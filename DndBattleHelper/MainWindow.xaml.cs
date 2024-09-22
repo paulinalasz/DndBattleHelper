@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using DndBattleHelper.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,11 @@ namespace DndBattleHelper
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MainWindowViewModel MainWindowViewModel;
+
         public MainWindow()
         {
-            InitializeComponent();
+            MainWindowViewModel = new MainWindowViewModel();
         }
     }
 }

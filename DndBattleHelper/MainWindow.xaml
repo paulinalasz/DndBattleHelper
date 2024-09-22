@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DnD Battle Helper" Height="450" Width="800"
+        xmlns:VM="clr-namespace:DndBattleHelper.ViewModels">
+    <Window.DataContext>
+        <VM:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="Test1">Test1</TabItem>
+            <TabItem Header="Test1">Test2</TabItem>
+            <TabItem Header="Test1">Test3</TabItem>
+            <TabItem Header="Test1">Test4</TabItem>
+        </TabControl>
     </Grid>
 </Window>
