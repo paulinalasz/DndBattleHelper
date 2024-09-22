@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
     public class MainWindowViewModel
     {
-        public string TestLOL => "Test";
+        public ObservableCollection<IEntity> EntitiesInInitiative { get; set; }
+
+        public MainWindowViewModel() 
+        {
+            EntitiesInInitiative = [new Enemy("Minotaur", 70), new Enemy("Minotaur 2", 63)];
+        }
     }
 }

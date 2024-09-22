@@ -11,11 +11,21 @@
         <VM:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <TabControl TabStripPlacement="Left">
-            <TabItem Header="Test1">Test1</TabItem>
-            <TabItem Header="Test1">Test2</TabItem>
-            <TabItem Header="Test1">Test3</TabItem>
-            <TabItem Header="Test1">Test4</TabItem>
+        <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}">
+            <TabControl.ItemTemplate>
+                <!-- this is the header template-->
+                <DataTemplate>
+                    <TextBlock
+                    Text="{Binding Name}" />
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <!-- this is the body of the TabItem template-->
+                <DataTemplate>
+                    <TextBlock
+                    Text="{Binding Health}" />
+                </DataTemplate>
+            </TabControl.ContentTemplate>
         </TabControl>
     </Grid>
 </Window>
