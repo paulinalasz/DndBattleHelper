@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DndBattleHelper.Models
 {
-    public class Player : IEntity
+    public class Player
     {
         public string Name { get; set; }
         public int Health { get; set; }

@@ -6,12 +6,18 @@
         xmlns:local="clr-namespace:DndBattleHelper"
         mc:Ignorable="d"
         Title="DnD Battle Helper" Height="450" Width="800"
-        xmlns:VM="clr-namespace:DndBattleHelper.ViewModels">
+        xmlns:VM="clr-namespace:DndBattleHelper.ViewModels"
+        xmlns:Views="clr-namespace:DndBattleHelper.Views">
     <Window.DataContext>
         <VM:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}">
+            <TabControl.Resources>
+                <DataTemplate DataType="{x:Type VM:EntityViewModel}">
+                    <Views:EnemyContentView/>
+                </DataTemplate>
+            </TabControl.Resources>
             <TabControl.ItemTemplate>
                 <!-- this is the header template-->
                 <DataTemplate>
@@ -19,13 +25,13 @@
                     Text="{Binding Name}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
-            <TabControl.ContentTemplate>
-                <!-- this is the body of the TabItem template-->
+            <!--<TabControl.ContentTemplate>
+                 --><!--this is the body of the TabItem template--><!--
                 <DataTemplate>
                     <TextBlock
-                    Text="{Binding Health}" />
+                    Text="{Binding EntityContentViewModel}" />
                 </DataTemplate>
-            </TabControl.ContentTemplate>
+            </TabControl.ContentTemplate>-->
         </TabControl>
     </Grid>
 </Window>

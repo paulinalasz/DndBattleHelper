@@ -5,11 +5,16 @@ namespace DndBattleHelper.ViewModels
 {
     public class MainWindowViewModel
     {
-        public ObservableCollection<IEntity> EntitiesInInitiative { get; set; }
+        public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
         public MainWindowViewModel() 
         {
-            EntitiesInInitiative = [new Enemy("Minotaur", 70), new Enemy("Minotaur 2", 63)];
+            var enemy1 = new Enemy("Minotaur 1", 70);
+            var enemy2 = new Enemy("Minotaur 2", 60);
+
+            EntitiesInInitiative = [
+                new EntityViewModel(enemy1.Name, new EnemyContentViewModel(enemy1)), 
+                new EntityViewModel(enemy2.Name, new EnemyContentViewModel(enemy2))];
         }
     }
 }
