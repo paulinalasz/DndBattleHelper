@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DndBattleHelper.ViewModels
 {
-    public interface IEntityContentViewModel
+    public interface IEntityViewModel
     {
+        public string Name { get; set; }
     }
 }

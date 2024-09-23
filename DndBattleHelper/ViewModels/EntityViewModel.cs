@@ -2,16 +2,15 @@
 
 namespace DndBattleHelper.ViewModels
 {
-    public class EntityViewModel
+    public abstract class EntityViewModel : IEntityViewModel
     {
         public string Name { get; set; }
 
-        public IEntityContentViewModel EntityContentViewModel { get; set; }
+        //public IEntityContentViewModel EntityContentViewModel { get; set; }
 
-        public EntityViewModel(string name, IEntityContentViewModel entityContentViewModel)
+        public EntityViewModel(/*, IEntityContentViewModel entityContentViewModel*/)
         {
-            Name = name;
-            EntityContentViewModel = entityContentViewModel;
+            //EntityContentViewModel = entityContentViewModel;
         }
     }
 }

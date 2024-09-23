@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace DndBattleHelper.Views
 {
     /// <summary>
-    /// Interaction logic for EnemyContentView.xaml
+    /// Interaction logic for EnemyView.xaml
     /// </summary>
-    public partial class EnemyContentView : UserControl
+    public partial class EnemyView : UserControl
     {
-        public EnemyContentView()
+        public EnemyView()
         {
             InitializeComponent();
         }

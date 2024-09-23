@@ -15,7 +15,7 @@
         <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}">
             <TabControl.Resources>
                 <DataTemplate DataType="{x:Type VM:EntityViewModel}">
-                    <Views:EnemyContentView/>
+                    <Views:EnemyView/>
                 </DataTemplate>
             </TabControl.Resources>
             <TabControl.ItemTemplate>

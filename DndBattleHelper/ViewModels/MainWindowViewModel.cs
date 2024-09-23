@@ -12,9 +12,7 @@ namespace DndBattleHelper.ViewModels
             var enemy1 = new Enemy("Minotaur 1", 70);
             var enemy2 = new Enemy("Minotaur 2", 60);
 
-            EntitiesInInitiative = [
-                new EntityViewModel(enemy1.Name, new EnemyContentViewModel(enemy1)), 
-                new EntityViewModel(enemy2.Name, new EnemyContentViewModel(enemy2))];
+            EntitiesInInitiative = [new EnemyViewModel(enemy1), new EnemyViewModel(enemy2)];
         }
     }
 }

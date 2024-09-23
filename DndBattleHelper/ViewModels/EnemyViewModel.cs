@@ -7,11 +7,11 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class EnemyContentViewModel : IEntityContentViewModel
+    public class EnemyViewModel : EntityViewModel
     {
-        public EnemyContentViewModel(Enemy enemy) 
+        public EnemyViewModel(Enemy enemy) 
         {
-
+            Name = enemy.Name;
         }
     }
 }
