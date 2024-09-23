@@ -12,7 +12,7 @@
         <VM:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}">
+        <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
             <TabControl.Resources>
                 <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                     <Views:EnemyView/>
