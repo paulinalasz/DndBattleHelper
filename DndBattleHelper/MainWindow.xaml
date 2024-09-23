@@ -12,22 +12,28 @@
         <VM:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
-            <TabControl.Resources>
-                <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
-                    <Views:EnemyView/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type VM:PlayerViewModel}">
-                    <Views:PlayerView/>
-                </DataTemplate>
-            </TabControl.Resources>
-            <TabControl.ItemTemplate>
-                <!-- this is the header template-->
-                <DataTemplate>
-                    <TextBlock
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>
+                <Button Content="Next Turn" Command="{Binding NextTurnCommand}"/>
+            </StackPanel>
+            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
+                <TabControl.Resources>
+                    <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
+                        <Views:EnemyView/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type VM:PlayerViewModel}">
+                        <Views:PlayerView/>
+                    </DataTemplate>
+                </TabControl.Resources>
+                <TabControl.ItemTemplate>
+                    <!-- this is the header template-->
+                    <DataTemplate>
+                        <TextBlock
                     Text="{Binding Name}" />
-                </DataTemplate>
-            </TabControl.ItemTemplate>
-        </TabControl>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+            </TabControl>
+        </StackPanel>
     </Grid>
 </Window>

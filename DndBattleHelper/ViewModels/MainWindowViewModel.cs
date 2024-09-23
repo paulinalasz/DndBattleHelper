@@ -1,9 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using DndBattleHelper.Models;
+using DndBattleHelper.Helpers;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : NotifyPropertyChanged
     {
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
@@ -26,7 +28,42 @@ namespace DndBattleHelper.ViewModels
         public int SelectedTab
         {
             get { return _selectedTab; }
-            set { _selectedTab = value; }
+            set 
+            { 
+                _selectedTab = value; 
+                OnPropertyChanged(nameof(SelectedTab));
+            }
         }
+
+        private ICommand _previousTurnCommand;
+        public ICommand PreviousTurnCommand => _previousTurnCommand ?? (_previousTurnCommand = new CommandHandler(() => GoToPreviousTurn(), () => { return true; }));
+
+        public void GoToPreviousTurn()
+        {
+            if (SelectedTab -1 < 0)
+            {
+                SelectedTab = EntitiesInInitiative.Count - 1;
+            }
+            else
+            {
+                SelectedTab -= 1;
+            }
+        }
+
+        private ICommand _nextTurnCommand;
+        public ICommand NextTurnCommand => _nextTurnCommand ?? (_nextTurnCommand = new CommandHandler(() => GoToNextTurn(), () => { return true; }));
+
+        public void GoToNextTurn()
+        {
+            if (SelectedTab + 1 > EntitiesInInitiative.Count - 1) 
+            {
+                SelectedTab = 0;
+            }
+            else
+            {
+                SelectedTab += 1;
+            }
+        }
+
     }
 }
