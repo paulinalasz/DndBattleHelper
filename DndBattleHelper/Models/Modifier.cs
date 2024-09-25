@@ -31,5 +31,15 @@
             modifierString += Value.ToString();
             return modifierString;
         }
+
+        public int ToInt()
+        {
+            if (Type == ModifierType.Minus)
+            {
+                return Value * -1;
+            }
+
+            return Value;
+        }
     }
 }

@@ -98,6 +98,14 @@
         
         <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
             <TextBlock>Actions</TextBlock>
+
+            <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:EntityActionView/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
         
         

@@ -31,6 +31,19 @@ namespace DndBattleHelper.ViewModels
             abilities.Add(new Ability("Charge", "If the minotaur moves at least 10 ft. straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 ft. away and knocked prone."));
             abilities.Add(new Ability("name", "desc"));
 
+            var damageRolls = new List<DamageRoll>
+            {
+                new DamageRoll
+                (2,
+                12,
+                new Modifier(ModifierType.Plus, 4),
+                DamageType.Slashing,
+                new Modifier(ModifierType.Plus, 6))
+            };
+
+            actions.Add(new EntityAction("Greataxe", "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d12 + 4) slashing damage.",
+                ActionCost.MainAction, damageRolls));
+
             var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
             var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
             var player1 = new Player("Bar", 132);

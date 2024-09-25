@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="DndBattleHelper.Views.AbilityView"
+﻿<UserControl x:Class="DndBattleHelper.Views.EntityActionView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,9 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
         <TextBlock TextWrapping="Wrap">
             <Run FontWeight="Bold" Text="{Binding Name}"/>
             <Run Text="{Binding Description}"/>
         </TextBlock>
+
+        <Button Content="Roll !!" Command="{Binding RollDamageCommand}" Grid.Column="1" Height="30" Margin="5,0,5,0"/>
     </Grid>
 </UserControl>
