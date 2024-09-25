@@ -9,8 +9,8 @@
              xmlns:VM="clr-namespace:DndBattleHelper.ViewModels">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Orientation="Vertical">
@@ -41,12 +41,12 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
@@ -70,28 +70,36 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Skills"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
-                                                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
                 <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
-                                                        
+
                 <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
-                                                      
+
                 <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
                 <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>
             </Grid>
-            
 
+            <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:AbilityView/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
         
         <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
             <TextBlock>Actions</TextBlock>
         </StackPanel>
+        
+        
     </Grid>
 </UserControl>
