@@ -3,9 +3,9 @@
     public enum SenseType
     {
         Blindsight,
-        Darkvision,
+        Darkvision60ft,
+        Darkvision120ft,
         Tremoresense,
-        Truesight,
-        PassivePerception
+        Truesight
     }
 }

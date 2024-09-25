@@ -19,6 +19,7 @@
         Deception,
         Intimidation,
         Perfromance,
-        Persuasion
+        Persuasion,
+        PassivePerception
     }
 }

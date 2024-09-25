@@ -12,16 +12,24 @@ namespace DndBattleHelper.ViewModels
 
         public MainWindowViewModel() 
         {
-            var skills = new List<SkillType>();
+            var skills = new List<Skill>();
             var senses = new List<SenseType>();
             var languages = new List<LanguageType>();
             var abilities = new List<Ability>();
             var actions = new List<EntityAction>();
 
-            skills.Add(SkillType.Perception);
+            skills.Add(new Skill(SkillType.Perception, new Modifier(ModifierType.Plus, 7)));
+            skills.Add(new Skill(SkillType.Insight, new Modifier(ModifierType.Plus, 9)));
 
-            var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, languages, 3, abilities, actions);
-            var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, languages, 3, abilities, actions);
+            senses.Add(SenseType.Darkvision60ft);
+
+            var passivePerception = new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Plus, 7));
+
+            languages.Add(LanguageType.Common);
+            languages.Add(LanguageType.Abyssal);
+
+            var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
+            var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
             var player1 = new Player("Bar", 132);
 
             EntitiesInInitiative = [new EnemyViewModel(enemy1), 
@@ -100,13 +108,23 @@ namespace DndBattleHelper.ViewModels
 
         public void AddNew()
         {
-            var skills = new List<SkillType>();
+            var skills = new List<Skill>();
             var senses = new List<SenseType>();
             var languages = new List<LanguageType>();
             var abilities = new List<Ability>();
             var actions = new List<EntityAction>();
 
-            var newEnemy = new Enemy("Minotaur new", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, languages, 3, abilities, actions);
+            skills.Add(new Skill(SkillType.Perception, new Modifier(ModifierType.Plus, 7)));
+            skills.Add(new Skill(SkillType.Insight, new Modifier(ModifierType.Plus, 9)));
+
+            senses.Add(SenseType.Darkvision60ft);
+
+            var passivePerception = new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Plus, 7));
+
+            languages.Add(LanguageType.Common);
+            languages.Add(LanguageType.Abyssal);
+
+            var newEnemy = new Enemy("Minotaur new", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
 
             EntitiesInInitiative.Add(new EnemyViewModel(newEnemy));
 
