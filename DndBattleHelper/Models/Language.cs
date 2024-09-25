@@ -1,0 +1,36 @@
+﻿namespace DndBattleHelper.Models
+{
+    public enum Language
+    {
+        Common,
+        Dwarvish,
+        Elvish,
+        Giant,
+        Gnomish,
+        Goblin,
+        Halfling,
+        Orc,
+        Abyssal,
+        Celestial,
+        Draconic,
+        Kraul,
+        Loxodon,
+        Merfolk,
+        Minotaur,
+        Sphinx,
+        Sylvan,
+        Vedalken,
+        DeepSpeech,
+        Infernal,
+        Primodial,
+        Aquan,
+        Auran,
+        Ignan,
+        Terran,
+        Undercommon,
+        Aarakorcra,
+        Druidic,
+        Gith,
+        ThievesCant
+    }
+}

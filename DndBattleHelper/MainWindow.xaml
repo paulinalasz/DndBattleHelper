@@ -16,15 +16,16 @@
     <Window.Resources>
         <Converters:IndexToTurnNumberConveter x:Key="TwoEqualNumbersToBooleanConverter" />
     </Window.Resources>
-    
+
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>
                 <Button Content="Next Turn" Command="{Binding NextTurnCommand}"/>
                 <TextBlock Text="{Binding DisplayTurnNumber}"/>
-                <Button Content="Add New" Command="{Binding AddNewCommand}"/>
+                <Button Content="Add New Enemy" Command="{Binding AddNewCommand}"/>
             </StackPanel>
+
             <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}" ItemsControl.AlternationCount="{Binding EntitiesInInitiativeCount}">
                 <TabControl.Resources>
                     <Style TargetType="TabItem">
@@ -37,7 +38,7 @@
                                     </MultiBinding>
                                 </DataTrigger.Binding>
                                 <DataTrigger.Setters>
-                                    <Setter Property="Background" Value="Red"/>
+                                    <Setter Property="Background" Value="Blue"/>
                                 </DataTrigger.Setters>
                             </DataTrigger>
                         </Style.Triggers>
