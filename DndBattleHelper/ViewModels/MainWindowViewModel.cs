@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.Helpers;
+using System;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -22,6 +23,9 @@ namespace DndBattleHelper.ViewModels
                 new EnemyViewModel(enemy2),
                 new PlayerViewModel(player1),
             ];
+
+            TurnNumber = 0;
+            SelectedTab = TurnNumber;
         }
 
         private int _selectedTab;
@@ -35,19 +39,33 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
+        private int _turnNumber;
+        public int TurnNumber 
+        {
+            get { return _turnNumber; } 
+            set
+            {
+                _turnNumber = value;
+                OnPropertyChanged(nameof(TurnNumber));
+                OnPropertyChanged(nameof(DisplayTurnNumber));
+            } 
+        }
+
         private ICommand _previousTurnCommand;
         public ICommand PreviousTurnCommand => _previousTurnCommand ?? (_previousTurnCommand = new CommandHandler(() => GoToPreviousTurn(), () => { return true; }));
 
         public void GoToPreviousTurn()
         {
-            if (SelectedTab -1 < 0)
+            if (TurnNumber - 1 < 0)
             {
-                SelectedTab = EntitiesInInitiative.Count - 1;
+                TurnNumber = EntitiesInInitiative.Count - 1;
             }
             else
             {
-                SelectedTab -= 1;
+                TurnNumber -= 1;
             }
+
+            SelectedTab = TurnNumber;
         }
 
         private ICommand _nextTurnCommand;
@@ -55,15 +73,35 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToNextTurn()
         {
-            if (SelectedTab + 1 > EntitiesInInitiative.Count - 1) 
+            if (TurnNumber + 1 > EntitiesInInitiative.Count - 1) 
             {
-                SelectedTab = 0;
+                TurnNumber = 0;
             }
             else
             {
-                SelectedTab += 1;
+                TurnNumber += 1;
             }
+
+            SelectedTab = TurnNumber;
         }
 
+        private int _displayTurnNumber;
+        public int DisplayTurnNumber => TurnNumber + 1;
+
+        public int EntitiesInInitiativeCount => EntitiesInInitiative?.Count ?? 0;
+
+        private ICommand _addNewCommand;
+        public ICommand AddNewCommand => _addNewCommand ?? (_addNewCommand = new CommandHandler(() => AddNew(), () => { return true; }));
+
+        public void AddNew()
+        {
+            var abilities = new List<Ability>();
+            var actions = new List<EntityAction>();
+            var newEnemy = new Enemy("Minotaur new", 10, 70, abilities, actions);
+
+            EntitiesInInitiative.Add(new EnemyViewModel(newEnemy));
+
+            OnPropertyChanged(string.Empty);
+        }
     }
 }
