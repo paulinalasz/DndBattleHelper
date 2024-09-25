@@ -12,11 +12,16 @@ namespace DndBattleHelper.ViewModels
 
         public MainWindowViewModel() 
         {
+            var skills = new List<SkillType>();
+            var senses = new List<SenseType>();
+            var languages = new List<LanguageType>();
             var abilities = new List<Ability>();
             var actions = new List<EntityAction>();
 
-            var enemy1 = new Enemy("Minotaur 1", 10, 70, abilities, actions);
-            var enemy2 = new Enemy("Minotaur 2", 10, 60, abilities, actions);
+            skills.Add(SkillType.Perception);
+
+            var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, languages, 3, abilities, actions);
+            var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, languages, 3, abilities, actions);
             var player1 = new Player("Bar", 132);
 
             EntitiesInInitiative = [new EnemyViewModel(enemy1), 
@@ -95,9 +100,13 @@ namespace DndBattleHelper.ViewModels
 
         public void AddNew()
         {
+            var skills = new List<SkillType>();
+            var senses = new List<SenseType>();
+            var languages = new List<LanguageType>();
             var abilities = new List<Ability>();
             var actions = new List<EntityAction>();
-            var newEnemy = new Enemy("Minotaur new", 10, 70, abilities, actions);
+
+            var newEnemy = new Enemy("Minotaur new", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, languages, 3, abilities, actions);
 
             EntitiesInInitiative.Add(new EnemyViewModel(newEnemy));
 

@@ -18,9 +18,9 @@ namespace DndBattleHelper.ViewModels
         public int Intelligence { get; set; }
         public int Wisdom {  get; set; }
         public int Charisma { get; set; }
-        public List<Skill> Skills { get; set; }
-        public List<Sense> Senses { get; set; }
-        public List<Language> Languages { get; set; }
+        public List<SkillType> Skills { get; set; }
+        public List<SenseType> Senses { get; set; }
+        public List<LanguageType> Languages { get; set; }
         public int Challenge { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }

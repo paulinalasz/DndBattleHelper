@@ -1,6 +1,6 @@
 ﻿namespace DndBattleHelper.Models
 {
-    public enum Language
+    public enum LanguageType
     {
         Common,
         Dwarvish,

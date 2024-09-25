@@ -1,6 +1,6 @@
 ﻿namespace DndBattleHelper.Models
 {
-    public enum Skill
+    public enum SkillType
     {
         Athletics,
         Acrobatics,

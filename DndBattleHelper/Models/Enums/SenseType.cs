@@ -1,6 +1,6 @@
 ﻿namespace DndBattleHelper.Models
 {
-    public enum Sense
+    public enum SenseType
     {
         Blindsight,
         Darkvision,

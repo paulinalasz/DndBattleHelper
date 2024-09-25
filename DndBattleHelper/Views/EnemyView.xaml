@@ -9,15 +9,88 @@
              xmlns:VM="clr-namespace:DndBattleHelper.ViewModels">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="{Binding Name}" />
-            <TextBlock Text="{Binding ArmourClass}"/>
-            <TextBlock Text="{Binding Health}"/>
+
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Health}"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
+            </Grid>
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="DEX"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Margin="5, 0, 5, 0" Text="CON"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Margin="5, 0, 5, 0" Text="INT"/>
+                <TextBlock Grid.Row="0" Grid.Column="4" Margin="5, 0, 5, 0" Text="WIS"/>
+                <TextBlock Grid.Row="0" Grid.Column="5" Margin="5, 0, 5, 0" Text="CHA"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="{Binding Strength}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Dexterity}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" Text="{Binding Constitution}"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Margin="5, 0, 5, 0" Text="{Binding Intelligence}"/>
+                <TextBlock Grid.Row="1" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
+                <TextBlock Grid.Row="1" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Skills"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Skills}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Senses"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Senses}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Languages"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Languages}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Challenge"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Challenge}"/>
+            </Grid>
+            
+
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        
+        <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
             <TextBlock>Actions</TextBlock>
         </StackPanel>
     </Grid>
