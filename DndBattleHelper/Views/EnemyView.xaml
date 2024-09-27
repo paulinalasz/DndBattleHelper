@@ -109,13 +109,15 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Target Armour Class" Margin="0,0,5,0"/>
                     <TextBox MinWidth="30" Text="{Binding TargetArmourClass}"/>
+                    <ToggleButton Content="Adv" IsChecked="{Binding IsAdvantage}"/>
+                    <ToggleButton Content="Dis" IsChecked="{Binding IsDisadvantage}"/>
                 </StackPanel>
 
                 <Button Grid.Column="1" Content="Clear" Command="{Binding ClearCommand}"/>

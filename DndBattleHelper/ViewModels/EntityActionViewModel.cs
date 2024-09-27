@@ -1,5 +1,6 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Providers;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -8,6 +9,7 @@ namespace DndBattleHelper.ViewModels
     public class EntityActionViewModel
     {
         private readonly TargetArmourClassProvider _targetArmourClassProvider;
+        private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
 
         public string Name { get; set; }
         public string Description { get; set; }
@@ -19,8 +21,11 @@ namespace DndBattleHelper.ViewModels
         //But only one To Hit Modifier
         public Modifier ToHit { get; set; }
 
-        public EntityActionViewModel(EntityAction entityAction, TargetArmourClassProvider targetArmourClass)
+        public EntityActionViewModel(EntityAction entityAction, TargetArmourClassProvider targetArmourClass, AdvantageDisadvantageProvider advantageDisadvantageProvider)
         {
+            _targetArmourClassProvider = targetArmourClass;
+            _advantageDisadvantageProvider = advantageDisadvantageProvider;
+
             Name = entityAction.Name;
             Description = entityAction.Description; 
             Type = entityAction.Type;
@@ -32,8 +37,6 @@ namespace DndBattleHelper.ViewModels
             {
                 DamageRolls.Add(new DamageRollViewModel(damageRoll));
             }
-
-            _targetArmourClassProvider = targetArmourClass;
         }
 
         public Action ActionTaken;
@@ -70,6 +73,19 @@ namespace DndBattleHelper.ViewModels
         {
             Random rand = new Random();
             var roll = rand.Next(1, 21);
+
+            if (_advantageDisadvantageProvider.IsAdvantage)
+            {
+                var roll2 = rand.Next(1, 21);
+                roll = roll > roll2 ? roll : roll2;
+            }
+
+            if (_advantageDisadvantageProvider.IsDisadvantage)
+            {
+                var roll2 = rand.Next(1, 21);
+                roll = roll < roll2 ? roll : roll2;
+            }
+
             var withModifier = roll + ToHit.ToInt();
 
             if (withModifier >= armourClass && roll != 1) return new ToHitRoll(true, roll, ToHit, withModifier);

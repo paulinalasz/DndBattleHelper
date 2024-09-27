@@ -1,4 +1,4 @@
-﻿namespace DndBattleHelper.ViewModels
+﻿namespace DndBattleHelper.ViewModels.Providers
 {
     public class TargetArmourClassProvider
     {

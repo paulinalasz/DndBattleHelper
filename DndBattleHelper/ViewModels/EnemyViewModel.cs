@@ -9,12 +9,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
 {
     public class EnemyViewModel : EntityViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider { get; }
+        private AdvantageDisadvantageProvider _advantageDisadvantageProvider { get; }
 
         public int ArmourClass { get; set; }
         public int Health { get; set; }
@@ -47,6 +49,7 @@ namespace DndBattleHelper.ViewModels
         public EnemyViewModel(Enemy enemy) 
         {
             _targetArmourClassProvider = new TargetArmourClassProvider();
+            _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
 
             Name = enemy.Name;
             ArmourClass = enemy.ArmourClass;
@@ -74,7 +77,7 @@ namespace DndBattleHelper.ViewModels
 
             foreach(var action in enemy.Actions)
             {
-                Actions.Add(new EntityActionViewModel(action, _targetArmourClassProvider));
+                Actions.Add(new EntityActionViewModel(action, _targetArmourClassProvider, _advantageDisadvantageProvider));
             }
 
             OutputBox = new OutputBoxViewModel();
@@ -82,6 +85,40 @@ namespace DndBattleHelper.ViewModels
             foreach (var action in Actions)
             {
                 action.ActionTaken += () => { OutputBox.AttackDamages.Add(action.MostRecentDamageRolled); };
+            }
+        }
+
+        private bool _isAdvantage;
+        public bool IsAdvantage
+        {
+            get { return _advantageDisadvantageProvider.IsAdvantage; }
+            set 
+            {
+                if (IsDisadvantage)
+                {
+                    IsDisadvantage = false;
+                }
+                _advantageDisadvantageProvider.IsAdvantage = value; 
+
+                OnPropertyChanged(nameof(IsAdvantage));
+                OnPropertyChanged(nameof(IsDisadvantage));
+            }
+        }
+
+        private bool _isDisadvantage;
+        public bool IsDisadvantage
+        {
+            get { return _advantageDisadvantageProvider.IsDisadvantage; }
+            set
+            {
+                if (IsAdvantage)
+                {
+                    IsAdvantage = false;
+                }
+                _advantageDisadvantageProvider.IsDisadvantage = value;
+
+                OnPropertyChanged(nameof(IsAdvantage));
+                OnPropertyChanged(nameof(IsDisadvantage));
             }
         }
 
