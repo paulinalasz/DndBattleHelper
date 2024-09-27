@@ -56,7 +56,7 @@ namespace DndBattleHelper.ViewModels
         {
             var attackDamageString = string.Empty;
 
-            if (ToHitRoll.Roll == 20)
+            if (ToHitRoll != null && ToHitRoll.Roll == 20)
             {
                 attackDamageString += "Critical Hit! ";
             }
