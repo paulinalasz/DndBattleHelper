@@ -95,7 +95,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
             <TextBlock>Actions</TextBlock>
 
@@ -103,7 +103,7 @@
                 <TextBlock Text="Target Armour Class" Margin="0,0,5,0"/>
                 <TextBox MinWidth="30"/>
             </StackPanel>
-            
+
             <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -111,8 +111,8 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-        </StackPanel>
 
-        
+            <local:OutputBoxView DataContext="{Binding OutputBox}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

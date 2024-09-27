@@ -5,11 +5,28 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Media;
+using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
+    public class OutputBoxViewModel
+    {
+        public ObservableCollection<Damage> Damage { get; set; }
+
+
+
+        private ICommand _clearCommand;
+        public ICommand ClearCommand => _clearCommand ?? (_clearCommand = new CommandHandler(() => Clear(), () => { return true; }));
+
+        public void Clear()
+        {
+            Damage.Clear();
+        }
+    }
+
     public class EnemyViewModel : EntityViewModel
     {
         public int ArmourClass { get; set; }
@@ -38,6 +55,8 @@ namespace DndBattleHelper.ViewModels
                 OnPropertyChanged(nameof(TargetArmourClass));
             }
         }
+
+        public OutputBoxViewModel OutputBox { get; set; }
 
         public EnemyViewModel(Enemy enemy) 
         {
@@ -69,6 +88,8 @@ namespace DndBattleHelper.ViewModels
             {
                 Actions.Add(new EntityActionViewModel(action));
             }
+
+            OutputBox = new OutputBoxViewModel();
         }
     }
 }
