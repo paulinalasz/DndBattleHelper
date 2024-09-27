@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Border BorderThickness="2" BorderBrush="Black" Background="White" MinHeight="100">
         <Grid>
-            <TextBlock> Testing</TextBlock>
+            <TextBlock Text="{Binding Output}"/>
         </Grid>
     </Border>
 </UserControl>
