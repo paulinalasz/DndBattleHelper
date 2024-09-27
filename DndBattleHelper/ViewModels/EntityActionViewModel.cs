@@ -39,7 +39,7 @@ namespace DndBattleHelper.ViewModels
 
         public AttackDamageViewModel MostRecentDamageRolled { get; set; }
 
-        public void RollDamage()
+        public void RollDamage(ToHitRoll toHitRoll = null)
         {
             var damageRolled = new ObservableCollection<Damage>();
 
@@ -48,14 +48,14 @@ namespace DndBattleHelper.ViewModels
                 damageRolled.Add(damageRoll.RollDamage());
             }
 
-            MostRecentDamageRolled = new AttackDamageViewModel(Name, true, damageRolled);
+            MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll, damageRolled);
             ActionTaken?.Invoke();
         }
 
         private ICommand _rollToHitAndDamageCommand;
         public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(10), () => { return true; }));
 
-        private DidAttackHitWithToHit DoesAttackHit(int armourClass)
+        private ToHitRoll DoesAttackHit(int armourClass)
         {
             Random rand = new Random();
 
@@ -65,26 +65,26 @@ namespace DndBattleHelper.ViewModels
 
             if (withModifier >= armourClass)
             {
-                return new DidAttackHitWithToHit(true, withModifier);
+                return new ToHitRoll(true, roll, withModifier);
             }
 
-            return new DidAttackHitWithToHit(false, withModifier);
+            return new ToHitRoll(false, roll, withModifier);
         }
 
         public void RollToHitAndDamage(int armourClass)
         {
             Random rand = new Random();
 
-            var didAttackHitWithToHit = DoesAttackHit(armourClass);
+            var toHitRoll = DoesAttackHit(armourClass);
 
-            if (!didAttackHitWithToHit.DidAttackHit)
+            if (!toHitRoll.DidAttackHit)
             {
-                MostRecentDamageRolled = new AttackDamageViewModel(Name, false);
+                MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll);
                 ActionTaken?.Invoke();
                 return;
             }
 
-            RollDamage();
+            RollDamage(toHitRoll);
         }
     }
 }

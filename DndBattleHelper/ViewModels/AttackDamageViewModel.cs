@@ -6,15 +6,14 @@ namespace DndBattleHelper.ViewModels
     public class AttackDamageViewModel
     {
         public string Name { get; set; }
-        public int ToHitRolled { get; set; }
-        public bool Hits { get; }
+        public ToHitRoll ToHitRoll { get; set; }
         public ObservableCollection<Damage> DamageRolled { get; set; }
 
-        public AttackDamageViewModel(string name, bool hits, ObservableCollection<Damage> damageRolled = null)
+        public AttackDamageViewModel(string name, ToHitRoll toHitRoll = null, ObservableCollection<Damage> damageRolled = null)
         {
             Name = name;
+            ToHitRoll = toHitRoll;
             DamageRolled = damageRolled;
-            Hits = hits;
         }
 
         public override string ToString()
@@ -22,27 +21,41 @@ namespace DndBattleHelper.ViewModels
             var attackDamageString = string.Empty;
 
             attackDamageString += Name;
-            attackDamageString += ": Rolled to hit: ";
-            attackDamageString += ToHitRolled;
 
-            if (Hits)
+            if (ToHitRoll != null)
             {
-                attackDamageString += ". Its a hit! Target takes ";
+                attackDamageString += ": Rolled to hit: ";
+                attackDamageString += ToHitRoll.ToHitWithModifier;
+                attackDamageString += ". ";
 
-                foreach (Damage damage in DamageRolled)
+                if (ToHitRoll.DidAttackHit)
                 {
-                    attackDamageString += damage.ToString();
-                    attackDamageString += " and ";
+                    attackDamageString += ToStringDamage();
+                }
+                else
+                {
+                    attackDamageString += "Its a miss!";
                 }
 
-                attackDamageString = attackDamageString.Substring(0, attackDamageString.Length - 5);
+                return attackDamageString;
             }
             else
             {
-                attackDamageString += "Its a miss!";
+                return ToStringDamage();
+            }
+        }
+
+        private string ToStringDamage()
+        {
+            var attackDamageString = "Its a hit! Target takes ";
+
+            foreach (Damage damage in DamageRolled)
+            {
+                attackDamageString += damage.ToString();
+                attackDamageString += " and ";
             }
 
-            return attackDamageString;
+            return attackDamageString.Substring(0, attackDamageString.Length - 5);
         }
     }
 }
