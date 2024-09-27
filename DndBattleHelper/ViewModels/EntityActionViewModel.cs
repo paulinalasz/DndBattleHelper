@@ -7,6 +7,8 @@ namespace DndBattleHelper.ViewModels
 {
     public class EntityActionViewModel
     {
+        private readonly TargetArmourClassProvider _targetArmourClassProvider;
+
         public string Name { get; set; }
         public string Description { get; set; }
         public ActionCost Type { get; set; }
@@ -17,7 +19,7 @@ namespace DndBattleHelper.ViewModels
         //But only one To Hit Modifier
         public Modifier ToHit { get; set; }
 
-        public EntityActionViewModel(EntityAction entityAction)
+        public EntityActionViewModel(EntityAction entityAction, TargetArmourClassProvider targetArmourClass)
         {
             Name = entityAction.Name;
             Description = entityAction.Description; 
@@ -30,6 +32,8 @@ namespace DndBattleHelper.ViewModels
             {
                 DamageRolls.Add(new DamageRollViewModel(damageRoll));
             }
+
+            _targetArmourClassProvider = targetArmourClass;
         }
 
         public Action ActionTaken;
@@ -53,7 +57,7 @@ namespace DndBattleHelper.ViewModels
         }
 
         private ICommand _rollToHitAndDamageCommand;
-        public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(10), () => { return true; }));
+        public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
 
         private ToHitRoll DoesAttackHit(int armourClass)
         {

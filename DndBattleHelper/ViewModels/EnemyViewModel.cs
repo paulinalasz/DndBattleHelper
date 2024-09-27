@@ -14,6 +14,8 @@ namespace DndBattleHelper.ViewModels
 {
     public class EnemyViewModel : EntityViewModel
     {
+        private TargetArmourClassProvider _targetArmourClassProvider { get; }
+
         public int ArmourClass { get; set; }
         public int Health { get; set; }
         public int Speed { get; set; }
@@ -30,13 +32,12 @@ namespace DndBattleHelper.ViewModels
         public ObservableCollection<AbilityViewModel> Abilities { get; set; }
         public ObservableCollection<EntityActionViewModel> Actions { get; set; }
 
-        private int _targetArmourClass;
         public int TargetArmourClass 
         {
-            get { return _targetArmourClass; }
+            get { return _targetArmourClassProvider.TargetArmourClass; }
             set 
             {
-                _targetArmourClass = value;
+                _targetArmourClassProvider.TargetArmourClass = value;
                 OnPropertyChanged(nameof(TargetArmourClass));
             }
         }
@@ -45,6 +46,8 @@ namespace DndBattleHelper.ViewModels
 
         public EnemyViewModel(Enemy enemy) 
         {
+            _targetArmourClassProvider = new TargetArmourClassProvider();
+
             Name = enemy.Name;
             ArmourClass = enemy.ArmourClass;
             Health = enemy.Health;
@@ -71,7 +74,7 @@ namespace DndBattleHelper.ViewModels
 
             foreach(var action in enemy.Actions)
             {
-                Actions.Add(new EntityActionViewModel(action));
+                Actions.Add(new EntityActionViewModel(action, _targetArmourClassProvider));
             }
 
             OutputBox = new OutputBoxViewModel();
