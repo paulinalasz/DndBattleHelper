@@ -18,7 +18,7 @@ namespace DndBattleHelper.Models
             DamageType = damageType;
         }
 
-        public Damage RollDamage(DidAttackHitWithToHit didAttackHitWithToHit = null)
+        public Damage RollDamage()
         {
             Random rand = new Random();
 
@@ -29,12 +29,7 @@ namespace DndBattleHelper.Models
                 damage += rand.Next(1, DiceBase + 1);
             }
 
-            if (didAttackHitWithToHit == null)
-            {
-                return new Damage(damage, DamageType, 0);
-            }
-
-            return new Damage(damage, DamageType, didAttackHitWithToHit.ToHit);
+            return new Damage(damage, DamageType);
 
         }
     }

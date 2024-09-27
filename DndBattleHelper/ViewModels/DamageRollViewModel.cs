@@ -23,9 +23,9 @@ namespace DndBattleHelper.ViewModels
             DamageType = damageRoll.DamageType;
         }
 
-        public Damage RollDamage(DidAttackHitWithToHit didAttackHitWithToHit = null)
+        public Damage RollDamage()
         {
-            return _damageRoll.RollDamage(didAttackHitWithToHit);
+            return _damageRoll.RollDamage();
         }
     }
 }

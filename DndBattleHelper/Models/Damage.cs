@@ -4,13 +4,16 @@
     {
         public int DamageGiven { get; set; }
         public DamageType DamageType { get; set; }
-        public int ToHit { get; set; }
 
-        public Damage(int damageGiven, DamageType damageType, int toHit)
+        public Damage(int damageGiven, DamageType damageType)
         {
             DamageGiven = damageGiven;
             DamageType = damageType;
-            ToHit = toHit;
+        }
+
+        public override string ToString()
+        {
+            return $"{DamageGiven} {DamageType} damage!";
         }
     }
 }

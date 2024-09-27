@@ -2,7 +2,6 @@
 {
     public enum DamageType
     {
-        Miss,
         Piercing,
         Bludgeoning,
         Slashing,

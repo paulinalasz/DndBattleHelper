@@ -30,27 +30,26 @@ namespace DndBattleHelper.ViewModels
             {
                 DamageRolls.Add(new DamageRollViewModel(damageRoll));
             }
-
-            MostRecentDamageRolled = new ObservableCollection<Damage>();
         }
 
-        public Action DamageRolled;
+        public Action ActionTaken;
 
         private ICommand _rollDamageCommand;
         public ICommand RollDamageCommand => _rollDamageCommand ?? (_rollDamageCommand = new CommandHandler(() => RollDamage(), () => { return true; }));
 
-        public ObservableCollection<Damage> MostRecentDamageRolled { get; set; }
+        public AttackDamageViewModel MostRecentDamageRolled { get; set; }
 
-        public void RollDamage(DidAttackHitWithToHit didAttackHitWithToHit = null)
+        public void RollDamage()
         {
-            MostRecentDamageRolled = new ObservableCollection<Damage>();
+            var damageRolled = new ObservableCollection<Damage>();
 
             foreach(var damageRoll in DamageRolls)
             {
-                MostRecentDamageRolled.Add(damageRoll.RollDamage(didAttackHitWithToHit));
+                damageRolled.Add(damageRoll.RollDamage());
             }
 
-            DamageRolled?.Invoke();
+            MostRecentDamageRolled = new AttackDamageViewModel(Name, true, damageRolled);
+            ActionTaken?.Invoke();
         }
 
         private ICommand _rollToHitAndDamageCommand;
@@ -80,10 +79,12 @@ namespace DndBattleHelper.ViewModels
 
             if (!didAttackHitWithToHit.DidAttackHit)
             {
-                MostRecentDamageRolled = [new Damage(0, DamageType.Miss, didAttackHitWithToHit.ToHit)];
+                MostRecentDamageRolled = new AttackDamageViewModel(Name, false);
+                ActionTaken?.Invoke();
+                return;
             }
 
-            RollDamage(didAttackHitWithToHit);
+            RollDamage();
         }
     }
 }

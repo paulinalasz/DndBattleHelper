@@ -73,6 +73,11 @@ namespace DndBattleHelper.ViewModels
             }
 
             OutputBox = new OutputBoxViewModel();
+
+            foreach (var action in Actions)
+            {
+                action.ActionTaken += () => { OutputBox.DamageRolled.Add(action.MostRecentDamageRolled); };
+            }
         }
     }
 }
