@@ -26,7 +26,7 @@ namespace DndBattleHelper.ViewModels
             {
                 attackDamageString += ": Rolled to hit: ";
                 attackDamageString += ToHitRoll.ToHitWithModifier;
-                attackDamageString += ". ";
+                attackDamageString += $"({ToHitRoll.Roll}, {ToHitRoll.Modifier}). ";
 
                 if (ToHitRoll.DidAttackHit)
                 {
@@ -47,7 +47,16 @@ namespace DndBattleHelper.ViewModels
 
         private string ToStringDamage()
         {
-            var attackDamageString = "Its a hit! Target takes ";
+            var attackDamageString = string.Empty;
+
+            if (ToHitRoll.Roll == 20)
+            {
+                attackDamageString += "Critical Hit! ";
+            }
+            else
+            {
+                attackDamageString += "Its a hit! Target takes ";
+            }
 
             foreach (Damage damage in DamageRolled)
             {

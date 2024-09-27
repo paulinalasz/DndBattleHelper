@@ -49,7 +49,14 @@ namespace DndBattleHelper.ViewModels
 
             foreach(var damageRoll in DamageRolls)
             {
-                damageRolled.Add(damageRoll.RollDamage());
+                if (toHitRoll != null && toHitRoll.Roll == 20)
+                {
+                    damageRolled.Add(damageRoll.RollDamage(true));
+                }
+                else
+                {
+                    damageRolled.Add(damageRoll.RollDamage(false));
+                }
             }
 
             MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll, damageRolled);
@@ -62,23 +69,17 @@ namespace DndBattleHelper.ViewModels
         private ToHitRoll DoesAttackHit(int armourClass)
         {
             Random rand = new Random();
-
             var roll = rand.Next(1, 21);
-
             var withModifier = roll + ToHit.ToInt();
 
-            if (withModifier >= armourClass)
-            {
-                return new ToHitRoll(true, roll, withModifier);
-            }
+            if (withModifier >= armourClass) return new ToHitRoll(true, roll, ToHit, withModifier);
 
-            return new ToHitRoll(false, roll, withModifier);
+            return new ToHitRoll(false, roll, ToHit, withModifier);
         }
 
         public void RollToHitAndDamage(int armourClass)
         {
             Random rand = new Random();
-
             var toHitRoll = DoesAttackHit(armourClass);
 
             if (!toHitRoll.DidAttackHit)

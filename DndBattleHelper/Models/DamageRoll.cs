@@ -18,7 +18,7 @@ namespace DndBattleHelper.Models
             DamageType = damageType;
         }
 
-        public Damage RollDamage()
+        public Damage RollDamage(bool critialHit)
         {
             Random rand = new Random();
 
@@ -27,6 +27,14 @@ namespace DndBattleHelper.Models
             for(int i = 0; i <= NumberOfDice; i++) 
             {
                 damage += rand.Next(1, DiceBase + 1);
+            }
+
+            if(critialHit) 
+            {
+                for (int i = 0; i <= NumberOfDice; i++)
+                {
+                    damage += rand.Next(1, DiceBase + 1);
+                }
             }
 
             return new Damage(damage, DamageType);

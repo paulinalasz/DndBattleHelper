@@ -23,9 +23,9 @@ namespace DndBattleHelper.ViewModels
             DamageType = damageRoll.DamageType;
         }
 
-        public Damage RollDamage()
+        public Damage RollDamage(bool criticalHit)
         {
-            return _damageRoll.RollDamage();
+            return _damageRoll.RollDamage(criticalHit);
         }
     }
 }
