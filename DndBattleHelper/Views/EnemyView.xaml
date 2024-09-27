@@ -120,8 +120,10 @@
 
                 <Button Grid.Column="1" Content="Clear" Command="{Binding ClearCommand}"/>
             </Grid>
-            
+
             <local:OutputBoxView DataContext="{Binding OutputBox}"/>
+
+            <TextBlock Text="{Binding OutputBox.TotalDamageOutput}"/>
         </StackPanel>
     </Grid>
 </UserControl>

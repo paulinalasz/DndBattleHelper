@@ -78,7 +78,7 @@ namespace DndBattleHelper.ViewModels
 
             foreach (var action in Actions)
             {
-                action.ActionTaken += () => { OutputBox.DamageRolled.Add(action.MostRecentDamageRolled); };
+                action.ActionTaken += () => { OutputBox.AttackDamages.Add(action.MostRecentDamageRolled); };
             }
         }
 
