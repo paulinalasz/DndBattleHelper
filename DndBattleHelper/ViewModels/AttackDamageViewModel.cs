@@ -34,7 +34,14 @@ namespace DndBattleHelper.ViewModels
                 }
                 else
                 {
-                    attackDamageString += "Its a miss!";
+                    if (ToHitRoll.Roll == 1)
+                    {
+                        attackDamageString += "Critical miss!";
+                    }
+                    else
+                    {
+                        attackDamageString += "Its a miss!";
+                    }
                 }
 
                 return attackDamageString;

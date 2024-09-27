@@ -72,7 +72,7 @@ namespace DndBattleHelper.ViewModels
             var roll = rand.Next(1, 21);
             var withModifier = roll + ToHit.ToInt();
 
-            if (withModifier >= armourClass) return new ToHitRoll(true, roll, ToHit, withModifier);
+            if (withModifier >= armourClass && roll != 1) return new ToHitRoll(true, roll, ToHit, withModifier);
 
             return new ToHitRoll(false, roll, ToHit, withModifier);
         }
