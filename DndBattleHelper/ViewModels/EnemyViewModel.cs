@@ -5,7 +5,9 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Media;
+using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
@@ -78,6 +80,14 @@ namespace DndBattleHelper.ViewModels
             {
                 action.ActionTaken += () => { OutputBox.DamageRolled.Add(action.MostRecentDamageRolled); };
             }
+        }
+
+        private ICommand _clearCommand;
+        public ICommand ClearCommand => _clearCommand ?? (_clearCommand = new CommandHandler(() => Clear(), () => { return true; }));
+
+        public void Clear()
+        {
+            OutputBox.Clear();
         }
     }
 }

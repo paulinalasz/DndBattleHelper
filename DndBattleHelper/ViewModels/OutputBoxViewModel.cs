@@ -31,9 +31,6 @@ namespace DndBattleHelper.ViewModels
             return output;
         }
 
-        private ICommand _clearCommand;
-        public ICommand ClearCommand => _clearCommand ?? (_clearCommand = new CommandHandler(() => Clear(), () => { return true; }));
-
         public void Clear()
         {
             DamageRolled.Clear();
