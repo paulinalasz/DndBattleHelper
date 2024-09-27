@@ -37,12 +37,11 @@ namespace DndBattleHelper.ViewModels
                 (2,
                 12,
                 new Modifier(ModifierType.Plus, 4),
-                DamageType.Slashing,
-                new Modifier(ModifierType.Plus, 6))
+                DamageType.Slashing)
             };
 
             actions.Add(new EntityAction("Greataxe", "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d12 + 4) slashing damage.",
-                ActionCost.MainAction, damageRolls));
+                ActionCost.MainAction, new Modifier(ModifierType.Plus, 6), damageRolls));
 
             var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
             var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);

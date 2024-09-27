@@ -9,7 +9,8 @@
         xmlns:VM="clr-namespace:DndBattleHelper.ViewModels"
         xmlns:Views="clr-namespace:DndBattleHelper.Views"
         xmlns:Converters="clr-namespace:DndBattleHelper.Views.Converters"
-        Name="main">
+        MouseDown="window_MouseDown"
+        Name="window">
     <Window.DataContext>
         <VM:MainWindowViewModel/>
     </Window.DataContext>
@@ -17,7 +18,7 @@
         <Converters:IndexToTurnNumberConveter x:Key="TwoEqualNumbersToBooleanConverter" />
     </Window.Resources>
 
-    <Grid>
+    <Grid Name="grid1" Focusable="True" >
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>

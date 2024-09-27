@@ -1,4 +1,7 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Models;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -7,14 +10,80 @@ namespace DndBattleHelper.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
         public ActionCost Type { get; set; }
-        public List<DamageRoll> DamageRolls { get; set; }
+
+        // Can have multiple damage rolls of different type for the same action
+        public List<DamageRollViewModel> DamageRolls { get; set; }
+
+        //But only one To Hit Modifier
+        public Modifier ToHit { get; set; }
 
         public EntityActionViewModel(EntityAction entityAction)
         {
             Name = entityAction.Name;
             Description = entityAction.Description; 
             Type = entityAction.Type;
-            DamageRolls = entityAction.DamageRolls;
+            ToHit = entityAction.ToHit;
+
+            DamageRolls = new List<DamageRollViewModel>();
+
+            foreach(var damageRoll in  entityAction.DamageRolls) 
+            {
+                DamageRolls.Add(new DamageRollViewModel(damageRoll));
+            }
+
+            MostRecentDamageRolled = new ObservableCollection<Damage>();
+        }
+
+        public Action DamageRolled;
+
+        private ICommand _rollDamageCommand;
+        public ICommand RollDamageCommand => _rollDamageCommand ?? (_rollDamageCommand = new CommandHandler(() => RollDamage(), () => { return true; }));
+
+        public ObservableCollection<Damage> MostRecentDamageRolled { get; set; }
+
+        public void RollDamage(DidAttackHitWithToHit didAttackHitWithToHit = null)
+        {
+            MostRecentDamageRolled = new ObservableCollection<Damage>();
+
+            foreach(var damageRoll in DamageRolls)
+            {
+                MostRecentDamageRolled.Add(damageRoll.RollDamage(didAttackHitWithToHit));
+            }
+
+            DamageRolled?.Invoke();
+        }
+
+        private ICommand _rollToHitAndDamageCommand;
+        public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(10), () => { return true; }));
+
+        private DidAttackHitWithToHit DoesAttackHit(int armourClass)
+        {
+            Random rand = new Random();
+
+            var roll = rand.Next(1, 21);
+
+            var withModifier = roll + ToHit.ToInt();
+
+            if (withModifier >= armourClass)
+            {
+                return new DidAttackHitWithToHit(true, withModifier);
+            }
+
+            return new DidAttackHitWithToHit(false, withModifier);
+        }
+
+        public void RollToHitAndDamage(int armourClass)
+        {
+            Random rand = new Random();
+
+            var didAttackHitWithToHit = DoesAttackHit(armourClass);
+
+            if (!didAttackHitWithToHit.DidAttackHit)
+            {
+                MostRecentDamageRolled = [new Damage(0, DamageType.Miss, didAttackHitWithToHit.ToHit)];
+            }
+
+            RollDamage(didAttackHitWithToHit);
         }
     }
 }

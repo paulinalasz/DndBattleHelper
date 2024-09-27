@@ -1,4 +1,7 @@
-﻿namespace DndBattleHelper.Models
+﻿using DndBattleHelper.Helpers;
+using System.Windows.Input;
+
+namespace DndBattleHelper.Models
 {
     public class DamageRoll
     {
@@ -6,34 +9,16 @@
         public int DiceBase { get; set; }
         public Modifier DamageModifier { get; set; }
         public DamageType DamageType { get; set; }
-        public Modifier ToHitModifier { get; set; }
 
-        public DamageRoll(int number, int diceBase, Modifier modifier, DamageType damageType, Modifier toHitModifier)
+        public DamageRoll(int number, int diceBase, Modifier modifier, DamageType damageType)
         {
             NumberOfDice = number;
             DiceBase = diceBase;
             DamageModifier = modifier;
             DamageType = damageType;
-            ToHitModifier = toHitModifier;
         }
 
-        public bool DoesAttackHit(int armourClass)
-        {
-            Random rand = new Random();
-
-            var roll = rand.Next(1, 21);
-
-            var withModifier = roll + ToHitModifier.ToInt();
-
-            if (withModifier >= armourClass)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        public Damage RollDamage()
+        public Damage RollDamage(DidAttackHitWithToHit didAttackHitWithToHit = null)
         {
             Random rand = new Random();
 
@@ -44,19 +29,13 @@
                 damage += rand.Next(1, DiceBase + 1);
             }
 
-            return new Damage(damage, DamageType);
-        }
-
-        public Damage RollToHitAndDamage(int armourClass)
-        {
-            Random rand = new Random();
-
-            if (!DoesAttackHit(armourClass))
+            if (didAttackHitWithToHit == null)
             {
-                return new Damage(0, DamageType.Miss);
+                return new Damage(damage, DamageType, 0);
             }
 
-            return RollDamage();
+            return new Damage(damage, DamageType, didAttackHitWithToHit.ToHit);
+
         }
     }
 }

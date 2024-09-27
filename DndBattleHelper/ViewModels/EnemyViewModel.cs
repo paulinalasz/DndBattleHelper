@@ -26,7 +26,18 @@ namespace DndBattleHelper.ViewModels
         public LanguagesViewModel Languages { get; set; }
         public int Challenge { get; set; }
         public ObservableCollection<AbilityViewModel> Abilities { get; set; }
-        public List<EntityAction> Actions { get; set; }
+        public ObservableCollection<EntityActionViewModel> Actions { get; set; }
+
+        private int _targetArmourClass;
+        public int TargetArmourClass 
+        {
+            get { return _targetArmourClass; }
+            set 
+            {
+                _targetArmourClass = value;
+                OnPropertyChanged(nameof(TargetArmourClass));
+            }
+        }
 
         public EnemyViewModel(Enemy enemy) 
         {
@@ -52,7 +63,12 @@ namespace DndBattleHelper.ViewModels
                 Abilities.Add(new AbilityViewModel(ability));
             }
 
-            Actions = enemy.Actions;
+            Actions = new ObservableCollection<EntityActionViewModel>();
+
+            foreach(var action in enemy.Actions)
+            {
+                Actions.Add(new EntityActionViewModel(action));
+            }
         }
     }
 }

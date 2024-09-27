@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock TextWrapping="Wrap">
@@ -17,6 +18,7 @@
             <Run Text="{Binding Description}"/>
         </TextBlock>
 
-        <Button Content="Roll !!" Command="{Binding RollDamageCommand}" Grid.Column="1" Height="30" Margin="5,0,5,0"/>
+        <Button Content="Roll !!" Command="{Binding RollToHitAndDamageCommand}" Grid.Column="1" Height="30" Margin="5,0,5,0"/>
+        <Button Content="Just Dmg" Command="{Binding RollDamageCommand}" Grid.Column="2" Height="30" Margin="5,0,5,0"/>
     </Grid>
 </UserControl>

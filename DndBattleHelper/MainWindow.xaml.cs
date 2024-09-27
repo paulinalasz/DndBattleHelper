@@ -1,4 +1,5 @@
 ﻿using DndBattleHelper.ViewModels;
+using System;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,5 +24,17 @@ namespace DndBattleHelper
         {
             MainWindowViewModel = new MainWindowViewModel();
         }
+
+        private void window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBox textBox = Keyboard.FocusedElement as TextBox;
+            if (textBox != null)
+            {
+                TraversalRequest tRequest = new TraversalRequest(FocusNavigationDirection.Next);
+                textBox.MoveFocus(tRequest);
+            }
+        }
+
+
     }
 }

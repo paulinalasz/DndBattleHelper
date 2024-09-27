@@ -2,6 +2,7 @@
 {
     public enum DamageType
     {
+        Miss,
         Piercing,
         Bludgeoning,
         Slashing,
@@ -14,7 +15,6 @@
         Necrotic,
         Radiant,
         Force,
-        Psychic,
-        Miss
+        Psychic
     }
 }
