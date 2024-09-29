@@ -1,9 +1,9 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.ViewModels;
+﻿using DndBattleHelper.ViewModels;
 using System.Configuration;
 using System.Data;
 using System.Windows;
 using DndBattleHelper.Views;
+using DndBattleHelper.Helpers.DialogService;
 
 namespace DndBattleHelper
 {

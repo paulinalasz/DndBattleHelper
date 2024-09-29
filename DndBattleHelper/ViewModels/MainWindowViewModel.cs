@@ -4,6 +4,7 @@ using DndBattleHelper.Models;
 using DndBattleHelper.Helpers;
 using System;
 using System.Windows;
+using DndBattleHelper.Helpers.DialogService;
 
 namespace DndBattleHelper.ViewModels
 {

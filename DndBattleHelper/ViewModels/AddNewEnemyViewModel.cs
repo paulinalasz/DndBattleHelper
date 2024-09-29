@@ -1,4 +1,5 @@
 ﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Helpers.DialogService;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
