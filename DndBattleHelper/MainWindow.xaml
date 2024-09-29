@@ -11,9 +11,6 @@
         xmlns:Converters="clr-namespace:DndBattleHelper.Views.Converters"
         MouseDown="window_MouseDown"
         Name="window">
-    <Window.DataContext>
-        <VM:MainWindowViewModel/>
-    </Window.DataContext>
     <Window.Resources>
         <Converters:IndexToTurnNumberConveter x:Key="TwoEqualNumbersToBooleanConverter" />
     </Window.Resources>

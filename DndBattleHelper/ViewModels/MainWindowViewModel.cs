@@ -3,15 +3,20 @@ using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.Helpers;
 using System;
+using System.Windows;
 
 namespace DndBattleHelper.ViewModels
 {
     public class MainWindowViewModel : NotifyPropertyChanged
     {
+        private readonly IDialogService _dialogService;
+
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
-        public MainWindowViewModel() 
+        public MainWindowViewModel(IDialogService dialogService) 
         {
+            _dialogService = dialogService;
+
             var skills = new List<Skill>();
             var senses = new List<SenseType>();
             var languages = new List<LanguageType>();
@@ -126,26 +131,31 @@ namespace DndBattleHelper.ViewModels
 
         public void AddNew()
         {
-            var skills = new List<Skill>();
-            var senses = new List<SenseType>();
-            var languages = new List<LanguageType>();
-            var abilities = new List<Ability>();
-            var actions = new List<EntityAction>();
+            //var skills = new List<Skill>();
+            //var senses = new List<SenseType>();
+            //var languages = new List<LanguageType>();
+            //var abilities = new List<Ability>();
+            //var actions = new List<EntityAction>();
 
-            skills.Add(new Skill(SkillType.Perception, new Modifier(ModifierType.Plus, 7)));
-            skills.Add(new Skill(SkillType.Insight, new Modifier(ModifierType.Plus, 9)));
+            //skills.Add(new Skill(SkillType.Perception, new Modifier(ModifierType.Plus, 7)));
+            //skills.Add(new Skill(SkillType.Insight, new Modifier(ModifierType.Plus, 9)));
 
-            senses.Add(SenseType.Darkvision60ft);
+            //senses.Add(SenseType.Darkvision60ft);
 
-            var passivePerception = new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Plus, 7));
+            //var passivePerception = new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Plus, 7));
 
-            languages.Add(LanguageType.Common);
-            languages.Add(LanguageType.Abyssal);
+            //languages.Add(LanguageType.Common);
+            //languages.Add(LanguageType.Abyssal);
 
-            var newEnemy = new Enemy("Minotaur new", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
+            //var newEnemy = new Enemy("Minotaur new", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
 
-            EntitiesInInitiative.Add(new EnemyViewModel(newEnemy));
+            var AddNewEnemyViewModel = new AddNewEnemyViewModel();
+            bool? result = _dialogService.ShowDialog(AddNewEnemyViewModel);
 
+
+
+
+            //EntitiesInInitiative.Add(new EnemyViewModel(newEnemy));
             OnPropertyChanged(string.Empty);
         }
     }

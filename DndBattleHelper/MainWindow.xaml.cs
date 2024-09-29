@@ -18,11 +18,9 @@ namespace DndBattleHelper
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindowViewModel MainWindowViewModel;
-
         public MainWindow()
         {
-            MainWindowViewModel = new MainWindowViewModel();
+            InitializeComponent();
         }
 
         private void window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -34,7 +32,5 @@ namespace DndBattleHelper
                 textBox.MoveFocus(tRequest);
             }
         }
-
-
     }
 }

@@ -1,6 +1,9 @@
-﻿using System.Configuration;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.ViewModels;
+using System.Configuration;
 using System.Data;
 using System.Windows;
+using DndBattleHelper.Views;
 
 namespace DndBattleHelper
 {
@@ -9,6 +12,20 @@ namespace DndBattleHelper
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var view = new MainWindow();
+
+            IDialogService dialogService = new DialogService(MainWindow);
+            dialogService.Register<AddNewEnemyViewModel, AddNewEnemyView>();
+
+            var viewModel = new MainWindowViewModel(dialogService);
+            view.DataContext = viewModel;
+
+            view.ShowDialog();
+        }
     }
 
 }
