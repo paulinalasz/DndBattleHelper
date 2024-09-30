@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Width="800" Height="450">
+             Width="800" Height="450"
+             xmlns:Converters="clr-namespace:DndBattleHelper.Views.Converters">
+    <Window.Resources>
+        <Converters:EnumToCollectionConverter x:Key="EnumToCollectionConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -31,6 +35,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Name: "/>
@@ -38,7 +43,19 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
-                    <TextBox MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Health}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" MinWidth="30" Text="{Binding Health}"/>
+                    <StackPanel Grid.Row="2" Grid.Column="2" Margin="5, 0, 5, 0" Orientation="Horizontal">
+                        <TextBlock Margin="5, 0, 3, 0" Text="Roll Health:"/>
+                        <TextBox MinWidth="15" Text="{Binding HealthDiceNumber}"/>
+                        <TextBlock Text="d"/>
+                        <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding HealthDiceBase}"/>
+                        <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=HealthModifierType, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
+                              SelectedValuePath="Value"
+                              DisplayMemberPath="Description"
+                              SelectedValue="{Binding Path=HealthModifierType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding HealthModifierValue}" IsEnabled="{Binding HealthModifierValueEnabled}"/>
+                        <Button Margin="0, 0, 3, 0" Content="Roll!" Command="{Binding RollHealthCommand}"/>
+                    </StackPanel>
                     <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
                     <TextBox MinWidth="30" Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
                 </Grid>

@@ -19,7 +19,7 @@ namespace DndBattleHelper.ViewModels
 
             NumberOfDice = damageRoll.NumberOfDice;
             DiceBase = damageRoll.DiceBase;
-            DamageModifier = damageRoll.DamageModifier;
+            DamageModifier = damageRoll.ValueModifier;
             DamageType = damageRoll.DamageType;
         }
 

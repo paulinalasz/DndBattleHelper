@@ -143,7 +143,60 @@ namespace DndBattleHelper.ViewModels
             } 
         }
 
+        private int _healthDiceNumber;
+        public int HealthDiceNumber
+        {
+            get { return _healthDiceNumber; }
+            set
+            {
+                _healthDiceNumber = value;
+                OnPropertyChanged(nameof(HealthDiceNumber));
+            }
+        }
 
+        private int _healthDiceBase;
+        public int HealthDiceBase
+        {
+            get { return _healthDiceBase; }
+            set
+            {
+                _healthDiceBase = value;
+                OnPropertyChanged(nameof(HealthDiceBase));
+            }
+        }
+
+        private ModifierType _healthModifierType;
+        public ModifierType HealthModifierType
+        {
+            get { return _healthModifierType; }
+            set
+            {
+                _healthModifierType = value;
+                OnPropertyChanged(nameof(HealthModifierType));
+                OnPropertyChanged(nameof(HealthModifierValueEnabled));
+            }
+        }
+
+        private int _healthModifierValue;
+        public int HealthModifierValue
+        {
+            get { return _healthModifierValue; }
+            set
+            {
+                _healthModifierValue = value;
+                OnPropertyChanged(nameof(HealthModifierValue));
+            }
+        }
+
+        public bool HealthModifierValueEnabled => HealthModifierType != ModifierType.Neutral;
+
+        private ICommand _rollHealthCommand;
+        public ICommand RollHealthCommand => _rollHealthCommand ?? (_rollHealthCommand = new CommandHandler(() => RollHealth(), () => { return true; }));
+
+        public void RollHealth()
+        {
+            Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierType, HealthModifierValue)).RollValue();
+        }
 
         #region dialogService
         public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
