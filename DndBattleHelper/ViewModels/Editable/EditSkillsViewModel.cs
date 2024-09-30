@@ -5,19 +5,43 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditSkillsViewModel : NotifyPropertyChanged
+    public class EditLangaugesViewModel : NotifyPropertyChanged
     {
-        public SkillsViewModel SkillsViewModel { get; set; }
+        //public EditableLanguageViewModelViewModels EditableLanguageViewModelViewModels { get; set; }
 
-        public EditableSkillViewModelsViewModel EditableSkillViewModelsViewModel { get; set; }
-
-        public EditSkillsViewModel(SkillsViewModel skillsViewModel)
+        public EditLangaugesViewModel() 
         {
-            SkillsViewModel = skillsViewModel;
-            ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+            
+        }
 
-            var editableSkillViewModels = new ObservableCollection<EditableSkillViewModel>();
-            EditableSkillViewModelsViewModel = new EditableSkillViewModelsViewModel(editableSkillViewModels);
+        private LanguageType _languageToAdd;
+        public LanguageType LanguageToAdd
+        {
+            get {  return _languageToAdd; } 
+            set 
+            { 
+                _languageToAdd = value; 
+                OnPropertyChanged(nameof(LanguageToAdd)); 
+            }
+        }
+
+        private ICommand _addCommand;
+        public ICommand AddCommand => _addCommand ?? (_addCommand = new CommandHandler(() => Add(), () => { return true; }));
+
+        public void Add()
+        {
+
+        }
+    }
+
+    public class EditSkillsViewModel : NotifyPropertyChanged
+    { 
+        public EditableTraitViewModelsViewModel EditableSkillViewModelsViewModel { get; set; }
+
+        public EditSkillsViewModel()
+        {
+            ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+            EditableSkillViewModelsViewModel = new EditableTraitViewModelsViewModel(new ObservableCollection<EditableTraitViewModel>());
         }
 
         private SkillType _selectedToAdd;
@@ -39,11 +63,7 @@ namespace DndBattleHelper.ViewModels.Editable
         public void AddSkill()
         {
             var skillToAdd = new Skill(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
-
-            SkillsViewModel.Skills.Add(skillToAdd);
-            EditableSkillViewModelsViewModel.EditableSkillViewModels.Add(new EditableSkillViewModel(skillToAdd));
-
-            OnPropertyChanged(nameof(SkillsViewModel));
+            EditableSkillViewModelsViewModel.EditableTraitViewModels.Add(new EditableSkillViewModel(skillToAdd));
             OnPropertyChanged(nameof(EditableSkillViewModelsViewModel));
         }
     }

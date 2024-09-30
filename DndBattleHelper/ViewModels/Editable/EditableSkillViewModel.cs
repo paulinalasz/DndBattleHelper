@@ -1,10 +1,18 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
-using System.Windows.Input;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableSkillViewModel : NotifyPropertyChanged
+    public class EditableLangaugeViewModel : EditableTraitViewModel
+    {
+        public LanguageType LanguageType { get; }
+
+        public EditableLangaugeViewModel(LanguageType languageType) 
+        {
+            LanguageType = languageType;
+        }
+    }
+
+    public class EditableSkillViewModel : EditableTraitViewModel
     {
         public Skill Skill { get; set; }
 
@@ -14,16 +22,6 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             Skill = skill;
             ModifierViewModel = new ModifierViewModel(Skill.Modifier);
-        }
-
-        private ICommand _removeCommand;
-        public ICommand RemoveCommand => _removeCommand ?? (_removeCommand = new CommandHandler(() => Remove(), () => { return true; }));
-
-        public Action Removed;
-
-        public void Remove()
-        {
-            Removed?.Invoke();
         }
     }
 }

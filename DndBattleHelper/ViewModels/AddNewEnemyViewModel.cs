@@ -18,6 +18,7 @@ namespace DndBattleHelper.ViewModels
         public List<EntityAction> Actions { get; set; }
 
         public EditSkillsViewModel EditSkillsViewModel { get; set; }
+        //public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
 
         public AddNewEnemyViewModel()
         {
@@ -33,10 +34,8 @@ namespace DndBattleHelper.ViewModels
             Charisma = 10;
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
-
-            var skills = new ObservableCollection<Skill>();
-            var skillsViewModel = new SkillsViewModel(skills);
-            EditSkillsViewModel = new EditSkillsViewModel(skillsViewModel);
+            EditSkillsViewModel = new EditSkillsViewModel();
+            //EditLanguagesViewModel = new EditLanguagesViewModel();
         }
 
         private string _name;

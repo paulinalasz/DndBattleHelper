@@ -3,14 +3,15 @@ using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableSkillViewModelsViewModel : NotifyPropertyChanged
+    public class EditableTraitViewModelsViewModel : NotifyPropertyChanged
     {
-        public ObservableCollection<EditableSkillViewModel> EditableSkillViewModels { get; }
+        public ObservableCollection<EditableTraitViewModel> EditableTraitViewModels { get; }
 
-        public EditableSkillViewModelsViewModel(ObservableCollection<EditableSkillViewModel> editableSkillViewModels)
+        public EditableTraitViewModelsViewModel(ObservableCollection<EditableTraitViewModel> editableTraitViewModels)
         {
-            EditableSkillViewModels = editableSkillViewModels;
-            foreach (var viewModel in EditableSkillViewModels)
+            EditableTraitViewModels = editableTraitViewModels;
+
+            foreach (var viewModel in EditableTraitViewModels)
             {
                 viewModel.Removed += () =>
                 {
@@ -18,15 +19,15 @@ namespace DndBattleHelper.ViewModels.Editable
                 };
             }
 
-            EditableSkillViewModels.CollectionChanged += EditableSkillViewModels_CollectionChanged;
+            EditableTraitViewModels.CollectionChanged += EditableTraitViewModels_CollectionChanged;
         }
 
-        private void EditableSkillViewModels_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void EditableTraitViewModels_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             switch (e.Action)
             {
                 case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
-                    foreach (var viewModel in EditableSkillViewModels)
+                    foreach (var viewModel in EditableTraitViewModels)
                     {
                         viewModel.Removed += () =>
                         {
@@ -45,10 +46,9 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public void Remove(EditableSkillViewModel viewModel) 
+        public void Remove(EditableTraitViewModel viewModel)
         {
-            EditableSkillViewModels.Remove(viewModel);
+            EditableTraitViewModels.Remove(viewModel);
         }
-
     }
 }
