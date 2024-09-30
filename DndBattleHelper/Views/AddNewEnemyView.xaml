@@ -49,11 +49,7 @@
                         <TextBox MinWidth="15" Text="{Binding HealthDiceNumber}"/>
                         <TextBlock Text="d"/>
                         <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding HealthDiceBase}"/>
-                        <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=HealthModifierType, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
-                              SelectedValuePath="Value"
-                              DisplayMemberPath="Description"
-                              SelectedValue="{Binding Path=HealthModifierType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding HealthModifierValue}" IsEnabled="{Binding HealthModifierValueEnabled}"/>
+                        <local:ModifierView DataContext="{Binding HealthModifierViewModel}"/>
                         <Button Margin="0, 0, 3, 0" Content="Roll!" Command="{Binding RollHealthCommand}"/>
                     </StackPanel>
                     <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>

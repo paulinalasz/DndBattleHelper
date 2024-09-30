@@ -5,31 +5,31 @@ namespace DndBattleHelper.ViewModels
 {
     public class ModifierViewModel : NotifyPropertyChanged
     {
-        private Modifier _modifier;
+        public Modifier Modifier { get; }
 
         public ModifierViewModel(Modifier modifier) 
         {
-            _modifier = modifier;
+            Modifier = modifier;
         }
 
         public ModifierType ModifierType
         {
-            get { return _modifier.Type; }
+            get { return Modifier.Type; }
             set
             {
-                _modifier.Type = value;
+                Modifier.Type = value;
                 OnPropertyChanged(nameof(ModifierType));
                 OnPropertyChanged(nameof(IsModifierValueEnabled));
             }
         }
 
-        public int modifierValue
+        public int ModifierValue
         {
-            get { return _modifier.Value; }
+            get { return Modifier.Value; }
             set
             {
-                _modifier.Value = value;
-                OnPropertyChanged(nameof(modifierValue));
+                Modifier.Value = value;
+                OnPropertyChanged(nameof(ModifierValue));
             }
         }
 

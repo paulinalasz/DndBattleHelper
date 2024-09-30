@@ -29,6 +29,7 @@
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=ModifierType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <local:ModifierView DataContext="{Binding ToAddModifierViewModel}"/>
+            <Button Content="Add" Command="{Binding AddSkillCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

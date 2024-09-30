@@ -1,54 +1,13 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class EditableSkill
-    {
-        public Skill skill { get; set; }
-    }
-
-    public class EditSkillsViewModel : NotifyPropertyChanged
-    {
-        public SkillsViewModel SkillsViewModel { get; set; }
-        public ObservableCollection<EditableSkill> EditableSkills { get; set; }
-
-        public EditSkillsViewModel(SkillsViewModel skillsViewModel)
-        {
-            SkillsViewModel = skillsViewModel;
-            ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
-        }
-
-        private SkillType _selectedToAdd;
-        public SkillType SelectedToAdd 
-        { 
-            get { return _selectedToAdd; }
-            set
-            {
-                _selectedToAdd = value;
-                OnPropertyChanged(nameof(SelectedToAdd));
-            }
-        }
-
-        public ModifierViewModel ToAddModifierViewModel { get; set; }
-
-        private ICommand _addSkillCommand;
-        public ICommand AddSkillCommand => _addSkillCommand ?? (_addSkillCommand = new CommandHandler(() => AddSkill(), () => { return true; }));
-
-        public void AddSkill()
-        {
-
-        }
-    }
-
     public class AddNewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
     {
-        //public List<Skill> Skills { get; set; }
-        //public SkillsViewModel SkillsViewModel { get; set; }
         public List<SenseType> Senses { get; set; }
         public Skill PassivePerception { get; set; }
         public List<LanguageType> Languages { get; set; }
@@ -70,6 +29,8 @@ namespace DndBattleHelper.ViewModels
             Intelligence = 10;
             Wisdom = 10;
             Charisma = 10;
+
+            HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
 
             var skills = new List<Skill>();
             var skillsViewModel = new SkillsViewModel(skills);
@@ -208,37 +169,14 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        private ModifierType _healthModifierType;
-        public ModifierType HealthModifierType
-        {
-            get { return _healthModifierType; }
-            set
-            {
-                _healthModifierType = value;
-                OnPropertyChanged(nameof(HealthModifierType));
-                OnPropertyChanged(nameof(HealthModifierValueEnabled));
-            }
-        }
-
-        private int _healthModifierValue;
-        public int HealthModifierValue
-        {
-            get { return _healthModifierValue; }
-            set
-            {
-                _healthModifierValue = value;
-                OnPropertyChanged(nameof(HealthModifierValue));
-            }
-        }
-
-        public bool HealthModifierValueEnabled => HealthModifierType != ModifierType.Neutral;
+        public ModifierViewModel HealthModifierViewModel { get; set; }
 
         private ICommand _rollHealthCommand;
         public ICommand RollHealthCommand => _rollHealthCommand ?? (_rollHealthCommand = new CommandHandler(() => RollHealth(), () => { return true; }));
 
         public void RollHealth()
         {
-            Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierType, HealthModifierValue)).RollValue();
+            Health = new Roll(HealthDiceNumber, HealthDiceBase, HealthModifierViewModel.Modifier).RollValue();
         }
 
         #region dialogService
