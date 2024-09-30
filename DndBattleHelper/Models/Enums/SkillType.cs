@@ -1,9 +1,12 @@
-﻿namespace DndBattleHelper.Models
+﻿using System.ComponentModel;
+
+namespace DndBattleHelper.Models
 {
     public enum SkillType
     {
         Athletics,
         Acrobatics,
+        [Description("Sleight Of Hand")]
         SleightOfHand,
         Stealth,
         Arcana,
@@ -11,6 +14,7 @@
         Investigation,
         Nature,
         Religion,
+        [Description("Animal Handling")]
         AnimalHandling,
         Insight,
         Medicine,
@@ -20,6 +24,7 @@
         Intimidation,
         Perfromance,
         Persuasion,
+        [Description("Passive Perception")]
         PassivePerception
     }
 }
