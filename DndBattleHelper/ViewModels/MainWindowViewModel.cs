@@ -18,7 +18,7 @@ namespace DndBattleHelper.ViewModels
         {
             _dialogService = dialogService;
 
-            var skills = new List<Skill>();
+            var skills = new ObservableCollection<Skill>();
             var senses = new List<SenseType>();
             var languages = new List<LanguageType>();
             var abilities = new List<Ability>();

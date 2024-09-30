@@ -3,6 +3,7 @@ using DndBattleHelper.Helpers.DialogService;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using DndBattleHelper.Models;
+using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -32,7 +33,7 @@ namespace DndBattleHelper.ViewModels
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
 
-            var skills = new List<Skill>();
+            var skills = new ObservableCollection<Skill>();
             var skillsViewModel = new SkillsViewModel(skills);
             EditSkillsViewModel = new EditSkillsViewModel(skillsViewModel);
         }
@@ -176,7 +177,7 @@ namespace DndBattleHelper.ViewModels
 
         public void RollHealth()
         {
-            Health = new Roll(HealthDiceNumber, HealthDiceBase, HealthModifierViewModel.Modifier).RollValue();
+            Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierViewModel.ModifierType, HealthModifierViewModel.ModifierValue)).RollValue();
         }
 
         #region dialogService

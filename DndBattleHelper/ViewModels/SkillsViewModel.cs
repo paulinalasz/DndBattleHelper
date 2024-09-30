@@ -1,12 +1,14 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Models;
+using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class SkillsViewModel
+    public class SkillsViewModel : NotifyPropertyChanged
     {
-        public List<Skill> Skills { get; }
+        public ObservableCollection<Skill> Skills { get; }
 
-        public SkillsViewModel(List<Skill> skills)
+        public SkillsViewModel(ObservableCollection<Skill> skills)
         {
             Skills = skills;
         }

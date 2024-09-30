@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.Models
 {
@@ -19,7 +20,7 @@ namespace DndBattleHelper.Models
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-        public List<Skill> Skills { get; set; }
+        public ObservableCollection<Skill> Skills { get; set; }
         public List<SenseType> Senses { get; set; }
         public Skill PassivePerception { get; set; }
         public List<LanguageType> Languages { get; set; }
@@ -37,7 +38,7 @@ namespace DndBattleHelper.Models
             int intelligence,
             int wisdom,
             int charisma,
-            List<Skill> skills,
+            ObservableCollection<Skill> skills,
             List<SenseType> senses,
             Skill passivePerception,
             List<LanguageType> languages,
