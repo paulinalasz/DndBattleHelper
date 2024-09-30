@@ -21,7 +21,10 @@ namespace DndBattleHelper.ViewModels
                 skillsString += ", ";
             }
 
-            skillsString = skillsString.Substring(0, skillsString.Length - 2);
+            if (Skills.Count > 2)
+            {
+                skillsString = skillsString.Substring(0, skillsString.Length - 2);
+            }
 
             return skillsString;
         }

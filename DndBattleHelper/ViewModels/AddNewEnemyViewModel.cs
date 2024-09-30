@@ -7,15 +7,56 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
+    public class EditableSkill
+    {
+        public Skill skill { get; set; }
+    }
+
+    public class EditSkillsViewModel : NotifyPropertyChanged
+    {
+        public SkillsViewModel SkillsViewModel { get; set; }
+        public ObservableCollection<EditableSkill> EditableSkills { get; set; }
+
+        public EditSkillsViewModel(SkillsViewModel skillsViewModel)
+        {
+            SkillsViewModel = skillsViewModel;
+            ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+        }
+
+        private SkillType _selectedToAdd;
+        public SkillType SelectedToAdd 
+        { 
+            get { return _selectedToAdd; }
+            set
+            {
+                _selectedToAdd = value;
+                OnPropertyChanged(nameof(SelectedToAdd));
+            }
+        }
+
+        public ModifierViewModel ToAddModifierViewModel { get; set; }
+
+        private ICommand _addSkillCommand;
+        public ICommand AddSkillCommand => _addSkillCommand ?? (_addSkillCommand = new CommandHandler(() => AddSkill(), () => { return true; }));
+
+        public void AddSkill()
+        {
+
+        }
+    }
+
     public class AddNewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
     {
-        public List<Skill> Skills { get; set; }
+        //public List<Skill> Skills { get; set; }
+        //public SkillsViewModel SkillsViewModel { get; set; }
         public List<SenseType> Senses { get; set; }
         public Skill PassivePerception { get; set; }
         public List<LanguageType> Languages { get; set; }
         public int Challenge { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
+
+        public EditSkillsViewModel EditSkillsViewModel { get; set; }
 
         public AddNewEnemyViewModel()
         {
@@ -30,7 +71,9 @@ namespace DndBattleHelper.ViewModels
             Wisdom = 10;
             Charisma = 10;
 
-            Skills = new List<Skill>();
+            var skills = new List<Skill>();
+            var skillsViewModel = new SkillsViewModel(skills);
+            EditSkillsViewModel = new EditSkillsViewModel(skillsViewModel);
         }
 
         private string _name;
