@@ -1,4 +1,6 @@
-﻿namespace DndBattleHelper.Models
+﻿using DndBattleHelper.Helpers;
+
+namespace DndBattleHelper.Models
 {
     public class Modifier
     {
@@ -13,20 +15,7 @@
 
         public override string ToString()
         {
-            var modifierString = string.Empty;
-
-            switch (Type)
-            {
-                case ModifierType.Plus:
-                    modifierString = "+";
-                    break;
-                case ModifierType.Minus:
-                    modifierString = "-";
-                    break;
-                case ModifierType.Neutral:
-                    modifierString = string.Empty;
-                    break;
-            }
+            var modifierString = EnumHelper.Description(Type);
 
             modifierString += Value.ToString();
             return modifierString;

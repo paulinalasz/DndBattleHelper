@@ -4,7 +4,7 @@ namespace DndBattleHelper.Models
 {
     public enum ModifierType
     {
-        [Description("No Modifier")]
+        [Description("")]
         Neutral,
         [Description("+")]
         Plus,
