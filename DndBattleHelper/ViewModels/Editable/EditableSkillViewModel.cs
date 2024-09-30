@@ -2,7 +2,7 @@
 using DndBattleHelper.Models;
 using System.Windows.Input;
 
-namespace DndBattleHelper.ViewModels
+namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditableSkillViewModel : NotifyPropertyChanged
     {

@@ -3,19 +3,8 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Models;
 
-namespace DndBattleHelper.ViewModels
+namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableSkillViewModelsViewModel 
-    {
-        public ObservableCollection<EditableSkillViewModel> EditableSkillViewModels { get; set; }
-
-        public EditableSkillViewModelsViewModel(ObservableCollection<EditableSkillViewModel> editableSkillViewModels) 
-        {
-            EditableSkillViewModels = editableSkillViewModels;
-        }
-
-    }
-
     public class EditSkillsViewModel : NotifyPropertyChanged
     {
         public SkillsViewModel SkillsViewModel { get; set; }
@@ -32,8 +21,8 @@ namespace DndBattleHelper.ViewModels
         }
 
         private SkillType _selectedToAdd;
-        public SkillType SelectedToAdd 
-        { 
+        public SkillType SelectedToAdd
+        {
             get { return _selectedToAdd; }
             set
             {

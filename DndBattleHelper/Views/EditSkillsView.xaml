@@ -16,15 +16,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Skills"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding SkillsViewModel}"/>
+        <TextBlock Grid.Row="0" Margin="5, 0, 5, 0" Text="Skills"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+        <StackPanel Grid.Row="1"  Orientation="Horizontal">
             <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedToAdd, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
@@ -33,6 +28,6 @@
             <Button Content="Add" Command="{Binding AddSkillCommand}"/>
         </StackPanel>
 
-        <local:EditableSkillsView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditableSkillViewModelsViewModel}"/>
+        <local:EditableSkillsView Grid.Row="2" DataContext="{Binding EditableSkillViewModelsViewModel}"/>
     </Grid>
 </UserControl>

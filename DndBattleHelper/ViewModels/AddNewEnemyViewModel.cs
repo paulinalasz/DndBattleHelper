@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Windows.Navigation;
 using DndBattleHelper.Models;
 using System.Collections.ObjectModel;
+using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels
 {
