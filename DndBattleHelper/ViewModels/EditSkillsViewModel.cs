@@ -5,17 +5,30 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
+    public class EditableSkillViewModelsViewModel 
+    {
+        public ObservableCollection<EditableSkillViewModel> EditableSkillViewModels { get; set; }
+
+        public EditableSkillViewModelsViewModel(ObservableCollection<EditableSkillViewModel> editableSkillViewModels) 
+        {
+            EditableSkillViewModels = editableSkillViewModels;
+        }
+
+    }
+
     public class EditSkillsViewModel : NotifyPropertyChanged
     {
         public SkillsViewModel SkillsViewModel { get; set; }
-        public ObservableCollection<EditableSkillViewModel> EditableSkillViewModels { get; set; }
+
+        public EditableSkillViewModelsViewModel EditableSkillViewModelsViewModel { get; set; }
 
         public EditSkillsViewModel(SkillsViewModel skillsViewModel)
         {
             SkillsViewModel = skillsViewModel;
             ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
 
-            EditableSkillViewModels = new ObservableCollection<EditableSkillViewModel>();
+            var editableSkillViewModels = new ObservableCollection<EditableSkillViewModel>();
+            EditableSkillViewModelsViewModel = new EditableSkillViewModelsViewModel(editableSkillViewModels);
         }
 
         private SkillType _selectedToAdd;
@@ -39,10 +52,10 @@ namespace DndBattleHelper.ViewModels
             var skillToAdd = new Skill(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
 
             SkillsViewModel.Skills.Add(skillToAdd);
-            EditableSkillViewModels.Add(new EditableSkillViewModel(skillToAdd));
+            EditableSkillViewModelsViewModel.EditableSkillViewModels.Add(new EditableSkillViewModel(skillToAdd));
 
             OnPropertyChanged(nameof(SkillsViewModel));
-            OnPropertyChanged(nameof(EditableSkillViewModels));
+            OnPropertyChanged(nameof(EditableSkillViewModelsViewModel));
         }
     }
 }

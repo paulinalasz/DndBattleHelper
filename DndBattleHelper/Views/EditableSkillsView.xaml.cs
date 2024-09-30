@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DndBattleHelper.Views
 {
     /// <summary>
-    /// Interaction logic for EditSkillsViewModel.xaml
+    /// Interaction logic for EditableSkillsView.xaml
     /// </summary>
-    public partial class EditSkillsViewModel : UserControl
+    public partial class EditableSkillsView : UserControl
     {
-        public EditSkillsViewModel()
+        public EditableSkillsView()
         {
             InitializeComponent();
         }

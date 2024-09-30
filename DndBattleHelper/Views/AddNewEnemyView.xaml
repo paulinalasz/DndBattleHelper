@@ -94,7 +94,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <local:EditSkillsViewModel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
+                    <local:EditSkillsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
