@@ -12,13 +12,12 @@ namespace DndBattleHelper.ViewModels
     {
         public List<SenseType> Senses { get; set; }
         public Skill PassivePerception { get; set; }
-        public List<LanguageType> Languages { get; set; }
         public int Challenge { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
 
         public EditSkillsViewModel EditSkillsViewModel { get; set; }
-        //public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
+        public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
 
         public AddNewEnemyViewModel()
         {
@@ -35,7 +34,7 @@ namespace DndBattleHelper.ViewModels
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditSkillsViewModel = new EditSkillsViewModel();
-            //EditLanguagesViewModel = new EditLanguagesViewModel();
+            EditLanguagesViewModel = new EditLanguagesViewModel();
         }
 
         private string _name;

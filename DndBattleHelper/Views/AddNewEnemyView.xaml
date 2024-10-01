@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Width="800" Height="450"
-             xmlns:Converters="clr-namespace:DndBattleHelper.Views.Converters">
+             xmlns:Converters="clr-namespace:DndBattleHelper.Views.Converters"
+             xmlns:editable="clr-namespace:DndBattleHelper.Views.Editable">
     <Window.Resources>
         <Converters:EnumToCollectionConverter x:Key="EnumToCollectionConverter"/>
     </Window.Resources>
@@ -99,8 +100,10 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
 
-                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
+                    <!--<TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>-->
+
+                    <editable:EditLanguagesView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
                     <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>

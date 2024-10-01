@@ -2,16 +2,6 @@
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableLangaugeViewModel : EditableTraitViewModel
-    {
-        public LanguageType LanguageType { get; }
-
-        public EditableLangaugeViewModel(LanguageType languageType) 
-        {
-            LanguageType = languageType;
-        }
-    }
-
     public class EditableSkillViewModel : EditableTraitViewModel
     {
         public Skill Skill { get; set; }

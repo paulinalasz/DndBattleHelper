@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="DndBattleHelper.Views.Editable.EditLanguagesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DndBattleHelper.Views.Editable"
+             xmlns:parent="clr-namespace:DndBattleHelper.Views"
+             xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:EnumToCollectionConverter x:Key="EnumToCollectionConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="5, 0, 5, 0" Text="Languages"/>
+
+        <StackPanel Grid.Row="1"  Orientation="Horizontal">
+            <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedToAdd, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
+                              SelectedValuePath="Value"
+                              DisplayMemberPath="Description"
+                              SelectedValue="{Binding Path=SelectedToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="Add" Command="{Binding AddCommand}"/>
+        </StackPanel>
+
+        <local:EditableLanguagesView Grid.Row="2" DataContext="{Binding EditableLanguageViewModelsViewModel}"/>
+    </Grid>
+</UserControl>

@@ -5,35 +5,6 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditLangaugesViewModel : NotifyPropertyChanged
-    {
-        //public EditableLanguageViewModelViewModels EditableLanguageViewModelViewModels { get; set; }
-
-        public EditLangaugesViewModel() 
-        {
-            
-        }
-
-        private LanguageType _languageToAdd;
-        public LanguageType LanguageToAdd
-        {
-            get {  return _languageToAdd; } 
-            set 
-            { 
-                _languageToAdd = value; 
-                OnPropertyChanged(nameof(LanguageToAdd)); 
-            }
-        }
-
-        private ICommand _addCommand;
-        public ICommand AddCommand => _addCommand ?? (_addCommand = new CommandHandler(() => Add(), () => { return true; }));
-
-        public void Add()
-        {
-
-        }
-    }
-
     public class EditSkillsViewModel : NotifyPropertyChanged
     { 
         public EditableTraitViewModelsViewModel EditableSkillViewModelsViewModel { get; set; }
