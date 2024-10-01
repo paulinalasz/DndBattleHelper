@@ -24,7 +24,7 @@ namespace DndBattleHelper.Models
         public List<SenseType> Senses { get; set; }
         public Skill PassivePerception { get; set; }
         public List<LanguageType> Languages { get; set; }
-        public int Challenge { get; set; }
+        public ChallengeRating ChallengeRating { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
 
@@ -42,7 +42,7 @@ namespace DndBattleHelper.Models
             List<SenseType> senses,
             Skill passivePerception,
             List<LanguageType> languages,
-            int challenge,
+            ChallengeRating challengeRating,
             List<Ability> abilities,
             List<EntityAction> actions) 
         {
@@ -60,7 +60,7 @@ namespace DndBattleHelper.Models
             PassivePerception = passivePerception;
             Senses = senses;
             Languages = languages;
-            Challenge = challenge;
+            ChallengeRating = challengeRating;
             Abilities = abilities;
             Actions = actions;
         }

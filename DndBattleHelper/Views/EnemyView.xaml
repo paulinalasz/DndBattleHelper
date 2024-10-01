@@ -83,8 +83,7 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>
+                <local:ChallengeRatingView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
             </Grid>
 
             <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">

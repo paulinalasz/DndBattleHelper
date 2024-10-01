@@ -5,6 +5,7 @@ using System.Windows.Navigation;
 using DndBattleHelper.Models;
 using System.Collections.ObjectModel;
 using DndBattleHelper.ViewModels.Editable;
+using DndBattleHelper.Models.Enums;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -15,7 +16,7 @@ namespace DndBattleHelper.ViewModels
         public EditableSkillViewModel PassivePerception { get; set; }
         public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
 
-        public int Challenge { get; set; }
+        public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
 
@@ -31,6 +32,8 @@ namespace DndBattleHelper.ViewModels
             Intelligence = 10;
             Wisdom = 10;
             Charisma = 10;
+
+            ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditSkillsViewModel = new EditSkillsViewModel("Skills");

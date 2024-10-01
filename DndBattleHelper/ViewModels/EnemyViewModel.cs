@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using System.Windows.Media;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
@@ -30,7 +23,7 @@ namespace DndBattleHelper.ViewModels
         public SkillsViewModel Skills { get; set; }
         public SensesViewModel Senses { get; set; }
         public LanguagesViewModel Languages { get; set; }
-        public int Challenge { get; set; }
+        public ChallengeRatingViewModel ChallengeRating { get; set; }
         public ObservableCollection<AbilityViewModel> Abilities { get; set; }
         public ObservableCollection<EntityActionViewModel> Actions { get; set; }
 
@@ -64,7 +57,7 @@ namespace DndBattleHelper.ViewModels
             Skills = new SkillsViewModel(enemy.Skills);
             Senses = new SensesViewModel(enemy.Senses, enemy.PassivePerception);
             Languages = new LanguagesViewModel(enemy.Languages);
-            Challenge = enemy.Challenge;
+            ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);
             
             Abilities = new ObservableCollection<AbilityViewModel>();
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Models;
+using DndBattleHelper.Models.Enums;
 using DndBattleHelper.Helpers;
 using System;
 using System.Windows;
@@ -52,8 +53,10 @@ namespace DndBattleHelper.ViewModels
                 ActionCost.MainAction, new Modifier(ModifierType.Plus, 6), damageRolls));
             actions.Add(new EntityAction("name", "test", ActionCost.MainAction, new Modifier(ModifierType.Plus, 6), damageRolls));
 
-            var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
-            var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, 3, abilities, actions);
+            var challengeRating = new ChallengeRating(ChallengeRatingLevel.Three);
+
+            var enemy1 = new Enemy("Minotaur 1", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, challengeRating, abilities, actions);
+            var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, challengeRating, abilities, actions);
             var player1 = new Player("Bar", 132);
 
             EntitiesInInitiative = [new EnemyViewModel(enemy1), 

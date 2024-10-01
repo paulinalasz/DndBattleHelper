@@ -101,8 +101,7 @@
                     <editable:EditableTraitView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
                     <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
-                    <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
-                    <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>
+                    <editable:EditableChallengeRatingView Grid.Row="4" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
                 </Grid>
 
                 <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
