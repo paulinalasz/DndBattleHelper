@@ -33,8 +33,8 @@ namespace DndBattleHelper.ViewModels
             Charisma = 10;
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
-            EditSkillsViewModel = new EditSkillsViewModel();
-            EditLanguagesViewModel = new EditLanguagesViewModel();
+            EditSkillsViewModel = new EditSkillsViewModel("Skills");
+            EditLanguagesViewModel = new EditLanguagesViewModel("Languages");
         }
 
         private string _name;

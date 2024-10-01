@@ -2,17 +2,94 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Models;
+using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditSkillsViewModel : NotifyPropertyChanged
-    { 
-        public EditableTraitViewModelsViewModel EditableSkillViewModelsViewModel { get; set; }
+    public abstract class EditTraitsViewModel : NotifyPropertyChanged
+    {
+        public string Header { get; set; }
+        public bool HasModifier { get; }
+        public EditableTraitViewModelsViewModel EditableTraitViewModelsViewModel { get; set; }
 
-        public EditSkillsViewModel()
+        public EditTraitsViewModel(string header, bool hasModifier) 
+        {
+            Header = header;
+            HasModifier = hasModifier;
+            EditableTraitViewModelsViewModel = new EditableTraitViewModelsViewModel(new ObservableCollection<EditableTraitViewModel>());
+        }
+
+        private ICommand _addCommand;
+        public ICommand AddCommand => _addCommand ?? (_addCommand = new CommandHandler(() => Add(), () => CanAdd()));
+
+        public virtual void Add()
+        {
+            OnPropertyChanged(nameof(EditableTraitViewModelsViewModel));
+        }
+
+        public abstract bool CanAdd();
+    }
+
+    public class EditLanguagesViewModel : EditTraitsViewModel
+    {
+        public EditLanguagesViewModel(string header) : base(header, false) { }
+
+        private LanguageType _selectedToAdd;
+        public LanguageType SelectedToAdd
+        {
+            get { return _selectedToAdd; }
+            set
+            {
+                _selectedToAdd = value;
+                OnPropertyChanged(nameof(SelectedToAdd));
+            }
+        }
+
+        public override void Add()
+        {
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableLanguageViewModel(SelectedToAdd));
+            base.Add();
+        }
+
+        public override bool CanAdd() 
+        {
+            return true;
+        }
+    }
+
+    public class EditSensesViewModel : EditTraitsViewModel
+    {
+        public EditSensesViewModel(string header) : base(header, false) { }
+
+        private SenseType _selectedToAdd;
+        public SenseType SelectedToAdd
+        {
+            get { return _selectedToAdd; }
+            set
+            {
+                _selectedToAdd = value;
+                OnPropertyChanged(nameof(SelectedToAdd));
+            }
+        }
+
+        public override void Add()
+        {
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableSenseViewModel(SelectedToAdd));
+            base.Add();
+        }
+
+        public override bool CanAdd()
+        {
+            return true;
+        }
+    }
+
+    public class EditSkillsViewModel : EditTraitsViewModel
+    { 
+        public EditSkillsViewModel(string header) : base (header, true)
         {
             ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
-            EditableSkillViewModelsViewModel = new EditableTraitViewModelsViewModel(new ObservableCollection<EditableTraitViewModel>());
         }
 
         private SkillType _selectedToAdd;
@@ -28,14 +105,16 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public ModifierViewModel ToAddModifierViewModel { get; set; }
 
-        private ICommand _addSkillCommand;
-        public ICommand AddSkillCommand => _addSkillCommand ?? (_addSkillCommand = new CommandHandler(() => AddSkill(), () => { return ToAddModifierViewModel.ModifierType != ModifierType.Neutral; }));
-
-        public void AddSkill()
+        public override void Add()
         {
             var skillToAdd = new Skill(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
-            EditableSkillViewModelsViewModel.EditableTraitViewModels.Add(new EditableSkillViewModel(skillToAdd));
-            OnPropertyChanged(nameof(EditableSkillViewModelsViewModel));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableSkillViewModel(skillToAdd));
+            base.Add();
+        }
+
+        public override bool CanAdd()
+        {
+            return ToAddModifierViewModel.ModifierType != ModifierType.Neutral;
         }
     }
 }

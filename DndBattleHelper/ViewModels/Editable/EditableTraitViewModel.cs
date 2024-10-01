@@ -14,5 +14,7 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             Removed?.Invoke();
         }
+
+        public abstract bool HasModifier { get; }
     }
 }

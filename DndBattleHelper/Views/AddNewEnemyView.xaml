@@ -95,15 +95,12 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <local:EditSkillsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
+                    <editable:EditTraitsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
 
-                    <!--<TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>-->
-
-                    <editable:EditLanguagesView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
+                    <editable:EditTraitsView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
                     <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>
