@@ -15,7 +15,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{Binding Type}"/>
             <parent:ModifierView DataContext="{Binding ModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
-            <Button Content="X" Command="{Binding RemoveCommand}"/>
+            <Button Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -89,6 +89,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -96,14 +97,12 @@
                     </Grid.ColumnDefinitions>
 
                     <editable:EditTraitsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
+                    <editable:EditTraitsView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
+                    <editable:EditableTraitView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
+                    <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
-
-                    <editable:EditTraitsView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
-
-                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Challenge"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Challenge}"/>
                 </Grid>
 
                 <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">

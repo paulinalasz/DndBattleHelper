@@ -1,5 +1,4 @@
 ﻿using DndBattleHelper.Models;
-using System.Windows.Navigation;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
@@ -10,12 +9,15 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public ModifierViewModel ModifierViewModel { get; set; }
 
-        public EditableSkillViewModel(Skill skill)
+        public EditableSkillViewModel(Skill skill, bool isRemoveVisible = true)
         {
             Skill = skill;
             ModifierViewModel = new ModifierViewModel(Skill.Modifier);
+
+            IsRemoveVisible = isRemoveVisible;
         }
 
+        public override bool IsRemoveVisible { get; }
         public override bool HasModifier => true;
     }
 }

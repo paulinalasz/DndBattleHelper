@@ -10,14 +10,14 @@ namespace DndBattleHelper.ViewModels
 {
     public class AddNewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
     {
-        public List<SenseType> Senses { get; set; }
-        public Skill PassivePerception { get; set; }
+        public EditSkillsViewModel EditSkillsViewModel { get; set; }
+        public EditSensesViewModel EditSensesViewModel { get; set; }
+        public EditableSkillViewModel PassivePerception { get; set; }
+        public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
+
         public int Challenge { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
-
-        public EditSkillsViewModel EditSkillsViewModel { get; set; }
-        public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
 
         public AddNewEnemyViewModel()
         {
@@ -34,6 +34,8 @@ namespace DndBattleHelper.ViewModels
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditSkillsViewModel = new EditSkillsViewModel("Skills");
+            EditSensesViewModel = new EditSensesViewModel("Senses");
+            PassivePerception = new EditableSkillViewModel(new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Neutral, 0)), false);
             EditLanguagesViewModel = new EditLanguagesViewModel("Languages");
         }
 
