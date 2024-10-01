@@ -2,12 +2,12 @@
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditLanguagesViewModel : EditTraitsViewModel
+    public class EditSensesViewModel : EditTraitsViewModel
     {
-        public EditLanguagesViewModel(string header) : base(header, false) { }
+        public EditSensesViewModel(string header) : base(header, false) { }
 
-        private LanguageType _selectedToAdd;
-        public LanguageType SelectedToAdd
+        private SenseType _selectedToAdd;
+        public SenseType SelectedToAdd
         {
             get { return _selectedToAdd; }
             set
@@ -19,11 +19,11 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableLanguageViewModel(SelectedToAdd));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableSenseViewModel(SelectedToAdd));
             base.Add();
         }
 
-        public override bool CanAdd() 
+        public override bool CanAdd()
         {
             return true;
         }
