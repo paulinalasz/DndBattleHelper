@@ -12,6 +12,10 @@
             <local:EditableAbilityView />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type editableViewModels:EditableActionViewModel}">
+            <local:EditableAbilityView />
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type editableViewModels:EditableTraitViewModel}">
             <local:EditableTraitView />
         </DataTemplate>
