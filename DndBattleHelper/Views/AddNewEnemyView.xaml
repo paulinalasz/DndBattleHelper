@@ -90,6 +90,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -102,15 +103,9 @@
                     <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
                     <editable:EditableChallengeRatingView Grid.Row="4" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
-                </Grid>
 
-                <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:AbilityView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                    <editable:EditAbilitiesView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
+                </Grid>
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">

@@ -17,7 +17,7 @@ namespace DndBattleHelper.ViewModels
         public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
 
         public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }
-        public List<Ability> Abilities { get; set; }
+        public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
         public List<EntityAction> Actions { get; set; }
 
         public AddNewEnemyViewModel()
@@ -36,10 +36,11 @@ namespace DndBattleHelper.ViewModels
             ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
 
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
-            EditSkillsViewModel = new EditSkillsViewModel("Skills");
-            EditSensesViewModel = new EditSensesViewModel("Senses");
+            EditSkillsViewModel = new EditSkillsViewModel();
+            EditSensesViewModel = new EditSensesViewModel();
             PassivePerception = new EditableSkillViewModel(new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Neutral, 0)), false);
-            EditLanguagesViewModel = new EditLanguagesViewModel("Languages");
+            EditLanguagesViewModel = new EditLanguagesViewModel();
+            EditAbilitiesViewModel = new EditAbilitiesViewModel();
         }
 
         private string _name;

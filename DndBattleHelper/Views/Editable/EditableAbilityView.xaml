@@ -1,23 +1,19 @@
-﻿<UserControl x:Class="DndBattleHelper.Views.Editable.EditableTraitsView"
+﻿<UserControl x:Class="DndBattleHelper.Views.Editable.EditableAbilityView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DndBattleHelper.Views.Editable"
-             xmlns:editableViewModels="clr-namespace:DndBattleHelper.ViewModels.Editable"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <DataTemplate DataType="{x:Type editableViewModels:EditableAbilityViewModel}">
-            <local:EditableAbilityView />
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type editableViewModels:EditableTraitViewModel}">
-            <local:EditableTraitView />
-        </DataTemplate>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
     </UserControl.Resources>
-
     <Grid>
-        <ItemsControl ItemsSource="{Binding EditableTraitViewModels}"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding Name}"/>
+            <TextBox Text="{Binding Description}"/>
+            <Button Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -4,7 +4,7 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditLanguagesViewModel : EditTraitsViewModel
     {
-        public EditLanguagesViewModel(string header) : base(header, false) { }
+        public EditLanguagesViewModel() : base("Languages", false) { }
 
         private LanguageType _selectedToAdd;
         public LanguageType SelectedToAdd
