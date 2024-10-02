@@ -7,12 +7,12 @@ namespace DndBattleHelper.Models
     {
         public DamageType DamageType { get; set; }
 
-        public DamageRoll(int number, int diceBase, Modifier modifier, DamageType damageType)
-            : base(number, diceBase, modifier)
+        public DamageRoll(int number, int diceBase, Modifier damageModifier, DamageType damageType)
+            : base(number, diceBase, damageModifier)
         {
             NumberOfDice = number;
             DiceBase = diceBase;
-            ValueModifier = modifier;
+            ValueModifier = damageModifier;
             DamageType = damageType;
         }
 

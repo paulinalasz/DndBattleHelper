@@ -50,6 +50,7 @@ namespace DndBattleHelper.ViewModels.Editable
                 new EditableActionViewModel(
                     new EntityAction(Name, Description, SelectedActionCost, new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue), new List<DamageRoll>()),
                     true));
+            base.Add();
         }
 
         public override bool CanAdd()
