@@ -2,7 +2,7 @@
 {
     public class DamagingAction : EntityAction 
     {
-        protected DamagingAction(string name, string description, ActionCost cost, List<DamageRoll> damageRolls) : base(name, description, cost)
+        public DamagingAction(string name, string description, ActionCost cost, List<DamageRoll> damageRolls) : base(name, description, cost)
         {
             DamageRolls = damageRolls;
         }

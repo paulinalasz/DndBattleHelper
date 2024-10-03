@@ -2,10 +2,11 @@
 using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.Models.Enums;
+using DndBattleHelper.Models.ActionTypes;
 using DndBattleHelper.Helpers;
-using System;
-using System.Windows;
+using DndBattleHelper.ViewModels.Actions;
 using DndBattleHelper.Helpers.DialogService;
+using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -17,6 +18,9 @@ namespace DndBattleHelper.ViewModels
 
         public MainWindowViewModel(IDialogService dialogService) 
         {
+            var targetArmourClassProvider = new TargetArmourClassProvider();
+            var advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+
             _dialogService = dialogService;
 
             var skills = new ObservableCollection<Skill>();
@@ -49,9 +53,15 @@ namespace DndBattleHelper.ViewModels
                 (1, 6, new Modifier(ModifierType.Plus, 1), DamageType.Cold)
             };
 
-            actions.Add(new EntityAction("Greataxe", "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d12 + 4) slashing damage.",
-                ActionCost.MainAction, new Modifier(ModifierType.Plus, 6), damageRolls));
-            actions.Add(new EntityAction("name", "test", ActionCost.MainAction, new Modifier(ModifierType.Plus, 6), damageRolls));
+            actions.Add(new AttackAction("Greataxe", "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d12 + 4) slashing damage.",
+                ActionCost.MainAction, damageRolls, new Modifier(ModifierType.Plus, 6)));
+            actions.Add(new AttackAction("name", "test", ActionCost.MainAction, damageRolls, new Modifier(ModifierType.Plus, 6)));
+
+            var actionViewModels = new ObservableCollection<EntityActionViewModel>();
+            foreach(var action in actions)
+            {
+                actionViewModels.Add(new AttackActionViewModel((AttackAction)action, targetArmourClassProvider, advantageDisadvantageProvider));
+            }
 
             var challengeRating = new ChallengeRating(ChallengeRatingLevel.Three);
 
@@ -59,8 +69,8 @@ namespace DndBattleHelper.ViewModels
             var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, challengeRating, abilities, actions);
             var player1 = new Player("Bar", 132);
 
-            EntitiesInInitiative = [new EnemyViewModel(enemy1), 
-                new EnemyViewModel(enemy2),
+            EntitiesInInitiative = [new EnemyViewModel(enemy1, actionViewModels, targetArmourClassProvider, advantageDisadvantageProvider), 
+                new EnemyViewModel(enemy2, actionViewModels, targetArmourClassProvider, advantageDisadvantageProvider),
                 new PlayerViewModel(player1),
             ];
 

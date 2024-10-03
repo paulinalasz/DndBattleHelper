@@ -2,7 +2,7 @@
 {
     public abstract class NonDamagingSpell : EntityAction, ISpell
     {
-        protected NonDamagingSpell(string name, 
+        public NonDamagingSpell(string name, 
             string description, 
             ActionCost cost, 
             bool concentration,
@@ -15,6 +15,5 @@
 
         public bool Concentration { get; }
         public SpellSlot SpellSlot { get; }
-    }
     }
 }

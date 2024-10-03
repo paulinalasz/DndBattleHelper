@@ -1,8 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.CodeDom;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
+using DndBattleHelper.ViewModels.Actions;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -39,10 +41,10 @@ namespace DndBattleHelper.ViewModels
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyViewModel(Enemy enemy) 
+        public EnemyViewModel(Enemy enemy, ObservableCollection<EntityActionViewModel> actions, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) 
         {
-            _targetArmourClassProvider = new TargetArmourClassProvider();
-            _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+            _targetArmourClassProvider = targetArmourClassProvider;
+            _advantageDisadvantageProvider = advantageDisadvantageProvider;
 
             Name = enemy.Name;
             ArmourClass = enemy.ArmourClass;
@@ -66,22 +68,25 @@ namespace DndBattleHelper.ViewModels
                 Abilities.Add(new AbilityViewModel(ability));
             }
 
-            Actions = new ObservableCollection<EntityActionViewModel>();
+            Actions = actions;
 
-            foreach(var action in enemy.Actions)
-            {
-                Actions.Add(new EntityActionViewModel(action, _targetArmourClassProvider, _advantageDisadvantageProvider));
-            }
+            //Actions = new ObservableCollection<EntityActionViewModel>();
 
             OutputBox = new OutputBoxViewModel();
 
             foreach (var action in Actions)
             {
-                action.ActionTaken += () => { OutputBox.AttackDamages.Add(action.MostRecentDamageRolled); };
+                if(action is DamagingActionViewModel)
+                {
+                    action.ActionTaken += () => 
+                    { 
+                        OutputBox.AttackDamages.Add(((DamagingActionViewModel)action).MostRecentDamageRolled); 
+                    };
+
+                }
             }
         }
 
-        private bool _isAdvantage;
         public bool IsAdvantage
         {
             get { return _advantageDisadvantageProvider.IsAdvantage; }
@@ -98,7 +103,6 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        private bool _isDisadvantage;
         public bool IsDisadvantage
         {
             get { return _advantageDisadvantageProvider.IsDisadvantage; }

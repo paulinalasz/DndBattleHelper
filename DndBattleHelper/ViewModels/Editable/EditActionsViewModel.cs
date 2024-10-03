@@ -1,5 +1,5 @@
 ﻿using DndBattleHelper.Models;
-using System.Security.Cryptography.X509Certificates;
+using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
@@ -100,7 +100,7 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(
                 new EditableActionViewModel(
-                    new EntityAction(Name, Description, SelectedActionCost, new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue), new List<DamageRoll>())));
+                    new EntityAction(Name, Description, SelectedActionCost/*, new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue), new List<DamageRoll>())*/)));
             base.Add();
         }
 

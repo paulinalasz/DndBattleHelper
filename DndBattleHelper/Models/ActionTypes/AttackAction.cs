@@ -2,7 +2,7 @@
 {
     public class AttackAction : DamagingAction
     {
-        protected AttackAction(string name, 
+        public AttackAction(string name, 
             string description, 
             ActionCost cost, 
             List<DamageRoll> damageRolls, 
