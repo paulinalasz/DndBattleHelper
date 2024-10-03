@@ -1,5 +1,4 @@
-﻿using DndBattleHelper.Models;
-using System.Security.Cryptography.X509Certificates;
+﻿using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
