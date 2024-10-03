@@ -23,7 +23,7 @@
             <TextBox Text="{Binding DiceNumber}"/>
             <TextBlock Text="d"/>
             <TextBox Text="{Binding DiceBase}"/>
-            <parent:ModifierView DataContext="{Binding DamageModifierViewModel}"/>
+            <local:EditableModifierView DataContext="{Binding DamageModifierViewModel}"/>
             <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedDamageType, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"

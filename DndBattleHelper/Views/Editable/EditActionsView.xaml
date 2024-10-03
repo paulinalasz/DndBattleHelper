@@ -23,7 +23,7 @@
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedActionCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        <parent:ModifierView DataContext="{Binding ToHitModifierViewModel}"/>
+                        <local:EditableModifierView DataContext="{Binding ToHitModifierViewModel}"/>
                     </StackPanel>
                     <TextBox Text="{Binding Description}"/>
                     <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}"/>

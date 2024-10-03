@@ -6,15 +6,17 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views.Editable"
              xmlns:vm="clr-namespace:DndBattleHelper.ViewModels.Editable"
              xmlns:parent="clr-namespace:DndBattleHelper.Views"
+             xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Name="editableTraitView">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+        <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Type}"/>
+            <TextBlock Text="{Binding Type, Converter={StaticResource EnumToDescriptionConverter}}"/>
             <parent:ModifierView DataContext="{Binding ModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
             <Button Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
         </StackPanel>

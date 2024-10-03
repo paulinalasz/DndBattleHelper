@@ -27,7 +27,7 @@
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <parent:ModifierView DataContext="{Binding ToAddModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editTraitsView}"/>
+            <local:EditableModifierView DataContext="{Binding ToAddModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editTraitsView}"/>
             <Button Content="Add" Command="{Binding AddCommand}"/>
         </StackPanel>
 

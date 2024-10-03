@@ -8,15 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <converters:EnumToCollectionConverter x:Key="EnumToCollectionConverter"/>
+        <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=ModifierType, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
-                              SelectedValuePath="Value"
-                              DisplayMemberPath="Description"
-                              SelectedValue="{Binding Path=ModifierType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding ModifierValue}" IsEnabled="{Binding IsModifierValueEnabled}"/>
+            <TextBlock Text="{Binding ModifierType, Converter={StaticResource EnumToDescriptionConverter}}"/>
+            <TextBlock Text="{Binding ModifierValue}"/>
         </StackPanel>
     </Grid>
 </UserControl>
