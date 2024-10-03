@@ -4,9 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DndBattleHelper.Views.Editable"
+             xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
+             xmlns:parent="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="editTraitsView">
+    <UserControl.Resources>
+        <converters:EnumToCollectionConverter x:Key="enumToCollectionConverter"/>
+    </UserControl.Resources>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding DiceNumber}"/>
+            <TextBlock Text="d"/>
+            <TextBox Text="{Binding DiceBase}"/>
+            <parent:ModifierView DataContext="{Binding DamageModifierViewModel}"/>
+            <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedDamageType, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+                              SelectedValuePath="Value"
+                              DisplayMemberPath="Description"
+                              SelectedValue="{Binding Path=SelectedDamageType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="Add" Command="{Binding AddCommand}"/>
+        </StackPanel>
+
+        <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
     </Grid>
 </UserControl>

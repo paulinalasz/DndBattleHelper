@@ -1,12 +1,16 @@
 ﻿using DndBattleHelper.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditActionsViewModel : EditTraitsViewModel
     {
+        public EditDamageRollsViewModel EditDamageRollsViewModel { get; }
+
         public EditActionsViewModel() : base("Actions", false)
         {
             ToHitModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+            EditDamageRollsViewModel = new EditDamageRollsViewModel();
         }
 
         private string _name;

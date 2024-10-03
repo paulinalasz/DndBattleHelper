@@ -1,0 +1,58 @@
+﻿using DndBattleHelper.Models;
+
+namespace DndBattleHelper.ViewModels.Editable
+{
+    public class EditDamageRollsViewModel : EditTraitsViewModel
+    {
+        public EditDamageRollsViewModel() : base("", false) 
+        {
+            DamageModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+        }
+
+        private int _diceNumber;
+        public int DiceNumber 
+        { 
+            get {  return _diceNumber; }
+            set
+            {
+                _diceNumber = value;
+                OnPropertyChanged(nameof(DiceNumber));
+            }
+        }
+
+        private int _diceBase;
+        public int DiceBase 
+        { 
+            get { return _diceBase; }
+            set
+            {
+                _diceBase = value;
+                OnPropertyChanged(nameof(DiceBase));
+            }
+        }
+
+        public ModifierViewModel DamageModifierViewModel { get; }
+
+        private DamageType _selectedDamageType;
+        public DamageType SelectedDamageType
+        {
+            get => _selectedDamageType;
+            set
+            {
+                _selectedDamageType = value;
+                OnPropertyChanged(nameof(SelectedDamageType));
+            }
+        }
+
+        public override void Add()
+        {
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableDamageRollViewModel(new DamageRoll(DiceNumber, DiceBase, new Modifier(DamageModifierViewModel.ModifierType, DamageModifierViewModel.ModifierValue), SelectedDamageType)));
+            base.Add();
+        }
+
+        public override bool CanAdd()
+        {
+            return true;
+        }
+    }
+}

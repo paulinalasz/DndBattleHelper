@@ -1,4 +1,5 @@
 ﻿using DndBattleHelper.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
@@ -11,6 +12,8 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             _action = action;
             _hasModifier = hasModifier;
+
+            EditDamageRollsViewModel = new EditDamageRollsViewModel();
         }
 
         public string Name
@@ -32,6 +35,8 @@ namespace DndBattleHelper.ViewModels.Editable
                 OnPropertyChanged(nameof(Description));
             }
         }
+
+        public EditDamageRollsViewModel EditDamageRollsViewModel { get; }
 
         public override bool HasModifier => _hasModifier;
     }

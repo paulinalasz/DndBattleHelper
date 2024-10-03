@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DndBattleHelper.Views.Editable
+namespace DndBattleHelper.Views
 {
     /// <summary>
-    /// Interaction logic for EditableAbilityView.xaml
+    /// Interaction logic for DamageRollView.xaml
     /// </summary>
-    public partial class EditableAbilityView : UserControl
+    public partial class DamageRollView : UserControl
     {
-        public EditableAbilityView()
+        public DamageRollView()
         {
             InitializeComponent();
         }
