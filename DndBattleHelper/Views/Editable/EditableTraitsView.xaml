@@ -8,25 +8,13 @@
              xmlns:editableViewModels="clr-namespace:DndBattleHelper.ViewModels.Editable"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <DataTemplate DataType="{x:Type editableViewModels:EditableAbilityViewModel}">
-            <parent:AbilityView />
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type editableViewModels:EditableActionViewModel}">
-            <parent:AbilityView />
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type editableViewModels:EditableDamageRollViewModel}">
-            <parent:DamageRollView />
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type editableViewModels:EditableTraitViewModel}">
-            <local:EditableTraitView />
-        </DataTemplate>
-    </UserControl.Resources>
-
     <Grid>
-        <ItemsControl ItemsSource="{Binding EditableTraitViewModels}"/>
+        <ItemsControl ItemsSource="{Binding EditableTraitViewModels}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:EditableTraitView/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>

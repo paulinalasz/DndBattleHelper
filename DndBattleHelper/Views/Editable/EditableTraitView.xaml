@@ -13,12 +13,34 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
         <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
+        <DataTemplate DataType="{x:Type vm:EditableActionViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <parent:AbilityView/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditableAbilityViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <parent:AbilityView/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditableDamageRollViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <parent:DamageRollView/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditableTraitViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <parent:TraitView/>
+            </StackPanel>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Type, Converter={StaticResource EnumToDescriptionConverter}}"/>
-            <parent:ModifierView DataContext="{Binding ModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
-            <Button Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ContentPresenter Content="{Binding}" />
+        <Button Grid.Column="2" Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
     </Grid>
 </UserControl>

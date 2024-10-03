@@ -13,7 +13,6 @@
         <TextBlock TextWrapping="Wrap">
             <Run FontWeight="Bold" Text="{Binding Name}"/>
             <Run Text="{Binding Description}"/>
-            <Button Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
         </TextBlock>
     </Grid>
 </UserControl>
