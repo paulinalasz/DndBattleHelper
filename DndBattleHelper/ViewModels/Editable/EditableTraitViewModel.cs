@@ -16,6 +16,6 @@ namespace DndBattleHelper.ViewModels.Editable
         }
 
         public virtual bool IsRemoveVisible => true;
-        public abstract bool HasModifier { get; }
+        //public virtual bool HasModifier { get; set; }
     }
 }

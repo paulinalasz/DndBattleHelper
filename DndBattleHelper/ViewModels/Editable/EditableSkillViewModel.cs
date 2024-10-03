@@ -18,6 +18,6 @@ namespace DndBattleHelper.ViewModels.Editable
         }
 
         public override bool IsRemoveVisible { get; }
-        public override bool HasModifier => true;
+        public bool HasModifier => true;
     }
 }

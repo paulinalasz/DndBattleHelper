@@ -6,14 +6,10 @@ namespace DndBattleHelper.ViewModels.Editable
     public class EditableActionViewModel : EditableTraitViewModel
     {
         private readonly EntityAction _action;
-        private readonly bool _hasModifier;
 
-        public EditableActionViewModel(EntityAction action, bool hasModifier)
+        public EditableActionViewModel(EntityAction action)
         {
             _action = action;
-            _hasModifier = hasModifier;
-
-            EditDamageRollsViewModel = new EditDamageRollsViewModel();
         }
 
         public string Name
@@ -35,9 +31,5 @@ namespace DndBattleHelper.ViewModels.Editable
                 OnPropertyChanged(nameof(Description));
             }
         }
-
-        public EditDamageRollsViewModel EditDamageRollsViewModel { get; }
-
-        public override bool HasModifier => _hasModifier;
     }
 }

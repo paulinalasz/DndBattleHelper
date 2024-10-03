@@ -7,9 +7,11 @@
              xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              xmlns:parent="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="EditActions">
     <UserControl.Resources>
         <converters:EnumToCollectionConverter x:Key="enumToCollectionConverter"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
     </UserControl.Resources>
     <Grid>
         <StackPanel>
@@ -23,10 +25,20 @@
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedActionCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        <local:EditableModifierView DataContext="{Binding ToHitModifierViewModel}"/>
+                        <local:EditableModifierView DataContext="{Binding ToHitModifierViewModel}" IsEnabled="{Binding DataContext.HasModifier, ElementName=EditActions}"/>
+                        <StackPanel Orientation="Vertical">    
+                            <CheckBox Content="To Hit Modifier?" IsChecked="{Binding HasModifier}"/>
+                            <CheckBox Content="Does Damage?" IsChecked="{Binding DamageRollsEnabled}"/>
+                            <CheckBox Content="Is Spell?" IsChecked="{Binding IsSpell}"/>
+                        </StackPanel>
                     </StackPanel>
                     <TextBox Text="{Binding Description}"/>
-                    <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}"/>
+                    <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedSpellSlot, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+                              SelectedValuePath="Value"
+                              DisplayMemberPath="Description"
+                              SelectedValue="{Binding Path=SelectedSpellSlot, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              Visibility="{Binding IsSpell, Converter={StaticResource BoolToVisConverter}}"/>
+                    <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" Visibility="{Binding DataContext.DamageRollsEnabled, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
                 </StackPanel>
                 <Button Content="Add" Command="{Binding AddCommand}"/>
             </StackPanel>

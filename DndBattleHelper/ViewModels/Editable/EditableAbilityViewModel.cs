@@ -31,6 +31,6 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public override bool HasModifier => false;
+        public bool HasModifier => false;
     }
 }
