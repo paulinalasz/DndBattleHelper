@@ -1,6 +1,6 @@
 ﻿namespace DndBattleHelper.Models.ActionTypes
 {
-    public abstract class NonDamagingSpell : EntityAction, ISpell
+    public class NonDamagingSpell : EntityAction, ISpell
     {
         public NonDamagingSpell(string name, 
             string description, 

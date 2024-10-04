@@ -6,6 +6,7 @@ using DndBattleHelper.Models;
 using System.Collections.ObjectModel;
 using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.Models.Enums;
+using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -20,7 +21,7 @@ namespace DndBattleHelper.ViewModels
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
         public EditActionsViewModel EditActionsViewModel { get; set; }
 
-        public AddNewEnemyViewModel()
+        public AddNewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider)
         {
             Name = "";
             ArmourClass = 10;
@@ -41,7 +42,7 @@ namespace DndBattleHelper.ViewModels
             PassivePerception = new EditableSkillViewModel(new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Neutral, 0)), false);
             EditLanguagesViewModel = new EditLanguagesViewModel();
             EditAbilitiesViewModel = new EditAbilitiesViewModel();
-            EditActionsViewModel = new EditActionsViewModel();
+            EditActionsViewModel = new EditActionsViewModel(targetArmourClassProvider, advantageDisadvantageProvider);
         }
 
         private string _name;

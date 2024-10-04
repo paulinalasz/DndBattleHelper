@@ -13,13 +13,15 @@ namespace DndBattleHelper.ViewModels
     public class MainWindowViewModel : NotifyPropertyChanged
     {
         private readonly IDialogService _dialogService;
+        private readonly TargetArmourClassProvider _targetArmourClassProvider;
+        private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
         public MainWindowViewModel(IDialogService dialogService) 
         {
-            var targetArmourClassProvider = new TargetArmourClassProvider();
-            var advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+            _targetArmourClassProvider = new TargetArmourClassProvider();
+            _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
 
             _dialogService = dialogService;
 
@@ -60,7 +62,7 @@ namespace DndBattleHelper.ViewModels
             var actionViewModels = new ObservableCollection<EntityActionViewModel>();
             foreach(var action in actions)
             {
-                actionViewModels.Add(new AttackActionViewModel((AttackAction)action, targetArmourClassProvider, advantageDisadvantageProvider));
+                actionViewModels.Add(new AttackActionViewModel((AttackAction)action, _targetArmourClassProvider, _advantageDisadvantageProvider));
             }
 
             var challengeRating = new ChallengeRating(ChallengeRatingLevel.Three);
@@ -69,8 +71,8 @@ namespace DndBattleHelper.ViewModels
             var enemy2 = new Enemy("Minotaur 2", 10, 70, 30, 10, 10, 10, 10, 10, 10, skills, senses, passivePerception, languages, challengeRating, abilities, actions);
             var player1 = new Player("Bar", 132);
 
-            EntitiesInInitiative = [new EnemyViewModel(enemy1, actionViewModels, targetArmourClassProvider, advantageDisadvantageProvider), 
-                new EnemyViewModel(enemy2, actionViewModels, targetArmourClassProvider, advantageDisadvantageProvider),
+            EntitiesInInitiative = [new EnemyViewModel(enemy1, actionViewModels, _targetArmourClassProvider, _advantageDisadvantageProvider), 
+                new EnemyViewModel(enemy2, actionViewModels, _targetArmourClassProvider, _advantageDisadvantageProvider),
                 new PlayerViewModel(player1),
             ];
 
@@ -145,7 +147,7 @@ namespace DndBattleHelper.ViewModels
 
         public void AddNew()
         {
-            var AddNewEnemyViewModel = new AddNewEnemyViewModel();
+            var AddNewEnemyViewModel = new AddNewEnemyViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
             bool? result = _dialogService.ShowDialog(AddNewEnemyViewModel);
 
 
