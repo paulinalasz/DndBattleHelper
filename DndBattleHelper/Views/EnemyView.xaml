@@ -31,7 +31,12 @@
                 <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
                 <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Health}"/>
+                <StackPanel Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
+                    <TextBox Text="{Binding Health}"/>
+                    <TextBlock Margin="10, 0, 0, 0" Text="-"/>
+                    <TextBox Margin="10, 0, 0, 0" Text="{Binding DamageToTake}"/>
+                    <Button Content="Take Damage" Command="{Binding TakeDamageCommand}"/>
+                </StackPanel>
                 <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
                 <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
             </Grid>
