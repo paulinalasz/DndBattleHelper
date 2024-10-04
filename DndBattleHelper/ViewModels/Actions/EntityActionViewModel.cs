@@ -1,9 +1,10 @@
 ﻿using DndBattleHelper.Models;
 using DndBattleHelper.Models.ActionTypes;
+using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels.Actions
 {
-    public class EntityActionViewModel
+    public class EntityActionViewModel : IEditable
     {
         public string Name { get; set; }
         public string Description { get; set; }

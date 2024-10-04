@@ -31,7 +31,7 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableAbilityViewModel(new Ability(Name, Description)));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new AbilityViewModel(new Ability(Name, Description))));
             base.Add();
         }
 

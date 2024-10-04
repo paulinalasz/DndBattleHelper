@@ -19,7 +19,7 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableLanguageViewModel(SelectedToAdd));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new LanguageViewModel(SelectedToAdd)));
             base.Add();
         }
 

@@ -25,7 +25,7 @@ namespace DndBattleHelper.ViewModels.Editable
         public override void Add()
         {
             var skillToAdd = new Skill(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableSkillViewModel(skillToAdd));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SkillViewModel(skillToAdd)));
             base.Add();
         }
 

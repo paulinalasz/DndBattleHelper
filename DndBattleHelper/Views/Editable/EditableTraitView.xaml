@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:DndBattleHelper.Views.Editable"
-             xmlns:vm="clr-namespace:DndBattleHelper.ViewModels.Editable"
+             xmlns:actions="clr-namespace:DndBattleHelper.ViewModels.Actions"
+             xmlns:editable="clr-namespace:DndBattleHelper.ViewModels.Editable"
              xmlns:parent="clr-namespace:DndBattleHelper.Views"
              xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
@@ -13,22 +13,32 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
         <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
-        <DataTemplate DataType="{x:Type vm:EditableActionViewModel}">
+        <DataTemplate DataType="{x:Type actions:EntityActionViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:AbilityView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:EditableAbilityViewModel}">
+        <DataTemplate DataType="{x:Type editable:AbilityViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:AbilityView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:EditableDamageRollViewModel}">
+        <DataTemplate DataType="{x:Type editable:DamageRollViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:DamageRollView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:EditableTraitViewModel}">
+        <DataTemplate DataType="{x:Type editable:SenseViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <parent:TraitView/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type editable:SkillViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <parent:TraitView/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type editable:LanguageViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
@@ -40,7 +50,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ContentPresenter Content="{Binding}" />
+        <ContentPresenter Content="{Binding Content}" />
         <Button Grid.Column="2" Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
     </Grid>
 </UserControl>

@@ -1,23 +1,19 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableSkillViewModel : EditableTraitViewModel
+    public class SkillViewModel : NotifyPropertyChanged, IEditable
     {
         public Skill Skill { get; set; }
         public SkillType Type => Skill.Type;
 
         public ModifierViewModel ModifierViewModel { get; set; }
 
-        public EditableSkillViewModel(Skill skill, bool isRemoveVisible = true)
+        public SkillViewModel(Skill skill, bool isRemoveVisible = true)
         {
             Skill = skill;
             ModifierViewModel = new ModifierViewModel(Skill.Modifier);
-
-            IsRemoveVisible = isRemoveVisible;
         }
-
-        public override bool IsRemoveVisible { get; }
-        public bool HasModifier => true;
     }
 }

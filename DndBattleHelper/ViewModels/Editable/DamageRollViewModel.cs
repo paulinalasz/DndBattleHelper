@@ -1,12 +1,13 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableDamageRollViewModel : EditableTraitViewModel
+    public class DamageRollViewModel : NotifyPropertyChanged, IEditable
     {
         private readonly DamageRoll _damageRoll;
 
-        public EditableDamageRollViewModel(DamageRoll damageRoll) 
+        public DamageRollViewModel(DamageRoll damageRoll) 
         {
             _damageRoll = damageRoll;
             DamageModifierViewModel = new ModifierViewModel(_damageRoll.ValueModifier);
@@ -44,6 +45,9 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public bool HasModifier => true;
+        public Damage RollDamage(bool criticalHit)
+        {
+            return _damageRoll.RollDamage(criticalHit);
+        }
     }
 }

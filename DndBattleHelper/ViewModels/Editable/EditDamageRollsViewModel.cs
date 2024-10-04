@@ -46,7 +46,7 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableDamageRollViewModel(new DamageRoll(DiceNumber, DiceBase, new Modifier(DamageModifierViewModel.ModifierType, DamageModifierViewModel.ModifierValue), SelectedDamageType)));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new DamageRollViewModel(new DamageRoll(DiceNumber, DiceBase, new Modifier(DamageModifierViewModel.ModifierType, DamageModifierViewModel.ModifierValue), SelectedDamageType))));
             base.Add();
         }
 

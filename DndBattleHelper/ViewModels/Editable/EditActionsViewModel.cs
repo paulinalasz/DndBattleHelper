@@ -107,19 +107,30 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
+            var damageRolls = new List<DamageRoll>();
 
+            //foreach(var editableTraitViewModel in EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            //{
+            //    var damageRoll = (DamageRollViewModel)editableTraitViewModel;
+            //    damageRolls.Add(
+            //        new DamageRoll(damageRoll.DiceNumber, 
+            //        damageRoll.DiceBase, 
+            //        new Modifier(damageRoll.DamageModifierViewModel.ModifierType, 
+            //        damageRoll.DamageModifierViewModel.ModifierValue), 
+            //        damageRoll.SelectedDamageType));
+            //}
 
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(
-                new EntityActionFactory(_targetArmourClassProvider, _advantageDisadvantageProvider).Create(
-                    Name, 
-                    Description,
-                    SelectedActionCost,
-                    DamageRollsEnabled,
-                    EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels,
-                    HasModifier,
-                    new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
-                    IsSpell,
-                    SelectedSpellSlot)));
+            //EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(
+            //    new EntityActionFactory(_targetArmourClassProvider, _advantageDisadvantageProvider).Create(
+            //        Name, 
+            //        Description,
+            //        SelectedActionCost,
+            //        DamageRollsEnabled,
+            //        damageRolls,
+            //        HasModifier,
+            //        new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
+            //        IsSpell,
+            //        SelectedSpellSlot)));
             base.Add();
         }
 

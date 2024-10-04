@@ -3,6 +3,7 @@ using DndBattleHelper.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Models.ActionTypes;
+using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels.Actions
 {

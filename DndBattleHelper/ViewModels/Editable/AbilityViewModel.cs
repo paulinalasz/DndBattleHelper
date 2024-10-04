@@ -1,12 +1,13 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableAbilityViewModel : EditableTraitViewModel
+    public class AbilityViewModel : NotifyPropertyChanged, IEditable
     {
         private readonly Ability _ability; 
 
-        public EditableAbilityViewModel(Ability ability)
+        public AbilityViewModel(Ability ability)
         {
             _ability = ability;
         }
@@ -30,7 +31,5 @@ namespace DndBattleHelper.ViewModels.Editable
                 OnPropertyChanged(nameof(Description));
             }
         }
-
-        public bool HasModifier => false;
     }
 }
