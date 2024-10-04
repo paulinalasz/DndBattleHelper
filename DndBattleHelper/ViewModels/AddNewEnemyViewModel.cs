@@ -9,7 +9,14 @@ using DndBattleHelper.ViewModels.Editable.Traits;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class AddNewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
+    public class AddNewEnemyPresetViewModel : NewEnemyViewModel
+    {
+        public AddNewEnemyPresetViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
+        {
+        }
+    }
+
+    public abstract class NewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
     {
         public EditSkillsViewModel EditSkillsViewModel { get; set; }
         public EditSensesViewModel EditSensesViewModel { get; set; }
@@ -20,17 +27,10 @@ namespace DndBattleHelper.ViewModels
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
         public EditActionsViewModel EditActionsViewModel { get; set; }
 
-        private TargetArmourClassProvider _targetArmourClassProvider;
-        private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
-
-        public AddNewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider)
+        public NewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider)
         {
-            _targetArmourClassProvider = targetArmourClassProvider;
-            _advantageDisadvantageProvider = advantageDisadvantageProvider;
-
             Name = "";
             ArmourClass = 10;
-            Health = 0;
             Speed = 30;
             Strength = 10;
             Dexterity = 10;
@@ -51,10 +51,10 @@ namespace DndBattleHelper.ViewModels
         }
 
         private string _name;
-        public string Name 
-        { 
+        public string Name
+        {
             get { return _name; }
-            set 
+            set
             {
                 _name = value;
                 OnPropertyChanged(nameof(Name));
@@ -62,8 +62,8 @@ namespace DndBattleHelper.ViewModels
         }
 
         private int _armourClass;
-        public int ArmourClass 
-        { 
+        public int ArmourClass
+        {
             get { return _armourClass; }
             set
             {
@@ -72,21 +72,10 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        private int _health;
-        public int Health 
-        { 
-            get { return _health; }
-            set
-            {
-                _health = value;
-                OnPropertyChanged(nameof(Health));
-            }
-        }
-
         private int _speed;
-        public int Speed 
-        { 
-            get { return _speed; } 
+        public int Speed
+        {
+            get { return _speed; }
             set
             {
                 _speed = value;
@@ -95,9 +84,9 @@ namespace DndBattleHelper.ViewModels
         }
 
         private int _strength;
-        public int Strength 
-        { 
-            get { return _strength; } 
+        public int Strength
+        {
+            get { return _strength; }
             set
             {
                 _strength = value;
@@ -106,9 +95,9 @@ namespace DndBattleHelper.ViewModels
         }
 
         private int _dexterity;
-        public int Dexterity 
-        { 
-            get { return _dexterity; } 
+        public int Dexterity
+        {
+            get { return _dexterity; }
             set
             {
                 _dexterity = value;
@@ -117,9 +106,9 @@ namespace DndBattleHelper.ViewModels
         }
 
         private int _constitution;
-        public int Constitution 
+        public int Constitution
         {
-            get { return _constitution; } 
+            get { return _constitution; }
             set
             {
                 _constitution = value;
@@ -128,9 +117,9 @@ namespace DndBattleHelper.ViewModels
         }
 
         private int _intelligence;
-        public int Intelligence 
-        { 
-            get { return _intelligence; } 
+        public int Intelligence
+        {
+            get { return _intelligence; }
             set
             {
                 _intelligence = value;
@@ -139,25 +128,25 @@ namespace DndBattleHelper.ViewModels
         }
 
         private int _wisdom;
-        public int Wisdom 
-        { 
+        public int Wisdom
+        {
             get { return _wisdom; }
             set
             {
                 _wisdom = value;
                 OnPropertyChanged(nameof(Wisdom));
-            } 
+            }
         }
 
         private int _charisma;
-        public int Charisma 
-        { 
-            get { return _charisma; } 
+        public int Charisma
+        {
+            get { return _charisma; }
             set
             {
                 _charisma = value;
                 OnPropertyChanged(nameof(Charisma));
-            } 
+            }
         }
 
         private int _healthDiceNumber;
@@ -184,6 +173,48 @@ namespace DndBattleHelper.ViewModels
 
         public ModifierViewModel HealthModifierViewModel { get; set; }
 
+        #region dialogService
+        public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
+
+        private ICommand _addCommand;
+        public ICommand AddCommand => _addCommand ??
+            (_addCommand = new CommandHandler(Add, () => { return true; }));
+
+        private ICommand _cancelCommand;
+        public ICommand CancelCommand => _cancelCommand ??
+            (_cancelCommand = new CommandHandler(() => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(false)), () => { return true; }));
+        #endregion 
+
+        public virtual void Add()
+        {
+            CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
+        }
+    }
+
+    public class AddNewEnemyViewModel : NewEnemyViewModel
+    {
+        private TargetArmourClassProvider _targetArmourClassProvider;
+        private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+
+        public AddNewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
+        {
+            _targetArmourClassProvider = targetArmourClassProvider;
+            _advantageDisadvantageProvider = advantageDisadvantageProvider;
+
+            Health = 0;
+        }
+
+        private int _health;
+        public int Health 
+        { 
+            get { return _health; }
+            set
+            {
+                _health = value;
+                OnPropertyChanged(nameof(Health));
+            }
+        }
+
         private ICommand _rollHealthCommand;
         public ICommand RollHealthCommand => _rollHealthCommand ?? (_rollHealthCommand = new CommandHandler(() => RollHealth(), () => { return true; }));
 
@@ -192,28 +223,15 @@ namespace DndBattleHelper.ViewModels
             Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierViewModel.ModifierType, HealthModifierViewModel.ModifierValue)).RollValue();
         }
 
-        #region dialogService
-        public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
-
-        private ICommand _addCommand;
-        public ICommand AddCommand => _addCommand ?? 
-            (_addCommand = new CommandHandler(Add, () => { return true; }));
-
-        private ICommand _cancelCommand;
-        public ICommand CancelCommand => _cancelCommand ?? 
-            (_cancelCommand = new CommandHandler(() => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(false)), () => {  return true; }));
-        #endregion 
-
         public Action Added;
 
         public EnemyViewModel AddedEnemy { get; set; }
 
-        public void Add()
+        public override void Add()
         {
             CreateNewEnemy();
             Added?.Invoke();
-
-            CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
+            base.Add();
         }
 
         public void CreateNewEnemy()

@@ -142,10 +142,10 @@ namespace DndBattleHelper.ViewModels
 
         public int EntitiesInInitiativeCount => EntitiesInInitiative?.Count ?? 0;
 
-        private ICommand _addNewCommand;
-        public ICommand AddNewCommand => _addNewCommand ?? (_addNewCommand = new CommandHandler(() => AddNew(), () => { return true; }));
+        private ICommand _addNewEnemyCommand;
+        public ICommand AddNewEnemyCommand => _addNewEnemyCommand ?? (_addNewEnemyCommand = new CommandHandler(() => AddEnemyNew(), () => { return true; }));
 
-        public void AddNew()
+        public void AddEnemyNew()
         {
             var addNewEnemyViewModel = new AddNewEnemyViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
 
@@ -157,6 +157,16 @@ namespace DndBattleHelper.ViewModels
             bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
 
             OnPropertyChanged(string.Empty);
+        }
+
+        private ICommand _addNewEnemyPresetCommand;
+        public ICommand AddNewEnemyPresetCommand => _addNewEnemyCommand ?? (_addNewEnemyCommand = new CommandHandler(AddNewEnemyPreset, () => { return true; }));
+
+        public void AddNewEnemyPreset()
+        {
+            var addNewEnemyPresetViewModel = new AddNewEnemyPresetViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
+
+            bool? result = _dialogService.ShowDialog(addNewEnemyPresetViewModel);
         }
     }
 }
