@@ -71,8 +71,6 @@ namespace DndBattleHelper.ViewModels
 
             Actions = actions;
 
-            //Actions = new ObservableCollection<EntityActionViewModel>();
-
             OutputBox = new OutputBoxViewModel();
 
             foreach (var action in Actions)
@@ -86,6 +84,25 @@ namespace DndBattleHelper.ViewModels
 
                 }
             }
+
+            DamageToTake = 0;
+        }
+
+        public int DamageToTake { get; set; }
+
+        private ICommand _takeDamageCommand;
+        public ICommand TakeDamageCommand => _takeDamageCommand ?? (_takeDamageCommand = new CommandHandler(() => TakeDamage(), () => { return true; }));
+
+        public void TakeDamage()
+        {
+            Health -= DamageToTake;
+
+            if (Health < 0) 
+            {
+                Health = 0;
+            }
+
+            OnPropertyChanged(nameof(Health));
         }
 
         public bool IsAdvantage
