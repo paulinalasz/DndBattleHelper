@@ -16,34 +16,57 @@ namespace DndBattleHelper.ViewModels.Editable
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
         }
 
-        public EntityActionViewModel Create(EntityAction model)
-        {
-            return new EntityActionViewModel(model);
-        }
-
-        public DamagingActionViewModel Create(DamagingAction model)
+        private DamagingActionViewModel Create(DamagingAction model)
         {
             return new DamagingActionViewModel(model);
         }
 
-        public AttackActionViewModel Create(AttackAction model) 
+        private AttackActionViewModel Create(AttackAction model) 
         {
             return new AttackActionViewModel(model, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
 
-        public NonDamagingSpellViewModel Create(NonDamagingSpell model)
+        private NonDamagingSpellViewModel Create(NonDamagingSpell model)
         {
             return new NonDamagingSpellViewModel(model);
         }
 
-        public DamagingSpellWithSaveViewModel Create(DamagingSpellWithSave model)
+        private DamagingSpellWithSaveViewModel Create(DamagingSpellWithSave model)
         {
             return new DamagingSpellWithSaveViewModel(model);
         }
 
-        public SpellAttackViewModel Create(SpellAttack model) 
+        private SpellAttackViewModel Create(SpellAttack model) 
         {
             return new SpellAttackViewModel(model, _targetArmourClassProvider, _advantageDisadvantageProvider);
+        }
+
+        public EntityActionViewModel Create(EntityAction model)
+        {
+            if (model is ISpell)
+            {
+                switch (model)
+                {
+                    case SpellAttack spellAttack:
+                        return Create(spellAttack);
+                    case NonDamagingSpell nonDamagingSpell:
+                        return Create(nonDamagingSpell);
+                    case DamagingSpellWithSave damagingSpellWithSave:
+                        return Create(damagingSpellWithSave);
+                    default:
+                        return new EntityActionViewModel(model);
+                }
+            }
+
+            switch (model)
+            {
+                case AttackAction attackAction:
+                    return Create(attackAction);
+                case DamagingAction damagingAction:
+                    return Create(damagingAction);
+                default:
+                    return new EntityActionViewModel(model);
+            }
         }
     }
 }

@@ -28,7 +28,10 @@ namespace DndBattleHelper.ViewModels
                 languagesString += ", ";
             }
 
-            languagesString = languagesString.Substring(0, languagesString.Length - 2);
+            if (Languages.Count > 2) 
+            {
+                languagesString = languagesString.Substring(0, languagesString.Length - 2);
+            }
 
             return languagesString;
         }
