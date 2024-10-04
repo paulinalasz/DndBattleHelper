@@ -1,5 +1,4 @@
 ﻿using DndBattleHelper.Models;
-using DndBattleHelper.Models.ActionTypes;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Providers;
 using System.Printing;
@@ -109,94 +108,36 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             var damageRolls = new List<DamageRoll>();
 
-            //foreach(var editableTraitViewModel in EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels)
-            //{
-            //    var damageRoll = (DamageRollViewModel)editableTraitViewModel;
-            //    damageRolls.Add(
-            //        new DamageRoll(damageRoll.DiceNumber, 
-            //        damageRoll.DiceBase, 
-            //        new Modifier(damageRoll.DamageModifierViewModel.ModifierType, 
-            //        damageRoll.DamageModifierViewModel.ModifierValue), 
-            //        damageRoll.SelectedDamageType));
-            //}
+            foreach (var editableTraitViewModel in EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            {
+                var damageRollViewModel = (DamageRollViewModel)editableTraitViewModel.Content;
 
-            //EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(
-            //    new EntityActionFactory(_targetArmourClassProvider, _advantageDisadvantageProvider).Create(
-            //        Name, 
-            //        Description,
-            //        SelectedActionCost,
-            //        DamageRollsEnabled,
-            //        damageRolls,
-            //        HasModifier,
-            //        new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
-            //        IsSpell,
-            //        SelectedSpellSlot)));
+                damageRolls.Add(new DamageRoll(
+                    damageRollViewModel.DiceNumber, 
+                    damageRollViewModel.DiceBase,
+                    new Modifier(damageRollViewModel.DamageModifierViewModel.ModifierType, damageRollViewModel.DamageModifierViewModel.ModifierValue),
+                    damageRollViewModel.SelectedDamageType));
+            }
+
+            var actionFactory = new EntityActionFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
+            var newAction = actionFactory.Create(
+                    Name,
+                    Description,
+                    SelectedActionCost,
+                    DamageRollsEnabled,
+                    damageRolls,
+                    HasModifier,
+                    new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
+                    IsSpell,
+                    SelectedSpellSlot);
+
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(newAction));
             base.Add();
         }
 
         public override bool CanAdd()
         {
             return true;
-        }
-    }
-
-    public class EntityActionFactory
-    {
-        private readonly TargetArmourClassProvider _targetArmourClassProvider;
-        private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
-
-        public EntityActionFactory(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) 
-        {
-            _targetArmourClassProvider = targetArmourClassProvider;
-            _advantageDisadvantageProvider = advantageDisadvantageProvider;
-        }
-
-        public EntityActionViewModel Create(string name,
-            string description,
-            ActionCost actionCost,
-            bool damageRollsEnabled,
-            List<DamageRoll> damageRolls,
-            bool hasModifier,
-            Modifier toHitModifier,
-            bool isSpell,
-            SpellSlot spellSlot)
-        {
-            if (!isSpell && !hasModifier && !damageRollsEnabled)
-            {
-                return new EntityActionViewModel(new EntityAction(name, description, actionCost));
-            }
-            else if(!isSpell && !hasModifier && damageRollsEnabled)
-            {
-                return new DamagingActionViewModel(new DamagingAction(name, description, actionCost, damageRolls));
-            }
-            else if(!isSpell && hasModifier && !damageRollsEnabled) 
-            {
-                throw new ArgumentException("No such action type. Make this not possible with UI rules");
-            }
-            else if(!isSpell && hasModifier && damageRollsEnabled)
-            {
-                return new AttackActionViewModel(new AttackAction(name, description, actionCost, damageRolls, toHitModifier), _targetArmourClassProvider, _advantageDisadvantageProvider);
-            }
-            else if(isSpell && !hasModifier && !damageRollsEnabled)
-            {
-                return new NonDamagingSpellViewModel(new NonDamagingSpell(name, description, actionCost, true, spellSlot));
-            }
-            else if(isSpell && !hasModifier && damageRollsEnabled)
-            {
-                return new DamagingSpellWithSaveViewModel(new DamagingSpellWithSave(name, description, actionCost, true, spellSlot, damageRolls));
-            }
-            else if(isSpell && hasModifier && !damageRollsEnabled)
-            {
-                throw new ArgumentException("No such action type. Make this not possible with UI rules");
-            }
-            else if(isSpell && hasModifier && damageRollsEnabled)
-            {
-                return new SpellAttackViewModel(new SpellAttack(name, description, actionCost, true, damageRolls, toHitModifier, spellSlot), _targetArmourClassProvider, _advantageDisadvantageProvider);
-            }
-            else
-            {
-                throw new ArgumentException("if you got here you changed the check points and something went wrong");
-            }
         }
     }
 }
