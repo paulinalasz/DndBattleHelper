@@ -99,7 +99,10 @@
 
                     <editable:EditTraitsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
                     <editable:EditTraitsView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
-                    <editable:EditableTraitView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}">
+                        <TextBlock Text="Passive Perception: "/>
+                        <editable:EditableModifierView DataContext="{Binding ModifierViewModel}"/>
+                    </StackPanel>
                     <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
                     <editable:EditableChallengeRatingView Grid.Row="4" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
