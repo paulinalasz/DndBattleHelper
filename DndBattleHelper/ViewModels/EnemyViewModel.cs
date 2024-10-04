@@ -96,6 +96,12 @@ namespace DndBattleHelper.ViewModels
         public void TakeDamage()
         {
             Health -= DamageToTake;
+
+            if (Health < 0) 
+            {
+                Health = 0;
+            }
+
             OnPropertyChanged(nameof(Health));
         }
 
