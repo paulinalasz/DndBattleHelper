@@ -10,5 +10,10 @@
             Name = name;
             Description = description;
         }
+
+        public Ability Copy()
+        {
+            return new Ability(Name, Description);
+        }
     }
 }

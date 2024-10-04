@@ -1,9 +1,7 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
 using System.Windows.Input;
-using System.Windows.Navigation;
 using DndBattleHelper.Models;
-using System.Collections.ObjectModel;
 using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.Models.Enums;
 using DndBattleHelper.ViewModels.Providers;
@@ -22,8 +20,14 @@ namespace DndBattleHelper.ViewModels
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
         public EditActionsViewModel EditActionsViewModel { get; set; }
 
+        private TargetArmourClassProvider _targetArmourClassProvider;
+        private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+
         public AddNewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider)
         {
+            _targetArmourClassProvider = targetArmourClassProvider;
+            _advantageDisadvantageProvider = advantageDisadvantageProvider;
+
             Name = "";
             ArmourClass = 10;
             Health = 0;
@@ -193,11 +197,51 @@ namespace DndBattleHelper.ViewModels
 
         private ICommand _addCommand;
         public ICommand AddCommand => _addCommand ?? 
-            (_addCommand = new CommandHandler(() => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true)), () => { return true; }));
+            (_addCommand = new CommandHandler(Add, () => { return true; }));
 
         private ICommand _cancelCommand;
         public ICommand CancelCommand => _cancelCommand ?? 
             (_cancelCommand = new CommandHandler(() => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(false)), () => {  return true; }));
         #endregion 
+
+        public Action Added;
+
+        public EnemyViewModel AddedEnemy { get; set; }
+
+        public void Add()
+        {
+            CreateNewEnemy();
+            Added?.Invoke();
+
+            CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
+        }
+
+        public void CreateNewEnemy()
+        {
+            var enemy = new EnemyFactory().Create(
+                Name, 
+                ArmourClass, 
+                Health,
+                Speed,
+                Strength,
+                Dexterity, 
+                Constitution, 
+                Intelligence, 
+                Wisdom,
+                Charisma,
+                EditSkillsViewModel.CopyNewModels(),
+                EditSensesViewModel.CopyNewModels(),
+                PassivePerception.CopyModel(),
+                EditLanguagesViewModel.CopyNewModels(),
+                ChallengeRatingViewModel.CopyModel(),
+                EditAbilitiesViewModel.CopyNewModels(),
+                EditActionsViewModel.CopyNewModels());
+
+
+            AddedEnemy = new EnemyViewModelFactory(
+                new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider),
+               _targetArmourClassProvider, _advantageDisadvantageProvider).Create(
+                enemy);
+        }
     }
 }

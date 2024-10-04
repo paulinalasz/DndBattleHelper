@@ -65,5 +65,19 @@ namespace DndBattleHelper.ViewModels.Editable
             DamageModifierViewModel.ModifierValue = 0;
             SelectedDamageType = 0;
         }
+
+        public List<DamageRoll> CopyNewModels()
+        {
+            var damageRolls = new List<DamageRoll>();
+
+            foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            {
+                var damageRollViewModel = (DamageRollViewModel)editableTraitViewModel.Content;
+
+                damageRolls.Add(damageRollViewModel.CopyModel());
+            }
+
+            return damageRolls;
+        }
     }
 }

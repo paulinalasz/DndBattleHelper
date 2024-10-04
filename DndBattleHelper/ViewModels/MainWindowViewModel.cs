@@ -147,13 +147,15 @@ namespace DndBattleHelper.ViewModels
 
         public void AddNew()
         {
-            var AddNewEnemyViewModel = new AddNewEnemyViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
-            bool? result = _dialogService.ShowDialog(AddNewEnemyViewModel);
+            var addNewEnemyViewModel = new AddNewEnemyViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
 
+            addNewEnemyViewModel.Added += () =>
+            {
+                EntitiesInInitiative.Add(addNewEnemyViewModel.AddedEnemy);
+            };
 
+            bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
 
-
-            //EntitiesInInitiative.Add(new EnemyViewModel(newEnemy));
             OnPropertyChanged(string.Empty);
         }
     }

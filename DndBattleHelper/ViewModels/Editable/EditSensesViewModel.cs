@@ -33,5 +33,18 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             SelectedToAdd = 0;
         }
+
+        public List<SenseType> CopyNewModels()
+        {
+            var senses = new List<SenseType>();
+
+            foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            {
+                var senseViewModel = (SenseViewModel)editableTraitViewModel.Content;
+                senses.Add(senseViewModel.Type);
+            }
+
+            return senses;
+        }
     }
 }

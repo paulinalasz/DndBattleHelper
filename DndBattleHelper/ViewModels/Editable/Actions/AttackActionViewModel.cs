@@ -71,5 +71,10 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
             RollDamage(toHitRoll);
         }
+
+        public override AttackAction CopyModel()
+        {
+            return _action.Copy();
+        }
     }
 }

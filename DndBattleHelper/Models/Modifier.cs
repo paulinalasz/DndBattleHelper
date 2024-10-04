@@ -30,5 +30,10 @@ namespace DndBattleHelper.Models
 
             return Value;
         }
+
+        public Modifier Copy()
+        {
+            return new Modifier(Type, Value);
+        }
     }
 }

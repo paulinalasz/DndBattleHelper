@@ -8,5 +8,10 @@
         }
 
         public List<DamageRoll> DamageRolls { get; set; }
+
+        public override DamagingAction Copy()
+        {
+            return new DamagingAction(Name, Description, ActionCost, DamageRolls);
+        }
     }
 }

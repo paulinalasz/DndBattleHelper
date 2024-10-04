@@ -21,5 +21,10 @@
 
             return skillString;
         }
+
+        public Skill Copy()
+        {
+            return new Skill(Type, Modifier.Copy());
+        }
     }
 }

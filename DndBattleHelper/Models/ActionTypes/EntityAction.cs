@@ -13,5 +13,10 @@
             Description = description;
             ActionCost = actionCost;
         }
+
+        public virtual EntityAction Copy()
+        {
+            return new EntityAction(Name, Description, ActionCost);
+        }
     }
 }

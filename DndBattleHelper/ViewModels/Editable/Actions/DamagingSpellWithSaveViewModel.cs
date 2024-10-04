@@ -31,5 +31,10 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
                 OnPropertyChanged(nameof(SpellSlot));
             }
         }
+
+        public override DamagingSpellWithSave CopyModel()
+        {
+            return _action.Copy();
+        }
     }
 }

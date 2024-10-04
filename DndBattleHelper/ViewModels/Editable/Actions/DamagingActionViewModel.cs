@@ -8,10 +8,14 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 {
     public class DamagingActionViewModel : EntityActionViewModel
     {
+        public DamagingAction _action;
+
         public DamagingActionViewModel(DamagingAction action) : base(action)
         {
+            _action = action;
+
             DamageRolls = new List<DamageRollViewModel>();
-            foreach (var damageRoll in action.DamageRolls)
+            foreach (var damageRoll in _action.DamageRolls)
             {
                 DamageRolls.Add(new DamageRollViewModel(damageRoll));
             }
@@ -43,6 +47,11 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
             MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll, damageRolled);
             ActionTaken?.Invoke();
+        }
+
+        public override DamagingAction CopyModel()
+        {
+            return _action.Copy();
         }
     }
 }

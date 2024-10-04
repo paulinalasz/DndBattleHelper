@@ -1,7 +1,7 @@
 ﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Providers;
-using System.Printing;
+using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
@@ -108,22 +108,9 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            var damageRolls = new List<DamageRoll>();
+            var damageRolls = EditDamageRollsViewModel.CopyNewModels();
 
-            foreach (var editableTraitViewModel in EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels)
-            {
-                var damageRollViewModel = (DamageRollViewModel)editableTraitViewModel.Content;
-
-                damageRolls.Add(new DamageRoll(
-                    damageRollViewModel.DiceNumber, 
-                    damageRollViewModel.DiceBase,
-                    new Modifier(damageRollViewModel.DamageModifierViewModel.ModifierType, damageRollViewModel.DamageModifierViewModel.ModifierValue),
-                    damageRollViewModel.SelectedDamageType));
-            }
-
-            var actionFactory = new EntityActionFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
-            var newAction = actionFactory.Create(
-                    Name,
+            var action = new EntityActionFactory().Create(Name,
                     Description,
                     SelectedActionCost,
                     DamageRollsEnabled,
@@ -132,6 +119,9 @@ namespace DndBattleHelper.ViewModels.Editable
                     new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
                     IsSpell,
                     SelectedSpellSlot);
+
+            var actionFactory = new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
+            var newAction = actionFactory.Create(action);
 
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(newAction));
             base.Add();
@@ -151,6 +141,19 @@ namespace DndBattleHelper.ViewModels.Editable
             ToHitModifierViewModel.ModifierType = 0;
             ToHitModifierViewModel.ModifierValue = 0;
             SelectedSpellSlot = 0;
+        }
+
+        public List<EntityAction> CopyNewModels()
+        {
+            var actions = new List<EntityAction>();
+
+            foreach(var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            {
+                var entityActionViewModel = (EntityActionViewModel)editableTraitViewModel.Content;
+                actions.Add(entityActionViewModel.CopyModel());
+            }
+
+            return actions;
         }
     }
 }

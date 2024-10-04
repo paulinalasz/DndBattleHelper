@@ -49,5 +49,10 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
         {
             return _damageRoll.RollDamage(criticalHit);
         }
+
+        public DamageRoll CopyModel()
+        {
+            return _damageRoll.Copy();
+        }
     }
 }

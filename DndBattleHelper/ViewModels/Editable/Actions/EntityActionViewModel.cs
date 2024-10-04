@@ -6,46 +6,48 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 {
     public class EntityActionViewModel : NotifyPropertyChanged, IEditable
     {
-        private string _name;
+        private EntityAction _action;
+
         public string Name 
         {
-            get => _name;
+            get => _action.Name;
             set
             {
-                _name = value;
+                _action.Name = value;
                 OnPropertyChanged(nameof(Name));
             }
         }
 
-        private string _description;
         public string Description 
         { 
-            get => _description;
+            get => _action.Description;
             set
             {
-                _description = value;
+                _action.Description = value;
                 OnPropertyChanged(nameof(Description));
             }
         }
 
-        private ActionCost _actionCost;
         public ActionCost ActionCost 
         {
-            get => _actionCost;
+            get => _action.ActionCost;
             set
             {
-                _actionCost = value;
+                _action.ActionCost = value;
                 OnPropertyChanged(nameof(ActionCost));
             }
         }
 
         public EntityActionViewModel(EntityAction entityAction)
         {
-            _name = entityAction.Name;
-            _description = entityAction.Description; 
-            _actionCost = entityAction.ActionCost;
+            _action = entityAction;
         }
 
         public Action ActionTaken;
+
+        public virtual EntityAction CopyModel()
+        {
+            return _action.Copy();
+        }
     }
 }

@@ -17,5 +17,10 @@ namespace DndBattleHelper.Models
         {
             ChallengeRatingLevel = challengeRatingLevel;
         }
+
+        public ChallengeRating Copy()
+        {
+            return new ChallengeRating(ChallengeRatingLevel);
+        }
     }
 }

@@ -27,8 +27,7 @@ namespace DndBattleHelper.ViewModels.Editable
             ResetDefaults();
         }
 
-        public abstract void ResetDefaults();
-
         public abstract bool CanAdd();
+        public abstract void ResetDefaults();
     }
 }

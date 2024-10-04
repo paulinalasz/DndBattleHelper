@@ -31,5 +31,10 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
                 OnPropertyChanged(nameof(Description));
             }
         }
+
+        public Ability CopyModel()
+        {
+            return _ability.Copy();
+        }
     }
 }

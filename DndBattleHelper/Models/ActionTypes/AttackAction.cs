@@ -13,5 +13,10 @@
         }
 
         public Modifier ToHit { get; set; }
+
+        public override AttackAction Copy()
+        {
+            return new AttackAction(Name, Description, ActionCost, DamageRolls, ToHit);
+        }
     }
 }

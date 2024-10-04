@@ -33,5 +33,18 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             SelectedToAdd = 0;
         }
+
+        public List<LanguageType> CopyNewModels()
+        {
+            var languages = new List<LanguageType>();
+
+            foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            {
+                var language = (LanguageViewModel)editableTraitViewModel.Content;
+                languages.Add(language.Type);
+            }
+
+            return languages;
+        }
     }
 }

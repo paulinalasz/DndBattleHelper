@@ -30,5 +30,10 @@ namespace DndBattleHelper.Models
 
             return new Damage(damage, DamageType);
         }
+
+        public DamageRoll Copy()
+        {
+            return new DamageRoll(NumberOfDice, DiceBase, ValueModifier.Copy(), DamageType);
+        }
     }
 }

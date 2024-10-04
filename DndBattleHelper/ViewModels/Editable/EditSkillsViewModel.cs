@@ -39,5 +39,18 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             SelectedToAdd = 0;
         }
+
+        public List<Skill> CopyNewModels()
+        {
+            var skills = new List<Skill>();
+
+            foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
+            {
+                var skillViewModel = (SkillViewModel)editableTraitViewModel.Content;
+                skills.Add(skillViewModel.CopyModel());
+            }
+
+            return skills;
+        }
     }
 }

@@ -17,5 +17,10 @@
 
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
+
+        public DamagingSpellWithSave Copy()
+        {
+            return new DamagingSpellWithSave(Name, Description, ActionCost, Concentration, SpellSlot, DamageRolls);
+        }
     }
 }

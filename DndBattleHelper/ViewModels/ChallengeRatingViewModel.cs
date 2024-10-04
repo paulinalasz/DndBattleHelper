@@ -25,5 +25,10 @@ namespace DndBattleHelper.ViewModels
         }
 
         public int Xp => _challengeRating.Xp;
+
+        public ChallengeRating CopyModel()
+        {
+            return _challengeRating.Copy();
+        }
     }
 }
