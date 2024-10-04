@@ -160,7 +160,7 @@ namespace DndBattleHelper.ViewModels
         }
 
         private ICommand _addNewEnemyPresetCommand;
-        public ICommand AddNewEnemyPresetCommand => _addNewEnemyCommand ?? (_addNewEnemyCommand = new CommandHandler(AddNewEnemyPreset, () => { return true; }));
+        public ICommand AddNewEnemyPresetCommand => _addNewEnemyPresetCommand ?? (_addNewEnemyPresetCommand = new CommandHandler(AddNewEnemyPreset, () => { return true; }));
 
         public void AddNewEnemyPreset()
         {
