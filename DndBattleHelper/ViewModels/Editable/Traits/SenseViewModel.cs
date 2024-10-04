@@ -20,5 +20,10 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
         {
             _type = type;
         }
+
+        public override string ToString()
+        {
+            return _type.ToString();
+        }
     }
 }

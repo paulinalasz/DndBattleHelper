@@ -23,7 +23,7 @@ namespace DndBattleHelper.ViewModels
         {
             var skillsString = string.Empty;
 
-            foreach(var skill in Skills) 
+            foreach (var skill in Skills)
             {
                 skillsString += skill.ToString();
                 skillsString += ", ";

@@ -24,6 +24,11 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
             ModifierViewModel = new ModifierViewModel(_skill.Modifier);
         }
 
+        public override string ToString()
+        {
+            return _skill.ToString();
+        }
+
         public Skill CopyModel()
         {
             return _skill.Copy();
