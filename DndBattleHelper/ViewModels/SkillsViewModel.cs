@@ -1,16 +1,22 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Editable.Traits;
 using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
     public class SkillsViewModel : NotifyPropertyChanged
     {
-        public ObservableCollection<Skill> Skills { get; }
+        public ObservableCollection<SkillViewModel> Skills { get; }
 
-        public SkillsViewModel(ObservableCollection<Skill> skills)
+        public SkillsViewModel(List<Skill> skills)
         {
-            Skills = skills;
+            Skills = new ObservableCollection<SkillViewModel>();
+
+            foreach(var skill in skills)
+            {
+                Skills.Add(new SkillViewModel(skill));
+            }
         }
 
         public override string ToString()

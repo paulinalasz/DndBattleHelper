@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:actions="clr-namespace:DndBattleHelper.ViewModels.Actions"
+             xmlns:actions="clr-namespace:DndBattleHelper.ViewModels.Editable.Actions"
              xmlns:editable="clr-namespace:DndBattleHelper.ViewModels.Editable"
+             xmlns:traits="clr-namespace:DndBattleHelper.ViewModels.Editable.Traits"
              xmlns:parent="clr-namespace:DndBattleHelper.Views"
              xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
@@ -18,27 +19,27 @@
                 <parent:AbilityView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type editable:AbilityViewModel}">
+        <DataTemplate DataType="{x:Type traits:AbilityViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:AbilityView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type editable:DamageRollViewModel}">
+        <DataTemplate DataType="{x:Type actions:DamageRollViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:DamageRollView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type editable:SenseViewModel}">
+        <DataTemplate DataType="{x:Type traits:SenseViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type editable:SkillViewModel}">
+        <DataTemplate DataType="{x:Type traits:SkillViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type editable:LanguageViewModel}">
+        <DataTemplate DataType="{x:Type traits:LanguageViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>

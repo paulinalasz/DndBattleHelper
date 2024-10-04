@@ -2,7 +2,7 @@
 {
     public interface ISpell
     {
-        public bool Concentration { get; }
-        public SpellSlot SpellSlot { get; }
+        public bool Concentration { get; set; }
+        public SpellSlot SpellSlot { get; set; }
     }
 }

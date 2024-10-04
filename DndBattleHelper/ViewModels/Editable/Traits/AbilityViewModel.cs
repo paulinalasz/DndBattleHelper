@@ -1,11 +1,11 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 
-namespace DndBattleHelper.ViewModels.Editable
+namespace DndBattleHelper.ViewModels.Editable.Traits
 {
     public class AbilityViewModel : NotifyPropertyChanged, IEditable
     {
-        private readonly Ability _ability; 
+        private readonly Ability _ability;
 
         public AbilityViewModel(Ability ability)
         {

@@ -4,7 +4,7 @@ using DndBattleHelper.Models;
 using DndBattleHelper.Models.Enums;
 using DndBattleHelper.Models.ActionTypes;
 using DndBattleHelper.Helpers;
-using DndBattleHelper.ViewModels.Actions;
+using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.Helpers.DialogService;
 using DndBattleHelper.ViewModels.Providers;
 
@@ -25,7 +25,7 @@ namespace DndBattleHelper.ViewModels
 
             _dialogService = dialogService;
 
-            var skills = new ObservableCollection<Skill>();
+            var skills = new List<Skill>();
             var senses = new List<SenseType>();
             var languages = new List<LanguageType>();
             var abilities = new List<Ability>();

@@ -1,6 +1,6 @@
 ﻿using DndBattleHelper.Models;
 using DndBattleHelper.Models.ActionTypes;
-using DndBattleHelper.ViewModels.Actions;
+using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Providers;
 using System.Printing;
 

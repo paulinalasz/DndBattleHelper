@@ -5,21 +5,30 @@ using System.Windows.Input;
 using DndBattleHelper.Models.ActionTypes;
 using DndBattleHelper.ViewModels.Editable;
 
-namespace DndBattleHelper.ViewModels.Actions
+namespace DndBattleHelper.ViewModels.Editable.Actions
 {
     public class AttackActionViewModel : DamagingActionViewModel
     {
         private readonly TargetArmourClassProvider _targetArmourClassProvider;
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private readonly AttackAction _action;
+
         public AttackActionViewModel(AttackAction action, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(action)
         {
-            ToHit = action.ToHit;
+            _action = action;
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
         }
 
-        //But only one To Hit Modifier
-        public Modifier ToHit { get; set; }
+        public Modifier ToHit
+        {
+            get => _action.ToHit;
+            set
+            {
+                _action.ToHit = value;
+                OnPropertyChanged(nameof(ToHit));
+            }
+        }
 
         private ICommand _rollToHitAndDamageCommand;
         public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));

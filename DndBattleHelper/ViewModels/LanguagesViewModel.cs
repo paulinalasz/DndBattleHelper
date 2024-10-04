@@ -1,14 +1,21 @@
 ﻿using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Editable.Traits;
+using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
     public class LanguagesViewModel
     {
-        public List<LanguageType> Languages { get; set; }
+        public ObservableCollection<LanguageViewModel> Languages { get; set; }
 
         public LanguagesViewModel(List<LanguageType> languages) 
         {
-            Languages = languages;
+            Languages = new ObservableCollection<LanguageViewModel>();
+
+            foreach(LanguageType language in languages) 
+            {
+                Languages.Add(new LanguageViewModel(language));
+            }
         }
 
         public override string ToString()

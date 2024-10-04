@@ -4,7 +4,8 @@ using System.Windows.Input;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
-using DndBattleHelper.ViewModels.Actions;
+using DndBattleHelper.ViewModels.Editable.Actions;
+using DndBattleHelper.ViewModels.Editable.Traits;
 
 namespace DndBattleHelper.ViewModels
 {

@@ -15,7 +15,7 @@ namespace DndBattleHelper.Models
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-        public ObservableCollection<Skill> Skills { get; set; }
+        public List<Skill> Skills { get; set; }
         public List<SenseType> Senses { get; set; }
         public Skill PassivePerception { get; set; }
         public List<LanguageType> Languages { get; set; }
@@ -33,7 +33,7 @@ namespace DndBattleHelper.Models
             int intelligence,
             int wisdom,
             int charisma,
-            ObservableCollection<Skill> skills,
+            List<Skill> skills,
             List<SenseType> senses,
             Skill passivePerception,
             List<LanguageType> languages,

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.Models.Enums;
 using DndBattleHelper.ViewModels.Providers;
+using DndBattleHelper.ViewModels.Editable.Traits;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -39,7 +40,7 @@ namespace DndBattleHelper.ViewModels
             HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditSkillsViewModel = new EditSkillsViewModel();
             EditSensesViewModel = new EditSensesViewModel();
-            PassivePerception = new SkillViewModel(new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Neutral, 0)), false);
+            PassivePerception = new SkillViewModel(new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Neutral, 0)));
             EditLanguagesViewModel = new EditLanguagesViewModel();
             EditAbilitiesViewModel = new EditAbilitiesViewModel();
             EditActionsViewModel = new EditActionsViewModel(targetArmourClassProvider, advantageDisadvantageProvider);

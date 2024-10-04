@@ -1,13 +1,13 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 
-namespace DndBattleHelper.ViewModels.Editable
+namespace DndBattleHelper.ViewModels.Editable.Actions
 {
     public class DamageRollViewModel : NotifyPropertyChanged, IEditable
     {
         private readonly DamageRoll _damageRoll;
 
-        public DamageRollViewModel(DamageRoll damageRoll) 
+        public DamageRollViewModel(DamageRoll damageRoll)
         {
             _damageRoll = damageRoll;
             DamageModifierViewModel = new ModifierViewModel(_damageRoll.ValueModifier);
