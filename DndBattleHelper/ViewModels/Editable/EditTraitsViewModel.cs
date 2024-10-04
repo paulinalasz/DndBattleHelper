@@ -24,7 +24,10 @@ namespace DndBattleHelper.ViewModels.Editable
         public virtual void Add()
         {
             OnPropertyChanged(nameof(EditableTraitViewModelsViewModel));
+            ResetDefaults();
         }
+
+        public abstract void ResetDefaults();
 
         public abstract bool CanAdd();
     }

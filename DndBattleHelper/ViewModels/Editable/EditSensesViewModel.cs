@@ -28,5 +28,10 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             return true;
         }
+
+        public override void ResetDefaults()
+        {
+            SelectedToAdd = 0;
+        }
     }
 }

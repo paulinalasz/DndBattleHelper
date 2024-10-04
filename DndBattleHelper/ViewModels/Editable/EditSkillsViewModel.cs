@@ -34,5 +34,10 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             return ToAddModifierViewModel.ModifierType != ModifierType.Neutral;
         }
+
+        public override void ResetDefaults()
+        {
+            SelectedToAdd = 0;
+        }
     }
 }

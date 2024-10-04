@@ -5,7 +5,10 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditAbilitiesViewModel : EditTraitsViewModel
     {
-        public EditAbilitiesViewModel() : base("Abilities", false) { }
+        public EditAbilitiesViewModel() : base("Abilities", false) 
+        {
+            ResetDefaults();
+        }
 
         private string _name;
         public string Name
@@ -39,6 +42,12 @@ namespace DndBattleHelper.ViewModels.Editable
         public override bool CanAdd()
         {
             return true;
+        }
+
+        public override void ResetDefaults()
+        {
+            Name = "";
+            Description = "";
         }
     }
 }

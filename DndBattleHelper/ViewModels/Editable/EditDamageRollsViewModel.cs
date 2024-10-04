@@ -56,5 +56,14 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             return true;
         }
+
+        public override void ResetDefaults()
+        {
+            DiceNumber = 0;
+            DiceBase = 0;
+            DamageModifierViewModel.ModifierType = 0;
+            DamageModifierViewModel.ModifierValue = 0;
+            SelectedDamageType = 0;
+        }
     }
 }

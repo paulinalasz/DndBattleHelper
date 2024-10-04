@@ -19,6 +19,8 @@ namespace DndBattleHelper.ViewModels.Editable
             EditDamageRollsViewModel = new EditDamageRollsViewModel();
             HasModifier = true;
             DamageRollsEnabled = true;
+
+            ResetDefaults();
         }
 
         private string _name;
@@ -138,6 +140,17 @@ namespace DndBattleHelper.ViewModels.Editable
         public override bool CanAdd()
         {
             return true;
+        }
+
+        public override void ResetDefaults()
+        {
+            Name = "";
+            Description = "";
+            SelectedActionCost = 0;
+            EditDamageRollsViewModel.ResetDefaults();
+            ToHitModifierViewModel.ModifierType = 0;
+            ToHitModifierViewModel.ModifierValue = 0;
+            SelectedSpellSlot = 0;
         }
     }
 }
