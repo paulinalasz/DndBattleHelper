@@ -9,11 +9,13 @@ namespace DndBattleHelper.ViewModels.Editable
     {
         private readonly TargetArmourClassProvider _targetArmourClassProvider;
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
 
-        public EditActionsViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base("Actions", false)
+        public EditActionsViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider, List<EntityAction> actions = null) : base("Actions", false)
         {
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
+            _entityActionViewModelFactory = new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
 
             ToHitModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditDamageRollsViewModel = new EditDamageRollsViewModel();
@@ -21,6 +23,14 @@ namespace DndBattleHelper.ViewModels.Editable
             DamageRollsEnabled = true;
 
             ResetDefaults();
+
+            if (actions != null) 
+            {
+                foreach(EntityAction action in actions)
+                { 
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(_entityActionViewModelFactory.Create(action.Copy())));
+                }
+            }
         }
 
         private string _name;
@@ -120,9 +130,7 @@ namespace DndBattleHelper.ViewModels.Editable
                     IsSpell,
                     SelectedSpellSlot);
 
-            var actionFactory = new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
-            var newAction = actionFactory.Create(action);
-
+            var newAction = _entityActionViewModelFactory.Create(action);
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(newAction));
             base.Add();
         }

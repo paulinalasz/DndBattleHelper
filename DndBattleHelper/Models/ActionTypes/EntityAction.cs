@@ -1,5 +1,12 @@
-﻿namespace DndBattleHelper.Models.ActionTypes
+﻿using System.Xml.Serialization;
+
+namespace DndBattleHelper.Models.ActionTypes
 {
+    [XmlInclude(typeof(DamagingAction))]
+    [XmlInclude(typeof(DamagingSpellWithSave))]
+    [XmlInclude(typeof(AttackAction))]
+    [XmlInclude(typeof(NonDamagingSpell))]
+    [XmlInclude(typeof(SpellAttack))]
     public class EntityAction 
     {
         public string Name { get; set; }
@@ -14,7 +21,7 @@
             ActionCost = actionCost;
         }
 
-        private EntityAction() { }
+        protected EntityAction() { }
 
         public virtual EntityAction Copy()
         {

@@ -5,7 +5,16 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditSensesViewModel : EditTraitsViewModel
     {
-        public EditSensesViewModel() : base("Senses", false) { }
+        public EditSensesViewModel(List<SenseType> senses = null) : base("Senses", false) 
+        {
+            if (senses != null) 
+            {
+                foreach (SenseType sense in senses)
+                {
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SenseViewModel(sense)));
+                }
+            }
+        }
 
         private SenseType _selectedToAdd;
         public SenseType SelectedToAdd

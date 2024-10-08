@@ -16,6 +16,8 @@ namespace DndBattleHelper.Models
             DamageType = damageType;
         }
 
+        public DamageRoll() { }
+
         public Damage RollDamage(bool critialHit)
         {
             var damage = base.RollValue();

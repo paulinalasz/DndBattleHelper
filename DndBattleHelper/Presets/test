@@ -24,5 +24,26 @@
     <ChallengeRatingLevel>One</ChallengeRatingLevel>
   </ChallengeRating>
   <Abilities />
-  <Actions />
+  <Actions>
+    <EntityAction xsi:type="AttackAction">
+      <Name>test</Name>
+      <Description>test</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>2</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>10</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
 </Enemy>

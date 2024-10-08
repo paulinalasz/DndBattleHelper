@@ -17,7 +17,7 @@ namespace DndBattleHelper.ViewModels
         private readonly TargetArmourClassProvider _targetArmourClassProvider;
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly FileIO _fileIo;
-        private readonly PresetsViewModel _presetsViewModel;
+        private readonly Presets _presets;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
@@ -26,7 +26,7 @@ namespace DndBattleHelper.ViewModels
             _targetArmourClassProvider = new TargetArmourClassProvider();
             _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
             _fileIo = new FileIO();
-            _presetsViewModel = new PresetsViewModel(_fileIo);
+            _presets = new Presets(_fileIo);
 
             _dialogService = dialogService;
 
@@ -152,7 +152,7 @@ namespace DndBattleHelper.ViewModels
 
         public void AddEnemyNew()
         {
-            var addNewEnemyViewModel = new AddNewEnemyViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
+            var addNewEnemyViewModel = new AddNewEnemyViewModel(_presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
 
             addNewEnemyViewModel.Added += () =>
             {
@@ -174,6 +174,7 @@ namespace DndBattleHelper.ViewModels
             addNewEnemyPresetViewModel.Added += () =>
             {
                 _fileIo.OutputPreset(addNewEnemyPresetViewModel.AddedEnemyPreset);
+                _presets.DeserialisePresets();
             };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyPresetViewModel);

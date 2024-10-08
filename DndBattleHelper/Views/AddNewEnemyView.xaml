@@ -8,6 +8,15 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Width="800" Height="450">
     <Grid>
-        <local:NewEnemyView/>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox 
+                    ItemsSource="{Binding EnemyPresets}" 
+                    DisplayMemberPath="Name" 
+                    SelectedItem="{Binding SelectedEnemyPreset, Mode=TwoWay}" />
+                <Button Content="Use Preset" Command="{Binding UsePresetCommand}"/>
+            </StackPanel>
+            <local:NewEnemyView/>
+        </StackPanel>
     </Grid>
 </Window>

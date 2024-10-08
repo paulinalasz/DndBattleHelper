@@ -13,6 +13,8 @@
             SpellSlot = spellSlot;
         }
 
+        public NonDamagingSpell() { }
+
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
 

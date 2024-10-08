@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Enemy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Minotaur</Name>
+  <ArmourClass>14</ArmourClass>
+  <Health>76</Health>
+  <Speed>40</Speed>
+  <Strength>18</Strength>
+  <Dexterity>11</Dexterity>
+  <Constitution>16</Constitution>
+  <Intelligence>6</Intelligence>
+  <Wisdom>16</Wisdom>
+  <Charisma>9</Charisma>
+  <Skills>
+    <Skill>
+      <Type>Perception</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>7</Value>
+      </Modifier>
+    </Skill>
+  </Skills>
+  <Senses>
+    <SenseType>Darkvision60ft</SenseType>
+  </Senses>
+  <PassivePerception>
+    <Type>PassivePerception</Type>
+    <Modifier>
+      <Type>Plus</Type>
+      <Value>7</Value>
+    </Modifier>
+  </PassivePerception>
+  <Languages>
+    <LanguageType>Abyssal</LanguageType>
+  </Languages>
+  <ChallengeRating>
+    <ChallengeRatingLevel>Three</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Charge. </Name>
+      <Description>If the minotaur moves at least 10 ft. straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 ft. away and knocked prone.</Description>
+    </Ability>
+    <Ability>
+      <Name>Labyrinthine Recall.</Name>
+      <Description>The minotaur can perfectly recall any path it has traveled.</Description>
+    </Ability>
+    <Ability>
+      <Name>Reckless.</Name>
+      <Description>At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Greataxe.</Name>
+      <Description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d12 + 4) slashing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>12</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>4</Value>
+          </ValueModifier>
+          <DamageType>Slashing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Gore.</Name>
+      <Description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d8 + 4) piercing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>4</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+</Enemy>
