@@ -11,8 +11,34 @@ namespace DndBattleHelper.ViewModels
 {
     public class AddNewEnemyPresetViewModel : NewEnemyViewModel
     {
+        public Enemy AddedEnemyPreset { get; set; }
+
         public AddNewEnemyPresetViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
         {
+
+
+        }
+
+        public override void CreateNewEnemy()
+        {
+            AddedEnemyPreset = new EnemyFactory().Create(
+                            Name,
+                            ArmourClass,
+                            0,
+                            Speed,
+                            Strength,
+                            Dexterity,
+                            Constitution,
+                            Intelligence,
+                            Wisdom,
+                            Charisma,
+                            EditSkillsViewModel.CopyNewModels(),
+                            EditSensesViewModel.CopyNewModels(),
+                            PassivePerception.CopyModel(),
+                            EditLanguagesViewModel.CopyNewModels(),
+                            ChallengeRatingViewModel.CopyModel(),
+                            EditAbilitiesViewModel.CopyNewModels(),
+                            EditActionsViewModel.CopyNewModels());
         }
     }
 
@@ -31,6 +57,7 @@ namespace DndBattleHelper.ViewModels
         {
             Name = "";
             ArmourClass = 10;
+            Health = 0;
             Speed = 30;
             Strength = 10;
             Dexterity = 10;
@@ -149,6 +176,17 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
+        private int _health;
+        public int Health
+        {
+            get { return _health; }
+            set
+            {
+                _health = value;
+                OnPropertyChanged(nameof(Health));
+            }
+        }
+
         private int _healthDiceNumber;
         public int HealthDiceNumber
         {
@@ -173,6 +211,8 @@ namespace DndBattleHelper.ViewModels
 
         public ModifierViewModel HealthModifierViewModel { get; set; }
 
+        public Action Added;
+
         #region dialogService
         public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
 
@@ -187,8 +227,12 @@ namespace DndBattleHelper.ViewModels
 
         public virtual void Add()
         {
+            CreateNewEnemy();
+            Added?.Invoke();
             CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
         }
+
+        public abstract void CreateNewEnemy();
     }
 
     public class AddNewEnemyViewModel : NewEnemyViewModel
@@ -200,19 +244,6 @@ namespace DndBattleHelper.ViewModels
         {
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
-
-            Health = 0;
-        }
-
-        private int _health;
-        public int Health 
-        { 
-            get { return _health; }
-            set
-            {
-                _health = value;
-                OnPropertyChanged(nameof(Health));
-            }
         }
 
         private ICommand _rollHealthCommand;
@@ -223,18 +254,9 @@ namespace DndBattleHelper.ViewModels
             Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierViewModel.ModifierType, HealthModifierViewModel.ModifierValue)).RollValue();
         }
 
-        public Action Added;
-
         public EnemyViewModel AddedEnemy { get; set; }
 
-        public override void Add()
-        {
-            CreateNewEnemy();
-            Added?.Invoke();
-            base.Add();
-        }
-
-        public void CreateNewEnemy()
+        public override void CreateNewEnemy()
         {
             var enemy = new EnemyFactory().Create(
                 Name, 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Enemy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>test</Name>
+  <ArmourClass>10</ArmourClass>
+  <Health>0</Health>
+  <Speed>30</Speed>
+  <Strength>10</Strength>
+  <Dexterity>10</Dexterity>
+  <Constitution>10</Constitution>
+  <Intelligence>10</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>10</Charisma>
+  <Skills />
+  <Senses />
+  <PassivePerception>
+    <Type>PassivePerception</Type>
+    <Modifier>
+      <Type>Neutral</Type>
+      <Value>0</Value>
+    </Modifier>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>One</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities />
+  <Actions />
+</Enemy>

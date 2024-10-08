@@ -14,6 +14,8 @@
             ActionCost = actionCost;
         }
 
+        private EntityAction() { }
+
         public virtual EntityAction Copy()
         {
             return new EntityAction(Name, Description, ActionCost);

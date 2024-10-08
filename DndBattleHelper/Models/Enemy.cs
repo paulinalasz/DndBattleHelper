@@ -59,5 +59,7 @@ namespace DndBattleHelper.Models
             Abilities = abilities;
             Actions = actions;
         }
+
+        private Enemy() { }
     }
 }

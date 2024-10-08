@@ -44,9 +44,8 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" MinWidth="30" Text="{Binding Health}"/>
-                    <StackPanel Grid.Row="2" Grid.Column="2" Margin="5, 0, 5, 0" Orientation="Horizontal">
-                        <TextBlock Margin="5, 0, 3, 0" Text="Roll Health:"/>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
+                        <TextBlock Margin="5, 0, 3, 0" Text="Health Roll:"/>
                         <TextBox MinWidth="15" Text="{Binding HealthDiceNumber}"/>
                         <TextBlock Text="d"/>
                         <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding HealthDiceBase}"/>
@@ -117,7 +116,7 @@
         </Grid>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Add Enemy" Command="{Binding AddCommand}"/>
+            <Button Content="Add Preset" Command="{Binding AddCommand}"/>
             <Button Content="Cancel" Command="{Binding CancelCommand}"/>
         </StackPanel>
     </Grid>

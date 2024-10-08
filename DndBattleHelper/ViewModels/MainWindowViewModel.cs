@@ -7,6 +7,7 @@ using DndBattleHelper.Helpers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.Helpers.DialogService;
 using DndBattleHelper.ViewModels.Providers;
+using System;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -15,6 +16,7 @@ namespace DndBattleHelper.ViewModels
         private readonly IDialogService _dialogService;
         private readonly TargetArmourClassProvider _targetArmourClassProvider;
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        public readonly FileIO _fileIo;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
@@ -22,6 +24,7 @@ namespace DndBattleHelper.ViewModels
         {
             _targetArmourClassProvider = new TargetArmourClassProvider();
             _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+            _fileIo = new FileIO();
 
             _dialogService = dialogService;
 
@@ -165,6 +168,11 @@ namespace DndBattleHelper.ViewModels
         public void AddNewEnemyPreset()
         {
             var addNewEnemyPresetViewModel = new AddNewEnemyPresetViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider);
+
+            addNewEnemyPresetViewModel.Added += () =>
+            {
+                _fileIo.OutputPreset(addNewEnemyPresetViewModel.AddedEnemyPreset);
+            };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyPresetViewModel);
         }

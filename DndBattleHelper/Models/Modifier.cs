@@ -13,6 +13,8 @@ namespace DndBattleHelper.Models
             Value = value;
         }
 
+        private Modifier() { }
+
         public override string ToString()
         {
             var modifierString = EnumHelper.Description(Type);
