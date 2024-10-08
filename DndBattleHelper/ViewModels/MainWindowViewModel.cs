@@ -16,7 +16,8 @@ namespace DndBattleHelper.ViewModels
         private readonly IDialogService _dialogService;
         private readonly TargetArmourClassProvider _targetArmourClassProvider;
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
-        public readonly FileIO _fileIo;
+        private readonly FileIO _fileIo;
+        private readonly PresetsViewModel _presetsViewModel;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
@@ -25,6 +26,7 @@ namespace DndBattleHelper.ViewModels
             _targetArmourClassProvider = new TargetArmourClassProvider();
             _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
             _fileIo = new FileIO();
+            _presetsViewModel = new PresetsViewModel(_fileIo);
 
             _dialogService = dialogService;
 
