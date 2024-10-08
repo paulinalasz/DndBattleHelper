@@ -20,10 +20,10 @@ namespace DndBattleHelper.ViewModels
             _presets = presets;
         }
 
-        public List<Enemy> EnemyPresets => _presets.EnemyPresets;
+        public List<EnemyPreset> EnemyPresets => _presets.EnemyPresets;
 
-        private Enemy _selectedEnemyPreset;
-        public Enemy SelectedEnemyPreset
+        private EnemyPreset _selectedEnemyPreset;
+        public EnemyPreset SelectedEnemyPreset
         {
             get { return _selectedEnemyPreset; }
             set
@@ -55,7 +55,10 @@ namespace DndBattleHelper.ViewModels
             ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
             EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
             EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);
-        
+            HealthDiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
+            HealthDiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
+            HealthModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
+
             OnPropertyChanged(string.Empty);
         }
 

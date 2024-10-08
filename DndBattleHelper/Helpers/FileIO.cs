@@ -15,21 +15,21 @@ namespace DndBattleHelper.Helpers
             return filePath;
         }
 
-        public void OutputPreset(Enemy enemy)
+        public void OutputPreset(EnemyPreset enemy)
         {
             var path = GetFilePath(enemy.Name);
-            File.WriteAllText(path, MySerialiser<Enemy>.Serialize(enemy));
+            File.WriteAllText(path, MySerialiser<EnemyPreset>.Serialize(enemy));
         }
 
-        public List<Enemy> DeserialisePresets()
+        public List<EnemyPreset> DeserialisePresets()
         {
-            var presets = new List<Enemy>();
+            var presets = new List<EnemyPreset>();
             var presetFileNames = Directory.GetFiles(GetFilePath(""));
 
             foreach(var presetFileName in presetFileNames) 
             {
                 var xmlString = File.ReadAllText(GetFilePath(presetFileName));
-                presets.Add(MySerialiser<Enemy>.Deserialize(xmlString));
+                presets.Add(MySerialiser<EnemyPreset>.Deserialize(xmlString));
             }
 
             return presets;

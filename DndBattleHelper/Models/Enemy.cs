@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using DndBattleHelper.Models.ActionTypes;
+﻿using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.Models
 {
@@ -60,6 +59,6 @@ namespace DndBattleHelper.Models
             Actions = actions;
         }
 
-        private Enemy() { }
+        protected Enemy() { }
     }
 }

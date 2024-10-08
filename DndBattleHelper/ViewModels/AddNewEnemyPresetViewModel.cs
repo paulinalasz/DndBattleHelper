@@ -6,7 +6,7 @@ namespace DndBattleHelper.ViewModels
 {
     public class AddNewEnemyPresetViewModel : NewEnemyViewModel
     {
-        public Enemy AddedEnemyPreset { get; set; }
+        public EnemyPreset AddedEnemyPreset { get; set; }
 
         public AddNewEnemyPresetViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
         {
@@ -16,7 +16,7 @@ namespace DndBattleHelper.ViewModels
 
         public override void CreateNewEnemy()
         {
-            AddedEnemyPreset = new EnemyFactory().Create(
+            AddedEnemyPreset = new EnemyPreset(
                             Name,
                             ArmourClass,
                             Health,
@@ -33,7 +33,8 @@ namespace DndBattleHelper.ViewModels
                             EditLanguagesViewModel.CopyNewModels(),
                             ChallengeRatingViewModel.CopyModel(),
                             EditAbilitiesViewModel.CopyNewModels(),
-                            EditActionsViewModel.CopyNewModels());
+                            EditActionsViewModel.CopyNewModels(),
+                            new Roll(HealthDiceNumber, HealthDiceBase, HealthModifierViewModel.CopyModel()));
         }
     }
 }

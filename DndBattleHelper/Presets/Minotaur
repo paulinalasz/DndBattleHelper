@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<Enemy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Minotaur</Name>
   <ArmourClass>14</ArmourClass>
   <Health>76</Health>
@@ -35,20 +35,7 @@
   <ChallengeRating>
     <ChallengeRatingLevel>Three</ChallengeRatingLevel>
   </ChallengeRating>
-  <Abilities>
-    <Ability>
-      <Name>Charge. </Name>
-      <Description>If the minotaur moves at least 10 ft. straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 ft. away and knocked prone.</Description>
-    </Ability>
-    <Ability>
-      <Name>Labyrinthine Recall.</Name>
-      <Description>The minotaur can perfectly recall any path it has traveled.</Description>
-    </Ability>
-    <Ability>
-      <Name>Reckless.</Name>
-      <Description>At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.</Description>
-    </Ability>
-  </Abilities>
+  <Abilities />
   <Actions>
     <EntityAction xsi:type="AttackAction">
       <Name>Greataxe.</Name>
@@ -91,4 +78,12 @@
       </ToHit>
     </EntityAction>
   </Actions>
-</Enemy>
+  <HealthRoll>
+    <NumberOfDice>9</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>27</Value>
+    </ValueModifier>
+  </HealthRoll>
+</EnemyPreset>
