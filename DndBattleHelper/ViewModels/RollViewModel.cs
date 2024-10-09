@@ -41,7 +41,16 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        public ModifierViewModel ValueModifierViewModel { get; set; }
+        private ModifierViewModel _modifierViewModel;
+        public ModifierViewModel ValueModifierViewModel 
+        {
+            get => _modifierViewModel;
+            set
+            {
+                _modifierViewModel = value;
+                OnPropertyChanged(nameof(ValueModifierViewModel));
+            }
+        }
 
         private ICommand _rollCommand;
         public ICommand RollCommand => _rollCommand ?? (_rollCommand = new CommandHandler(RollValue, () => { return true; }));

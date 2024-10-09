@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-16"?>
 <EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
   <Name>Minotaur</Name>
   <ArmourClass>14</ArmourClass>
   <Health>76</Health>
@@ -95,4 +96,12 @@
       <Value>27</Value>
     </ValueModifier>
   </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>0</Value>
+    </ValueModifier>
+  </InitiativeRoll>
 </EnemyPreset>

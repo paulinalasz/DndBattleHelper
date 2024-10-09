@@ -42,7 +42,7 @@
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
                     <traits:RollView Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" DataContext="{Binding InitiativeRollViewModel}"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
+                    <TextBox MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
                     <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" MinWidth="30" Text="{Binding Health}"/>
                     <traits:RollView Grid.Row="3" Grid.Column="2" Margin="5, 0, 5, 0" DataContext="{Binding HealthRollViewModel}"/>
