@@ -34,5 +34,10 @@ namespace DndBattleHelper.ViewModels
         }
 
         public bool IsModifierValueEnabled => ModifierType != ModifierType.Neutral;
+
+        public Modifier CopyModel()
+        {
+            return _modifier.Copy();
+        }
     }
 }

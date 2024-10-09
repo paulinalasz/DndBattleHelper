@@ -12,7 +12,7 @@
 
             <StackPanel Grid.Row="1"  Orientation="Horizontal">
                 <TextBox Text="{Binding Name}"/>
-                <TextBox Text="{Binding Description}"/>
+                <TextBox Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="300"/>
                 <Button Content="Add" Command="{Binding AddCommand}"/>
             </StackPanel>
 

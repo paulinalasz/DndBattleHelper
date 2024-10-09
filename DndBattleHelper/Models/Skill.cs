@@ -11,6 +11,8 @@
             Modifier = modifier;
         }
 
+        private Skill() { }
+
         public override string ToString()
         {
             var skillString = string.Empty;

@@ -1,5 +1,8 @@
-﻿namespace DndBattleHelper.Models.ActionTypes
+﻿using System.Xml.Serialization;
+
+namespace DndBattleHelper.Models.ActionTypes
 {
+    [XmlInclude(typeof(SpellAttack))]
     public class DamagingSpellWithSave : DamagingAction, ISpell
     {
         public DamagingSpellWithSave(string name,
@@ -14,6 +17,8 @@
             Concentration = concentration;
             SpellSlot = spellSlot;
         }
+
+        protected DamagingSpellWithSave() { }
 
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }

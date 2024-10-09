@@ -2,9 +2,11 @@
 
 namespace DndBattleHelper.Models
 {
-    public class EnemyFactory()
+    public class EnemyPreset : Enemy
     {
-        public Enemy Create(string name,
+        public Roll HealthRoll { get; set; }
+
+        public EnemyPreset(string name,
             int armourClass,
             int health,
             int speed,
@@ -20,25 +22,29 @@ namespace DndBattleHelper.Models
             List<LanguageType> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
-            List<EntityAction> actions)
-        {
-            return new Enemy(name,
-                armourClass,
-                health,
-                speed,
+            List<EntityAction> actions,
+            Roll healthRoll) 
+            : base(name,
+                armourClass, 
+                health, 
+                speed, 
                 strength,
-                dexterity,
+                dexterity, 
                 constitution,
-                intelligence,
+                intelligence, 
                 wisdom,
-                charisma,
-                skills,
+                charisma, 
+                skills, 
                 senses,
-                passivePerception,
+                passivePerception, 
                 languages,
                 challengeRating,
                 abilities,
-                actions);
+                actions)
+        {
+            HealthRoll = healthRoll;
         }
+
+        public EnemyPreset() { }
     }
 }

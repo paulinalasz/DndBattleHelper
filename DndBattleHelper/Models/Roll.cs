@@ -15,6 +15,8 @@
             ValueModifier = modifier;
         }
 
+        public Roll() { }
+
         public int RollValue()
         {
             var roll = 0;

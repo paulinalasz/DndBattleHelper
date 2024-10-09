@@ -5,9 +5,17 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditSkillsViewModel : EditTraitsViewModel
     { 
-        public EditSkillsViewModel() : base ("Skills", true)
+        public EditSkillsViewModel(List<Skill> skills = null) : base ("Skills", true)
         {
             ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+
+            if (skills != null) 
+            {
+                foreach(var skill in skills) 
+                {
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SkillViewModel(skill.Copy())));
+                }
+            }
         }
 
         private SkillType _selectedToAdd;

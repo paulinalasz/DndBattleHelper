@@ -17,6 +17,8 @@
             SpellSlot = spellSlot;
         }
 
+        protected SpellAttack() { }
+
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
 

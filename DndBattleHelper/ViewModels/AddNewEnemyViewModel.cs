@@ -1,222 +1,80 @@
 ﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Helpers.DialogService;
 using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
-using DndBattleHelper.Models.Enums;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Traits;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class AddNewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
+    public class AddNewEnemyViewModel : NewEnemyViewModel
     {
-        public EditSkillsViewModel EditSkillsViewModel { get; set; }
-        public EditSensesViewModel EditSensesViewModel { get; set; }
-        public SkillViewModel PassivePerception { get; set; }
-        public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
-
-        public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }
-        public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
-        public EditActionsViewModel EditActionsViewModel { get; set; }
-
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private readonly Presets _presets;
 
-        public AddNewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider)
+        public AddNewEnemyViewModel(Presets presets, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
         {
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
-
-            Name = "";
-            ArmourClass = 10;
-            Health = 0;
-            Speed = 30;
-            Strength = 10;
-            Dexterity = 10;
-            Constitution = 10;
-            Intelligence = 10;
-            Wisdom = 10;
-            Charisma = 10;
-
-            ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
-
-            HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
-            EditSkillsViewModel = new EditSkillsViewModel();
-            EditSensesViewModel = new EditSensesViewModel();
-            PassivePerception = new SkillViewModel(new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Neutral, 0)));
-            EditLanguagesViewModel = new EditLanguagesViewModel();
-            EditAbilitiesViewModel = new EditAbilitiesViewModel();
-            EditActionsViewModel = new EditActionsViewModel(targetArmourClassProvider, advantageDisadvantageProvider);
+            _presets = presets;
         }
 
-        private string _name;
-        public string Name 
-        { 
-            get { return _name; }
-            set 
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
+        public List<EnemyPreset> EnemyPresets => _presets.EnemyPresets;
 
-        private int _armourClass;
-        public int ArmourClass 
-        { 
-            get { return _armourClass; }
-            set
-            {
-                _armourClass = value;
-                OnPropertyChanged(nameof(ArmourClass));
-            }
-        }
-
-        private int _health;
-        public int Health 
-        { 
-            get { return _health; }
-            set
-            {
-                _health = value;
-                OnPropertyChanged(nameof(Health));
-            }
-        }
-
-        private int _speed;
-        public int Speed 
-        { 
-            get { return _speed; } 
-            set
-            {
-                _speed = value;
-                OnPropertyChanged(nameof(Speed));
-            }
-        }
-
-        private int _strength;
-        public int Strength 
-        { 
-            get { return _strength; } 
-            set
-            {
-                _strength = value;
-                OnPropertyChanged(nameof(Strength));
-            }
-        }
-
-        private int _dexterity;
-        public int Dexterity 
-        { 
-            get { return _dexterity; } 
-            set
-            {
-                _dexterity = value;
-                OnPropertyChanged(nameof(Dexterity));
-            }
-        }
-
-        private int _constitution;
-        public int Constitution 
+        private EnemyPreset _selectedEnemyPreset;
+        public EnemyPreset SelectedEnemyPreset
         {
-            get { return _constitution; } 
+            get { return _selectedEnemyPreset; }
             set
             {
-                _constitution = value;
-                OnPropertyChanged(nameof(Constitution));
+                _selectedEnemyPreset = value;
+                OnPropertyChanged(nameof(SelectedEnemyPreset));
             }
         }
 
-        private int _intelligence;
-        public int Intelligence 
-        { 
-            get { return _intelligence; } 
-            set
-            {
-                _intelligence = value;
-                OnPropertyChanged(nameof(Intelligence));
-            }
-        }
+        private ICommand _usePresetCommand;
+        public ICommand UsePresetCommand => _usePresetCommand ?? (_usePresetCommand = new CommandHandler(UsePreset, () => { return true; }));
 
-        private int _wisdom;
-        public int Wisdom 
-        { 
-            get { return _wisdom; }
-            set
-            {
-                _wisdom = value;
-                OnPropertyChanged(nameof(Wisdom));
-            } 
-        }
-
-        private int _charisma;
-        public int Charisma 
-        { 
-            get { return _charisma; } 
-            set
-            {
-                _charisma = value;
-                OnPropertyChanged(nameof(Charisma));
-            } 
-        }
-
-        private int _healthDiceNumber;
-        public int HealthDiceNumber
+        public void UsePreset()
         {
-            get { return _healthDiceNumber; }
-            set
-            {
-                _healthDiceNumber = value;
-                OnPropertyChanged(nameof(HealthDiceNumber));
-            }
+            Name = SelectedEnemyPreset.Name;
+            ArmourClass = SelectedEnemyPreset.ArmourClass;
+            Health = SelectedEnemyPreset.Health;
+            Speed = SelectedEnemyPreset.Speed;
+            Strength = SelectedEnemyPreset.Strength;
+            Dexterity = SelectedEnemyPreset.Dexterity;
+            Constitution = SelectedEnemyPreset.Constitution;
+            Intelligence = SelectedEnemyPreset.Intelligence;
+            Wisdom = SelectedEnemyPreset.Wisdom;
+            Charisma = SelectedEnemyPreset.Charisma;
+            EditSkillsViewModel = new EditSkillsViewModel(SelectedEnemyPreset.Skills);
+            EditSensesViewModel = new EditSensesViewModel(SelectedEnemyPreset.Senses);
+            PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
+            EditLanguagesViewModel = new EditLanguagesViewModel(SelectedEnemyPreset.Languages);
+            ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
+            EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
+            EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);
+            HealthDiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
+            HealthDiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
+            HealthModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
+
+            OnPropertyChanged(string.Empty);
         }
 
-        private int _healthDiceBase;
-        public int HealthDiceBase
-        {
-            get { return _healthDiceBase; }
-            set
-            {
-                _healthDiceBase = value;
-                OnPropertyChanged(nameof(HealthDiceBase));
-            }
-        }
-
-        public ModifierViewModel HealthModifierViewModel { get; set; }
+        public override bool IsRollHealthVisible => true;
 
         private ICommand _rollHealthCommand;
-        public ICommand RollHealthCommand => _rollHealthCommand ?? (_rollHealthCommand = new CommandHandler(() => RollHealth(), () => { return true; }));
+        public ICommand RollHealthCommand => _rollHealthCommand ?? (_rollHealthCommand = new CommandHandler(RollHealth, () => { return true; }));
 
         public void RollHealth()
         {
             Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierViewModel.ModifierType, HealthModifierViewModel.ModifierValue)).RollValue();
         }
 
-        #region dialogService
-        public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
-
-        private ICommand _addCommand;
-        public ICommand AddCommand => _addCommand ?? 
-            (_addCommand = new CommandHandler(Add, () => { return true; }));
-
-        private ICommand _cancelCommand;
-        public ICommand CancelCommand => _cancelCommand ?? 
-            (_cancelCommand = new CommandHandler(() => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(false)), () => {  return true; }));
-        #endregion 
-
-        public Action Added;
-
         public EnemyViewModel AddedEnemy { get; set; }
 
-        public void Add()
-        {
-            CreateNewEnemy();
-            Added?.Invoke();
-
-            CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
-        }
-
-        public void CreateNewEnemy()
+        public override void CreateNewEnemy()
         {
             var enemy = new EnemyFactory().Create(
                 Name, 
@@ -231,7 +89,7 @@ namespace DndBattleHelper.ViewModels
                 Charisma,
                 EditSkillsViewModel.CopyNewModels(),
                 EditSensesViewModel.CopyNewModels(),
-                PassivePerception.CopyModel(),
+                new PassivePerception(SelectedEnemyPreset.PassivePerception.Value),
                 EditLanguagesViewModel.CopyNewModels(),
                 ChallengeRatingViewModel.CopyModel(),
                 EditAbilitiesViewModel.CopyNewModels(),

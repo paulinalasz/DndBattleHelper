@@ -1,4 +1,6 @@
-﻿namespace DndBattleHelper.Models.ActionTypes
+﻿using System.Xml.Serialization;
+
+namespace DndBattleHelper.Models.ActionTypes
 {
     public class AttackAction : DamagingAction
     {
@@ -11,6 +13,8 @@
         {
             ToHit = toHit;
         }
+
+        protected AttackAction() { }
 
         public Modifier ToHit { get; set; }
 

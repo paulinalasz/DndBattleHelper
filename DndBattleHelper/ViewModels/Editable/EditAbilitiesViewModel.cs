@@ -5,9 +5,17 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditAbilitiesViewModel : EditTraitsViewModel
     {
-        public EditAbilitiesViewModel() : base("Abilities", false) 
+        public EditAbilitiesViewModel(List<Ability> abilities = null) : base("Abilities", false) 
         {
             ResetDefaults();
+
+            if(abilities != null)
+            {
+                foreach(var ability in abilities) 
+                {
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new AbilityViewModel(ability.Copy())));
+                }
+            }
         }
 
         private string _name;

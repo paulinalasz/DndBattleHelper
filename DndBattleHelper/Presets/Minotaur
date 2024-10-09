@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Minotaur</Name>
+  <ArmourClass>14</ArmourClass>
+  <Health>76</Health>
+  <Speed>40</Speed>
+  <Strength>18</Strength>
+  <Dexterity>11</Dexterity>
+  <Constitution>16</Constitution>
+  <Intelligence>6</Intelligence>
+  <Wisdom>16</Wisdom>
+  <Charisma>9</Charisma>
+  <Skills>
+    <Skill>
+      <Type>Perception</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>7</Value>
+      </Modifier>
+    </Skill>
+  </Skills>
+  <Senses>
+    <SenseType>Darkvision60ft</SenseType>
+  </Senses>
+  <PassivePerception>
+    <Type>PassivePerception</Type>
+    <Modifier>
+      <Type>Plus</Type>
+      <Value>7</Value>
+    </Modifier>
+  </PassivePerception>
+  <Languages>
+    <LanguageType>Abyssal</LanguageType>
+  </Languages>
+  <ChallengeRating>
+    <ChallengeRatingLevel>Three</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities />
+  <Actions>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Greataxe.</Name>
+      <Description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d12 + 4) slashing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>12</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>4</Value>
+          </ValueModifier>
+          <DamageType>Slashing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Gore.</Name>
+      <Description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: (2d8 + 4) piercing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>4</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>9</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>27</Value>
+    </ValueModifier>
+  </HealthRoll>
+</EnemyPreset>

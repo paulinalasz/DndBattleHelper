@@ -8,9 +8,9 @@ namespace DndBattleHelper.ViewModels
     {
         public ObservableCollection<SenseViewModel> Senses { get; set; }
 
-        public Skill PassivePerception { get; set; }
+        public PassivePerception PassivePerception { get; set; }
 
-        public SensesViewModel(List<SenseType> senses, Skill passivePerception)
+        public SensesViewModel(List<SenseType> senses, PassivePerception passivePerception)
         {
             Senses = new ObservableCollection<SenseViewModel>();
 
