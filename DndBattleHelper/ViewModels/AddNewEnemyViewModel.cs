@@ -13,7 +13,7 @@ namespace DndBattleHelper.ViewModels
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly Presets _presets;
 
-        public AddNewEnemyViewModel(Presets presets, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
+        public AddNewEnemyViewModel(Presets presets, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(true, true, targetArmourClassProvider, advantageDisadvantageProvider)
         {
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
@@ -55,21 +55,11 @@ namespace DndBattleHelper.ViewModels
             ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
             EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
             EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);
-            HealthDiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
-            HealthDiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
-            HealthModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
+            HealthRollViewModel.DiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
+            HealthRollViewModel.DiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
+            HealthRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
 
             OnPropertyChanged(string.Empty);
-        }
-
-        public override bool IsRollHealthVisible => true;
-
-        private ICommand _rollHealthCommand;
-        public ICommand RollHealthCommand => _rollHealthCommand ?? (_rollHealthCommand = new CommandHandler(RollHealth, () => { return true; }));
-
-        public void RollHealth()
-        {
-            Health = new Roll(HealthDiceNumber, HealthDiceBase, new Modifier(HealthModifierViewModel.ModifierType, HealthModifierViewModel.ModifierValue)).RollValue();
         }
 
         public EnemyViewModel AddedEnemy { get; set; }
@@ -78,6 +68,7 @@ namespace DndBattleHelper.ViewModels
         {
             var enemy = new EnemyFactory().Create(
                 Name, 
+                Initiative,
                 ArmourClass, 
                 Health,
                 Speed,

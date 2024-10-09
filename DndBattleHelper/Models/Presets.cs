@@ -16,7 +16,8 @@ namespace DndBattleHelper.Models
 
         public List<EnemyPreset> DeserialisePresets()
         {
-            return _fileIo.DeserialisePresets();
+            var presets = _fileIo.DeserialisePresets();
+            return presets.OrderByDescending(preset => preset.Initiative).ToList();
         }
     }
 }

@@ -30,5 +30,10 @@
 
             return roll;
         }
+
+        public Roll Copy()
+        {
+            return new Roll(NumberOfDice, DiceBase, ValueModifier);
+        }
     }
 }

@@ -48,6 +48,7 @@ namespace DndBattleHelper.ViewModels
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
 
             Name = enemy.Name;
+            Initiative = enemy.Initiative;
             ArmourClass = enemy.ArmourClass;
             Health = enemy.Health;
             Speed = enemy.Speed;

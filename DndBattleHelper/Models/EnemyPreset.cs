@@ -6,7 +6,10 @@ namespace DndBattleHelper.Models
     {
         public Roll HealthRoll { get; set; }
 
+        public Roll InitiativeRoll { get; set; }
+
         public EnemyPreset(string name,
+            int initiative,
             int armourClass,
             int health,
             int speed,
@@ -23,8 +26,10 @@ namespace DndBattleHelper.Models
             ChallengeRating challengeRating,
             List<Ability> abilities,
             List<EntityAction> actions,
-            Roll healthRoll) 
+            Roll healthRoll,
+            Roll initiativeRoll) 
             : base(name,
+                initiative,
                 armourClass, 
                 health, 
                 speed, 
@@ -43,6 +48,7 @@ namespace DndBattleHelper.Models
                 actions)
         {
             HealthRoll = healthRoll;
+            InitiativeRoll = initiativeRoll;
         }
 
         public EnemyPreset() { }

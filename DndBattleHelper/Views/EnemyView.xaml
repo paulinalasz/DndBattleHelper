@@ -21,6 +21,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -28,17 +29,19 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
-                <StackPanel Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
+                <StackPanel Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
                     <TextBox Text="{Binding Health}"/>
                     <TextBlock Margin="10, 0, 0, 0" Text="-"/>
                     <TextBox Margin="10, 0, 0, 0" Text="{Binding DamageToTake}"/>
                     <Button Content="Take Damage" Command="{Binding TakeDamageCommand}"/>
                 </StackPanel>
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
             </Grid>
             <Grid Margin="5">
                 <Grid.RowDefinitions>

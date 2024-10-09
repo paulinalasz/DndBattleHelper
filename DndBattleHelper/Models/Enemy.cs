@@ -4,6 +4,7 @@ namespace DndBattleHelper.Models
 {
     public class Enemy
     {
+        public int Initiative { get; set; }
         public string Name { get; set; }
         public int ArmourClass { get; set; }
         public int Health { get; set; }
@@ -23,6 +24,7 @@ namespace DndBattleHelper.Models
         public List<EntityAction> Actions { get; set; }
 
         public Enemy(string name, 
+            int initiative,
             int armourClass,
             int health,
             int speed,
@@ -41,6 +43,7 @@ namespace DndBattleHelper.Models
             List<EntityAction> actions) 
         {
             Name = name;
+            Initiative = initiative;
             ArmourClass = armourClass;
             Health = health;
             Speed = speed;

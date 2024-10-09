@@ -5,6 +5,7 @@ namespace DndBattleHelper.Models
     public class EnemyFactory()
     {
         public Enemy Create(string name,
+            int initiative,
             int armourClass,
             int health,
             int speed,
@@ -23,6 +24,7 @@ namespace DndBattleHelper.Models
             List<EntityAction> actions)
         {
             return new Enemy(name,
+                initiative,
                 armourClass,
                 health,
                 speed,

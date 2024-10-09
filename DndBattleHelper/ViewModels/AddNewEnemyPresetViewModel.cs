@@ -9,16 +9,15 @@ namespace DndBattleHelper.ViewModels
     {
         public EnemyPreset AddedEnemyPreset { get; set; }
 
-        public AddNewEnemyPresetViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(targetArmourClassProvider, advantageDisadvantageProvider)
+        public AddNewEnemyPresetViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(false, false, targetArmourClassProvider, advantageDisadvantageProvider)
         {
         }
-
-        public override bool IsRollHealthVisible => false;
 
         public override void CreateNewEnemy()
         {
             AddedEnemyPreset = new EnemyPreset(
                             Name,
+                            Initiative,
                             ArmourClass,
                             Health,
                             Speed,
@@ -35,7 +34,8 @@ namespace DndBattleHelper.ViewModels
                             ChallengeRatingViewModel.CopyModel(),
                             EditAbilitiesViewModel.CopyNewModels(),
                             EditActionsViewModel.CopyNewModels(),
-                            new Roll(HealthDiceNumber, HealthDiceBase, HealthModifierViewModel.CopyModel()));
+                            HealthRollViewModel.CopyModel(),
+                            InitiativeRollViewModel.CopyModel());
         }
     }
 }

@@ -20,11 +20,20 @@ namespace DndBattleHelper.ViewModels
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
         public EditActionsViewModel EditActionsViewModel { get; set; }
 
-        public NewEnemyViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider)
+        public NewEnemyViewModel(bool isHealthRollVisible, 
+            bool isInitiativeRollVisible, 
+            TargetArmourClassProvider targetArmourClassProvider,
+            AdvantageDisadvantageProvider advantageDisadvantageProvider)
         {
             Name = "";
+            Initiative = 10;
+            InitiativeRollViewModel = new RollViewModel(new Roll(1, 20, new Modifier(ModifierType.Neutral, 0)), "Roll Initiative: ", isInitiativeRollVisible, false);
             ArmourClass = 10;
             Health = 0;
+            HealthRollViewModel = new RollViewModel(new Roll(1, 10, new Modifier(ModifierType.Neutral, 0)), "Roll Health: ", isHealthRollVisible);
+
+            HealthRollViewModel.Rolled += () => { Health = HealthRollViewModel.ValueRolled; };
+
             Speed = 30;
             Strength = 10;
             Dexterity = 10;
@@ -35,7 +44,6 @@ namespace DndBattleHelper.ViewModels
 
             ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
 
-            HealthModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditSkillsViewModel = new EditSkillsViewModel();
             EditSensesViewModel = new EditSensesViewModel();
             PassivePerception = new PassivePerceptionViewModel(new PassivePerception(10));
@@ -54,6 +62,19 @@ namespace DndBattleHelper.ViewModels
                 OnPropertyChanged(nameof(Name));
             }
         }
+
+        private int _initiative;
+        public int Initiative
+        {
+            get => _initiative;
+            set
+            {
+                _initiative = value;
+                OnPropertyChanged(nameof(Initiative));
+            }
+        }
+
+        public RollViewModel InitiativeRollViewModel { get; set; }
 
         private int _armourClass;
         public int ArmourClass
@@ -143,8 +164,6 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        public abstract bool IsRollHealthVisible { get; }
-
         private int _health;
         public int Health
         {
@@ -156,31 +175,7 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        private int _healthDiceNumber;
-        public int HealthDiceNumber
-        {
-            get { return _healthDiceNumber; }
-            set
-            {
-                _healthDiceNumber = value;
-                OnPropertyChanged(nameof(HealthDiceNumber));
-            }
-        }
-
-        private int _healthDiceBase;
-        public int HealthDiceBase
-        {
-            get { return _healthDiceBase; }
-            set
-            {
-                _healthDiceBase = value;
-                OnPropertyChanged(nameof(HealthDiceBase));
-            }
-        }
-
-        public ModifierViewModel HealthModifierViewModel { get; set; }
-
-        public Action Added;
+        public RollViewModel HealthRollViewModel { get; set; }
 
         #region dialogService
         public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
@@ -193,6 +188,8 @@ namespace DndBattleHelper.ViewModels
         public ICommand CancelCommand => _cancelCommand ??
             (_cancelCommand = new CommandHandler(() => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(false)), () => { return true; }));
         #endregion 
+
+        public Action Added;
 
         public virtual void Add()
         {
