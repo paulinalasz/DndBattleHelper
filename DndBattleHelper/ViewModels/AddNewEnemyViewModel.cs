@@ -50,7 +50,7 @@ namespace DndBattleHelper.ViewModels
             Charisma = SelectedEnemyPreset.Charisma;
             EditSkillsViewModel = new EditSkillsViewModel(SelectedEnemyPreset.Skills);
             EditSensesViewModel = new EditSensesViewModel(SelectedEnemyPreset.Senses);
-            PassivePerception = new SkillViewModel(SelectedEnemyPreset.PassivePerception);
+            PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
             EditLanguagesViewModel = new EditLanguagesViewModel(SelectedEnemyPreset.Languages);
             ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
             EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
@@ -89,7 +89,7 @@ namespace DndBattleHelper.ViewModels
                 Charisma,
                 EditSkillsViewModel.CopyNewModels(),
                 EditSensesViewModel.CopyNewModels(),
-                PassivePerception.CopyModel(),
+                new PassivePerception(SelectedEnemyPreset.PassivePerception.Value),
                 EditLanguagesViewModel.CopyNewModels(),
                 ChallengeRatingViewModel.CopyModel(),
                 EditAbilitiesViewModel.CopyNewModels(),

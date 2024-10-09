@@ -16,7 +16,7 @@ namespace DndBattleHelper.Models
         public int Charisma { get; set; }
         public List<Skill> Skills { get; set; }
         public List<SenseType> Senses { get; set; }
-        public Skill PassivePerception { get; set; }
+        public PassivePerception PassivePerception { get; set; }
         public List<LanguageType> Languages { get; set; }
         public ChallengeRating ChallengeRating { get; set; }
         public List<Ability> Abilities { get; set; }
@@ -34,7 +34,7 @@ namespace DndBattleHelper.Models
             int charisma,
             List<Skill> skills,
             List<SenseType> senses,
-            Skill passivePerception,
+            PassivePerception passivePerception,
             List<LanguageType> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,

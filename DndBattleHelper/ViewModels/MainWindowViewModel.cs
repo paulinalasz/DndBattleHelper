@@ -41,7 +41,7 @@ namespace DndBattleHelper.ViewModels
 
             senses.Add(SenseType.Darkvision60ft);
 
-            var passivePerception = new Skill(SkillType.PassivePerception, new Modifier(ModifierType.Plus, 7));
+            var passivePerception = new PassivePerception(17);
 
             languages.Add(LanguageType.Common);
             languages.Add(LanguageType.Abyssal);

@@ -1,5 +1,6 @@
 ﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
+using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
@@ -29,7 +30,7 @@ namespace DndBattleHelper.ViewModels
                             Charisma,
                             EditSkillsViewModel.CopyNewModels(),
                             EditSensesViewModel.CopyNewModels(),
-                            PassivePerception.CopyModel(),
+                            new PassivePerception(PassivePerception.Value),
                             EditLanguagesViewModel.CopyNewModels(),
                             ChallengeRatingViewModel.CopyModel(),
                             EditAbilitiesViewModel.CopyNewModels(),
