@@ -5,6 +5,7 @@ using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
 using DndBattleHelper.ViewModels.Providers;
 using Microsoft.Win32;
+using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -15,6 +16,9 @@ namespace DndBattleHelper.ViewModels
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly FileIO _fileIo;
         private readonly Presets _presets;
+        private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
+        private readonly EnemyFactory _enemyFactory;
+        private readonly EnemyViewModelFactory _enemyViewModelFactory;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
@@ -24,6 +28,10 @@ namespace DndBattleHelper.ViewModels
             _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
             _fileIo = new FileIO();
             _presets = new Presets(_fileIo);
+
+            _entityActionViewModelFactory = new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
+            _enemyFactory = new EnemyFactory();
+            _enemyViewModelFactory = new EnemyViewModelFactory(_entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
 
             _dialogService = dialogService;
 
@@ -51,6 +59,30 @@ namespace DndBattleHelper.ViewModels
             _fileIo.OutputSaveFile(entitiesInInitiative, saveFileDialog.FileName);
         }
 
+        private ICommand _openCommand;
+        public ICommand OpenCommand => _openCommand ?? (_openCommand = new CommandHandler(Open, () => { return true; }));
+
+        public void Open()
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+
+            var entities = _fileIo.OpenSavedFiles(openFileDialog.FileName);
+
+            EntitiesInInitiative.Clear();
+
+            foreach(var entity in entities)
+            {
+                if (entity is Enemy)
+                {
+                    EntitiesInInitiative.Add(_enemyViewModelFactory.Create((Enemy)entity));
+                }
+                else
+                {
+                    EntitiesInInitiative.Add(new PlayerViewModel((Player)entity));
+                }
+            }
+        }
 
         private int _selectedTab;
         public int SelectedTab
@@ -118,7 +150,7 @@ namespace DndBattleHelper.ViewModels
 
         public void AddEnemyNew()
         {
-            var addNewEnemyViewModel = new AddNewEnemyViewModel(_presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _enemyViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
 
             addNewEnemyViewModel.Added += () =>
             {

@@ -11,12 +11,21 @@ namespace DndBattleHelper.ViewModels
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private readonly EnemyFactory _enemyFactory;
+        private readonly EnemyViewModelFactory _enemyViewModelFactory;
         private readonly Presets _presets;
 
-        public AddNewEnemyViewModel(Presets presets, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(true, true, targetArmourClassProvider, advantageDisadvantageProvider)
+        public AddNewEnemyViewModel(EnemyFactory enemyFactory,
+            EnemyViewModelFactory enemyViewModelFactory,
+            Presets presets, 
+            TargetArmourClassProvider targetArmourClassProvider, 
+            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
+            : base(true, true, targetArmourClassProvider, advantageDisadvantageProvider)
         {
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
+            _enemyFactory = enemyFactory;
+            _enemyViewModelFactory = enemyViewModelFactory;
             _presets = presets;
         }
 
@@ -66,7 +75,7 @@ namespace DndBattleHelper.ViewModels
 
         public override void CreateNewEnemy()
         {
-            var enemy = new EnemyFactory().Create(
+            var enemy = _enemyFactory.Create(
                 Name, 
                 Initiative,
                 ArmourClass, 
@@ -87,9 +96,7 @@ namespace DndBattleHelper.ViewModels
                 EditActionsViewModel.CopyNewModels());
 
 
-            AddedEnemy = new EnemyViewModelFactory(
-                new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider),
-               _targetArmourClassProvider, _advantageDisadvantageProvider).Create(
+            AddedEnemy = _enemyViewModelFactory.Create(
                 enemy);
         }
     }

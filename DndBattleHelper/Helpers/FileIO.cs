@@ -49,5 +49,11 @@ namespace DndBattleHelper.Helpers
         {
             File.WriteAllText(path, MySerialiser<List<Entity>>.Serialize(entitiesInInitiative));
         }
+
+        public List<Entity> OpenSavedFiles(string path)
+        {
+            var xmlString = File.ReadAllText(path);
+            return MySerialiser<List<Entity>>.Deserialize(xmlString);
+        }
     }
 }
