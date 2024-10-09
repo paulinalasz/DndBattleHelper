@@ -18,6 +18,8 @@
     <Grid Name="grid1" Focusable="True" >
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
+                <Button Content="Save" Command="{Binding SaveCommand}"/>
+                <Button Content="Open" Command="{Binding OpenCommand}"/>
                 <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>
                 <Button Content="Next Turn" Command="{Binding NextTurnCommand}"/>
                 <TextBlock Text="{Binding DisplayTurnNumber}"/>

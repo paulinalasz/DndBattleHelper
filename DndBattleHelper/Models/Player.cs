@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DndBattleHelper.Models
 {
-    public class Player
+    public class Player : Entity
     {
-        public string Name { get; set; }
-        public int Health { get; set; }
+        public Player(string name, int initiative, int health) : base(initiative, name, health) { }
 
-        public Player(string name, int health)
+        public Player() { }
+
+        public Player Copy()
         {
-            Name = name;
-            Health = health;
+            return new Player(Name, Initiative, Health);
         }
     }
 }
