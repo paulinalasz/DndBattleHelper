@@ -28,6 +28,9 @@ namespace DndBattleHelper.ViewModels
             Name = "";
             Initiative = 10;
             InitiativeRollViewModel = new RollViewModel(new Roll(1, 20, new Modifier(ModifierType.Neutral, 0)), "Roll Initiative: ", isInitiativeRollVisible, false);
+
+            InitiativeRollViewModel.Rolled += () => { Initiative = InitiativeRollViewModel.ValueRolled; };
+
             ArmourClass = 10;
             Health = 0;
             HealthRollViewModel = new RollViewModel(new Roll(1, 10, new Modifier(ModifierType.Neutral, 0)), "Roll Health: ", isHealthRollVisible);

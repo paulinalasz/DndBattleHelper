@@ -10,9 +10,17 @@ namespace DndBattleHelper.ViewModels
 {
     public class PlayerViewModel : EntityViewModel
     {
+        private readonly Player _player;
+
         public PlayerViewModel(Player player)
         {
             Name = player.Name;
+            _player = player;
+        }
+
+        public override Entity CopyModel()
+        {
+            return _player.Copy();
         }
     }
 }

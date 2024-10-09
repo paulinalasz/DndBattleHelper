@@ -4,6 +4,7 @@ using DndBattleHelper.Models;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
 using DndBattleHelper.ViewModels.Providers;
+using Microsoft.Win32;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -31,6 +32,25 @@ namespace DndBattleHelper.ViewModels
             TurnNumber = 0;
             SelectedTab = TurnNumber;
         }
+
+        private ICommand _saveCommand;
+        public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new CommandHandler(Save, () => { return true; }));
+
+        public void Save()
+        {
+            var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.ShowDialog();
+
+            var entitiesInInitiative = new List<Entity>();
+
+            foreach(var entityViewModel in EntitiesInInitiative)
+            {
+                entitiesInInitiative.Add(entityViewModel.CopyModel());
+            }
+
+            _fileIo.OutputSaveFile(entitiesInInitiative, saveFileDialog.FileName);
+        }
+
 
         private int _selectedTab;
         public int SelectedTab

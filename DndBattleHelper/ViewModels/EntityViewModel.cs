@@ -1,6 +1,7 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 using System.ComponentModel;
+using System.Windows.Controls;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -8,5 +9,8 @@ namespace DndBattleHelper.ViewModels
     {
         public int Initiative { get; set; }
         public string Name { get; set; }
+        public int Health { get; set; }
+
+        public abstract Entity CopyModel();
     }
 }

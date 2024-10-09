@@ -14,5 +14,7 @@
             Modifier = modifier;
             ToHitWithModifier = toHit;
         }
+
+        public ToHitRoll() { }
     }
 }

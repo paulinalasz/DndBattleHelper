@@ -11,6 +11,8 @@
             DamageType = damageType;
         }
 
+        public Damage() { }
+
         public override string ToString()
         {
             return $"{DamageGiven} {DamageType} damage!";

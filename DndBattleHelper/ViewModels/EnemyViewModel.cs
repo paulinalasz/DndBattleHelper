@@ -11,11 +11,11 @@ namespace DndBattleHelper.ViewModels
 {
     public class EnemyViewModel : EntityViewModel
     {
-        private TargetArmourClassProvider _targetArmourClassProvider { get; }
-        private AdvantageDisadvantageProvider _advantageDisadvantageProvider { get; }
+        private TargetArmourClassProvider _targetArmourClassProvider;
+        private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private readonly Enemy _enemy;
 
         public int ArmourClass { get; set; }
-        public int Health { get; set; }
         public int Speed { get; set; }
         public int Strength { get; set; }   
         public int Dexterity { get; set; }
@@ -46,6 +46,7 @@ namespace DndBattleHelper.ViewModels
         {
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
+            _enemy = enemy;
 
             Name = enemy.Name;
             Initiative = enemy.Initiative;
@@ -144,6 +145,11 @@ namespace DndBattleHelper.ViewModels
         public void Clear()
         {
             OutputBox.Clear();
+        }
+
+        public override Enemy CopyModel()
+        {
+            return _enemy.Copy();
         }
     }
 }

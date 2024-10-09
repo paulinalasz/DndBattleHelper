@@ -2,12 +2,9 @@
 
 namespace DndBattleHelper.Models
 {
-    public class Enemy
+    public class Enemy : Entity
     {
-        public int Initiative { get; set; }
-        public string Name { get; set; }
         public int ArmourClass { get; set; }
-        public int Health { get; set; }
         public int Speed { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
@@ -40,12 +37,9 @@ namespace DndBattleHelper.Models
             List<LanguageType> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
-            List<EntityAction> actions) 
+            List<EntityAction> actions) : base(initiative, name, health)
         {
-            Name = name;
-            Initiative = initiative;
             ArmourClass = armourClass;
-            Health = health;
             Speed = speed;
             Strength = strength;
             Dexterity = dexterity;
@@ -63,5 +57,27 @@ namespace DndBattleHelper.Models
         }
 
         protected Enemy() { }
+
+        public Enemy Copy()
+        {
+            return new Enemy(Name,
+                Initiative,
+                ArmourClass,
+                Health,
+                Speed,
+                Strength,
+                Dexterity,
+                Constitution,
+                Intelligence,
+                Wisdom,
+                Charisma,
+                Skills,
+                Senses,
+                PassivePerception,
+                Languages,
+                ChallengeRating,
+                Abilities,
+                Actions);
+        }
     }
 }
