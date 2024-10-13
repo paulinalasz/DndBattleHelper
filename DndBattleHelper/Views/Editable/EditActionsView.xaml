@@ -32,7 +32,7 @@
                             <CheckBox Content="Is Spell?" IsChecked="{Binding IsSpell}"/>
                         </StackPanel>
                     </StackPanel>
-                    <TextBox Text="{Binding Description}"/>
+                    <TextBox Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="300"/>
                     <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedSpellSlot, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"

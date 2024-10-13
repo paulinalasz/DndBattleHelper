@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Dretch</Name>
+  <Health>18</Health>
+  <ArmourClass>11</ArmourClass>
+  <Speed>20</Speed>
+  <Strength>11</Strength>
+  <Dexterity>11</Dexterity>
+  <Constitution>12</Constitution>
+  <Intelligence>5</Intelligence>
+  <Wisdom>8</Wisdom>
+  <Charisma>3</Charisma>
+  <Skills />
+  <Senses>
+    <SenseType>Darkvision60ft</SenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>9</Value>
+  </PassivePerception>
+  <Languages>
+    <LanguageType>Abyssal</LanguageType>
+  </Languages>
+  <ChallengeRating>
+    <ChallengeRatingLevel>Quater</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities />
+  <Actions>
+    <EntityAction>
+      <Name>Multiattack.</Name>
+      <Description>The dretch makes two attacks: one with its bite and one with its claws.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Bite.</Name>
+      <Description>Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: (1d6) piercing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>2</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Claws</Name>
+      <Description> Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: (2d4) slashing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>4</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Slashing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>2</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction>
+      <Name>Fetid Cloud (1/Day)</Name>
+      <Description>A 10-foot radius of disgusting green gas extends out from the dretch. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a DC 11 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target can take either an action or a bonus action on its turn, not both, and can't take reactions.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>4</NumberOfDice>
+    <DiceBase>6</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>4</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Neutral</Type>
+      <Value>0</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

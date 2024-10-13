@@ -76,6 +76,13 @@ namespace DndBattleHelper.ViewModels
                 if (entity is Enemy)
                 {
                     EntitiesInInitiative.Add(_enemyViewModelFactory.Create((Enemy)entity));
+                    var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
+                    EntitiesInInitiative.Clear();
+
+                    foreach (var entityViewModel in entitiesSorted)
+                    {
+                        EntitiesInInitiative.Add(entityViewModel);
+                    }
                 }
                 else
                 {
@@ -155,6 +162,13 @@ namespace DndBattleHelper.ViewModels
             addNewEnemyViewModel.Added += () =>
             {
                 EntitiesInInitiative.Add(addNewEnemyViewModel.AddedEnemy);
+                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
+                EntitiesInInitiative.Clear();
+
+                foreach (var entityViewModel in entitiesSorted)
+                {
+                    EntitiesInInitiative.Add(entityViewModel);
+                }
             };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
