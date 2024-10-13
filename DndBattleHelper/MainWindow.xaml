@@ -23,6 +23,7 @@
                 <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>
                 <Button Content="Next Turn" Command="{Binding NextTurnCommand}"/>
                 <TextBlock Text="{Binding DisplayTurnNumber}"/>
+                <Button Content="Add New Player" Command="{Binding AddNewPlayerCommand}"/>
                 <Button Content="Add New Enemy" Command="{Binding AddNewEnemyCommand}"/>
                 <Button Content="Add New Enemy Preset" Command="{Binding AddNewEnemyPresetCommand}"/>
             </StackPanel>

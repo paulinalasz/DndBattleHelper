@@ -12,5 +12,6 @@ namespace DndBattleHelper.ViewModels
         public int Health { get; set; }
 
         public abstract Entity CopyModel();
+        public abstract EntityViewModel Copy();
     }
 }

@@ -15,12 +15,19 @@ namespace DndBattleHelper.ViewModels
         public PlayerViewModel(Player player)
         {
             Name = player.Name;
+            Initiative = player.Initiative;
+            Health = player.Health;
             _player = player;
         }
 
         public override Entity CopyModel()
         {
             return _player.Copy();
+        }
+
+        public override EntityViewModel Copy()
+        {
+            return new PlayerViewModel(_player.Copy());
         }
     }
 }

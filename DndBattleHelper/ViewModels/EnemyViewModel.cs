@@ -151,5 +151,10 @@ namespace DndBattleHelper.ViewModels
         {
             return _enemy.Copy();
         }
+
+        public override EntityViewModel Copy()
+        {
+            return new EnemyViewModel(_enemy.Copy(), Actions, _targetArmourClassProvider, _advantageDisadvantageProvider);
+        }
     }
 }
