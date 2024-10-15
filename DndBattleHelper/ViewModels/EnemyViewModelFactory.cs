@@ -21,14 +21,7 @@ namespace DndBattleHelper.ViewModels
 
         public EnemyViewModel Create(Enemy enemy)
         {
-            var actions = new ObservableCollection<EntityActionViewModel>();
-
-            foreach(var action in enemy.Actions)
-            {
-                actions.Add(_entityActionViewModelFactory.Create(action));
-            }
-
-            return new EnemyViewModel(enemy, actions, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            return new EnemyViewModel(enemy, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
     }
 }

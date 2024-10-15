@@ -5,11 +5,13 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
+using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels
 {
     public class EnemyViewModel : EntityViewModel
     {
+        private EntityActionViewModelFactory _entityActionViewModelFactory;
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly Enemy _enemy;
@@ -46,8 +48,9 @@ namespace DndBattleHelper.ViewModels
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyViewModel(Enemy enemy, ObservableCollection<EntityActionViewModel> actions, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) 
+        public EnemyViewModel(Enemy enemy, EntityActionViewModelFactory entityActionViewModelFactory, TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) 
         {
+            _entityActionViewModelFactory = entityActionViewModelFactory;
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
             _enemy = enemy;
@@ -80,7 +83,12 @@ namespace DndBattleHelper.ViewModels
                 Abilities.Add(new AbilityViewModel(ability));
             }
 
-            Actions = actions;
+            Actions = new ObservableCollection<EntityActionViewModel>();
+
+            foreach (var action in enemy.Actions)
+            {
+                Actions.Add(_entityActionViewModelFactory.Create(action));
+            }
 
             OutputBox = new OutputBoxViewModel();
 
@@ -163,7 +171,7 @@ namespace DndBattleHelper.ViewModels
 
         public override EntityViewModel Copy()
         {
-            return new EnemyViewModel(_enemy.Copy(), Actions, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            return new EnemyViewModel(_enemy.Copy(), _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
     }
 }
