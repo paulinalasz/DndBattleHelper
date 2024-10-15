@@ -30,33 +30,33 @@
         }
     }
 
-    public class Skill 
-    {
-        public SkillType Type { get; set; }
-        public Modifier Modifier { get; set; }
+    //public class Skill 
+    //{
+    //    public SkillType Type { get; set; }
+    //    public Modifier Modifier { get; set; }
 
-        public Skill(SkillType type, Modifier modifier)
-        {
-            Type = type;
-            Modifier = modifier;
-        }
+    //    public Skill(SkillType type, Modifier modifier)
+    //    {
+    //        Type = type;
+    //        Modifier = modifier;
+    //    }
 
-        private Skill() { }
+    //    private Skill() { }
 
-        public override string ToString()
-        {
-            var skillString = string.Empty;
+    //    public override string ToString()
+    //    {
+    //        var skillString = string.Empty;
 
-            skillString += Type.ToString();
-            skillString += " ";
-            skillString += Modifier.ToString();
+    //        skillString += Type.ToString();
+    //        skillString += " ";
+    //        skillString += Modifier.ToString();
 
-            return skillString;
-        }
+    //        return skillString;
+    //    }
 
-        public Skill Copy()
-        {
-            return new Skill(Type, Modifier.Copy());
-        }
-    }
+    //    public Skill Copy()
+    //    {
+    //        return new Skill(Type, Modifier.Copy());
+    //    }
+    //}
 }

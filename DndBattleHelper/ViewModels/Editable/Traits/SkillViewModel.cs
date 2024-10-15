@@ -72,35 +72,35 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
     //    }
     //}
 
-    public class SkillViewModel : NotifyPropertyChanged, IEditable
-    {
-        private Skill _skill;
-        public SkillType Type
-        {
-            get => _skill.Type;
-            set
-            {
-                _skill.Type = value;
-                OnPropertyChanged(nameof(Type));
-            }
-        }
+    //public class SkillViewModel : NotifyPropertyChanged, IEditable
+    //{
+    //    private Skill _skill;
+    //    public SkillType Type
+    //    {
+    //        get => _skill.Type;
+    //        set
+    //        {
+    //            _skill.Type = value;
+    //            OnPropertyChanged(nameof(Type));
+    //        }
+    //    }
 
-        public ModifierViewModel ModifierViewModel { get; }
+    //    public ModifierViewModel ModifierViewModel { get; }
 
-        public SkillViewModel(Skill skill)
-        {
-            _skill = skill;
-            ModifierViewModel = new ModifierViewModel(_skill.Modifier);
-        }
+    //    public SkillViewModel(Skill skill)
+    //    {
+    //        _skill = skill;
+    //        ModifierViewModel = new ModifierViewModel(_skill.Modifier);
+    //    }
 
-        public override string ToString()
-        {
-            return _skill.ToString();
-        }
+    //    public override string ToString()
+    //    {
+    //        return _skill.ToString();
+    //    }
 
-        public Skill CopyModel()
-        {
-            return _skill.Copy();
-        }
-    }
+    //    public Skill CopyModel()
+    //    {
+    //        return _skill.Copy();
+    //    }
+    //}
 }

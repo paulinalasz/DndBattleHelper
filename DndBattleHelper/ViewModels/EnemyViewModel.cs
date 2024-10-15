@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
@@ -23,7 +22,7 @@ namespace DndBattleHelper.ViewModels
         public int Intelligence { get; set; }
         public int Wisdom {  get; set; }
         public int Charisma { get; set; }
-        public SkillsViewModel Skills { get; set; }
+        public TraitsWithModifierViewModel<SkillType> Skills { get; set; }
         public SensesViewModel Senses { get; set; }
         public LanguagesViewModel Languages { get; set; }
         public ChallengeRatingViewModel ChallengeRating { get; set; }
@@ -59,7 +58,7 @@ namespace DndBattleHelper.ViewModels
             Intelligence = enemy.Intelligence;
             Wisdom = enemy.Wisdom;
             Charisma = enemy.Charisma;
-            Skills = new SkillsViewModel(enemy.Skills);
+            Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills);
             Senses = new SensesViewModel(enemy.Senses, enemy.PassivePerception);
             Languages = new LanguagesViewModel(enemy.Languages);
             ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);

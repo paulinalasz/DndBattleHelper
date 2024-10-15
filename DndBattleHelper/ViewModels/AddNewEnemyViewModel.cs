@@ -90,7 +90,7 @@ namespace DndBattleHelper.ViewModels
                 Charisma,
                 EditSkillsViewModel.CopyNewModels(),
                 EditSensesViewModel.CopyNewModels(),
-                new PassivePerception(SelectedEnemyPreset.PassivePerception.Value),
+                new PassivePerception(PassivePerception.Value),
                 EditLanguagesViewModel.CopyNewModels(),
                 ChallengeRatingViewModel.CopyModel(),
                 EditAbilitiesViewModel.CopyNewModels(),

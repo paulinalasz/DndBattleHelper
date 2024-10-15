@@ -34,11 +34,11 @@
                 <parent:TraitView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type traits:SkillViewModel}">
+        <!--<DataTemplate DataType="{x:Type traits:TraitWithModifierViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
-        </DataTemplate>
+        </DataTemplate>-->
         <DataTemplate DataType="{x:Type traits:LanguageViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>

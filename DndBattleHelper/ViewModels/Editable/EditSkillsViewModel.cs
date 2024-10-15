@@ -5,7 +5,7 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditSkillsViewModel : EditTraitsViewModel
     { 
-        public EditSkillsViewModel(List<Skill> skills = null) : base ("Skills", true)
+        public EditSkillsViewModel(List<TraitWithModifier<SkillType>> skills = null) : base ("Skills", true)
         {
             ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
 
@@ -13,7 +13,7 @@ namespace DndBattleHelper.ViewModels.Editable
             {
                 foreach(var skill in skills) 
                 {
-                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SkillViewModel(skill.Copy())));
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitWithModifierViewModel<SkillType>(skill.Copy())));
                 }
             }
         }
@@ -33,8 +33,8 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            var skillToAdd = new Skill(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SkillViewModel(skillToAdd)));
+            var skillToAdd = new TraitWithModifier<SkillType>(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitWithModifierViewModel<SkillType>(skillToAdd)));
             base.Add();
         }
 
@@ -48,13 +48,13 @@ namespace DndBattleHelper.ViewModels.Editable
             SelectedToAdd = 0;
         }
 
-        public List<Skill> CopyNewModels()
+        public List<TraitWithModifier<SkillType>> CopyNewModels()
         {
-            var skills = new List<Skill>();
+            var skills = new List<TraitWithModifier<SkillType>>();
 
             foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
             {
-                var skillViewModel = (SkillViewModel)editableTraitViewModel.Content;
+                var skillViewModel = (TraitWithModifierViewModel<SkillType>)editableTraitViewModel.Content;
                 skills.Add(skillViewModel.CopyModel());
             }
 
