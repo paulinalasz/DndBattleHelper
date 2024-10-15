@@ -76,22 +76,43 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Skills"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Saving Throws"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding SavingThrows}"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Vurnerabilities"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageVulnerabilities}"/>
 
-                <local:ChallengeRatingView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Resistances"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageResistances}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Immunities"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageImmunities}"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Condition Immunities"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ConditionImmunities}"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Skills"/>
+                <TextBlock Grid.Row="5" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
+                <TextBlock Grid.Row="6" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
+                <TextBlock Grid.Row="7" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
+
+                <local:ChallengeRatingView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
             </Grid>
 
             <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">

@@ -22,6 +22,11 @@ namespace DndBattleHelper.ViewModels
         public int Intelligence { get; set; }
         public int Wisdom {  get; set; }
         public int Charisma { get; set; }
+        public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get; set; }
+        public TraitsViewModel<DamageType> DamageVulnerabilities { get; set; }
+        public TraitsViewModel<DamageType> DamageResistances { get; set; }
+        public TraitsViewModel<DamageType> DamageImmunities { get; set; }   
+        public TraitsViewModel<Condition> ConditionImmunities { get; set; }
         public TraitsWithModifierViewModel<SkillType> Skills { get; set; }
         public TraitsViewModel<SenseType> Senses { get; set; }
         public TraitsViewModel<LanguageType> Languages { get; set; }
@@ -58,6 +63,11 @@ namespace DndBattleHelper.ViewModels
             Intelligence = enemy.Intelligence;
             Wisdom = enemy.Wisdom;
             Charisma = enemy.Charisma;
+            SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows);
+            DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities);
+            DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances);
+            DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities);
+            ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities);
             Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills);
             Senses = new TraitsViewModel<SenseType>(enemy.Senses, enemy.PassivePerception);
             Languages = new TraitsViewModel<LanguageType>(enemy.Languages);

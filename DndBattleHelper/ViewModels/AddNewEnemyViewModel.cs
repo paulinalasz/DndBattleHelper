@@ -57,6 +57,11 @@ namespace DndBattleHelper.ViewModels
             Intelligence = SelectedEnemyPreset.Intelligence;
             Wisdom = SelectedEnemyPreset.Wisdom;
             Charisma = SelectedEnemyPreset.Charisma;
+            EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ", SelectedEnemyPreset.SavingThrows);
+            EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ", SelectedEnemyPreset.DamageVurnerabilities);
+            EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ", SelectedEnemyPreset.DamageResistances);
+            EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ", SelectedEnemyPreset.DamageResistances);
+            EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ", SelectedEnemyPreset.ConditionImmunities);
             EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ", SelectedEnemyPreset.Skills);
             EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
             PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
@@ -77,22 +82,22 @@ namespace DndBattleHelper.ViewModels
         public override void CreateNewEnemy()
         {
             var enemy = _enemyFactory.Create(
-                Name, 
+                Name,
                 Initiative,
-                ArmourClass, 
+                ArmourClass,
                 Health,
                 Speed,
                 Strength,
-                Dexterity, 
-                Constitution, 
-                Intelligence, 
+                Dexterity,
+                Constitution,
+                Intelligence,
                 Wisdom,
                 Charisma,
-                new List<TraitWithModifier<AbilityScoreType>>(),
-                new List<Trait<DamageType>>(),
-                new List<Trait<DamageType>>(),
-                new List<Trait<DamageType>>(),
-                new List<Trait<Condition>>(),
+                EditSavingThrowsViewModel.CopyNewModels(),
+                EditDamageVulnerabilitiesViewModel.CopyNewModels(),
+                EditDamageResistancesViewModel.CopyNewModels(),
+                EditDamageImmunitiesViewModel.CopyNewModels(),
+                EditConditionImmunitiesViewModel.CopyNewModels(),
                 EditSkillsViewModel.CopyNewModels(),
                 EditSensesViewModel.CopyNewModels(),
                 new PassivePerception(PassivePerception.Value),

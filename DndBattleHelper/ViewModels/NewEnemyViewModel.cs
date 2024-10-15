@@ -11,6 +11,11 @@ namespace DndBattleHelper.ViewModels
 {
     public abstract class NewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
     {
+        public EditTraitsWithModifierViewModel<AbilityScoreType> EditSavingThrowsViewModel { get; set; }
+        public EditTraitsViewModel<DamageType> EditDamageVulnerabilitiesViewModel { get; set; }
+        public EditTraitsViewModel<DamageType> EditDamageResistancesViewModel { get; set; }
+        public EditTraitsViewModel<DamageType> EditDamageImmunitiesViewModel { get; set; }
+        public EditTraitsViewModel<Condition> EditConditionImmunitiesViewModel { get; set; }
         public EditTraitsWithModifierViewModel<SkillType> EditSkillsViewModel { get; set; }
         public EditTraitsViewModel<SenseType> EditSensesViewModel { get; set; }
         public PassivePerceptionViewModel PassivePerception { get; set; }
@@ -47,6 +52,11 @@ namespace DndBattleHelper.ViewModels
 
             ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
 
+            EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ");
+            EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ");
+            EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ");
+            EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ");
+            EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ");
             EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ");
             EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ");
             PassivePerception = new PassivePerceptionViewModel(new PassivePerception(10));

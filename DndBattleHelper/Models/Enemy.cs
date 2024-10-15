@@ -13,7 +13,7 @@ namespace DndBattleHelper.Models
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
         public List<TraitWithModifier<AbilityScoreType>> SavingThrows { get; set; }
-        public List<Trait<DamageType>> DamageVurnerability { get; set; }
+        public List<Trait<DamageType>> DamageVurnerabilities { get; set; }
         public List<Trait<DamageType>> DamageResistances { get; set; }
         public List<Trait<DamageType>> DamageImmunities { get; set; }
         public List<Trait<Condition>> ConditionImmunities { get; set; }
@@ -58,7 +58,7 @@ namespace DndBattleHelper.Models
             Wisdom = wisdom;
             Charisma = charisma;
             SavingThrows = savingThrows;
-            DamageVurnerability = damageVurnerability;
+            DamageVurnerabilities = damageVurnerability;
             DamageResistances = damageResistances;
             DamageImmunities = damageImmunities;
             ConditionImmunities = conditionImmunities;
@@ -87,7 +87,7 @@ namespace DndBattleHelper.Models
                 Wisdom,
                 Charisma,
                 SavingThrows,
-                DamageVurnerability,
+                DamageVurnerabilities,
                 DamageResistances,
                 DamageImmunities,
                 ConditionImmunities,
