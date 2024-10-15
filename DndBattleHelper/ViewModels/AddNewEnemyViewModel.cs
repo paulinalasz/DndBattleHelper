@@ -57,16 +57,22 @@ namespace DndBattleHelper.ViewModels
             Intelligence = SelectedEnemyPreset.Intelligence;
             Wisdom = SelectedEnemyPreset.Wisdom;
             Charisma = SelectedEnemyPreset.Charisma;
-            EditSkillsViewModel = new EditSkillsViewModel(SelectedEnemyPreset.Skills);
-            EditSensesViewModel = new EditSensesViewModel(SelectedEnemyPreset.Senses);
+            EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ", SelectedEnemyPreset.SavingThrows);
+            EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ", SelectedEnemyPreset.DamageVurnerabilities);
+            EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ", SelectedEnemyPreset.DamageResistances);
+            EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ", SelectedEnemyPreset.DamageResistances);
+            EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ", SelectedEnemyPreset.ConditionImmunities);
+            EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ", SelectedEnemyPreset.Skills);
+            EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
             PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
-            EditLanguagesViewModel = new EditLanguagesViewModel(SelectedEnemyPreset.Languages);
+            EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ", SelectedEnemyPreset.Languages);
             ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
             EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
             EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);
             HealthRollViewModel.DiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
             HealthRollViewModel.DiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
             HealthRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
+            InitiativeRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.InitiativeRoll.ValueModifier.Copy());
 
             OnPropertyChanged(string.Empty);
         }
@@ -76,20 +82,25 @@ namespace DndBattleHelper.ViewModels
         public override void CreateNewEnemy()
         {
             var enemy = _enemyFactory.Create(
-                Name, 
+                Name,
                 Initiative,
-                ArmourClass, 
+                ArmourClass,
                 Health,
                 Speed,
                 Strength,
-                Dexterity, 
-                Constitution, 
-                Intelligence, 
+                Dexterity,
+                Constitution,
+                Intelligence,
                 Wisdom,
                 Charisma,
+                EditSavingThrowsViewModel.CopyNewModels(),
+                EditDamageVulnerabilitiesViewModel.CopyNewModels(),
+                EditDamageResistancesViewModel.CopyNewModels(),
+                EditDamageImmunitiesViewModel.CopyNewModels(),
+                EditConditionImmunitiesViewModel.CopyNewModels(),
                 EditSkillsViewModel.CopyNewModels(),
                 EditSensesViewModel.CopyNewModels(),
-                new PassivePerception(SelectedEnemyPreset.PassivePerception.Value),
+                new PassivePerception(PassivePerception.Value),
                 EditLanguagesViewModel.CopyNewModels(),
                 ChallengeRatingViewModel.CopyModel(),
                 EditAbilitiesViewModel.CopyNewModels(),

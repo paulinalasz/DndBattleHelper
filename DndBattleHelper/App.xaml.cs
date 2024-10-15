@@ -21,6 +21,7 @@ namespace DndBattleHelper
             IDialogService dialogService = new DialogService(MainWindow);
             dialogService.Register<AddNewEnemyViewModel, AddNewEnemyView>();
             dialogService.Register<AddNewEnemyPresetViewModel, AddNewEnemyPresetView>();
+            dialogService.Register<AddNewPlayerViewModel, AddNewPlayerView>();
 
             var viewModel = new MainWindowViewModel(dialogService);
             view.DataContext = viewModel;

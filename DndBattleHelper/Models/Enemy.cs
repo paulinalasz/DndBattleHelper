@@ -12,10 +12,15 @@ namespace DndBattleHelper.Models
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
-        public List<Skill> Skills { get; set; }
-        public List<SenseType> Senses { get; set; }
+        public List<TraitWithModifier<AbilityScoreType>> SavingThrows { get; set; }
+        public List<Trait<DamageType>> DamageVurnerabilities { get; set; }
+        public List<Trait<DamageType>> DamageResistances { get; set; }
+        public List<Trait<DamageType>> DamageImmunities { get; set; }
+        public List<Trait<Condition>> ConditionImmunities { get; set; }
+        public List<TraitWithModifier<SkillType>> Skills { get; set; }
+        public List<Trait<SenseType>> Senses { get; set; }
         public PassivePerception PassivePerception { get; set; }
-        public List<LanguageType> Languages { get; set; }
+        public List<Trait<LanguageType>> Languages { get; set; }
         public ChallengeRating ChallengeRating { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
@@ -31,10 +36,15 @@ namespace DndBattleHelper.Models
             int intelligence,
             int wisdom,
             int charisma,
-            List<Skill> skills,
-            List<SenseType> senses,
+            List<TraitWithModifier<AbilityScoreType>> savingThrows,
+            List<Trait<DamageType>> damageVurnerability,
+            List<Trait<DamageType>> damageResistances,
+            List<Trait<DamageType>> damageImmunities,
+            List<Trait<Condition>> conditionImmunities,
+            List<TraitWithModifier<SkillType>> skills,
+            List<Trait<SenseType>> senses,
             PassivePerception passivePerception,
-            List<LanguageType> languages,
+            List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
             List<EntityAction> actions) : base(initiative, name, health)
@@ -47,6 +57,11 @@ namespace DndBattleHelper.Models
             Intelligence = intelligence;
             Wisdom = wisdom;
             Charisma = charisma;
+            SavingThrows = savingThrows;
+            DamageVurnerabilities = damageVurnerability;
+            DamageResistances = damageResistances;
+            DamageImmunities = damageImmunities;
+            ConditionImmunities = conditionImmunities;
             Skills = skills;
             PassivePerception = passivePerception;
             Senses = senses;
@@ -71,6 +86,11 @@ namespace DndBattleHelper.Models
                 Intelligence,
                 Wisdom,
                 Charisma,
+                SavingThrows,
+                DamageVurnerabilities,
+                DamageResistances,
+                DamageImmunities,
+                ConditionImmunities,
                 Skills,
                 Senses,
                 PassivePerception,

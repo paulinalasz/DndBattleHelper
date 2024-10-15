@@ -1,4 +1,6 @@
-﻿namespace DndBattleHelper.Models
+﻿using System.ComponentModel;
+
+namespace DndBattleHelper.Models
 {
     public enum DamageType
     {
@@ -14,6 +16,8 @@
         Necrotic,
         Radiant,
         Force,
-        Psychic
+        Psychic,
+        [Description("Non-Silvered Bludgeoning, Piercing, And Slashing")]
+        NonSilvered
     }
 }

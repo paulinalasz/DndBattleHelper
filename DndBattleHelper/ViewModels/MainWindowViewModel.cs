@@ -81,6 +81,14 @@ namespace DndBattleHelper.ViewModels
                 {
                     EntitiesInInitiative.Add(new PlayerViewModel((Player)entity));
                 }
+
+                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
+                EntitiesInInitiative.Clear();
+
+                foreach (var entityViewModel in entitiesSorted)
+                {
+                    EntitiesInInitiative.Add(entityViewModel);
+                }
             }
         }
 
@@ -155,6 +163,13 @@ namespace DndBattleHelper.ViewModels
             addNewEnemyViewModel.Added += () =>
             {
                 EntitiesInInitiative.Add(addNewEnemyViewModel.AddedEnemy);
+                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
+                EntitiesInInitiative.Clear();
+
+                foreach (var entityViewModel in entitiesSorted)
+                {
+                    EntitiesInInitiative.Add(entityViewModel);
+                }
             };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
@@ -176,6 +191,30 @@ namespace DndBattleHelper.ViewModels
             };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyPresetViewModel);
+        }
+
+        private ICommand _addNewPlayerCommand;
+        public ICommand AddNewPlayerCommand => _addNewPlayerCommand ?? (_addNewPlayerCommand = new CommandHandler(AddNewPlayer, () => { return true; }));
+
+        public void AddNewPlayer()
+        {
+            var addPlayerViewModel = new AddNewPlayerViewModel();
+
+            addPlayerViewModel.Added += () =>
+            {
+                EntitiesInInitiative.Add(addPlayerViewModel.AddedPlayerViewModel);
+                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
+                EntitiesInInitiative.Clear();
+
+                foreach (var entityViewModel in entitiesSorted)
+                {
+                    EntitiesInInitiative.Add(entityViewModel);
+                }
+            };
+
+            bool? result = _dialogService.ShowDialog(addPlayerViewModel);
+
+            OnPropertyChanged(string.Empty);
         }
     }
 }

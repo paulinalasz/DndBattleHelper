@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
@@ -23,9 +22,14 @@ namespace DndBattleHelper.ViewModels
         public int Intelligence { get; set; }
         public int Wisdom {  get; set; }
         public int Charisma { get; set; }
-        public SkillsViewModel Skills { get; set; }
-        public SensesViewModel Senses { get; set; }
-        public LanguagesViewModel Languages { get; set; }
+        public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get; set; }
+        public TraitsViewModel<DamageType> DamageVulnerabilities { get; set; }
+        public TraitsViewModel<DamageType> DamageResistances { get; set; }
+        public TraitsViewModel<DamageType> DamageImmunities { get; set; }   
+        public TraitsViewModel<Condition> ConditionImmunities { get; set; }
+        public TraitsWithModifierViewModel<SkillType> Skills { get; set; }
+        public TraitsViewModel<SenseType> Senses { get; set; }
+        public TraitsViewModel<LanguageType> Languages { get; set; }
         public ChallengeRatingViewModel ChallengeRating { get; set; }
         public ObservableCollection<AbilityViewModel> Abilities { get; set; }
         public ObservableCollection<EntityActionViewModel> Actions { get; set; }
@@ -59,9 +63,14 @@ namespace DndBattleHelper.ViewModels
             Intelligence = enemy.Intelligence;
             Wisdom = enemy.Wisdom;
             Charisma = enemy.Charisma;
-            Skills = new SkillsViewModel(enemy.Skills);
-            Senses = new SensesViewModel(enemy.Senses, enemy.PassivePerception);
-            Languages = new LanguagesViewModel(enemy.Languages);
+            SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows);
+            DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities);
+            DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances);
+            DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities);
+            ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities);
+            Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills);
+            Senses = new TraitsViewModel<SenseType>(enemy.Senses, enemy.PassivePerception);
+            Languages = new TraitsViewModel<LanguageType>(enemy.Languages);
             ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);
             
             Abilities = new ObservableCollection<AbilityViewModel>();
@@ -150,6 +159,11 @@ namespace DndBattleHelper.ViewModels
         public override Enemy CopyModel()
         {
             return _enemy.Copy();
+        }
+
+        public override EntityViewModel Copy()
+        {
+            return new EnemyViewModel(_enemy.Copy(), Actions, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
     }
 }

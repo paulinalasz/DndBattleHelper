@@ -3,22 +3,22 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
-    public class LanguageViewModel : NotifyPropertyChanged, IEditable
+    public class DamageTypeViewModel : NotifyPropertyChanged, IEditable
     {
-        private LanguageType _type;
-        public LanguageType Type 
+        private DamageType _type;
+        public DamageType Type
         {
-            get => _type;
-            set
-            {
-                _type = value;
+            get { return _type; }
+            set 
+            { 
+                _type = value; 
                 OnPropertyChanged(nameof(Type));
             }
         }
 
-        public LanguageViewModel(LanguageType type)
+        public DamageTypeViewModel(DamageType type)
         {
-            _type = type;
+            Type = type;
         }
 
         public override string ToString()
