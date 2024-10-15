@@ -12,6 +12,11 @@ namespace DndBattleHelper.Models
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
+        public List<TraitWithModifier<AbilityScoreType>> SavingThrows { get; set; }
+        public List<Trait<DamageType>> DamageVurnerability { get; set; }
+        public List<Trait<DamageType>> DamageResistances { get; set; }
+        public List<Trait<DamageType>> DamageImmunities { get; set; }
+        public List<Trait<Condition>> ConditionImmunities { get; set; }
         public List<TraitWithModifier<SkillType>> Skills { get; set; }
         public List<Trait<SenseType>> Senses { get; set; }
         public PassivePerception PassivePerception { get; set; }
@@ -31,6 +36,11 @@ namespace DndBattleHelper.Models
             int intelligence,
             int wisdom,
             int charisma,
+            List<TraitWithModifier<AbilityScoreType>> savingThrows,
+            List<Trait<DamageType>> damageVurnerability,
+            List<Trait<DamageType>> damageResistances,
+            List<Trait<DamageType>> damageImmunities,
+            List<Trait<Condition>> conditionImmunities,
             List<TraitWithModifier<SkillType>> skills,
             List<Trait<SenseType>> senses,
             PassivePerception passivePerception,
@@ -47,6 +57,11 @@ namespace DndBattleHelper.Models
             Intelligence = intelligence;
             Wisdom = wisdom;
             Charisma = charisma;
+            SavingThrows = savingThrows;
+            DamageVurnerability = damageVurnerability;
+            DamageResistances = damageResistances;
+            DamageImmunities = damageImmunities;
+            ConditionImmunities = conditionImmunities;
             Skills = skills;
             PassivePerception = passivePerception;
             Senses = senses;
@@ -71,6 +86,11 @@ namespace DndBattleHelper.Models
                 Intelligence,
                 Wisdom,
                 Charisma,
+                SavingThrows,
+                DamageVurnerability,
+                DamageResistances,
+                DamageImmunities,
+                ConditionImmunities,
                 Skills,
                 Senses,
                 PassivePerception,
