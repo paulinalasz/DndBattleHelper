@@ -5,13 +5,13 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditLanguagesViewModel : EditTraitsViewModel
     {
-        public EditLanguagesViewModel(List<LanguageType> languages = null) : base("Languages", false) 
+        public EditLanguagesViewModel(List<Trait<LanguageType>> languages = null) : base("Languages", false) 
         {
             if(languages != null)
             {
                 foreach(var language in languages)
                 {
-                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new LanguageViewModel(language)));
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitViewModel<LanguageType>(language)));
                 }
             }
         }
@@ -29,7 +29,7 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new LanguageViewModel(SelectedToAdd)));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitViewModel<LanguageType>(new Trait<LanguageType>(SelectedToAdd))));
             base.Add();
         }
 
@@ -43,14 +43,14 @@ namespace DndBattleHelper.ViewModels.Editable
             SelectedToAdd = 0;
         }
 
-        public List<LanguageType> CopyNewModels()
+        public List<Trait<LanguageType>> CopyNewModels()
         {
-            var languages = new List<LanguageType>();
+            var languages = new List<Trait<LanguageType>>();
 
             foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
             {
-                var language = (LanguageViewModel)editableTraitViewModel.Content;
-                languages.Add(language.Type);
+                var language = (TraitViewModel<LanguageType>)editableTraitViewModel.Content;
+                languages.Add(new Trait<LanguageType>(language.Type));
             }
 
             return languages;

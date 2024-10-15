@@ -1,62 +1,57 @@
 ﻿namespace DndBattleHelper.Models
 {
-    // where T is enum type
-    public class TraitWithModifier<T>
+    public class Trait<T> 
     {
         public T Type { get; set; }
-        public Modifier Modifier { get; set; }
-        public TraitWithModifier(T type, Modifier modifier)
+        public Trait(T type)
         {
             Type = type;
-            Modifier = modifier;
         }
 
-        private TraitWithModifier() { }
+        protected Trait() { }
 
         public override string ToString()
         {
-            var skillString = string.Empty;
+            var traitString = string.Empty;
 
-            skillString += Type.ToString();
-            skillString += " ";
-            skillString += Modifier.ToString();
+            traitString += Type.ToString();
+            traitString += " ";
 
-            return skillString;
+            return traitString;
         }
 
-        public TraitWithModifier<T> Copy()
+        public virtual Trait<T> Copy()
+        {
+            return new Trait<T>(Type);
+        }
+    }
+
+    // where T is enum type
+    public class TraitWithModifier<T> : Trait<T>
+    {
+        public Modifier Modifier { get; set; }
+
+        public TraitWithModifier(T type, Modifier modifier) : base(type)
+        {
+            Modifier = modifier;
+        }
+
+        protected TraitWithModifier() { }
+
+        public override string ToString()
+        {
+            var traitString = string.Empty;
+
+            traitString += Type.ToString();
+            traitString += " ";
+            traitString += Modifier.ToString();
+
+            return traitString;
+        }
+
+        public override TraitWithModifier<T> Copy()
         {
             return new TraitWithModifier<T>(Type, Modifier.Copy());
         }
     }
-
-    //public class Skill 
-    //{
-    //    public SkillType Type { get; set; }
-    //    public Modifier Modifier { get; set; }
-
-    //    public Skill(SkillType type, Modifier modifier)
-    //    {
-    //        Type = type;
-    //        Modifier = modifier;
-    //    }
-
-    //    private Skill() { }
-
-    //    public override string ToString()
-    //    {
-    //        var skillString = string.Empty;
-
-    //        skillString += Type.ToString();
-    //        skillString += " ";
-    //        skillString += Modifier.ToString();
-
-    //        return skillString;
-    //    }
-
-    //    public Skill Copy()
-    //    {
-    //        return new Skill(Type, Modifier.Copy());
-    //    }
-    //}
 }

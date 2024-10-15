@@ -16,9 +16,9 @@ namespace DndBattleHelper.Models
             int wisdom,
             int charisma,
             List<TraitWithModifier<SkillType>> skills,
-            List<SenseType> senses,
+            List<Trait<SenseType>> senses,
             PassivePerception passivePerception,
-            List<LanguageType> languages,
+            List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
             List<EntityAction> actions)

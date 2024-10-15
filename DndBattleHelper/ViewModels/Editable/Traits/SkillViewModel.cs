@@ -4,11 +4,9 @@ using Microsoft.Windows.Themes;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
-    // M is Model
-    // T is the enum used 
-    public class TraitWithModifierViewModel<T> : NotifyPropertyChanged, IEditable where T : struct
+    public class TraitViewModel<T> : NotifyPropertyChanged, IEditable where T : struct 
     {
-        private TraitWithModifier<T> _trait;
+        private Trait<T> _trait;
         public T Type
         {
             get => _trait.Type;
@@ -19,9 +17,32 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
             }
         }
 
+        public TraitViewModel(Trait<T> trait)
+        {
+            _trait = trait;
+        }
+
+        public override string ToString()
+        {
+            return _trait.ToString();
+        }
+
+        public virtual Trait<T> CopyModel()
+        {
+            return _trait.Copy();
+        }
+    }
+
+
+    // M is Model
+    // T is the enum used 
+    public class TraitWithModifierViewModel<T> : TraitViewModel<T>, IEditable where T : struct
+    {
+        private TraitWithModifier<T> _trait;
+
         public ModifierViewModel ModifierViewModel { get; }
 
-        public TraitWithModifierViewModel(TraitWithModifier<T> trait)
+        public TraitWithModifierViewModel(TraitWithModifier<T> trait) : base(trait)
         {
             _trait = trait;
             ModifierViewModel = new ModifierViewModel(_trait.Modifier);

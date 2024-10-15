@@ -13,9 +13,9 @@ namespace DndBattleHelper.Models
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
         public List<TraitWithModifier<SkillType>> Skills { get; set; }
-        public List<SenseType> Senses { get; set; }
+        public List<Trait<SenseType>> Senses { get; set; }
         public PassivePerception PassivePerception { get; set; }
-        public List<LanguageType> Languages { get; set; }
+        public List<Trait<LanguageType>> Languages { get; set; }
         public ChallengeRating ChallengeRating { get; set; }
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
@@ -32,9 +32,9 @@ namespace DndBattleHelper.Models
             int wisdom,
             int charisma,
             List<TraitWithModifier<SkillType>> skills,
-            List<SenseType> senses,
+            List<Trait<SenseType>> senses,
             PassivePerception passivePerception,
-            List<LanguageType> languages,
+            List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
             List<EntityAction> actions) : base(initiative, name, health)

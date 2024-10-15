@@ -23,8 +23,8 @@ namespace DndBattleHelper.ViewModels
         public int Wisdom {  get; set; }
         public int Charisma { get; set; }
         public TraitsWithModifierViewModel<SkillType> Skills { get; set; }
-        public SensesViewModel Senses { get; set; }
-        public LanguagesViewModel Languages { get; set; }
+        public TraitsViewModel<SenseType> Senses { get; set; }
+        public TraitsViewModel<LanguageType> Languages { get; set; }
         public ChallengeRatingViewModel ChallengeRating { get; set; }
         public ObservableCollection<AbilityViewModel> Abilities { get; set; }
         public ObservableCollection<EntityActionViewModel> Actions { get; set; }
@@ -59,8 +59,8 @@ namespace DndBattleHelper.ViewModels
             Wisdom = enemy.Wisdom;
             Charisma = enemy.Charisma;
             Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills);
-            Senses = new SensesViewModel(enemy.Senses, enemy.PassivePerception);
-            Languages = new LanguagesViewModel(enemy.Languages);
+            Senses = new TraitsViewModel<SenseType>(enemy.Senses, enemy.PassivePerception);
+            Languages = new TraitsViewModel<LanguageType>(enemy.Languages);
             ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);
             
             Abilities = new ObservableCollection<AbilityViewModel>();

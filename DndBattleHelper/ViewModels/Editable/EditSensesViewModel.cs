@@ -5,13 +5,13 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditSensesViewModel : EditTraitsViewModel
     {
-        public EditSensesViewModel(List<SenseType> senses = null) : base("Senses", false) 
+        public EditSensesViewModel(List<Trait<SenseType>> senses = null) : base("Senses", false) 
         {
             if (senses != null) 
             {
-                foreach (SenseType sense in senses)
+                foreach (var sense in senses)
                 {
-                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SenseViewModel(sense)));
+                    EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitViewModel<SenseType>(sense)));
                 }
             }
         }
@@ -29,7 +29,7 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new SenseViewModel(SelectedToAdd)));
+            EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitViewModel<SenseType>(new Trait<SenseType>(SelectedToAdd))));
             base.Add();
         }
 
@@ -43,14 +43,14 @@ namespace DndBattleHelper.ViewModels.Editable
             SelectedToAdd = 0;
         }
 
-        public List<SenseType> CopyNewModels()
+        public List<Trait<SenseType>> CopyNewModels()
         {
-            var senses = new List<SenseType>();
+            var senses = new List<Trait<SenseType>>();
 
             foreach (var editableTraitViewModel in EditableTraitViewModelsViewModel.EditableTraitViewModels)
             {
-                var senseViewModel = (SenseViewModel)editableTraitViewModel.Content;
-                senses.Add(senseViewModel.Type);
+                var senseViewModel = (TraitViewModel<SenseType>)editableTraitViewModel.Content;
+                senses.Add(new Trait<SenseType>(senseViewModel.Type));
             }
 
             return senses;

@@ -29,21 +29,21 @@
                 <parent:DamageRollView/>
             </StackPanel>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type traits:SenseViewModel}">
+        <!--<DataTemplate DataType="{x:Type traits:SenseViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
-        </DataTemplate>
+        </DataTemplate>-->
         <!--<DataTemplate DataType="{x:Type traits:TraitWithModifierViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
         </DataTemplate>-->
-        <DataTemplate DataType="{x:Type traits:LanguageViewModel}">
+        <!--<DataTemplate DataType="{x:Type traits:LanguageViewModel}">
             <StackPanel Orientation="Horizontal">
                 <parent:TraitView/>
             </StackPanel>
-        </DataTemplate>
+        </DataTemplate>-->
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
