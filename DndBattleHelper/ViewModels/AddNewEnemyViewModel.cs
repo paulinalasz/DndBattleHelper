@@ -57,10 +57,10 @@ namespace DndBattleHelper.ViewModels
             Intelligence = SelectedEnemyPreset.Intelligence;
             Wisdom = SelectedEnemyPreset.Wisdom;
             Charisma = SelectedEnemyPreset.Charisma;
-            EditSkillsViewModel = new EditSkillsViewModel(SelectedEnemyPreset.Skills);
-            EditSensesViewModel = new EditSensesViewModel(SelectedEnemyPreset.Senses);
+            EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ", SelectedEnemyPreset.Skills);
+            EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
             PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
-            EditLanguagesViewModel = new EditLanguagesViewModel(SelectedEnemyPreset.Languages);
+            EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ", SelectedEnemyPreset.Languages);
             ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
             EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
             EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);

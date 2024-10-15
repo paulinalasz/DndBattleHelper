@@ -11,10 +11,10 @@ namespace DndBattleHelper.ViewModels
 {
     public abstract class NewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
     {
-        public EditSkillsViewModel EditSkillsViewModel { get; set; }
-        public EditSensesViewModel EditSensesViewModel { get; set; }
+        public EditTraitsWithModifierViewModel<SkillType> EditSkillsViewModel { get; set; }
+        public EditTraitsViewModel<SenseType> EditSensesViewModel { get; set; }
         public PassivePerceptionViewModel PassivePerception { get; set; }
-        public EditLanguagesViewModel EditLanguagesViewModel { get; set; }
+        public EditTraitsViewModel<LanguageType> EditLanguagesViewModel { get; set; }
 
         public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
@@ -47,10 +47,10 @@ namespace DndBattleHelper.ViewModels
 
             ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
 
-            EditSkillsViewModel = new EditSkillsViewModel();
-            EditSensesViewModel = new EditSensesViewModel();
+            EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ");
+            EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ");
             PassivePerception = new PassivePerceptionViewModel(new PassivePerception(10));
-            EditLanguagesViewModel = new EditLanguagesViewModel();
+            EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ");
             EditAbilitiesViewModel = new EditAbilitiesViewModel();
             EditActionsViewModel = new EditActionsViewModel(targetArmourClassProvider, advantageDisadvantageProvider);
         }
