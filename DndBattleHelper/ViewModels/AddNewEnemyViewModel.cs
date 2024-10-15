@@ -67,6 +67,7 @@ namespace DndBattleHelper.ViewModels
             HealthRollViewModel.DiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
             HealthRollViewModel.DiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
             HealthRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
+            InitiativeRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.InitiativeRoll.ValueModifier.Copy());
 
             OnPropertyChanged(string.Empty);
         }
