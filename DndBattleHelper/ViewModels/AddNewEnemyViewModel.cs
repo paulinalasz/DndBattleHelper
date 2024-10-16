@@ -47,6 +47,13 @@ namespace DndBattleHelper.ViewModels
 
         public void UsePreset()
         {
+            var spellSlots = new List<SpellSlotAvailabilityViewModel>();
+
+            foreach (var spellSlot in SelectedEnemyPreset.SpellSlots)
+            {
+                spellSlots.Add(new SpellSlotAvailabilityViewModel(spellSlot.Copy()));
+            }
+
             Name = SelectedEnemyPreset.Name;
             ArmourClass = SelectedEnemyPreset.ArmourClass;
             Health = SelectedEnemyPreset.Health;
@@ -57,6 +64,8 @@ namespace DndBattleHelper.ViewModels
             Intelligence = SelectedEnemyPreset.Intelligence;
             Wisdom = SelectedEnemyPreset.Wisdom;
             Charisma = SelectedEnemyPreset.Charisma;
+            IsSpellCaster = SelectedEnemyPreset.IsSpellCaster;
+            SpellSlots = spellSlots;
             EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ", SelectedEnemyPreset.SavingThrows);
             EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ", SelectedEnemyPreset.DamageVurnerabilities);
             EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ", SelectedEnemyPreset.DamageResistances);

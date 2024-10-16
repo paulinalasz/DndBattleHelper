@@ -126,7 +126,7 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        public List<SpellSlotAvailabilityViewModel> SpellSlots { get; }
+        public List<SpellSlotAvailabilityViewModel> SpellSlots { get; set; }
 
         public PassivePerceptionViewModel PassivePerception { get; set; }
 

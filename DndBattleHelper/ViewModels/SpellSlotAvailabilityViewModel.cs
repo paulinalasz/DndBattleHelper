@@ -51,7 +51,7 @@ namespace DndBattleHelper.ViewModels
 
         public SpellSlotAvailability CopyModel()
         {
-            return new SpellSlotAvailability(SpellSlotLevel, Available, NumberLeft);
+            return _spellSlotAvailability.Copy();
         }
     }
 }

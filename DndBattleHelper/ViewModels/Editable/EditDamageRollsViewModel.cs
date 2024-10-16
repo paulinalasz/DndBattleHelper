@@ -64,7 +64,6 @@ namespace DndBattleHelper.ViewModels.Editable
             DamageModifierViewModel.ModifierType = 0;
             DamageModifierViewModel.ModifierValue = 0;
             SelectedDamageType = 0;
-            EditableTraitViewModelsViewModel.EditableTraitViewModels.Clear();
         }
 
         public List<DamageRoll> CopyNewModels()

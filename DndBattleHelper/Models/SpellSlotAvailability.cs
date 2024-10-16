@@ -14,5 +14,10 @@
         }
 
         public SpellSlotAvailability() { }
+
+        public SpellSlotAvailability Copy()
+        {
+            return new SpellSlotAvailability(SpellSlotLevel, Available, NumberLeft);
+        }
     }
 }
