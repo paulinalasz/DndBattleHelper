@@ -137,6 +137,17 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
+        private ICommand _resetSpellSlotsUsedCommand;
+        public ICommand ResetSpellSlotsUsedCommand => _resetSpellSlotsUsedCommand ?? (_resetSpellSlotsUsedCommand = new CommandHandler(ResetSpellSlotsUsed, () => { return true; }));
+
+        public void ResetSpellSlotsUsed()
+        {
+            foreach (var spellSlot in SpellSlots)
+            {
+                spellSlot.ResetUsed();
+            }
+        }
+
         private ICommand _clearCommand;
         public ICommand ClearCommand => _clearCommand ?? (_clearCommand = new CommandHandler(() => Clear(), () => { return true; }));
 

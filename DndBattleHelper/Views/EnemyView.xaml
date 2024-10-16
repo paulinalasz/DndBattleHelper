@@ -130,40 +130,44 @@
 
         <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
             <TextBlock Text="Spell Slots: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
-            <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                <ItemsControl ItemsSource="{Binding SpellSlots}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}" Margin="5" Width="20"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding SpellSlots}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}" Margin="5" Width="20"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
 
-                <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="1">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <TextBox Text="{Binding NumberLeft, UpdateSourceTrigger=PropertyChanged}" Width="20" Margin="5"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Grid>
+                    <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="1">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding NumberLeft, UpdateSourceTrigger=PropertyChanged}" Width="20" Margin="5"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+
+                <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}"/>
+            </StackPanel>
+
             <TextBlock>Actions</TextBlock>
-
             <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

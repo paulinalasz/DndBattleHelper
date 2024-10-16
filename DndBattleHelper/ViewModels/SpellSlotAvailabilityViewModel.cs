@@ -40,8 +40,13 @@ namespace DndBattleHelper.ViewModels
             set
             {
                 _spellSlotAvailability.NumberLeft = value;
-                OnPropertyChanged(nameof(Available));
+                OnPropertyChanged(nameof(NumberLeft));
             }
+        }
+
+        public void ResetUsed()
+        {
+            NumberLeft = Available;
         }
 
         public SpellSlotAvailability CopyModel()
