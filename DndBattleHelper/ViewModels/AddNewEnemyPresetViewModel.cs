@@ -9,7 +9,11 @@ namespace DndBattleHelper.ViewModels
     {
         public EnemyPreset AddedEnemyPreset { get; set; }
 
-        public AddNewEnemyPresetViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider) : base(false, false, targetArmourClassProvider, advantageDisadvantageProvider)
+        public AddNewEnemyPresetViewModel(
+            EnemyFactory enemyFactory,
+            TargetArmourClassProvider targetArmourClassProvider,
+            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
+            : base(false, false, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
         {
         }
 

@@ -52,5 +52,33 @@ namespace DndBattleHelper.Models
                 abilities,
                 actions);
         }
+
+        public Enemy CreateBlank()
+        {
+            return new Enemy("",
+                10,
+                10,
+                0,
+                30,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
+                new List<TraitWithModifier<AbilityScoreType>>(),
+                new List<Trait<DamageType>>(),
+                new List<Trait<DamageType>>(),
+                new List<Trait<DamageType>>(),
+                new List<Trait<Condition>>(),
+                new List<TraitWithModifier<SkillType>>(),
+                new List<Trait<SenseType>>(),
+                new PassivePerception(10),
+                new List<Trait<LanguageType>>(),
+                new ChallengeRating(Enums.ChallengeRatingLevel.One),
+                new List<Ability>(),
+                new List<EntityAction>());
+
+        }
     }
 }

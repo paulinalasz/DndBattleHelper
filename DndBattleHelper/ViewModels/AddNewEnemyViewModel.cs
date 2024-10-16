@@ -12,20 +12,20 @@ namespace DndBattleHelper.ViewModels
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly EnemyFactory _enemyFactory;
-        private readonly EnemyViewModelFactory _enemyViewModelFactory;
+        private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
         private readonly Presets _presets;
 
         public AddNewEnemyViewModel(EnemyFactory enemyFactory,
-            EnemyViewModelFactory enemyViewModelFactory,
+            EntityActionViewModelFactory entityActionViewModelFactory,
             Presets presets, 
             TargetArmourClassProvider targetArmourClassProvider, 
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
-            : base(true, true, targetArmourClassProvider, advantageDisadvantageProvider)
+            : base(true, true, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
         {
+            _entityActionViewModelFactory = entityActionViewModelFactory;
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
             _enemyFactory = enemyFactory;
-            _enemyViewModelFactory = enemyViewModelFactory;
             _presets = presets;
         }
 
@@ -77,7 +77,7 @@ namespace DndBattleHelper.ViewModels
             OnPropertyChanged(string.Empty);
         }
 
-        public EnemyViewModel AddedEnemy { get; set; }
+        public EnemyOutboxViewModel AddedEnemy { get; set; }
 
         public override void CreateNewEnemy()
         {
@@ -107,8 +107,7 @@ namespace DndBattleHelper.ViewModels
                 EditActionsViewModel.CopyNewModels());
 
 
-            AddedEnemy = _enemyViewModelFactory.Create(
-                enemy);
+            AddedEnemy = new EnemyOutboxViewModel(enemy, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
     }
 }

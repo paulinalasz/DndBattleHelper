@@ -9,7 +9,7 @@ using DndBattleHelper.ViewModels.Editable.Traits;
 
 namespace DndBattleHelper.ViewModels
 {
-    public abstract class NewEnemyViewModel : NotifyPropertyChanged, IDialogRequestClose
+    public abstract class NewEnemyViewModel : EnemyViewModel, IDialogRequestClose
     {
         public EditTraitsWithModifierViewModel<AbilityScoreType> EditSavingThrowsViewModel { get; set; }
         public EditTraitsViewModel<DamageType> EditDamageVulnerabilitiesViewModel { get; set; }
@@ -26,9 +26,11 @@ namespace DndBattleHelper.ViewModels
         public EditActionsViewModel EditActionsViewModel { get; set; }
 
         public NewEnemyViewModel(bool isHealthRollVisible, 
-            bool isInitiativeRollVisible, 
+            bool isInitiativeRollVisible,
+            Enemy enemy,
             TargetArmourClassProvider targetArmourClassProvider,
-            AdvantageDisadvantageProvider advantageDisadvantageProvider)
+            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
+            : base(enemy)
         {
             Name = "";
             Initiative = 10;
@@ -65,128 +67,7 @@ namespace DndBattleHelper.ViewModels
             EditActionsViewModel = new EditActionsViewModel(targetArmourClassProvider, advantageDisadvantageProvider);
         }
 
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
-
-        private int _initiative;
-        public int Initiative
-        {
-            get => _initiative;
-            set
-            {
-                _initiative = value;
-                OnPropertyChanged(nameof(Initiative));
-            }
-        }
-
         public RollViewModel InitiativeRollViewModel { get; set; }
-
-        private int _armourClass;
-        public int ArmourClass
-        {
-            get { return _armourClass; }
-            set
-            {
-                _armourClass = value;
-                OnPropertyChanged(nameof(ArmourClass));
-            }
-        }
-
-        private int _speed;
-        public int Speed
-        {
-            get { return _speed; }
-            set
-            {
-                _speed = value;
-                OnPropertyChanged(nameof(Speed));
-            }
-        }
-
-        private int _strength;
-        public int Strength
-        {
-            get { return _strength; }
-            set
-            {
-                _strength = value;
-                OnPropertyChanged(nameof(Strength));
-            }
-        }
-
-        private int _dexterity;
-        public int Dexterity
-        {
-            get { return _dexterity; }
-            set
-            {
-                _dexterity = value;
-                OnPropertyChanged(nameof(Dexterity));
-            }
-        }
-
-        private int _constitution;
-        public int Constitution
-        {
-            get { return _constitution; }
-            set
-            {
-                _constitution = value;
-                OnPropertyChanged(nameof(Constitution));
-            }
-        }
-
-        private int _intelligence;
-        public int Intelligence
-        {
-            get { return _intelligence; }
-            set
-            {
-                _intelligence = value;
-                OnPropertyChanged(nameof(Intelligence));
-            }
-        }
-
-        private int _wisdom;
-        public int Wisdom
-        {
-            get { return _wisdom; }
-            set
-            {
-                _wisdom = value;
-                OnPropertyChanged(nameof(Wisdom));
-            }
-        }
-
-        private int _charisma;
-        public int Charisma
-        {
-            get { return _charisma; }
-            set
-            {
-                _charisma = value;
-                OnPropertyChanged(nameof(Charisma));
-            }
-        }
-
-        private int _health;
-        public int Health
-        {
-            get { return _health; }
-            set
-            {
-                _health = value;
-                OnPropertyChanged(nameof(Health));
-            }
-        }
 
         public RollViewModel HealthRollViewModel { get; set; }
 

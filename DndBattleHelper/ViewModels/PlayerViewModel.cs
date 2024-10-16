@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -12,22 +6,14 @@ namespace DndBattleHelper.ViewModels
     {
         private readonly Player _player;
 
-        public PlayerViewModel(Player player)
+        public PlayerViewModel(Player player) : base(player)
         {
-            Name = player.Name;
-            Initiative = player.Initiative;
-            Health = player.Health;
             _player = player;
         }
 
-        public override Entity CopyModel()
+        public override Player CopyModel()
         {
-            return _player.Copy();
-        }
-
-        public override EntityViewModel Copy()
-        {
-            return new PlayerViewModel(_player.Copy());
+            return new Player(Name, Initiative, Health);
         }
     }
 }
