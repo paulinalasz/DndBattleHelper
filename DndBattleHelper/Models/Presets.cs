@@ -11,13 +11,13 @@ namespace DndBattleHelper.Models
         public Presets(FileIO fileIo)
         {
             _fileIo = fileIo;
-            EnemyPresets = DeserialisePresets();
+            DeserialisePresets();
         }
 
-        public List<EnemyPreset> DeserialisePresets()
+        public void DeserialisePresets()
         {
             var presets = _fileIo.DeserialisePresets();
-            return presets.OrderBy(preset => preset.Name).ToList();
+            EnemyPresets = presets.OrderBy(preset => preset.Name).ToList();
         }
     }
 }

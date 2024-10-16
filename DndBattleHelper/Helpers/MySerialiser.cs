@@ -30,9 +30,9 @@ namespace DndBattleHelper.Helpers
                 {
                     return test;
                 }
-                else 
-                { 
-                    throw new Exception("Deserialisation failed"); 
+                else
+                {
+                    throw new Exception("Deserialisation failed");
                 };
             }
         }

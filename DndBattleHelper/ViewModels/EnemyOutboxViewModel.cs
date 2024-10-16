@@ -6,6 +6,7 @@ using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.ViewModels.Editable;
+using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -13,20 +14,18 @@ namespace DndBattleHelper.ViewModels
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
-        private EntityActionViewModelFactory _entityActionViewModelFactory;
-        private readonly Enemy _enemy;
 
-        public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get; set; }
-        public TraitsViewModel<DamageType> DamageVulnerabilities { get; set; }
-        public TraitsViewModel<DamageType> DamageResistances { get; set; }
-        public TraitsViewModel<DamageType> DamageImmunities { get; set; }
-        public TraitsViewModel<Condition> ConditionImmunities { get; set; }
-        public TraitsWithModifierViewModel<SkillType> Skills { get; set; }
-        public TraitsViewModel<SenseType> Senses { get; set; }
-        public TraitsViewModel<LanguageType> Languages { get; set; }
-        public ChallengeRatingViewModel ChallengeRating { get; set; }
-        public ObservableCollection<AbilityViewModel> Abilities { get; set; }
-        public ObservableCollection<EntityActionViewModel> Actions { get; set; }
+        public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get;}
+        public TraitsViewModel<DamageType> DamageVulnerabilities { get;}
+        public TraitsViewModel<DamageType> DamageResistances { get; }
+        public TraitsViewModel<DamageType> DamageImmunities { get; }
+        public TraitsViewModel<Condition> ConditionImmunities { get; }
+        public TraitsWithModifierViewModel<SkillType> Skills { get; }
+        public TraitsViewModel<SenseType> Senses { get; }
+        public TraitsViewModel<LanguageType> Languages { get; }
+        public ChallengeRatingViewModel ChallengeRating { get; }
+        public ObservableCollection<AbilityViewModel> Abilities { get; }
+        public ObservableCollection<EntityActionViewModel> Actions { get; }
 
         public int TargetArmourClass
         {
@@ -46,10 +45,8 @@ namespace DndBattleHelper.ViewModels
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
             : base(enemy)
         {
-            _enemy = enemy;
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
-            _entityActionViewModelFactory = entityActionViewModelFactory;
 
             SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows);
             DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities);
@@ -72,7 +69,21 @@ namespace DndBattleHelper.ViewModels
 
             foreach (var action in enemy.Actions)
             {
-                Actions.Add(entityActionViewModelFactory.Create(action));
+                var actionViewModel = entityActionViewModelFactory.Create(action);
+                Actions.Add(actionViewModel);
+
+                if (actionViewModel is ISpell)
+                {
+                    actionViewModel.ActionTaken += () =>
+                    {
+                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)actionViewModel).SpellSlot);
+
+                        if (spellSlot != null && spellSlot.NumberLeft > 0)
+                        {
+                            spellSlot.NumberLeft -= 1;
+                        }
+                    };
+                }
             }
 
             OutputBox = new OutputBoxViewModel();
@@ -138,6 +149,17 @@ namespace DndBattleHelper.ViewModels
 
                 OnPropertyChanged(nameof(IsAdvantage));
                 OnPropertyChanged(nameof(IsDisadvantage));
+            }
+        }
+
+        private ICommand _resetSpellSlotsUsedCommand;
+        public ICommand ResetSpellSlotsUsedCommand => _resetSpellSlotsUsedCommand ?? (_resetSpellSlotsUsedCommand = new CommandHandler(ResetSpellSlotsUsed, () => { return true; }));
+
+        public void ResetSpellSlotsUsed()
+        {
+            foreach (var spellSlot in SpellSlots)
+            {
+                spellSlot.ResetUsed();
             }
         }
 

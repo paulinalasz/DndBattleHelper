@@ -149,6 +149,7 @@ namespace DndBattleHelper.ViewModels.Editable
             ToHitModifierViewModel.ModifierType = 0;
             ToHitModifierViewModel.ModifierValue = 0;
             SelectedSpellSlot = 0;
+            EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels.Clear();
         }
 
         public List<EntityAction> CopyNewModels()

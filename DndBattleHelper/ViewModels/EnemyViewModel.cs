@@ -1,4 +1,5 @@
 ﻿using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Editable.Traits;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -22,6 +23,17 @@ namespace DndBattleHelper.ViewModels
             Intelligence = enemy.Intelligence;
             Wisdom = enemy.Wisdom;
             Charisma = enemy.Charisma;
+            IsSpellCaster = enemy.IsSpellCaster;
+
+            SpellSlots = new List<SpellSlotAvailabilityViewModel>();
+
+            foreach(var spellSlotAvailability in enemy.SpellSlots) 
+            {
+                SpellSlots.Add(new SpellSlotAvailabilityViewModel(spellSlotAvailability));
+            }
+
+            PassivePerception = new PassivePerceptionViewModel(enemy.PassivePerception);
+            ChallengeRatingViewModel = new ChallengeRatingViewModel(enemy.ChallengeRating);
         }
 
         public int ArmourClass
@@ -103,6 +115,22 @@ namespace DndBattleHelper.ViewModels
                 OnPropertyChanged(nameof(Charisma));
             }
         }
+
+        public bool IsSpellCaster
+        {
+            get => _enemy.IsSpellCaster;
+            set
+            {
+                _enemy.IsSpellCaster = value;
+                OnPropertyChanged(nameof(IsSpellCaster));
+            }
+        }
+
+        public List<SpellSlotAvailabilityViewModel> SpellSlots { get; set; }
+
+        public PassivePerceptionViewModel PassivePerception { get; set; }
+
+        public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }
 
         public override Enemy CopyModel()
         {

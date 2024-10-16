@@ -32,6 +32,8 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             }
         }
 
+        public Action Cast;
+
         public override DamagingSpellWithSave CopyModel()
         {
             return _action.Copy();

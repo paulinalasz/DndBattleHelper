@@ -22,7 +22,7 @@
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
 
-        public SpellAttack Copy()
+        public override SpellAttack Copy()
         {
             return new SpellAttack(Name, Description, ActionCost, Concentration, DamageRolls, ToHit, SpellSlot);
         }

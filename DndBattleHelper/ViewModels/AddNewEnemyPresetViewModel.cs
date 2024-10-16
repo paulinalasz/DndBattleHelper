@@ -19,6 +19,13 @@ namespace DndBattleHelper.ViewModels
 
         public override void CreateNewEnemy()
         {
+            var spellSlots = new List<SpellSlotAvailability>();
+
+            foreach(var spellSlot in SpellSlots) 
+            {
+                spellSlots.Add(spellSlot.CopyModel());
+            }
+
             AddedEnemyPreset = new EnemyPreset(
                             Name,
                             Initiative,
@@ -31,6 +38,8 @@ namespace DndBattleHelper.ViewModels
                             Intelligence,
                             Wisdom,
                             Charisma,
+                            IsSpellCaster,
+                            spellSlots,
                             EditSavingThrowsViewModel.CopyNewModels(),
                             EditDamageVulnerabilitiesViewModel.CopyNewModels(),
                             EditDamageResistancesViewModel.CopyNewModels(),
