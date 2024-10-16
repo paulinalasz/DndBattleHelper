@@ -13,20 +13,18 @@ namespace DndBattleHelper.ViewModels
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
-        private EntityActionViewModelFactory _entityActionViewModelFactory;
-        private readonly Enemy _enemy;
 
-        public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get; set; }
-        public TraitsViewModel<DamageType> DamageVulnerabilities { get; set; }
-        public TraitsViewModel<DamageType> DamageResistances { get; set; }
-        public TraitsViewModel<DamageType> DamageImmunities { get; set; }
-        public TraitsViewModel<Condition> ConditionImmunities { get; set; }
-        public TraitsWithModifierViewModel<SkillType> Skills { get; set; }
-        public TraitsViewModel<SenseType> Senses { get; set; }
-        public TraitsViewModel<LanguageType> Languages { get; set; }
-        public ChallengeRatingViewModel ChallengeRating { get; set; }
-        public ObservableCollection<AbilityViewModel> Abilities { get; set; }
-        public ObservableCollection<EntityActionViewModel> Actions { get; set; }
+        public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get;}
+        public TraitsViewModel<DamageType> DamageVulnerabilities { get;}
+        public TraitsViewModel<DamageType> DamageResistances { get; }
+        public TraitsViewModel<DamageType> DamageImmunities { get; }
+        public TraitsViewModel<Condition> ConditionImmunities { get; }
+        public TraitsWithModifierViewModel<SkillType> Skills { get; }
+        public TraitsViewModel<SenseType> Senses { get; }
+        public TraitsViewModel<LanguageType> Languages { get; }
+        public ChallengeRatingViewModel ChallengeRating { get; }
+        public ObservableCollection<AbilityViewModel> Abilities { get; }
+        public ObservableCollection<EntityActionViewModel> Actions { get; }
 
         public int TargetArmourClass
         {
@@ -46,10 +44,8 @@ namespace DndBattleHelper.ViewModels
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
             : base(enemy)
         {
-            _enemy = enemy;
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
-            _entityActionViewModelFactory = entityActionViewModelFactory;
 
             SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows);
             DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities);

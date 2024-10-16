@@ -6,6 +6,7 @@
              xmlns:traits="clr-namespace:DndBattleHelper.Views.TraitViews">
     <UserControl.Resources>
         <Converters:EnumToCollectionConverter x:Key="EnumToCollectionConverter"/>
+        <Converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
     <Grid>
@@ -112,6 +113,43 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="Is Spell Caster" IsChecked="{Binding IsSpellCaster}"/>
+                    <TextBlock Text="Spell Slot Availability: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
+                </StackPanel>
+                <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <ItemsControl ItemsSource="{Binding SpellSlots}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}" Margin="5" Width="20"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="1">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20" Margin="5"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+
                 <editable:EditActionsView DataContext="{Binding EditActionsViewModel}"/>
             </StackPanel>
         </Grid>

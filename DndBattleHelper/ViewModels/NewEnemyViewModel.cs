@@ -18,10 +18,8 @@ namespace DndBattleHelper.ViewModels
         public EditTraitsViewModel<Condition> EditConditionImmunitiesViewModel { get; set; }
         public EditTraitsWithModifierViewModel<SkillType> EditSkillsViewModel { get; set; }
         public EditTraitsViewModel<SenseType> EditSensesViewModel { get; set; }
-        public PassivePerceptionViewModel PassivePerception { get; set; }
         public EditTraitsViewModel<LanguageType> EditLanguagesViewModel { get; set; }
 
-        public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
         public EditActionsViewModel EditActionsViewModel { get; set; }
 
@@ -45,7 +43,6 @@ namespace DndBattleHelper.ViewModels
             EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ");
             EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ");
             EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ");
-            PassivePerception = new PassivePerceptionViewModel(new PassivePerception(10));
             EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ");
             EditAbilitiesViewModel = new EditAbilitiesViewModel();
             EditActionsViewModel = new EditActionsViewModel(targetArmourClassProvider, advantageDisadvantageProvider);

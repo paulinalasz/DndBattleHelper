@@ -1,5 +1,6 @@
 ﻿namespace DndBattleHelper.Models
 {
+
     public class Ability
     {
         public string Name { get; set; }

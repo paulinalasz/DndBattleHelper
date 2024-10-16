@@ -12,6 +12,10 @@ namespace DndBattleHelper.Models
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
+
+        public bool IsSpellCaster { get; set; }
+        public List<SpellSlotAvailability> SpellSlots { get; set; }
+
         public List<TraitWithModifier<AbilityScoreType>> SavingThrows { get; set; }
         public List<Trait<DamageType>> DamageVurnerabilities { get; set; }
         public List<Trait<DamageType>> DamageResistances { get; set; }
@@ -36,6 +40,8 @@ namespace DndBattleHelper.Models
             int intelligence,
             int wisdom,
             int charisma,
+            bool isSpellCaster,
+            List<SpellSlotAvailability> spellSlots,
             List<TraitWithModifier<AbilityScoreType>> savingThrows,
             List<Trait<DamageType>> damageVurnerability,
             List<Trait<DamageType>> damageResistances,
@@ -57,6 +63,8 @@ namespace DndBattleHelper.Models
             Intelligence = intelligence;
             Wisdom = wisdom;
             Charisma = charisma;
+            IsSpellCaster = isSpellCaster;
+            SpellSlots = spellSlots;
             SavingThrows = savingThrows;
             DamageVurnerabilities = damageVurnerability;
             DamageResistances = damageResistances;
@@ -86,6 +94,8 @@ namespace DndBattleHelper.Models
                 Intelligence,
                 Wisdom,
                 Charisma,
+                IsSpellCaster,
+                SpellSlots,
                 SavingThrows,
                 DamageVurnerabilities,
                 DamageResistances,
