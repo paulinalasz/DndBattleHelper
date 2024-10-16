@@ -32,27 +32,11 @@ namespace DndBattleHelper.ViewModels
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
             : base(enemy)
         {
-            Name = "";
-            Initiative = 10;
             InitiativeRollViewModel = new RollViewModel(new Roll(1, 20, new Modifier(ModifierType.Neutral, 0)), "Roll Initiative: ", isInitiativeRollVisible, false);
-
             InitiativeRollViewModel.Rolled += () => { Initiative = InitiativeRollViewModel.ValueRolled; };
 
-            ArmourClass = 10;
-            Health = 0;
             HealthRollViewModel = new RollViewModel(new Roll(1, 10, new Modifier(ModifierType.Neutral, 0)), "Roll Health: ", isHealthRollVisible);
-
             HealthRollViewModel.Rolled += () => { Health = HealthRollViewModel.ValueRolled; };
-
-            Speed = 30;
-            Strength = 10;
-            Dexterity = 10;
-            Constitution = 10;
-            Intelligence = 10;
-            Wisdom = 10;
-            Charisma = 10;
-
-            ChallengeRatingViewModel = new ChallengeRatingViewModel(new ChallengeRating(ChallengeRatingLevel.One));
 
             EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ");
             EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ");
