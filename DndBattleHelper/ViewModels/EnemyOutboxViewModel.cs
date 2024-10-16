@@ -6,6 +6,7 @@ using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.ViewModels.Editable;
+using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -68,7 +69,21 @@ namespace DndBattleHelper.ViewModels
 
             foreach (var action in enemy.Actions)
             {
-                Actions.Add(entityActionViewModelFactory.Create(action));
+                var actionViewModel = entityActionViewModelFactory.Create(action);
+                Actions.Add(actionViewModel);
+
+                if (actionViewModel is ISpell)
+                {
+                    actionViewModel.ActionTaken += () =>
+                    {
+                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)actionViewModel).SpellSlot);
+
+                        if (spellSlot != null && spellSlot.NumberLeft > 0)
+                        {
+                            spellSlot.NumberLeft -= 1;
+                        }
+                    };
+                }
             }
 
             OutputBox = new OutputBoxViewModel();

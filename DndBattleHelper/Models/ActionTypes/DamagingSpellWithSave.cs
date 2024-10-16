@@ -23,7 +23,7 @@ namespace DndBattleHelper.Models.ActionTypes
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
 
-        public DamagingSpellWithSave Copy()
+        public override DamagingSpellWithSave Copy()
         {
             return new DamagingSpellWithSave(Name, Description, ActionCost, Concentration, SpellSlot, DamageRolls);
         }

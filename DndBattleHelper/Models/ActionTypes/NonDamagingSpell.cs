@@ -18,7 +18,7 @@
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
 
-        public NonDamagingSpell Copy()
+        public override NonDamagingSpell Copy()
         {
             return new NonDamagingSpell(Name, Description, ActionCost, Concentration, SpellSlot);
         }
