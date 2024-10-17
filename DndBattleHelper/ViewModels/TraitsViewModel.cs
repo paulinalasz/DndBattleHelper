@@ -43,5 +43,7 @@ namespace DndBattleHelper.ViewModels
 
             return traitsString;
         }
+
+        public bool IsVisible => Traits.Count > 0;
     }
 }

@@ -75,50 +75,43 @@
                 <TextBlock Grid.Row="1" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
                 <TextBlock Grid.Row="1" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
             </Grid>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Saving Throws"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding SavingThrows}"/>
-
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Vurnerabilities"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageVulnerabilities}"/>
-
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Resistances"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageResistances}"/>
-
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Immunities"/>
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageImmunities}"/>
-
-                <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Condition Immunities"/>
-                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ConditionImmunities}"/>
-
-                <TextBlock Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Skills"/>
-                <TextBlock Grid.Row="5" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
-
-                <TextBlock Grid.Row="6" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
-                <TextBlock Grid.Row="6" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
-
-                <TextBlock Grid.Row="7" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
-                <TextBlock Grid.Row="7" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding SavingThrows.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Saving Throws"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding SavingThrows}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding DamageVulnerabilities.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Damage Vulnerabilities"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding DamageVulnerabilities}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding DamageResistances.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Damage Resistances"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding DamageResistances}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding DamageImmunities.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Damage Immunities"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding DamageImmunities}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding ConditionImmunities.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Condition Immunities"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding ConditionImmunities}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding Skills.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Skills"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding Senses.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Senses"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding Languages.IsVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Margin="5, 0, 5, 0" Text="Languages"/>
+                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
+                </StackPanel>
 
                 <local:ChallengeRatingView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
-            </Grid>
-
+            </StackPanel>
+  
             <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
