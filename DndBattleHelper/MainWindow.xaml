@@ -40,8 +40,7 @@
                 <TabControl.ItemTemplate>
                     <!-- this is the header template-->
                     <DataTemplate>
-                        <TextBlock
-                    Text="{Binding Name}" />
+                        <TextBlock Style="{StaticResource TabTitle}" Text="{Binding Name}" />
                     </DataTemplate>
                 </TabControl.ItemTemplate>
             </TabControl>
