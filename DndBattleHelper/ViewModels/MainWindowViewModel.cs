@@ -67,6 +67,12 @@ namespace DndBattleHelper.ViewModels
 
             var entities = _fileIo.OpenSavedFiles(openFileDialog.FileName);
 
+            // User cancelled request to open save files
+            if(entities == null)
+            {
+                return;
+            }
+
             EntitiesInInitiative.Clear();
 
             foreach(var entity in entities)
