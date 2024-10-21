@@ -11,7 +11,7 @@
     </UserControl.Resources>
     <Grid>
         <TextBlock TextWrapping="Wrap">
-            <Run FontWeight="Bold" Text="{Binding Name}"/>
+            <Run FontWeight="Bold" Style="{StaticResource ActionName}" Text="{Binding Name}"/>
             <Run Text="{Binding Description}"/>
         </TextBlock>
     </Grid>

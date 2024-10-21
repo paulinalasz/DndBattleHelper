@@ -12,9 +12,9 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Margin="5, 0, 5, 0" Text="Challenge"/>
-            <TextBlock Margin="5, 0, 5, 0" Text="{Binding SelectedChallengeRating, Converter={StaticResource enumToDescriptionConverter}}"/>
-            <TextBlock >
+            <TextBlock Margin="5, 0, 5, 0" Style="{StaticResource TraitName}" Text="Challenge"/>
+            <TextBlock Margin="5, 0, 5, 0" Style="{StaticResource Trait}" Text="{Binding SelectedChallengeRating, Converter={StaticResource enumToDescriptionConverter}}"/>
+            <TextBlock Style="{StaticResource Trait}">
                 <Run Text="{Binding Xp, Mode=OneWay}"/>
                 <Run Text="Xp"/>
             </TextBlock>
