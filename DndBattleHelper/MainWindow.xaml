@@ -30,22 +30,6 @@
 
             <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}" ItemsControl.AlternationCount="{Binding EntitiesInInitiativeCount}">
                 <TabControl.Resources>
-                    <Style TargetType="TabItem">
-                        <Style.Triggers>
-                            <DataTrigger Value="True">
-                                <DataTrigger.Binding>
-                                    <MultiBinding Converter="{StaticResource TwoEqualNumbersToBooleanConverter}" ConverterParameter="&lt;">
-                                        <Binding RelativeSource="{RelativeSource Self}" Path="(ItemsControl.AlternationIndex)" />
-                                        <Binding Path="DataContext.TurnNumber" RelativeSource="{RelativeSource AncestorType=Window}" />
-                                    </MultiBinding>
-                                </DataTrigger.Binding>
-                                <DataTrigger.Setters>
-                                    <Setter Property="Background" Value="Blue"/>
-                                </DataTrigger.Setters>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
                     </DataTemplate>
