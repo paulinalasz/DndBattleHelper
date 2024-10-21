@@ -134,7 +134,7 @@
                     </ItemsControl>
                 </Grid>
 
-                <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}"/>
+                <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}" Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
             </StackPanel>
 
             <TextBlock>Actions</TextBlock>
