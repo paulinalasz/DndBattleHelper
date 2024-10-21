@@ -47,6 +47,7 @@ namespace DndBattleHelper.ViewModels.Editable
         {
             SelectedToAdd = (T)Enum.GetValues(typeof(T)).GetValue(0);
             ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+            OnPropertyChanged(nameof(ToAddModifierViewModel));
         }
 
         public List<TraitWithModifier<T>> CopyNewModels()

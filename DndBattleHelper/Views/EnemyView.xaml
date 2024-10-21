@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DndBattleHelper.Views"
+             xmlns:traits="clr-namespace:DndBattleHelper.Views.TraitViews"
              xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
@@ -33,7 +34,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
+                <TextBlock Style="{StaticResource Name}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative"/>
                 <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
@@ -76,38 +77,14 @@
                 <TextBlock Grid.Row="1" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
             </Grid>
             <StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding SavingThrows.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Saving Throws"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding SavingThrows}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding DamageVulnerabilities.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Damage Vulnerabilities"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding DamageVulnerabilities}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding DamageResistances.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Damage Resistances"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding DamageResistances}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding DamageImmunities.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Damage Immunities"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding DamageImmunities}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding ConditionImmunities.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Condition Immunities"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding ConditionImmunities}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding Skills.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Skills"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding Senses.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Senses"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding Languages.IsVisible, Converter={StaticResource BoolToVis}}">
-                    <TextBlock Margin="5, 0, 5, 0" Text="Languages"/>
-                    <TextBlock Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
-                </StackPanel>
+                <traits:TraitsView DataContext="{Binding SavingThrows}"/>
+                <traits:TraitsView DataContext="{Binding DamageVulnerabilities}"/>
+                <traits:TraitsView DataContext="{Binding DamageResistances}"/>
+                <traits:TraitsView DataContext="{Binding DamageImmunities}"/>
+                <traits:TraitsView DataContext="{Binding ConditionImmunities}"/>
+                <traits:TraitsView DataContext="{Binding Skills}"/>
+                <traits:TraitsView DataContext="{Binding Senses}"/>
+                <traits:TraitsView DataContext="{Binding Languages}"/>
 
                 <local:ChallengeRatingView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
             </StackPanel>

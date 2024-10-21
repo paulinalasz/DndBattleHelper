@@ -8,9 +8,11 @@ namespace DndBattleHelper.ViewModels
 {
     public class TraitsWithModifierViewModel<T> : NotifyPropertyChanged where T : struct
     {
+        public string Header { get; }
+
         public ObservableCollection<TraitWithModifierViewModel<T>> TraitsWithModifier { get; }
 
-        public TraitsWithModifierViewModel(List<TraitWithModifier<T>> traits)
+        public TraitsWithModifierViewModel(List<TraitWithModifier<T>> traits, string header)
         {
             TraitsWithModifier = new ObservableCollection<TraitWithModifierViewModel<T>>();
 
@@ -18,6 +20,8 @@ namespace DndBattleHelper.ViewModels
             {
                 TraitsWithModifier.Add(new TraitWithModifierViewModel<T>(trait));
             }
+
+            Header = header;
         }
 
         public override string ToString()
