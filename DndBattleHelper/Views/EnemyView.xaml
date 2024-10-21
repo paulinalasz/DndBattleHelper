@@ -13,7 +13,7 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         <converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="#f3e9cf">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
