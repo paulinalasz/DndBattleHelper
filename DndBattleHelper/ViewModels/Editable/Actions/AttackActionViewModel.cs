@@ -3,7 +3,6 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
 using System.Windows.Input;
 using DndBattleHelper.Models.ActionTypes;
-using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels.Editable.Actions
 {
@@ -32,6 +31,15 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
         private ICommand _rollToHitAndDamageCommand;
         public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
+
+        private ICommand _rollToHitCommand;
+        public ICommand RollToHitCommand => _rollToHitCommand ?? (_rollToHitCommand = new CommandHandler(() => JustAttackRoll(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
+
+        private void JustAttackRoll(int armourClass)
+        {
+            MostRecentTakenAction = new TakenActionViewModel(Name, new ToHitRollViewModel(DoesAttackHit(armourClass)));
+            ActionTaken?.Invoke();
+        }
 
         private ToHitRoll DoesAttackHit(int armourClass)
         {
@@ -64,7 +72,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
             if (!toHitRoll.DidAttackHit)
             {
-                MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll);
+                MostRecentTakenAction = new TakenActionViewModel(Name, new ToHitRollViewModel(toHitRoll));
                 ActionTaken?.Invoke();
                 return;
             }

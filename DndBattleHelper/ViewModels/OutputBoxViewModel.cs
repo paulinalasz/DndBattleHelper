@@ -4,17 +4,18 @@ using System.Windows.Input;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 using System.Linq;
+using DndBattleHelper.ViewModels.Editable.Actions;
 
 namespace DndBattleHelper.ViewModels
 {
     public class OutputBoxViewModel : NotifyPropertyChanged
     {
-        public ObservableCollection<AttackDamageViewModel> AttackDamages { get; set; }
+        public ObservableCollection<TakenActionViewModel> TakenActions { get; set; }
 
         public OutputBoxViewModel()
         {
-            AttackDamages = new ObservableCollection<AttackDamageViewModel>();
-            AttackDamages.CollectionChanged += Names_CollectionChanged;
+            TakenActions = new ObservableCollection<TakenActionViewModel>();
+            TakenActions.CollectionChanged += Names_CollectionChanged;
         }
 
         public string Output => ConvertToOutput();
@@ -23,9 +24,9 @@ namespace DndBattleHelper.ViewModels
         {
             var output = string.Empty;
 
-            foreach(var damageRolled in AttackDamages) 
+            foreach(var takenAction in TakenActions) 
             {
-                output += damageRolled.ToString();
+                output += takenAction.ToString();
                 output += "\n";
             }
 
@@ -36,12 +37,12 @@ namespace DndBattleHelper.ViewModels
 
         public string CalculateTotalDamageOutput()
         {
-            if (AttackDamages.Count == 0) return "";
+            if (TakenActions.Count == 0) return "";
 
-            var totalDamage = (from attackDamage in AttackDamages
-                               where attackDamage.DamageRolled != null
-                               from damage in attackDamage.DamageRolled
-                               select damage).ToList();
+            var totalDamage = TakenActions
+                .Where(x => x.AttackDamageViewModel != null)
+                .SelectMany(action => action.AttackDamageViewModel.DamageRolled)
+                .ToList();
 
             var totalDamagePerType = new Dictionary<DamageType, int>();
 
@@ -71,7 +72,7 @@ namespace DndBattleHelper.ViewModels
 
         public void Clear()
         {
-            AttackDamages.Clear();
+            TakenActions.Clear();
         }
 
         private void Names_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

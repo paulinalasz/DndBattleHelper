@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return $"{DamageGiven} {DamageType} damage!";
+            return $"{DamageGiven} {DamageType}";
         }
     }
 }

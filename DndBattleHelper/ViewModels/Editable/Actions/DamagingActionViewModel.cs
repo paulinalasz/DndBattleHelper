@@ -24,8 +24,6 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
         // Can have multiple damage rolls of different type for the same action
         public List<DamageRollViewModel> DamageRolls { get; set; }
 
-        public AttackDamageViewModel MostRecentDamageRolled { get; set; }
-
         private ICommand _rollDamageCommand;
         public ICommand RollDamageCommand => _rollDamageCommand ?? (_rollDamageCommand = new CommandHandler(() => RollDamage(), () => { return true; }));
 
@@ -45,7 +43,20 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
                 }
             }
 
-            MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll, damageRolled);
+            ToHitRollViewModel toHitRollViewModel = null;
+            AttackDamageViewModel attackDamageViewModel = null;
+
+            if (toHitRoll != null)
+            {
+                toHitRollViewModel = new ToHitRollViewModel(toHitRoll);
+            }
+
+            if (damageRolled.Count > 0) 
+            {
+                attackDamageViewModel = new AttackDamageViewModel(damageRolled);
+            }
+
+            MostRecentTakenAction = new TakenActionViewModel(Name, toHitRollViewModel, attackDamageViewModel);
             ActionTaken?.Invoke();
         }
 

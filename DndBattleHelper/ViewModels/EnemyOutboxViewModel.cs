@@ -90,14 +90,10 @@ namespace DndBattleHelper.ViewModels
 
             foreach (var action in Actions)
             {
-                if (action is DamagingActionViewModel)
+                action.ActionTaken += () =>
                 {
-                    action.ActionTaken += () =>
-                    {
-                        OutputBox.AttackDamages.Add(((DamagingActionViewModel)action).MostRecentDamageRolled);
-                    };
-
-                }
+                    OutputBox.TakenActions.Add(action.MostRecentTakenAction);
+                };
             }
 
             DamageToTake = 0;
