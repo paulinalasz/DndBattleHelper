@@ -4,10 +4,14 @@
              xmlns:local="clr-namespace:DndBattleHelper"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary >
+        <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries >
                 <ResourceDictionary Source="Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <BitmapImage x:Key="Save" UriSource="Icons\Save.png"/>
+            <BitmapImage x:Key="OpenFile" UriSource="Icons\OpenFile.png"/>
+            <BitmapImage x:Key="NextTurn" UriSource="Icons\NextTurn.png"/>
+            <BitmapImage x:Key="PreviousTurn" UriSource="Icons\PreviousTurn.png"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -8,4 +8,36 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="SVGs\**" />
+    <EmbeddedResource Remove="SVGs\**" />
+    <None Remove="SVGs\**" />
+    <Page Remove="SVGs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\NextTurn.png" />
+    <None Remove="Icons\NextTurn.svg" />
+    <None Remove="Icons\OpenFile.png" />
+    <None Remove="Icons\OpenFile.svg" />
+    <None Remove="Icons\PreviousTurn.png" />
+    <None Remove="Icons\PreviousTurn.svg" />
+    <None Remove="Icons\Save.png" />
+    <None Remove="Icons\Save.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharpVectors" Version="1.8.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\NextTurn.png" />
+    <Resource Include="Icons\NextTurn.svg" />
+    <Resource Include="Icons\OpenFile.png" />
+    <Resource Include="Icons\OpenFile.svg" />
+    <Resource Include="Icons\PreviousTurn.png" />
+    <Resource Include="Icons\PreviousTurn.svg" />
+    <Resource Include="Icons\Save.png" />
+    <Resource Include="Icons\Save.svg" />
+  </ItemGroup>
 </Project>

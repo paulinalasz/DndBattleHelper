@@ -17,16 +17,44 @@
 
     <Grid Name="grid1" Focusable="True" >
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Save" Command="{Binding SaveCommand}"/>
-                <Button Content="Open" Command="{Binding OpenCommand}"/>
-                <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>
-                <Button Content="Next Turn" Command="{Binding NextTurnCommand}"/>
-                <TextBlock Text="{Binding DisplayTurnNumber}"/>
-                <Button Content="Add New Player" Command="{Binding AddNewPlayerCommand}"/>
-                <Button Content="Add New Enemy" Command="{Binding AddNewEnemyCommand}"/>
-                <Button Content="Add New Enemy Preset" Command="{Binding AddNewEnemyPresetCommand}"/>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource Save}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Open Save File" Command="{Binding OpenCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource OpenFile}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Go to previous turn" Command="{Binding PreviousTurnCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource PreviousTurn}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Go to next turn" Command="{Binding NextTurnCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource NextTurn}"/>
+                        </Viewbox>
+                    </Button>
+                    <TextBlock Text="{Binding DisplayTurnNumber}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Add New Player" Command="{Binding AddNewPlayerCommand}"/>
+                    <Button Content="Add New Enemy" Command="{Binding AddNewEnemyCommand}"/>
+                    <Button Content="Add New Enemy Preset" Command="{Binding AddNewEnemyPresetCommand}"/>
+                </StackPanel>
+            </Grid>
 
             <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}" ItemsControl.AlternationCount="{Binding EntitiesInInitiativeCount}">
                 <TabControl.Resources>

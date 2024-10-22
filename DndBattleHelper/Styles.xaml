@@ -52,5 +52,17 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--Button Styles-->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="#912316"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+    <Style TargetType="Button" x:Key="ToolBar" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Height" Value="20"/>
+    </Style>
 
 </ResourceDictionary>
