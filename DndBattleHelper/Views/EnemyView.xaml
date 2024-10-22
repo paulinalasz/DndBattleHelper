@@ -12,10 +12,10 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         <converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
     </UserControl.Resources>
-    <Grid Background="#f3e9cf">
+    <Grid Background="#f3e9cf" x:Name="ParentGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition x:Name="FirstColumn" Width="*" MaxWidth="400"/>
+            <ColumnDefinition x:Name="ActionColumn" Width="*"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Orientation="Vertical">

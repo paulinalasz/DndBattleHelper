@@ -3,6 +3,7 @@
     <!-- TextBlock Style -->
     <Style TargetType="TextBlock">
         <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
     <Style TargetType="Run" x:Key="ActionName">
         <Setter Property="FontStyle" Value="Italic"/>
