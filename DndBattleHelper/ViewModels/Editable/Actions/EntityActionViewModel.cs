@@ -47,14 +47,19 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
         public Action ActionTaken;
         public TakenActionViewModel MostRecentTakenAction { get; set; }
 
-        private ICommand _actionTakenCommand;
-        public ICommand ActionTakenCommand => _actionTakenCommand ?? (_actionTakenCommand = new CommandHandler(TakeAction, () => { return true; }));
+        private ICommand _takeActionCommand;
+        public ICommand TakeActionCommand => _takeActionCommand ?? (_takeActionCommand = new CommandHandler(TakeAction, () => { return true; }));
 
-        private void TakeAction()
+        public virtual void TakeAction()
         {
             MostRecentTakenAction = new TakenActionViewModel(Name);
             ActionTaken?.Invoke();
         }
+
+        public virtual string TakenActionContent => "Take Action";
+        public virtual bool IsTakeActionVisible => true;
+        public virtual bool IsRollToHitVisible => false;
+        public virtual bool IsRollDamageVisible => false;   
 
         public virtual EntityAction CopyModel()
         {

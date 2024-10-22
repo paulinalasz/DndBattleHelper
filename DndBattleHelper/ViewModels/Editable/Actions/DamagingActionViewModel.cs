@@ -60,6 +60,10 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             ActionTaken?.Invoke();
         }
 
+        public override bool IsTakeActionVisible => false;
+        public override bool IsRollToHitVisible => false;
+        public override bool IsRollDamageVisible => true;
+
         public override DamagingAction CopyModel()
         {
             return _action.Copy();

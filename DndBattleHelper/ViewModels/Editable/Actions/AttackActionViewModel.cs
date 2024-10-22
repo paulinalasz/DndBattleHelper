@@ -29,9 +29,6 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             }
         }
 
-        private ICommand _rollToHitAndDamageCommand;
-        public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
-
         private ICommand _rollToHitCommand;
         public ICommand RollToHitCommand => _rollToHitCommand ?? (_rollToHitCommand = new CommandHandler(() => JustAttackRoll(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
 
@@ -65,10 +62,10 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             return new ToHitRoll(false, roll, ToHit, withModifier);
         }
 
-        public void RollToHitAndDamage(int armourClass)
+        public override void TakeAction()
         {
             Random rand = new Random();
-            var toHitRoll = DoesAttackHit(armourClass);
+            var toHitRoll = DoesAttackHit(_targetArmourClassProvider.TargetArmourClass);
 
             if (!toHitRoll.DidAttackHit)
             {
@@ -79,6 +76,11 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
             RollDamage(toHitRoll);
         }
+
+        public override string TakenActionContent => "Roll and Damage";
+        public override bool IsTakeActionVisible => true;
+        public override bool IsRollToHitVisible => true;
+        public override bool IsRollDamageVisible => true;
 
         public override AttackAction CopyModel()
         {
