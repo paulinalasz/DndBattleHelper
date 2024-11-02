@@ -9,8 +9,9 @@
         <Converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
+    <StackPanel Background="#f3e9cf">
+        <DockPanel>
+        <!--<Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -19,9 +20,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>-->
 
-            <StackPanel Grid.Column="0" Orientation="Vertical">
+            <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -37,17 +38,17 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Name: "/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Name: "/>
                     <TextBox MinWidth="30" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Name}"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative:"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
                     <traits:RollView Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" DataContext="{Binding InitiativeRollViewModel}"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class:"/>
                     <TextBox MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health:"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" MinWidth="30" Text="{Binding Health}"/>
                     <traits:RollView Grid.Row="3" Grid.Column="2" Margin="5, 0, 5, 0" DataContext="{Binding HealthRollViewModel}"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed:"/>
                     <TextBox MinWidth="30" Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
                 </Grid>
                 <Grid Margin="5">
@@ -64,12 +65,12 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="DEX"/>
-                    <TextBlock Grid.Row="0" Grid.Column="2" Margin="5, 0, 5, 0" Text="CON"/>
-                    <TextBlock Grid.Row="0" Grid.Column="3" Margin="5, 0, 5, 0" Text="INT"/>
-                    <TextBlock Grid.Row="0" Grid.Column="4" Margin="5, 0, 5, 0" Text="WIS"/>
-                    <TextBlock Grid.Row="0" Grid.Column="5" Margin="5, 0, 5, 0" Text="CHA"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="DEX"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="2" Margin="5, 0, 5, 0" Text="CON"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="3" Margin="5, 0, 5, 0" Text="INT"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="4" Margin="5, 0, 5, 0" Text="WIS"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="5" Margin="5, 0, 5, 0" Text="CHA"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="{Binding Strength}"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Dexterity}"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" Text="{Binding Constitution}"/>
@@ -77,42 +78,44 @@
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
                     <TextBox MinWidth="30" Grid.Row="1" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
                 </Grid>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                <ScrollViewer MaxHeight="300">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <editable:EditTraitsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSavingThrowsViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageVulnerabilitiesViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageResistancesViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageImmunitiesViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditConditionImmunitiesViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
-                    <traits:PassivePerceptionView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
-                    <editable:EditTraitsView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSavingThrowsViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageVulnerabilitiesViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageResistancesViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageImmunitiesViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditConditionImmunitiesViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
+                        <traits:PassivePerceptionView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
+                        <editable:EditTraitsView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
 
-                    <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
+                        <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
 
-                    <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
-                </Grid>
+                        <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
+                    </Grid>
+                </ScrollViewer>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
+            <StackPanel DockPanel.Dock="Right" Margin="10, 0, 10, 0">
                 <StackPanel Orientation="Horizontal">
                     <CheckBox Content="Is Spell Caster" IsChecked="{Binding IsSpellCaster}"/>
                     <TextBlock Text="Spell Slot Availability: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
@@ -152,11 +155,10 @@
 
                 <editable:EditActionsView DataContext="{Binding EditActionsViewModel}"/>
             </StackPanel>
-        </Grid>
-
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+        </DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
             <Button Content="Add" Command="{Binding AddCommand}"/>
             <Button Content="Cancel" Command="{Binding CancelCommand}"/>
         </StackPanel>
-    </Grid>
+    </StackPanel>
 </UserControl>

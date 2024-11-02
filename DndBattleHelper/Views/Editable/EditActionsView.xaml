@@ -21,7 +21,7 @@
                 <StackPanel>
                     <StackPanel Grid.Row="1"  Orientation="Horizontal">
                         <TextBox Text="{Binding Name}"/>
-                        <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedActionCost, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+                        <ComboBox Width="70" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedActionCost, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedActionCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />

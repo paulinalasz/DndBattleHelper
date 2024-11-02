@@ -20,13 +20,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Margin="5, 0, 5, 0" Text="{Binding Header}"/>
+        <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Margin="5, 0, 5, 0" Text="{Binding Header}"/>
 
-        <StackPanel Grid.Row="1"  Orientation="Horizontal">
-            <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedToAdd, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
-                              SelectedValuePath="Value"
-                              DisplayMemberPath="Description"
-                              SelectedValue="{Binding Path=SelectedToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <ComboBox Width="110" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedToAdd, Converter={StaticResource EnumToCollectionConverter}, Mode=OneTime}"
+                          SelectedValuePath="Value"
+                          DisplayMemberPath="Description"
+                          SelectedValue="{Binding Path=SelectedToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <local:EditableModifierView DataContext="{Binding ToAddModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editTraitsView}"/>
             <Button Content="Add" Command="{Binding AddCommand}"/>
         </StackPanel>

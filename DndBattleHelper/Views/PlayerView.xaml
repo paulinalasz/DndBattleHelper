@@ -9,8 +9,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding Name}"/>
-            <TextBlock Text="{Binding Name}"/>
-            <TextBlock >testingggg</TextBlock>
+            <TextBlock Text="{Binding Initiative}"/>
         </StackPanel>
     </Grid>
 </UserControl>

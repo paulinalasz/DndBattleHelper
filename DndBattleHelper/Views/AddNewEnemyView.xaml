@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-                <ComboBox 
+                <ComboBox Width="300"
                     ItemsSource="{Binding EnemyPresets}" 
                     DisplayMemberPath="Name" 
                     SelectedItem="{Binding SelectedEnemyPreset, Mode=TwoWay}" />

@@ -24,7 +24,7 @@
             <TextBlock Text="d"/>
             <TextBox Text="{Binding DiceBase}"/>
             <local:EditableModifierView DataContext="{Binding DamageModifierViewModel}"/>
-            <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedDamageType, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+            <ComboBox Width="95" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedDamageType, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedDamageType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
