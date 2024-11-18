@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Animated Piano</Name>
+  <Health>86</Health>
+  <ArmourClass>15</ArmourClass>
+  <Speed>30</Speed>
+  <Strength>18</Strength>
+  <Dexterity>6</Dexterity>
+  <Constitution>10</Constitution>
+  <Intelligence>1</Intelligence>
+  <Wisdom>3</Wisdom>
+  <Charisma>1</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities>
+    <TraitOfDamageType>
+      <Type>Poison</Type>
+    </TraitOfDamageType>
+    <TraitOfDamageType>
+      <Type>Psychic</Type>
+    </TraitOfDamageType>
+  </DamageImmunities>
+  <ConditionImmunities>
+    <TraitOfCondition>
+      <Type>Blinded</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Charmed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Deafened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Frightened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Paralyzed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Petrified</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Poisoned</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Exhaustion</Type>
+    </TraitOfCondition>
+  </ConditionImmunities>
+  <Skills />
+  <Senses>
+    <TraitOfSenseType>
+      <Type>Blindsight</Type>
+    </TraitOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>Three</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Antimagic Susceptibility</Name>
+      <Description>The wardrobe is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the wardrobe must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute.</Description>
+    </Ability>
+    <Ability>
+      <Name>False Appearance</Name>
+      <Description>While the wardrobe remains motionless, it is indistinguishable from a normal wardrobe.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The Paino makes two attacks: One with its Grasping Strings, and One with its Slam</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Slam</Name>
+      <Description>+ 6 to hit, 4d6 + 9</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>4</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>9</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Grasping Strings</Name>
+      <Description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage. If the target is a creature, it is grappled (escape DC 14). Until this grapple ends, the target is restrained, and the piano can’t use its grasping clothes on another target.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>3</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>3</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Swallow</Name>
+      <Description>The piano makes one grasping strings attack against a Medium or smaller creature it is grappling. If the attack hits, the target takes the grasping clothes’ damage, and the target is swallowed. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the wardrobe, and it takes 10 (3d6 + 3) bludgeoning damage at the start of each of the wardrobe’s turns. If the piano takes 12 damage or more on a single turn from a creature inside it, the wardrobe must succeed on a DC 20 Constitution saving throw at the end of that turn or expel the swallowed creature, which falls prone in a space within 5 feet of the wardrobe. If the wardrobe dies, a swallowed creature is no longer restrained by it and can escape from the broken wardrobe by using 5 feet of its movement.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>3</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>3</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Neutral</Type>
+        <Value>0</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>12</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>20</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Neutral</Type>
+      <Value>0</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>
