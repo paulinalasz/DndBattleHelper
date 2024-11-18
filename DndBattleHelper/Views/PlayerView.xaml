@@ -9,7 +9,10 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="{Binding Name}"/>
-            <TextBlock Text="{Binding Initiative}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Initiative: "/>
+                <TextBox Text="{Binding Initiative}"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>
