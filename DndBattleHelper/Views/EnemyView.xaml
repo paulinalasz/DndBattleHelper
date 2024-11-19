@@ -13,11 +13,6 @@
         <converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
     </UserControl.Resources>
     <DockPanel Background="#f3e9cf" x:Name="ParentGrid">
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition x:Name="FirstColumn" Width="*" MaxWidth="400"/>
-            <ColumnDefinition x:Name="ActionColumn" Width="*"/>
-        </Grid.ColumnDefinitions>-->
-
         <StackPanel DockPanel.Dock="Left" Width="Auto" MaxWidth="400" Orientation="Vertical">
             <Grid>
                 <Grid.RowDefinitions>
@@ -45,7 +40,11 @@
                     <TextBox Text="{Binding Health}"/>
                     <TextBlock Margin="10, 0, 0, 0" Text="-"/>
                     <TextBox Margin="10, 0, 0, 0" Text="{Binding DamageToTake}"/>
-                    <Button Content="Take Damage" Command="{Binding TakeDamageCommand}"/>
+                    <Button ToolTip="Take damage" Command="{Binding TakeDamageCommand}">
+                        <Viewbox>
+                            <Image Source="{StaticResource TakeDamageDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
                 </StackPanel>
                 <TextBlock Style="{StaticResource TraitName}" Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
                 <TextBlock Style="{StaticResource Trait}" Grid.Row="5" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
@@ -159,11 +158,23 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Target Armour Class" Margin="0,0,5,0"/>
                     <TextBox MinWidth="30" Text="{Binding TargetArmourClass}"/>
-                    <ToggleButton Content="Adv" IsChecked="{Binding IsAdvantage}"/>
-                    <ToggleButton Content="Dis" IsChecked="{Binding IsDisadvantage}"/>
+                    <ToggleButton ToolTip="Roll with advantage" IsChecked="{Binding IsAdvantage}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AdvantageDrawingImage}"/>
+                        </Viewbox>
+                    </ToggleButton>
+                    <ToggleButton ToolTip="Roll with disadvantage" IsChecked="{Binding IsDisadvantage}">
+                        <Viewbox>
+                            <Image Source="{StaticResource DisadvantageDrawingImage}"/>
+                        </Viewbox>
+                    </ToggleButton>
                 </StackPanel>
 
-                <Button Grid.Column="1" Content="Clear" Command="{Binding ClearCommand}"/>
+                <Button Grid.Column="1" ToolTip="Clear output" Command="{Binding ClearCommand}">
+                    <Viewbox>
+                        <Image Source="{StaticResource ClearDrawingImage}"/>
+                    </Viewbox>
+                </Button>
             </Grid>
 
             <local:OutputBoxView DataContext="{Binding OutputBox}"/>

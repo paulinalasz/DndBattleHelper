@@ -56,7 +56,8 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             ActionTaken?.Invoke();
         }
 
-        public virtual string TakenActionContent => "Take Action";
+        public string ViewModelType => GetType().Name;
+        public virtual string TakenActionTooltip => "Take action";
         public virtual bool IsTakeActionVisible => true;
         public virtual bool IsRollToHitVisible => false;
         public virtual bool IsRollDamageVisible => false;   

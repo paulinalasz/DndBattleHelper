@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DndBattleHelper.Views"
+             xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="MyControl">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
@@ -17,9 +19,34 @@
         
         <local:AbilityView/>
         <DockPanel Grid.Column="1">
-            <Button Content="{Binding TakenActionContent}" Command="{Binding TakeActionCommand}" Visibility="{Binding IsTakeActionVisible, Converter={StaticResource BoolToVis}}" Grid.Column="1" Height="30" Margin="5,0,5,0"/>
-            <Button Content="Roll To Hit" Command="{Binding RollToHitCommand}" Visibility="{Binding IsRollToHitVisible, Converter={StaticResource BoolToVis}}" Grid.Column="2" Height="30" Margin="5,0,5,0"/>
-            <Button Content="Just Dmg" Command="{Binding RollDamageCommand}" Visibility="{Binding IsRollDamageVisible, Converter={StaticResource BoolToVis}}" Grid.Column="3" Height="30" Margin="5,0,5,0"/>
+            <Button ToolTip="{Binding TakenActionTooltip}" Command="{Binding TakeActionCommand}" Visibility="{Binding IsTakeActionVisible, Converter={StaticResource BoolToVis}}" Grid.Column="1" Height="30" Margin="5,0,5,0">
+                <Viewbox>
+                    <Image>
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ViewModelType}" Value="AttackActionViewModel">
+                                        <Setter Property="Source" Value="{StaticResource RollToHitAndDamageDrawingImage}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ViewModelType}" Value="EntityActionViewModel">
+                                        <Setter Property="Source" Value="{StaticResource TakeActionDrawingImage}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Viewbox>
+            </Button>
+            <Button ToolTip="Roll to hit" Command="{Binding RollToHitCommand}" Visibility="{Binding IsRollToHitVisible, Converter={StaticResource BoolToVis}}" Grid.Column="2" Height="30" Margin="5,0,5,0">
+                <Viewbox>
+                    <Image Source="{StaticResource RollToHitDrawingImage}"/>
+                </Viewbox>
+            </Button>
+            <Button ToolTip="Roll damage" Command="{Binding RollDamageCommand}" Visibility="{Binding IsRollDamageVisible, Converter={StaticResource BoolToVis}}" Grid.Column="3" Height="30" Margin="5,0,5,0">
+                <Viewbox>
+                    <Image Source="{StaticResource RollDamageDrawingImage}"/>
+                </Viewbox>
+            </Button>
         </DockPanel>
     </Grid>
 </UserControl>

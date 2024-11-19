@@ -14,11 +14,15 @@
                 <ResourceDictionary Source="Icons\AddPlayer.xaml"/>
                 <ResourceDictionary Source="Icons\AddEnemy.xaml"/>
                 <ResourceDictionary Source="Icons\AddEnemyPreset.xaml"/>
+                <ResourceDictionary Source="Icons\Advantage.xaml"/>
+                <ResourceDictionary Source="Icons\Disadvantage.xaml"/>
+                <ResourceDictionary Source="Icons\Clear.xaml"/>
+                <ResourceDictionary Source="Icons\TakeAction.xaml"/>
+                <ResourceDictionary Source="Icons\RollToHitAndDamage.xaml"/>
+                <ResourceDictionary Source="Icons\RollToHit.xaml"/>
+                <ResourceDictionary Source="Icons\RollDamage.xaml"/>
+                <ResourceDictionary Source="Icons\TakeDamage.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <!--<BitmapImage x:Key="Save" UriSource="Icons\Save.png"/>
-            <BitmapImage x:Key="OpenFile" UriSource="Icons\OpenFile.png"/>
-            <BitmapImage x:Key="NextTurn" UriSource="Icons\NextTurn.png"/>
-            <BitmapImage x:Key="PreviousTurn" UriSource="Icons\PreviousTurn.png"/>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

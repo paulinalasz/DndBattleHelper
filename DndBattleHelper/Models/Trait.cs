@@ -15,7 +15,6 @@
             var traitString = string.Empty;
 
             traitString += Type.ToString();
-            traitString += " ";
 
             return traitString;
         }

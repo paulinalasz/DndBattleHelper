@@ -77,7 +77,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             RollDamage(toHitRoll);
         }
 
-        public override string TakenActionContent => "Roll and Damage";
+        public override string TakenActionTooltip => "Roll to hit and damage";
         public override bool IsTakeActionVisible => true;
         public override bool IsRollToHitVisible => true;
         public override bool IsRollDamageVisible => true;
