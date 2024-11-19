@@ -7,11 +7,18 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries >
                 <ResourceDictionary Source="Styles.xaml"/>
+                <ResourceDictionary Source="Icons\NextTurn.xaml"/>
+                <ResourceDictionary Source="Icons\PreviousTurn.xaml"/>
+                <ResourceDictionary Source="Icons\OpenFile.xaml"/>
+                <ResourceDictionary Source="Icons\Save.xaml"/>
+                <ResourceDictionary Source="Icons\AddPlayer.xaml"/>
+                <ResourceDictionary Source="Icons\AddEnemy.xaml"/>
+                <ResourceDictionary Source="Icons\AddEnemyPreset.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <BitmapImage x:Key="Save" UriSource="Icons\Save.png"/>
+            <!--<BitmapImage x:Key="Save" UriSource="Icons\Save.png"/>
             <BitmapImage x:Key="OpenFile" UriSource="Icons\OpenFile.png"/>
             <BitmapImage x:Key="NextTurn" UriSource="Icons\NextTurn.png"/>
-            <BitmapImage x:Key="PreviousTurn" UriSource="Icons\PreviousTurn.png"/>
+            <BitmapImage x:Key="PreviousTurn" UriSource="Icons\PreviousTurn.png"/>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>
