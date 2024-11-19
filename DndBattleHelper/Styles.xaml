@@ -36,6 +36,7 @@
     <!--TextBox Styles-->
     <Style TargetType="TextBox">
         <Setter Property="MinWidth" Value="20"/>
+        <Setter Property="MaxHeight" Value="20"/>
         <Setter Property="Foreground" Value="#58170d"/>
     </Style>
     
@@ -82,6 +83,7 @@
         <Setter Property="Height" Value="30"/>
     </Style>
     
+    <!--Toggle Button-->
     <Style TargetType="ToggleButton">
         <Setter Property="Background" Value="#912316"/>
         <Setter Property="BorderBrush" Value="Black"/>

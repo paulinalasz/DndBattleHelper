@@ -25,8 +25,8 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Style="{StaticResource Name}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
@@ -91,13 +91,15 @@
                 <local:ChallengeRatingView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
             </StackPanel>
             <Path/>
-            <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:AbilityView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <ScrollViewer MaxHeight="200">
+                <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:AbilityView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
         </StackPanel>
 
         <StackPanel DockPanel.Dock="Right" Width="Auto" Margin="10, 0, 10, 0">
