@@ -68,8 +68,27 @@
         <Setter Property="Margin" Value="2"/>
     </Style>
     <Style TargetType="Button" x:Key="ToolBar" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="50"/>
+    </Style>
+    <Style TargetType="Button" x:Key="Actions" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="MaxWidth" Value="40"/>
+        <Setter Property="MaxHeight" Value="40"/>
         <Setter Property="Width" Value="40"/>
-        <Setter Property="Height" Value="40"/>
+        <Setter Property="MinHeight" Value="40"/>
+    </Style>
+    <Style TargetType="Button" x:Key="OutputBox" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+    
+    <Style TargetType="ToggleButton">
+        <Setter Property="Background" Value="#912316"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
     </Style>
 
     <!--ComboBox Styles-->

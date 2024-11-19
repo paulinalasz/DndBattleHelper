@@ -6,12 +6,12 @@
 				<DrawingGroup Opacity="1" Transform="1,0,0,1,-241.71922,-60.918183">
 					<GeometryDrawing Geometry="F1 M25.498471,22.097583z M0,0z M266.35226,82.514731L242.58584,82.486281 254.49369,61.918181z">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F1 M25.498471,22.097583z M0,0z M258.92235,78.103119L250.04691,78.102356 254.48529,70.416382z">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 				</DrawingGroup>

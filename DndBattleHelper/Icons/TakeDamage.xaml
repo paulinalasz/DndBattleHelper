@@ -6,62 +6,62 @@
 				<DrawingGroup Opacity="1" Transform="1,0,0,1,-241.35226,-59.723636">
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M242.45711,82.765809L245.1757,85.32593 248.42333,81.926119 245.81587,79.451246 242.45711,82.765809z">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M243.07583,76.53443L250.98659,84.445187 252.48919,82.810003 244.57843,75.208605 243.07583,76.53443z">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M246.25781,76.755401L259.64865,62.834237 264.95195,61.906159 264.81937,66.458159 251.25175,81.528372">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M263.00741,64.248451L249.66076,78.12542">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M246.86818,76.069742L241.88259,73.617615 247.8488,71.363712 243.42939,61.199053 252.84274,65.441693 255.49439,60.094199 258.14605,64.115868">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M263.18418,68.535285L266.32197,69.10981 262.56546,75.120217 266.18938,83.163556 258.05766,79.937382 255.93634,85.726818 252.44055,80.384527">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M249.03976,70.514732L246.28976,64.202232 251.78976,66.827232">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M261.53976,76.514731L263.97726,80.889731 258.72726,78.952231">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M254.22726,81.389731L255.41476,83.327231 256.53976,80.264731">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M263.28976,69.452232L264.78976,69.827232 262.10226,73.577231">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M254.35226,65.139732L255.60226,62.577232 256.53976,64.389732">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M246.78976,74.639731L244.78976,73.702231 247.72726,72.577231">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="0.5" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 				</DrawingGroup>

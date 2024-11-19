@@ -170,7 +170,7 @@
                     </ToggleButton>
                 </StackPanel>
 
-                <Button Grid.Column="1" ToolTip="Clear output" Command="{Binding ClearCommand}">
+                <Button Grid.Column="1" ToolTip="Clear output" Command="{Binding ClearCommand}" Style="{StaticResource OutputBox}">
                     <Viewbox>
                         <Image Source="{StaticResource ClearDrawingImage}"/>
                     </Viewbox>

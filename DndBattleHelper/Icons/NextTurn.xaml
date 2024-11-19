@@ -6,7 +6,7 @@
 				<DrawingGroup Opacity="1" Transform="1,0,0,1,-241.35226,-59.723636">
 					<GeometryDrawing Geometry="F0 M25.914679,26.666094z M0,0z M251.03877,60.147062L256.49833,69.836748 241.86565,66.183146 241.76168,79.36734 256.4929,76.143923 250.89465,86.266963 266.44153,72.83745 251.03877,60.147062z">
 						<GeometryDrawing.Pen>
-							<Pen Brush="#FF000000" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+							<Pen Brush="white" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
 						</GeometryDrawing.Pen>
 					</GeometryDrawing>
 				</DrawingGroup>
