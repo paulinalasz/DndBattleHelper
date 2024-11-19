@@ -50,17 +50,17 @@
                     <TextBlock Text="{Binding DisplayTurnNumber}"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Command="{Binding AddNewPlayerCommand}" Style="{StaticResource ToolBar}">
+                    <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
                         <Viewbox>
                             <Image Source="{StaticResource AddPlayerDrawingImage}"/>
                         </Viewbox>
                     </Button>
-                    <Button Command="{Binding AddNewEnemyCommand}" Style="{StaticResource ToolBar}">
+                    <Button Command="{Binding AddNewEnemyCommand}" ToolTip="Add new enemy" Style="{StaticResource ToolBar}">
                         <Viewbox>
                             <Image Source="{StaticResource AddEnemyDrawingImage}"/>
                         </Viewbox>
                     </Button>
-                    <Button Command="{Binding AddNewEnemyPresetCommand}" Style="{StaticResource ToolBar}">
+                    <Button Command="{Binding AddNewEnemyPresetCommand}" ToolTip="Add new enemy preset" Style="{StaticResource ToolBar}">
                         <Viewbox>
                             <Image Source="{StaticResource AddEnemyPresetDrawingImage}"/>
                         </Viewbox>
