@@ -10,9 +10,9 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
     <Grid>
-        <StackPanel Orientation="Horizontal" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVis}}">
-            <TextBlock  Margin="5, 0, 5, 0" Style="{StaticResource TraitName}" Text="{Binding Header}"/>
-            <TextBlock TextWrapping="Wrap" MaxWidth="260" Margin="5, 0, 5, 0" Style="{StaticResource Trait}" Text="{Binding }"/>
-        </StackPanel>
+        <TextBlock Margin="5, 3, 5, 0" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVis}}" TextWrapping="Wrap" MaxWidth="300">
+            <Run Style="{StaticResource TraitNameRun}" Text="{Binding Header, Mode=OneWay}"/>
+            <Run Style="{StaticResource TraitRun}" Text="{Binding TraitsString, Mode=OneWay}"/>
+        </TextBlock>
     </Grid>
 </UserControl>

@@ -26,6 +26,8 @@ namespace DndBattleHelper.ViewModels
             PassivePerception = passivePerception;
         }
 
+        public string TraitsString => ToString();
+
         public override string ToString()
         {
             var traitsString = string.Empty;

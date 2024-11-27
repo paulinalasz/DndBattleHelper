@@ -48,14 +48,14 @@ namespace DndBattleHelper.ViewModels
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
 
-            SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows, "Saving Throws");
-            DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities, "Damage Vulnerabilities");
-            DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances, "Damage Resistances");
-            DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities, "Damage Immunities");
-            ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities, "Condition Immunities");
-            Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills, "Skills");
-            Senses = new TraitsViewModel<SenseType>(enemy.Senses, "Senses", enemy.PassivePerception);
-            Languages = new TraitsViewModel<LanguageType>(enemy.Languages, "Languages");
+            SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows, "Saving Throws:");
+            DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities, "Damage Vulnerabilities:");
+            DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances, "Damage Resistances:");
+            DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities, "Damage Immunities:");
+            ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities, "Condition Immunities:");
+            Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills, "Skills:");
+            Senses = new TraitsViewModel<SenseType>(enemy.Senses, "Senses:", enemy.PassivePerception);
+            Languages = new TraitsViewModel<LanguageType>(enemy.Languages, "Languages:");
             ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);
 
             Abilities = new ObservableCollection<AbilityViewModel>();

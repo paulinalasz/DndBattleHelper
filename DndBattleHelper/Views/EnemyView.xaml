@@ -13,7 +13,7 @@
         <converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
     </UserControl.Resources>
     <DockPanel Background="#f3e9cf" x:Name="ParentGrid">
-        <StackPanel DockPanel.Dock="Left" Width="Auto" MaxWidth="400" Orientation="Vertical">
+        <StackPanel DockPanel.Dock="Left" Width="Auto" MaxWidth="300" Orientation="Vertical">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -25,28 +25,28 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Style="{StaticResource Name}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
                 <Path Grid.Row="1" Grid.ColumnSpan="2"/>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative:"/>
                 <TextBlock Style="{StaticResource Trait}" Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class:"/>
                 <TextBlock  Style="{StaticResource Trait}" Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Margin="5, 10, 5, 0" Text="Health:"/>
                 <StackPanel Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
                     <TextBox Text="{Binding Health}"/>
-                    <TextBlock Margin="10, 0, 0, 0" Text="-"/>
-                    <TextBox Margin="10, 0, 0, 0" Text="{Binding DamageToTake}"/>
+                    <TextBlock Margin="5, 8, 0, 0" Text="-"/>
+                    <TextBox Margin="5, 0, 0, 0" Text="{Binding DamageToTake}"/>
                     <Button ToolTip="Take damage" Command="{Binding TakeDamageCommand}">
                         <Viewbox>
                             <Image Source="{StaticResource TakeDamageDrawingImage}"/>
                         </Viewbox>
                     </Button>
                 </StackPanel>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed:"/>
                 <TextBlock Style="{StaticResource Trait}" Grid.Row="5" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
             </Grid>
             <Path/>
@@ -77,20 +77,38 @@
                 <TextBlock Grid.Row="1" Style="{StaticResource Trait}" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
                 <TextBlock Grid.Row="1" Style="{StaticResource Trait}" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
             </Grid>
+            
             <Path/>
-            <StackPanel>
-                <traits:TraitsView DataContext="{Binding SavingThrows}"/>
-                <traits:TraitsView DataContext="{Binding DamageVulnerabilities}"/>
-                <traits:TraitsView DataContext="{Binding DamageResistances}"/>
-                <traits:TraitsView DataContext="{Binding DamageImmunities}"/>
-                <traits:TraitsView DataContext="{Binding ConditionImmunities}"/>
-                <traits:TraitsView DataContext="{Binding Skills}"/>
-                <traits:TraitsView DataContext="{Binding Senses}"/>
-                <traits:TraitsView DataContext="{Binding Languages}"/>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <traits:TraitsView Grid.Row="0" DataContext="{Binding SavingThrows}"/>
+                <traits:TraitsView Grid.Row="1" DataContext="{Binding DamageVulnerabilities}"/>
+                <traits:TraitsView Grid.Row="2" DataContext="{Binding DamageResistances}"/>
+                <traits:TraitsView Grid.Row="3" DataContext="{Binding DamageImmunities}"/>
+                <traits:TraitsView Grid.Row="4" DataContext="{Binding ConditionImmunities}"/>
+                <traits:TraitsView Grid.Row="5" DataContext="{Binding Skills}"/>
+                <traits:TraitsView Grid.Row="6" DataContext="{Binding Senses}"/>
+                <traits:TraitsView Grid.Row="7" DataContext="{Binding Languages}"/>
 
-                <local:ChallengeRatingView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
-            </StackPanel>
+                <local:ChallengeRatingView Margin="5, 3, 5, 0" Grid.Row="8" DataContext="{Binding ChallengeRating}"/>
+            </Grid>
+            
             <Path/>
+            
             <ScrollViewer MaxHeight="200">
                 <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
                     <ItemsControl.ItemTemplate>

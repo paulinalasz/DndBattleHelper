@@ -24,6 +24,8 @@ namespace DndBattleHelper.ViewModels
             Header = header;
         }
 
+        public string TraitsString => ToString();
+
         public override string ToString()
         {
             var traitsString = string.Empty;
