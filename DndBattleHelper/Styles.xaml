@@ -84,7 +84,7 @@
     </Style>
     
     <!--Toggle Button-->
-    <Style TargetType="ToggleButton">
+    <Style TargetType="ToggleButton" x:Key="ToggleButton">
         <Setter Property="Background" Value="#912316"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="Foreground" Value="White"/>
