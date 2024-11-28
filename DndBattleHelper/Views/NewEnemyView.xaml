@@ -11,17 +11,6 @@
     </UserControl.Resources>
     <StackPanel Background="#f3e9cf">
         <DockPanel>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>-->
-
             <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -38,19 +27,20 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Name: "/>
-                    <TextBox MinWidth="30" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Name}"/>
-                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative:"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
-                    <traits:RollView Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" DataContext="{Binding InitiativeRollViewModel}"/>
-                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class:"/>
-                    <TextBox MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
-                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health:"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" MinWidth="30" Text="{Binding Health}"/>
-                    <traits:RollView Grid.Row="3" Grid.Column="2" Margin="5, 0, 5, 0" DataContext="{Binding HealthRollViewModel}"/>
-                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed:"/>
-                    <TextBox MinWidth="30" Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Grid.Column="0" Text="Name: "/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Text="Initiative:"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Text="Armour Class:"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Health:"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Text="Speed:"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
+                    <traits:RollView Grid.Row="1" Grid.Column="2" DataContext="{Binding InitiativeRollViewModel}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="2" Grid.Column="1" Text="{Binding ArmourClass}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="3" Grid.Column="1" Text="{Binding Health}"/>
+                    <traits:RollView Grid.Row="3" Grid.Column="2" DataContext="{Binding HealthRollViewModel}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="4" Grid.Column="1" Text="{Binding Speed}"/>
                 </Grid>
+                <Path/>
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -65,20 +55,21 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
-                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="DEX"/>
-                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="2" Margin="5, 0, 5, 0" Text="CON"/>
-                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="3" Margin="5, 0, 5, 0" Text="INT"/>
-                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="4" Margin="5, 0, 5, 0" Text="WIS"/>
-                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="5" Margin="5, 0, 5, 0" Text="CHA"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="{Binding Strength}"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Dexterity}"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" Text="{Binding Constitution}"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="3" Margin="5, 0, 5, 0" Text="{Binding Intelligence}"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
-                    <TextBox MinWidth="30" Grid.Row="1" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="0" Text="STR"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="1" Text="DEX"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="2" Text="CON"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="3" Text="INT"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="4" Text="WIS"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="5" Text="CHA"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Strength}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Dexterity}"/>
+                    <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Constitution}"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Intelligence}"/>
+                    <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding Wisdom}"/>
+                    <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
                 </Grid>
-                <ScrollViewer MaxHeight="300">
+                <Path/>
+                <ScrollViewer MaxHeight="200">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -147,7 +138,7 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <TextBox Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20" Margin="5"/>
+                                <TextBox Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

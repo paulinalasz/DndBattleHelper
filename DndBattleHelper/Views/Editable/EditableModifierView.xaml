@@ -15,7 +15,7 @@
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=ModifierType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding ModifierValue}" IsEnabled="{Binding IsModifierValueEnabled}"/>
+            <TextBox Margin="0, 0, 3, 0" Text="{Binding ModifierValue}" IsEnabled="{Binding IsModifierValueEnabled}"/>
         </StackPanel>
     </Grid>
 </UserControl>

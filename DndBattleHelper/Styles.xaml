@@ -15,10 +15,11 @@
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontFamily" Value="Ariel"/>
         <Setter Property="Margin" Value="5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="TraitName" BasedOn="{StaticResource Trait}">
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Margin" Value="5,0,5,0"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="Name" BasedOn="{StaticResource TraitName}">
         <Setter Property="FontSize" Value="24"/>
@@ -28,7 +29,7 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="TabTitle">
-        <Setter Property="Foreground" Value="#58170d"/>
+        <Setter Property="Foreground" Value="#912316"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
@@ -61,7 +62,41 @@
     <Style TargetType="TextBox">
         <Setter Property="MinWidth" Value="20"/>
         <Setter Property="MaxHeight" Value="20"/>
-        <Setter Property="Foreground" Value="#58170d"/>
+        <Setter Property="Foreground" Value="#912316"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="bg" BorderBrush="#FF825E5E" Background="White" BorderThickness="1">
+                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="BorderBrush" TargetName="bg" Value="#858585"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="bg" Value="#912316"/>
+                            <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="bg" Value="#912316"/>
+                            <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="Traits" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="MinWidth" Value="30"/>
     </Style>
     
     <!--Path Separator-->
