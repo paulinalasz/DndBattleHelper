@@ -127,6 +127,11 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="Separator">
+        <Setter Property="Background" Value="#912316"/>
+        <Setter Property="Height" Value="1"/>
+    </Style>
     
     <!--Button Styles-->
     <Style TargetType="Button">
