@@ -9,10 +9,9 @@
         <Setter Property="FontStyle" Value="Italic"/>
         <Setter Property="FontSize" Value="12"/>
     </Style>
-    <Style TargetType="TextBlock" x:Key="Trait">
+    <Style TargetType="TextBlock" x:Key="Trait" BasedOn="{StaticResource {x:Type TextBlock}}">
         <Setter Property="Foreground" Value="#912316"/>
         <!--<Setter Property="Foreground" Value="#58170d"/>-->
-        <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontFamily" Value="Ariel"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -20,6 +19,9 @@
     <Style TargetType="TextBlock" x:Key="TraitName" BasedOn="{StaticResource Trait}">
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="5,0,5,0"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="EditTraitName" BasedOn="{StaticResource TraitName}">
+        <Setter Property="FontSize" Value="14"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="Name" BasedOn="{StaticResource TraitName}">
         <Setter Property="FontSize" Value="24"/>
@@ -83,6 +85,9 @@
                             <Setter Property="BorderBrush" TargetName="bg" Value="#912316"/>
                             <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
                         </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="#858585"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -139,8 +144,13 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#f7bf2d"/>
             </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="#8f6c68"/>
+                <Setter Property="BorderBrush" Value="Gray"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
+    
     <Style TargetType="Button" x:Key="ToolBar" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="50"/>
@@ -154,6 +164,12 @@
     <Style TargetType="Button" x:Key="OutputBox" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Width" Value="30"/>
         <Setter Property="Height" Value="30"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="AddRemove" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="MaxHeight" Value="15"/>
+        <Setter Property="Padding" Value="2, 2, 2, 2"/>
     </Style>
     
     <!--Toggle Button-->
@@ -279,4 +295,8 @@
         </Style.Resources>
     </Style>
 
+    <!--Image-->
+    <Style TargetType="Image">
+        <Setter Property="Margin" Value="1"/>
+    </Style>
 </ResourceDictionary>

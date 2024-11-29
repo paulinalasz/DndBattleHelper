@@ -22,6 +22,8 @@
                 <ResourceDictionary Source="Icons\RollToHit.xaml"/>
                 <ResourceDictionary Source="Icons\RollDamage.xaml"/>
                 <ResourceDictionary Source="Icons\TakeDamage.xaml"/>
+                <ResourceDictionary Source="Icons\Add.xaml"/>
+                <ResourceDictionary Source="Icons\Remove.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

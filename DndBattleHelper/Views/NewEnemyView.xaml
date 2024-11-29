@@ -61,15 +61,15 @@
                     <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="3" Text="INT"/>
                     <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="4" Text="WIS"/>
                     <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="5" Text="CHA"/>
-                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Strength}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Dexterity}"/>
-                    <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Constitution}"/>
-                    <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Intelligence}"/>
-                    <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding Wisdom}"/>
-                    <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="0" Text="{Binding Strength}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="1" Text="{Binding Dexterity}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="2" Text="{Binding Constitution}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="3" Text="{Binding Intelligence}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="4" Text="{Binding Wisdom}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
                 </Grid>
                 <Path/>
-                <ScrollViewer MaxHeight="200">
+                <ScrollViewer MaxHeight="150">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -89,21 +89,19 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <editable:EditTraitsView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSavingThrowsViewModel}"/>
-                        <editable:EditTraitsView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageVulnerabilitiesViewModel}"/>
-                        <editable:EditTraitsView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageResistancesViewModel}"/>
-                        <editable:EditTraitsView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageImmunitiesViewModel}"/>
-                        <editable:EditTraitsView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditConditionImmunitiesViewModel}"/>
-                        <editable:EditTraitsView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSavingThrowsViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageVulnerabilitiesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageResistancesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageImmunitiesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditConditionImmunitiesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
                         <editable:EditTraitsView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
-                        <traits:PassivePerceptionView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
-                        <editable:EditTraitsView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
-
-                        <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
-
-                        <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
+                        <traits:PassivePerceptionView Margin="0, 0, 0, 10" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
                     </Grid>
                 </ScrollViewer>
+                <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
+                <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
             </StackPanel>
 
             <StackPanel DockPanel.Dock="Right" Margin="10, 0, 10, 0">

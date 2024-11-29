@@ -29,29 +29,13 @@
                 <parent:DamageRollView/>
             </StackPanel>
         </DataTemplate>
-        <!--<DataTemplate DataType="{x:Type traits:SenseViewModel}">
-            <StackPanel Orientation="Horizontal">
-                <parent:TraitView/>
-            </StackPanel>
-        </DataTemplate>-->
-        <!--<DataTemplate DataType="{x:Type traits:TraitWithModifierViewModel}">
-            <StackPanel Orientation="Horizontal">
-                <parent:TraitView/>
-            </StackPanel>
-        </DataTemplate>-->
-        <!--<DataTemplate DataType="{x:Type traits:LanguageViewModel}">
-            <StackPanel Orientation="Horizontal">
-                <parent:TraitView/>
-            </StackPanel>
-        </DataTemplate>-->
     </UserControl.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <ContentPresenter Content="{Binding Content}" />
-        <Button Grid.Column="2" Content="X" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
-    </Grid>
+    <DockPanel>
+        <ContentPresenter DockPanel.Dock="Left" Content="{Binding Content}" Margin="10, 0, 0, 0"/>
+        <Button Style="{StaticResource AddRemove}" DockPanel.Dock="Right" HorizontalAlignment="Right" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}">
+            <Viewbox>
+                <Image Source="{StaticResource CancelDrawingImage}"/>
+            </Viewbox>
+        </Button>
+    </DockPanel>
 </UserControl>
