@@ -21,14 +21,18 @@
 
         <StackPanel Orientation="Horizontal">
             <TextBox Text="{Binding DiceNumber}"/>
-            <TextBlock Text="d"/>
+            <TextBlock Style="{StaticResource TraitName}" Text="d" Margin="0"/>
             <TextBox Margin="0, 0, 3, 0" Text="{Binding DiceBase}"/>
             <local:EditableModifierView DataContext="{Binding DamageModifierViewModel}"/>
             <ComboBox Width="95" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedDamageType, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedDamageType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Content="Add" Command="{Binding AddCommand}"/>
+            <Button Style="{StaticResource AddRemove}" Command="{Binding AddCommand}">
+                <Viewbox>
+                    <Image Source="{StaticResource AddDrawingImage}"/>
+                </Viewbox>
+            </Button>
         </StackPanel>
 
         <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>

@@ -28,8 +28,8 @@
                         <Image Source="{StaticResource AddDrawingImage}"/>
                     </Viewbox>
                 </Button>
-                <TextBox VerticalAlignment="Top" Grid.Row="1" MaxHeight="50" Margin="0, 0, 5, 0" TextWrapping="Wrap" Grid.Column="0" Text="{Binding Name}"/>
-                <TextBox VerticalAlignment="Center" Grid.Row="1" MaxHeight="50" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap"/>
+                <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Top" Grid.Row="1" MaxHeight="50" Margin="0, 0, 5, 0" TextWrapping="Wrap" Grid.Column="0" Text="{Binding Name}"/>
+                <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Center" Grid.Row="1" MaxHeight="50" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap"/>
             </Grid>
 
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>

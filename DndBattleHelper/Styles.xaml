@@ -23,6 +23,10 @@
     <Style TargetType="TextBlock" x:Key="EditTraitName" BasedOn="{StaticResource TraitName}">
         <Setter Property="FontSize" Value="14"/>
     </Style>
+    <Style TargetType="TextBlock" x:Key="EditTrait" BasedOn="{StaticResource TraitName}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+    </Style>
     <Style TargetType="TextBlock" x:Key="Name" BasedOn="{StaticResource TraitName}">
         <Setter Property="FontSize" Value="24"/>
     </Style>

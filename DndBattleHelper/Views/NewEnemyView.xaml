@@ -73,7 +73,7 @@
                     <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
                 </Grid>
                 <Path/>
-                <ScrollViewer MaxHeight="150">
+                <ScrollViewer MaxHeight="140">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>

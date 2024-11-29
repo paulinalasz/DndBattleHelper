@@ -16,33 +16,81 @@
     <Grid>
         <StackPanel>
             <TextBlock Style="{StaticResource Name}" Grid.Row="0" Margin="5, 0, 5, 0" Text="{Binding Header}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <StackPanel Grid.Row="1"  Orientation="Horizontal">
-                        <TextBox Text="{Binding Name}"/>
-                        <ComboBox Width="70" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedActionCost, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
-                              SelectedValuePath="Value"
-                              DisplayMemberPath="Description"
-                              SelectedValue="{Binding Path=SelectedActionCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                        <local:EditableModifierView DataContext="{Binding ToHitModifierViewModel}" IsEnabled="{Binding DataContext.HasModifier, ElementName=EditActions}"/>
-                        <StackPanel Orientation="Vertical">    
-                            <CheckBox Content="To Hit Modifier?" IsChecked="{Binding HasModifier}"/>
-                            <CheckBox Content="Does Damage?" IsChecked="{Binding DamageRollsEnabled}"/>
-                            <CheckBox Content="Is Spell?" IsChecked="{Binding IsSpell}"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <TextBox Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="300"/>
-                    <ComboBox Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedSpellSlot, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+                <Grid Grid.Row="0" Margin="0, 0, 0, 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition MaxWidth="100"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Style="{StaticResource TraitName}" Text="Action Cost"/>
+                    <TextBlock Style="{StaticResource TraitName}" Text="Name" Grid.Column="1"/>
+                    <TextBlock Style="{StaticResource TraitName}" Text="Description" Grid.Column="2"/>
+                    <Button HorizontalAlignment="Right" Style="{StaticResource AddRemove}" Command="{Binding AddCommand}" Grid.Column="3">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+
+                    <ComboBox Grid.Row="1" Grid.Column="0" Width="70" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedActionCost, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+                      SelectedValuePath="Value"
+                      DisplayMemberPath="Description"
+                      SelectedValue="{Binding Path=SelectedActionCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" MaxHeight="50" MinWidth="70" Margin="0, 0, 5, 0" TextWrapping="Wrap" Text="{Binding Name}"/>
+                    <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Center" Grid.Row="1" MaxHeight="50" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap"/>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="0, 10, 0, 10">
+                        <CheckBox IsChecked="{Binding IsSpell}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 0">
+                            <TextBlock Text="Is Spell?" Style="{StaticResource TraitName}" Margin="0"/>
+                        </CheckBox>
+                        <ComboBox HorizontalAlignment="Left" Margin="0, 0, 3, 0" Width="70" ItemsSource="{Binding Path=SelectedSpellSlot, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedSpellSlot, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               Visibility="{Binding IsSpell, Converter={StaticResource BoolToVisConverter}}"/>
-                    <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" Visibility="{Binding DataContext.DamageRollsEnabled, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
-                </StackPanel>
-                <Button Content="Add" Command="{Binding AddCommand}"/>
-            </StackPanel>
+                    </StackPanel>
 
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="0, 10, 0, 10">
+                        <CheckBox IsChecked="{Binding HasModifier}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 0">
+                            <TextBlock Text="To Hit?" Style="{StaticResource TraitName}" Margin="0"/>
+                        </CheckBox>
+                        <local:EditableModifierView DataContext="{Binding ToHitModifierViewModel}" IsEnabled="{Binding DataContext.HasModifier, ElementName=EditActions}"
+                                                    Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="0, 10, 0, 10">
+                        <CheckBox IsChecked="{Binding DamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 0">
+                            <TextBlock Text="Does Damage?" Style="{StaticResource TraitName}" Margin="0"/>
+                        </CheckBox>
+                        <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" 
+                                               Visibility="{Binding DataContext.DamageRollsEnabled, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                </Grid>
+            </Grid>
+            
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
         </StackPanel>
     </Grid>
