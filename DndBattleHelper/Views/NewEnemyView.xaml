@@ -9,12 +9,15 @@
         <Converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <StackPanel Background="#f3e9cf">
-        <Grid>
+    <Grid  Background="#f3e9cf">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <StackPanel Grid.Column="0" Orientation="Vertical">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -160,11 +163,18 @@
 
                     <editable:EditActionsView Margin="0, 10, 0, 0" DataContext="{Binding EditActionsViewModel}"/>
                 </StackPanel>
-                <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Add" Command="{Binding AddCommand}"/>
-                    <Button Content="Cancel" Command="{Binding CancelCommand}"/>
-                </StackPanel>
             </Grid>
+            <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Command="{Binding AddCommand}" Width="60" Height="30">
+                    <Viewbox>
+                        <Image Source="{StaticResource ConfirmDrawingImage}"/>
+                    </Viewbox>
+                </Button>
+                <Button Command="{Binding CancelCommand}" Width="80" Height="30">
+                    <Viewbox>
+                        <Image Source="{StaticResource CancelDrawingImage}"/>
+                    </Viewbox>
+                </Button>
+            </StackPanel>
         </Grid>
-    </StackPanel>
 </UserControl>

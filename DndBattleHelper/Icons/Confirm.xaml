@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="ConfirmDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V3.9811694 H14.300017 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-244.32242,-68.897215">
+                    <DrawingGroup>
+                        <GlyphRunDrawing ForegroundBrush="White">
+                            <GlyphRunDrawing.GlyphRun>
+                                <GlyphRun PixelsPerDip="1" BaselineOrigin="244.25894,72.715927" FontRenderingEmSize="5" BidiLevel="0" IsSideways="False" Characters="Add" GlyphIndices="36 71 71" AdvanceWidths="2.995 2.765 2.765" Language="en-us">
+                                    <GlyphRun.GlyphTypeface>
+                                        <GlyphTypeface FontUri="C:\WINDOWS\FONTS\TAHOMA.TTF" StyleSimulations="None" />
+                                    </GlyphRun.GlyphTypeface>
+                                </GlyphRun>
+                            </GlyphRunDrawing.GlyphRun>
+                        </GlyphRunDrawing>
+                    </DrawingGroup>
+                    <GeometryDrawing Geometry="F0 M14.300017,3.9811694z M0,0z M258.24225,70.877457L254.80478,70.877457">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.74969149" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M14.300017,3.9811694z M0,0z M256.52832,72.50913L256.52832,69.26647">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.72813904" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

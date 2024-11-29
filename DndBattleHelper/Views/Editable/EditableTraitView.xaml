@@ -34,7 +34,7 @@
         <ContentPresenter DockPanel.Dock="Left" Content="{Binding Content}" Margin="10, 0, 0, 0"/>
         <Button Style="{StaticResource AddRemove}" DockPanel.Dock="Right" HorizontalAlignment="Right" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}">
             <Viewbox>
-                <Image Source="{StaticResource CancelDrawingImage}"/>
+                <Image Source="{StaticResource RemoveDrawingImage}"/>
             </Viewbox>
         </Button>
     </DockPanel>

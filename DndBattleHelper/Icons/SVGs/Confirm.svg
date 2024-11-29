@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="5.9075508mm"
-   height="1.1537336mm"
-   viewBox="0 0 20.932267 4.0880324"
+   width="4.0357823mm"
+   height="1.1235745mm"
+   viewBox="0 0 14.300017 3.9811694"
    id="svg3336"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Cancel.svg"
+   sodipodi:docname="Confirm.svg"
    inkscape:export-filename="C:\Users\KlaKlaKla\source\repos\DndBattleHelper\DndBattleHelper\Icons\Save.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -165,6 +165,14 @@
        effect="spiro"
        id="path-effect4204-2"
        is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4176-0-9-4"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4176-0-8-3"
+       is_visible="true" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -173,9 +181,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="32.000001"
-     inkscape:cx="10.383398"
-     inkscape:cy="5.2567403"
+     inkscape:zoom="16"
+     inkscape:cx="3.5834405"
+     inkscape:cy="6.7875289"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -204,23 +212,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-244.5397,-68.831017)">
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.85953242px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 261.81808,69.274249 3.21975,3.170221"
-       id="path4174-4"
-       inkscape:path-effect="#path-effect4176-0-8"
-       inkscape:original-d="m 261.81808,69.274249 c 5.76344,5.399744 7.51925,7.088517 3.21975,3.170221"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.85953242px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 265.03652,69.265157 -3.17022,3.219752"
-       id="path4174-4-6"
-       inkscape:path-effect="#path-effect4176-0-9"
-       inkscape:original-d="m 265.03652,69.265157 c -0.83341,1.338201 -0.24385,4.364438 -3.17022,3.219752"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+     transform="translate(-244.32242,-68.897215)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -232,6 +224,22 @@
          id="tspan3379"
          x="244.25894"
          y="72.715927"
-         style="font-size:5px">Cancel</tspan></text>
+         style="font-size:5px">Add</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.74969149px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 258.24225,70.877457 -3.43747,0"
+       id="path4174-4"
+       inkscape:path-effect="#path-effect4176-0-8-3"
+       inkscape:original-d="m 258.24225,70.877457 c -3.1975,7.455838 -7.85952,0.224507 -3.43747,0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.72813904px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 256.52832,72.50913 0,-3.24266"
+       id="path4174-4-6"
+       inkscape:path-effect="#path-effect4176-0-9-4"
+       inkscape:original-d="m 256.52832,72.50913 c -0.34503,-1.103919 -2.88835,-2.354591 0,-3.24266"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
