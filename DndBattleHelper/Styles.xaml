@@ -26,6 +26,9 @@
     <Style TargetType="TextBlock" x:Key="Name" BasedOn="{StaticResource TraitName}">
         <Setter Property="FontSize" Value="24"/>
     </Style>
+    <Style TargetType="TextBlock" x:Key="EditName" BasedOn="{StaticResource TraitName}">
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
     <Style TargetType="TextBlock" x:Key="AbilityScore" BasedOn="{StaticResource TraitName}">
         <Setter Property="FontSize" Value="14"/>
     </Style>

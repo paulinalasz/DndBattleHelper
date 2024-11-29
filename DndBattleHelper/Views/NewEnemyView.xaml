@@ -10,8 +10,12 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
     <StackPanel Background="#f3e9cf">
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Left" Orientation="Vertical">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -98,56 +102,65 @@
                         <editable:EditTraitsView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
                         <traits:PassivePerceptionView Margin="0, 0, 0, 10" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
                         <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
+                        <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
                     </Grid>
                 </ScrollViewer>
-                <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
+
+                <Path/>
+
                 <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
             </StackPanel>
 
-            <StackPanel DockPanel.Dock="Right" Margin="10, 0, 10, 0">
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Content="Is Spell Caster" IsChecked="{Binding IsSpellCaster}"/>
-                    <TextBlock Text="Spell Slot Availability: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="Is Spell Caster" IsChecked="{Binding IsSpellCaster}"/>
+                        <TextBlock Text="Spell Slot Availability: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
+                    </StackPanel>
+                    <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <ItemsControl ItemsSource="{Binding SpellSlots}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}" Margin="5" Width="20"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="1">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+
+                    <editable:EditActionsView DataContext="{Binding EditActionsViewModel}"/>
                 </StackPanel>
-                <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <ItemsControl ItemsSource="{Binding SpellSlots}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}" Margin="5" Width="20"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-
-                    <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="1">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBox Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </Grid>
-
-                <editable:EditActionsView DataContext="{Binding EditActionsViewModel}"/>
-            </StackPanel>
-        </DockPanel>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Add" Command="{Binding AddCommand}"/>
-            <Button Content="Cancel" Command="{Binding CancelCommand}"/>
-        </StackPanel>
+                <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Add" Command="{Binding AddCommand}"/>
+                    <Button Content="Cancel" Command="{Binding CancelCommand}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </StackPanel>
 </UserControl>

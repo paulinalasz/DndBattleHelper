@@ -12,14 +12,16 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Margin="5, 0, 5, 0" Text="Challenge"/>
+            <TextBlock Style="{StaticResource EditTraitName}" Margin="5, 0, 5, 0" Text="Challenge:"/>
             <ComboBox Width="35" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedChallengeRating, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                               SelectedValuePath="Value"
                               DisplayMemberPath="Description"
                               SelectedValue="{Binding Path=SelectedChallengeRating, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock >
+            <TextBlock VerticalAlignment="Center" Style="{StaticResource TraitName}" Margin="5, 0, 0,0">
+                <Run Text="("/>
                 <Run Text="{Binding Xp, Mode=OneWay}"/>
-                <Run Text="Xp"/>
+                <Run Text="XP"/>
+                <Run Text=")"/>
             </TextBlock>
         </StackPanel>
     </Grid>

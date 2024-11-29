@@ -7,14 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Grid.Row="0" Margin="5, 0, 5, 0" Text="{Binding Header}"/>
+        <StackPanel Margin="5, 0, 5, 0">
+            <TextBlock Style="{StaticResource EditName}" Grid.Row="0" Text="{Binding Header}"/>
 
-            <StackPanel Grid.Row="1"  Orientation="Horizontal">
-                <TextBox Text="{Binding Name}"/>
-                <TextBox Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="300"/>
-                <Button Content="Add" Command="{Binding AddCommand}"/>
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="100"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource TraitName}" Text="Name"/>
+                <TextBlock Style="{StaticResource TraitName}" Text="Description" Grid.Column="1"/>
+                <Button HorizontalAlignment="Right" Style="{StaticResource AddRemove}" Command="{Binding AddCommand}" Grid.Column="2">
+                    <Viewbox>
+                        <Image Source="{StaticResource AddDrawingImage}"/>
+                    </Viewbox>
+                </Button>
+                <TextBox Grid.Row="1" TextWrapping="Wrap" Grid.Column="0" Text="{Binding Name}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap"/>
+            </Grid>
 
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
         </StackPanel>
