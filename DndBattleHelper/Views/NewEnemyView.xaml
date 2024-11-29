@@ -9,7 +9,7 @@
         <Converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <Grid  Background="#f3e9cf">
+    <Grid Background="#f3e9cf">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>
@@ -112,12 +112,8 @@
                 <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
             </StackPanel>
 
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
+        <Grid Grid.Column="1">
+            <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
                     <StackPanel Orientation="Horizontal">
                         <CheckBox IsChecked="{Binding IsSpellCaster}">
                             <TextBlock Style="{StaticResource EditTraitName}" Text="Is Spell Caster"/>

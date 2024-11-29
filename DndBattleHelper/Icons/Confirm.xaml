@@ -2,12 +2,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DrawingImage x:Key="ConfirmDrawingImage">
         <DrawingImage.Drawing>
-            <DrawingGroup ClipGeometry="M0,0 V3.9811694 H14.300017 V0 H0 Z">
-                <DrawingGroup Opacity="1" Transform="1,0,0,1,-244.32242,-68.897215">
+            <DrawingGroup ClipGeometry="M0,0 V26.367426 H91.723321 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-245.90966,-47.458493">
+                    <GeometryDrawing Geometry="F0 M91.723321,26.367426z M0,0z M335.6554,60.37381L315.15527,60.37381">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="3.89961576" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M91.723321,26.367426z M0,0z M325.53103,70.599909L325.53103,50.099774">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="3.89961576" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
                     <DrawingGroup>
                         <GlyphRunDrawing ForegroundBrush="White">
                             <GlyphRunDrawing.GlyphRun>
-                                <GlyphRun PixelsPerDip="1" BaselineOrigin="244.25894,72.715927" FontRenderingEmSize="5" BidiLevel="0" IsSideways="False" Characters="Add" GlyphIndices="36 71 71" AdvanceWidths="2.995 2.765 2.765" Language="en-us">
+                                <GlyphRun PixelsPerDip="1" BaselineOrigin="245.47768,73.310867" FontRenderingEmSize="34.02677536" BidiLevel="0" IsSideways="False" Characters="Add" GlyphIndices="36 71 71" AdvanceWidths="20.416065216 18.81680677408 18.81680677408" Language="en-us">
                                     <GlyphRun.GlyphTypeface>
                                         <GlyphTypeface FontUri="C:\WINDOWS\FONTS\TAHOMA.TTF" StyleSimulations="None" />
                                     </GlyphRun.GlyphTypeface>
@@ -15,16 +25,6 @@
                             </GlyphRunDrawing.GlyphRun>
                         </GlyphRunDrawing>
                     </DrawingGroup>
-                    <GeometryDrawing Geometry="F0 M14.300017,3.9811694z M0,0z M258.24225,70.877457L254.80478,70.877457">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="White" Thickness="0.74969149" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                    <GeometryDrawing Geometry="F0 M14.300017,3.9811694z M0,0z M256.52832,72.50913L256.52832,69.26647">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="White" Thickness="0.72813904" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
                 </DrawingGroup>
             </DrawingGroup>
         </DrawingImage.Drawing>

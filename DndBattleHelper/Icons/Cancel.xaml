@@ -2,22 +2,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DrawingImage x:Key="CancelDrawingImage">
         <DrawingImage.Drawing>
-            <DrawingGroup ClipGeometry="M0,0 V4.0880324 H20.932267 V0 H0 Z">
-                <DrawingGroup Opacity="1" Transform="1,0,0,1,-244.5397,-68.831017">
-                    <GeometryDrawing Geometry="F0 M20.932267,4.0880324z M0,0z M261.81808,69.274249L265.03783,72.44447">
+            <DrawingGroup ClipGeometry="M0,0 V10.056831 H51.494768 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-244.53971,-62.862218">
+                    <GeometryDrawing Geometry="F0 M51.494768,10.056831z M0,0z M287.04566,63.952599L294.96646,71.751553">
                         <GeometryDrawing.Pen>
-                            <Pen Brush="White" Thickness="0.85953242" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            <Pen Brush="White" Thickness="2.11450672" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
                         </GeometryDrawing.Pen>
                     </GeometryDrawing>
-                    <GeometryDrawing Geometry="F0 M20.932267,4.0880324z M0,0z M265.03652,69.265157L261.8663,72.484909">
+                    <GeometryDrawing Geometry="F0 M51.494768,10.056831z M0,0z M294.96323,63.930232L287.16428,71.851036">
                         <GeometryDrawing.Pen>
-                            <Pen Brush="White" Thickness="0.85953242" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            <Pen Brush="White" Thickness="2.11450672" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
                         </GeometryDrawing.Pen>
                     </GeometryDrawing>
                     <DrawingGroup>
                         <GlyphRunDrawing ForegroundBrush="White">
                             <GlyphRunDrawing.GlyphRun>
-                                <GlyphRun PixelsPerDip="1" BaselineOrigin="244.25894,72.715927" FontRenderingEmSize="5" BidiLevel="0" IsSideways="False" Characters="Cancel" GlyphIndices="38 68 81 70 72 79" AdvanceWidths="3.005 2.625 2.785 2.305 2.635 1.145" Language="en-us">
+                                <GlyphRun PixelsPerDip="1" BaselineOrigin="243.84901,72.419357" FontRenderingEmSize="12.30033207" BidiLevel="0" IsSideways="False" Characters="Cancel" GlyphIndices="38 68 81 70 72 79" AdvanceWidths="7.39249957407 6.45767433675 6.86358529506 5.68275341634 6.46997466882 2.80447571196" Language="en-us">
                                     <GlyphRun.GlyphTypeface>
                                         <GlyphTypeface FontUri="C:\WINDOWS\FONTS\TAHOMA.TTF" StyleSimulations="None" />
                                     </GlyphRun.GlyphTypeface>

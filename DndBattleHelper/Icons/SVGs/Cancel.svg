@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="5.9075508mm"
-   height="1.1537336mm"
-   viewBox="0 0 20.932267 4.0880324"
+   width="14.532968mm"
+   height="2.8382611mm"
+   viewBox="0 0 51.494768 10.056831"
    id="svg3336"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -173,9 +173,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="32.000001"
-     inkscape:cx="10.383398"
-     inkscape:cy="5.2567403"
+     inkscape:zoom="16.000001"
+     inkscape:cx="42.895412"
+     inkscape:cy="6.3946699"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -204,34 +204,34 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-244.5397,-68.831017)">
+     transform="translate(-244.53971,-62.862218)">
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.85953242px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 261.81808,69.274249 3.21975,3.170221"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.11450672px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 287.04566,63.952599 7.9208,7.798954"
        id="path4174-4"
        inkscape:path-effect="#path-effect4176-0-8"
-       inkscape:original-d="m 261.81808,69.274249 c 5.76344,5.399744 7.51925,7.088517 3.21975,3.170221"
+       inkscape:original-d="m 287.04566,63.952599 c 14.17844,13.283729 18.49785,17.438222 7.9208,7.798954"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.85953242px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 265.03652,69.265157 -3.17022,3.219752"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.11450672px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 294.96323,63.930232 -7.79895,7.920804"
        id="path4174-4-6"
        inkscape:path-effect="#path-effect4176-0-9"
-       inkscape:original-d="m 265.03652,69.265157 c -0.83341,1.338201 -0.24385,4.364438 -3.17022,3.219752"
+       inkscape:original-d="m 294.96323,63.930232 c -2.05024,3.292063 -0.59988,10.736807 -7.79895,7.920804"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="244.25894"
-       y="72.715927"
+       style="font-style:normal;font-weight:normal;font-size:98.40265656px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="243.84901"
+       y="72.419357"
        id="text3377"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3379"
-         x="244.25894"
-         y="72.715927"
-         style="font-size:5px">Cancel</tspan></text>
+         x="243.84901"
+         y="72.419357"
+         style="font-size:12.30033207px">Cancel</tspan></text>
   </g>
 </svg>
