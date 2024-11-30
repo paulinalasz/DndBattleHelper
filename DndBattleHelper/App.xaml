@@ -26,6 +26,8 @@
                 <ResourceDictionary Source="Icons\Remove.xaml"/>
                 <ResourceDictionary Source="Icons\Confirm.xaml"/>
                 <ResourceDictionary Source="Icons\Cancel.xaml"/>
+                <ResourceDictionary Source="Icons\RollDie.xaml"/>
+                <ResourceDictionary Source="Icons\ApplyPreset.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
