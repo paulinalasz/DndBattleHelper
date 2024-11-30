@@ -37,9 +37,9 @@
                 <TextBlock  Style="{StaticResource Trait}" Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
                 <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Margin="5, 10, 5, 0" Text="Health:"/>
                 <StackPanel Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
-                    <TextBox Text="{Binding Health}"/>
+                    <TextBox VerticalAlignment="Center" Text="{Binding Health}"/>
                     <TextBlock Margin="5, 8, 0, 0" Text="-"/>
-                    <TextBox Margin="5, 0, 0, 0" Text="{Binding DamageToTake}"/>
+                    <TextBox VerticalAlignment="Center" Margin="5, 0, 0, 0" Text="{Binding DamageToTake}"/>
                     <Button ToolTip="Take damage" Command="{Binding TakeDamageCommand}">
                         <Viewbox>
                             <Image Source="{StaticResource TakeDamageDrawingImage}"/>
@@ -179,7 +179,7 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Style="{StaticResource TraitName}" FontSize="14" Text="Target Armour Class:" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                    <TextBox MinWidth="30" Text="{Binding TargetArmourClass}"/>
+                    <TextBox VerticalAlignment="Center" MinWidth="30" Text="{Binding TargetArmourClass}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10, 0, 0, 0">
