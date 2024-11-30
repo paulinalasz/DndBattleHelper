@@ -11,7 +11,7 @@
     </UserControl.Resources>
     <Grid Background="#f3e9cf">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -47,7 +47,7 @@
                     <traits:RollView Grid.Row="3" Grid.Column="2" DataContext="{Binding HealthRollViewModel}"/>
                     <TextBox Style="{StaticResource Traits}" Grid.Row="4" Grid.Column="1" Text="{Binding Speed}"/>
                 </Grid>
-                <Path/>
+                <Path Style="{StaticResource NewEnemy}"/>
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -75,7 +75,7 @@
                     <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="4" Text="{Binding Wisdom}"/>
                     <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
                 </Grid>
-                <Path/>
+            <Path Style="{StaticResource NewEnemy}"/>
                 <ScrollViewer MaxHeight="140">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -108,7 +108,7 @@
                         <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
                     </Grid>
                 </ScrollViewer>
-                <Path/>
+                <Path Style="{StaticResource NewEnemy}"/>
                 <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
             </StackPanel>
 
