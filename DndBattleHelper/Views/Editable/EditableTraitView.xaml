@@ -16,7 +16,7 @@
         <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
         <DataTemplate DataType="{x:Type actions:EntityActionViewModel}">
             <StackPanel Orientation="Horizontal">
-                <parent:AbilityView/>
+                <parent:EntityActionView/>
             </StackPanel>
         </DataTemplate>
         <DataTemplate DataType="{x:Type traits:AbilityViewModel}">

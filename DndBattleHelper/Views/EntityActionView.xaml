@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DndBattleHelper.Views"
+             xmlns:traits="clr-namespace:DndBattleHelper.Views.TraitViews"
              xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
@@ -20,7 +21,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <local:AbilityView VerticalAlignment="Center"/>
+        <traits:EntityActionView VerticalAlignment="Center"/>
         <StackPanel Grid.Column="1" Orientation="Horizontal">
             <Button Style="{StaticResource Actions}" ToolTip="{Binding TakenActionTooltip}" Command="{Binding TakeActionCommand}" Visibility="{Binding IsTakeActionVisible, Converter={StaticResource BoolToVis}}" Grid.Column="1">
                 <Viewbox>
