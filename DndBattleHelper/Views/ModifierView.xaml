@@ -12,8 +12,8 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding ModifierType, Converter={StaticResource EnumToDescriptionConverter}}"/>
-            <TextBlock Text="{Binding ModifierValue}"/>
+            <TextBlock Style="{StaticResource TraitName}" Margin="2, 0, 0, 0" Text="{Binding ModifierType, Converter={StaticResource EnumToDescriptionConverter}}"/>
+            <TextBlock Style="{StaticResource TraitName}" Margin="0" Text="{Binding ModifierValue}"/>
         </StackPanel>
     </Grid>
 </UserControl>

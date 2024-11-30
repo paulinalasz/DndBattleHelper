@@ -45,15 +45,15 @@
                         </Viewbox>
                     </Button>
 
-                    <ComboBox Grid.Row="1" Grid.Column="0" Width="70" Margin="0, 0, 3, 0" ItemsSource="{Binding Path=SelectedActionCost, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
+                    <ComboBox HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" Width="70" Margin="4, 0, 3, 0" ItemsSource="{Binding Path=SelectedActionCost, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
                       SelectedValuePath="Value"
                       DisplayMemberPath="Description"
                       SelectedValue="{Binding Path=SelectedActionCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" MaxHeight="50" MinWidth="70" Margin="0, 0, 5, 0" TextWrapping="Wrap" Text="{Binding Name}"/>
                     <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Center" Grid.Row="1" MaxHeight="50" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap"/>
 
-                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="0, 10, 0, 10">
-                        <CheckBox IsChecked="{Binding IsSpell}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 0">
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="5, 10, 10, 10">
+                        <CheckBox IsChecked="{Binding IsSpell}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
                             <TextBlock Text="Is Spell?" Style="{StaticResource TraitName}" Margin="0"/>
                         </CheckBox>
                         <ComboBox HorizontalAlignment="Left" Margin="0, 0, 3, 0" Width="70" ItemsSource="{Binding Path=SelectedSpellSlot, Converter={StaticResource enumToCollectionConverter}, Mode=OneTime}"
@@ -64,7 +64,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Grid.Column="1" Margin="0, 10, 0, 10">
-                        <CheckBox IsChecked="{Binding HasModifier}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 0">
+                        <CheckBox IsChecked="{Binding HasModifier}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
                             <TextBlock Text="To Hit?" Style="{StaticResource TraitName}" Margin="0"/>
                         </CheckBox>
                         <local:EditableModifierView DataContext="{Binding ToHitModifierViewModel}" IsEnabled="{Binding DataContext.HasModifier, ElementName=EditActions}"
@@ -72,7 +72,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="0, 10, 0, 10">
-                        <CheckBox IsChecked="{Binding DamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 0">
+                        <CheckBox IsChecked="{Binding DamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
                             <TextBlock Text="Does Damage?" Style="{StaticResource TraitName}" Margin="0"/>
                         </CheckBox>
                         <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" 

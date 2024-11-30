@@ -34,6 +34,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
         }
 
         public ModifierViewModel DamageModifierViewModel { get; }
+        public bool HasModifier => DamageModifierViewModel.ModifierType != ModifierType.Neutral;
 
         public DamageType SelectedDamageType
         {
