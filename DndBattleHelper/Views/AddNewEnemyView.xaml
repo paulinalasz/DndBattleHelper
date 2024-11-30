@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Width="800" Height="450">
+             Height="500" Width="850" MinWidth="850" MinHeight="500">
     <Grid>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
