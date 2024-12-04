@@ -6,12 +6,12 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="#f3e9cf">
         <StackPanel>
-            <TextBlock Text="{Binding Name}"/>
+            <TextBlock Style="{StaticResource Name}" Text="{Binding Name}"/>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Initiative: "/>
-                <TextBox Text="{Binding Initiative}"/>
+                <TextBlock Style="{StaticResource TraitName}" Text="Initiative: "/>
+                <TextBox Style="{StaticResource Traits}" Text="{Binding Initiative}"/>
             </StackPanel>
         </StackPanel>
     </Grid>
