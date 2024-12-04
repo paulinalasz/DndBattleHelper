@@ -4,6 +4,31 @@
              xmlns:local="clr-namespace:DndBattleHelper"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="Styles.xaml"/>
+                <ResourceDictionary Source="Icons\NextTurn.xaml"/>
+                <ResourceDictionary Source="Icons\PreviousTurn.xaml"/>
+                <ResourceDictionary Source="Icons\OpenFile.xaml"/>
+                <ResourceDictionary Source="Icons\Save.xaml"/>
+                <ResourceDictionary Source="Icons\AddPlayer.xaml"/>
+                <ResourceDictionary Source="Icons\AddEnemy.xaml"/>
+                <ResourceDictionary Source="Icons\AddEnemyPreset.xaml"/>
+                <ResourceDictionary Source="Icons\Advantage.xaml"/>
+                <ResourceDictionary Source="Icons\Disadvantage.xaml"/>
+                <ResourceDictionary Source="Icons\Clear.xaml"/>
+                <ResourceDictionary Source="Icons\TakeAction.xaml"/>
+                <ResourceDictionary Source="Icons\RollToHitAndDamage.xaml"/>
+                <ResourceDictionary Source="Icons\RollToHit.xaml"/>
+                <ResourceDictionary Source="Icons\RollDamage.xaml"/>
+                <ResourceDictionary Source="Icons\TakeDamage.xaml"/>
+                <ResourceDictionary Source="Icons\Add.xaml"/>
+                <ResourceDictionary Source="Icons\Remove.xaml"/>
+                <ResourceDictionary Source="Icons\Confirm.xaml"/>
+                <ResourceDictionary Source="Icons\Cancel.xaml"/>
+                <ResourceDictionary Source="Icons\RollDie.xaml"/>
+                <ResourceDictionary Source="Icons\ApplyPreset.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

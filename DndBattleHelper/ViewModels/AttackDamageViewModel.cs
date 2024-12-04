@@ -5,65 +5,16 @@ namespace DndBattleHelper.ViewModels
 {
     public class AttackDamageViewModel
     {
-        public string Name { get; set; }
-        public ToHitRoll ToHitRoll { get; set; }
         public ObservableCollection<Damage> DamageRolled { get; set; }
 
-        public AttackDamageViewModel(string name, ToHitRoll toHitRoll = null, ObservableCollection<Damage> damageRolled = null)
+        public AttackDamageViewModel(ObservableCollection<Damage> damageRolled)
         {
-            Name = name;
-            ToHitRoll = toHitRoll;
             DamageRolled = damageRolled;
         }
 
         public override string ToString()
         {
-            var attackDamageString = string.Empty;
-
-            attackDamageString += Name;
-
-            if (ToHitRoll != null)
-            {
-                attackDamageString += ": Rolled to hit: ";
-                attackDamageString += ToHitRoll.ToHitWithModifier;
-                attackDamageString += $"({ToHitRoll.Roll}, {ToHitRoll.Modifier}). ";
-
-                if (ToHitRoll.DidAttackHit)
-                {
-                    attackDamageString += ToStringDamage();
-                }
-                else
-                {
-                    if (ToHitRoll.Roll == 1)
-                    {
-                        attackDamageString += "Critical miss!";
-                    }
-                    else
-                    {
-                        attackDamageString += "Its a miss!";
-                    }
-                }
-
-                return attackDamageString;
-            }
-            else
-            {
-                return ToStringDamage();
-            }
-        }
-
-        private string ToStringDamage()
-        {
-            var attackDamageString = string.Empty;
-
-            if (ToHitRoll != null && ToHitRoll.Roll == 20)
-            {
-                attackDamageString += "Critical Hit! ";
-            }
-            else
-            {
-                attackDamageString += "Its a hit! Target takes ";
-            }
+            var attackDamageString = "Target takes ";
 
             foreach (Damage damage in DamageRolled)
             {
@@ -71,7 +22,9 @@ namespace DndBattleHelper.ViewModels
                 attackDamageString += " and ";
             }
 
-            return attackDamageString.Substring(0, attackDamageString.Length - 5);
+            attackDamageString.Substring(0, attackDamageString.Length - 4);
+
+            return attackDamageString += "damage!";
         }
     }
 }

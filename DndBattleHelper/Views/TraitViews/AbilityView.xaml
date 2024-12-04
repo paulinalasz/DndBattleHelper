@@ -10,8 +10,8 @@
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
     </UserControl.Resources>
     <Grid>
-        <TextBlock TextWrapping="Wrap">
-            <Run FontWeight="Bold" Text="{Binding Name}"/>
+        <TextBlock HorizontalAlignment="Left" MaxWidth="300" TextWrapping="Wrap">
+            <Run FontWeight="Bold" Style="{StaticResource ActionName}" Text="{Binding Name}"/>
             <Run Text="{Binding Description}"/>
         </TextBlock>
     </Grid>

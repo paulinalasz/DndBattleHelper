@@ -3,7 +3,6 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
 using System.Windows.Input;
 using DndBattleHelper.Models.ActionTypes;
-using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels.Editable.Actions
 {
@@ -30,8 +29,14 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             }
         }
 
-        private ICommand _rollToHitAndDamageCommand;
-        public ICommand RollToHitAndDamageCommand => _rollToHitAndDamageCommand ?? (_rollToHitAndDamageCommand = new CommandHandler(() => RollToHitAndDamage(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
+        private ICommand _rollToHitCommand;
+        public ICommand RollToHitCommand => _rollToHitCommand ?? (_rollToHitCommand = new CommandHandler(() => JustAttackRoll(_targetArmourClassProvider.TargetArmourClass), () => { return true; }));
+
+        private void JustAttackRoll(int armourClass)
+        {
+            MostRecentTakenAction = new TakenActionViewModel(Name, new ToHitRollViewModel(DoesAttackHit(armourClass)));
+            ActionTaken?.Invoke();
+        }
 
         private ToHitRoll DoesAttackHit(int armourClass)
         {
@@ -57,20 +62,25 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             return new ToHitRoll(false, roll, ToHit, withModifier);
         }
 
-        public void RollToHitAndDamage(int armourClass)
+        public override void TakeAction()
         {
             Random rand = new Random();
-            var toHitRoll = DoesAttackHit(armourClass);
+            var toHitRoll = DoesAttackHit(_targetArmourClassProvider.TargetArmourClass);
 
             if (!toHitRoll.DidAttackHit)
             {
-                MostRecentDamageRolled = new AttackDamageViewModel(Name, toHitRoll);
+                MostRecentTakenAction = new TakenActionViewModel(Name, new ToHitRollViewModel(toHitRoll));
                 ActionTaken?.Invoke();
                 return;
             }
 
             RollDamage(toHitRoll);
         }
+
+        public override string TakenActionTooltip => "Roll to hit and damage";
+        public override bool IsTakeActionVisible => true;
+        public override bool IsRollToHitVisible => true;
+        public override bool IsRollDamageVisible => true;
 
         public override AttackAction CopyModel()
         {

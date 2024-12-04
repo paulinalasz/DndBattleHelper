@@ -23,6 +23,7 @@ namespace DndBattleHelper.ViewModels
             set
             {
                 _entity.Initiative = value;
+                InitiativeChanged?.Invoke();
                 OnPropertyChanged(nameof(Initiative));
             }
         }
@@ -41,6 +42,8 @@ namespace DndBattleHelper.ViewModels
         {
             _entity = entity;
         }
+
+        public Action InitiativeChanged;
 
         public abstract Entity CopyModel();
     }

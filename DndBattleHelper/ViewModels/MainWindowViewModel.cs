@@ -67,6 +67,12 @@ namespace DndBattleHelper.ViewModels
 
             var entities = _fileIo.OpenSavedFiles(openFileDialog.FileName);
 
+            // User cancelled request to open save files
+            if(entities == null)
+            {
+                return;
+            }
+
             EntitiesInInitiative.Clear();
 
             foreach(var entity in entities)
@@ -88,6 +94,8 @@ namespace DndBattleHelper.ViewModels
                     EntitiesInInitiative.Add(entityViewModel);
                 }
             }
+
+            SubscribeToInitativeChangedEvent();
         }
 
         private int _selectedTab;
@@ -161,13 +169,7 @@ namespace DndBattleHelper.ViewModels
             addNewEnemyViewModel.Added += () =>
             {
                 EntitiesInInitiative.Add(addNewEnemyViewModel.AddedEnemy);
-                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
-                EntitiesInInitiative.Clear();
-
-                foreach (var entityViewModel in entitiesSorted)
-                {
-                    EntitiesInInitiative.Add(entityViewModel);
-                }
+                SortByInitiative(); 
             };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
@@ -201,18 +203,35 @@ namespace DndBattleHelper.ViewModels
             addPlayerViewModel.Added += () =>
             {
                 EntitiesInInitiative.Add(addPlayerViewModel.AddedPlayerViewModel);
-                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
-                EntitiesInInitiative.Clear();
-
-                foreach (var entityViewModel in entitiesSorted)
-                {
-                    EntitiesInInitiative.Add(entityViewModel);
-                }
+                SortByInitiative();
+                SubscribeToInitativeChangedEvent();
             };
 
             bool? result = _dialogService.ShowDialog(addPlayerViewModel);
 
             OnPropertyChanged(string.Empty);
+        }
+
+        private void SortByInitiative()
+        {
+            var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
+            EntitiesInInitiative.Clear();
+
+            foreach (var entityViewModel in entitiesSorted)
+            {
+                EntitiesInInitiative.Add(entityViewModel);
+            }
+        }
+
+        private void SubscribeToInitativeChangedEvent()
+        {
+            foreach(var entityViewModel in EntitiesInInitiative)
+            {
+                entityViewModel.InitiativeChanged += () =>
+                {
+                    SortByInitiative();
+                };
+            }
         }
     }
 }

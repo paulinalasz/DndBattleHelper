@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper"
         mc:Ignorable="d"
-        Title="DnD Battle Helper" Height="450" Width="800"
+        Title="DnD Battle Helper" Height="450" Width="1000"
+        MinWidth="1000"
         xmlns:VM="clr-namespace:DndBattleHelper.ViewModels"
         xmlns:Views="clr-namespace:DndBattleHelper.Views"
         xmlns:Converters="clr-namespace:DndBattleHelper.Views.Converters"
@@ -17,35 +18,59 @@
 
     <Grid Name="grid1" Focusable="True" >
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Save" Command="{Binding SaveCommand}"/>
-                <Button Content="Open" Command="{Binding OpenCommand}"/>
-                <Button Content="Previous Turn" Command="{Binding PreviousTurnCommand}"/>
-                <Button Content="Next Turn" Command="{Binding NextTurnCommand}"/>
-                <TextBlock Text="{Binding DisplayTurnNumber}"/>
-                <Button Content="Add New Player" Command="{Binding AddNewPlayerCommand}"/>
-                <Button Content="Add New Enemy" Command="{Binding AddNewEnemyCommand}"/>
-                <Button Content="Add New Enemy Preset" Command="{Binding AddNewEnemyPresetCommand}"/>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource SaveDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Open Save File" Command="{Binding OpenCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource OpenFileDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Go to previous turn" Command="{Binding PreviousTurnCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource PreviousTurnDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Go to next turn" Command="{Binding NextTurnCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource NextTurnDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <TextBlock Text="{Binding DisplayTurnNumber}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddPlayerDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Command="{Binding AddNewEnemyCommand}" ToolTip="Add new enemy" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddEnemyDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Command="{Binding AddNewEnemyPresetCommand}" ToolTip="Add new enemy preset" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddEnemyPresetDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
+            </Grid>
 
             <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}" ItemsControl.AlternationCount="{Binding EntitiesInInitiativeCount}">
                 <TabControl.Resources>
-                    <Style TargetType="TabItem">
-                        <Style.Triggers>
-                            <DataTrigger Value="True">
-                                <DataTrigger.Binding>
-                                    <MultiBinding Converter="{StaticResource TwoEqualNumbersToBooleanConverter}" ConverterParameter="&lt;">
-                                        <Binding RelativeSource="{RelativeSource Self}" Path="(ItemsControl.AlternationIndex)" />
-                                        <Binding Path="DataContext.TurnNumber" RelativeSource="{RelativeSource AncestorType=Window}" />
-                                    </MultiBinding>
-                                </DataTrigger.Binding>
-                                <DataTrigger.Setters>
-                                    <Setter Property="Background" Value="Blue"/>
-                                </DataTrigger.Setters>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
                     </DataTemplate>
@@ -56,8 +81,7 @@
                 <TabControl.ItemTemplate>
                     <!-- this is the header template-->
                     <DataTemplate>
-                        <TextBlock
-                    Text="{Binding Name}" />
+                        <TextBlock Style="{StaticResource TabTitle}" Text="{Binding Name}" />
                     </DataTemplate>
                 </TabControl.ItemTemplate>
             </TabControl>

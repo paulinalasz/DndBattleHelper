@@ -1,6 +1,7 @@
 ﻿using DndBattleHelper.Helpers;
 using System.Windows.Input;
 using DndBattleHelper.Models;
+using System.Windows.Navigation;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -18,7 +19,7 @@ namespace DndBattleHelper.ViewModels
 
             Title = title;
 
-            ValueModifierViewModel = new ModifierViewModel(roll.ValueModifier);
+            ValueModifierViewModel = new ModifierViewModel(_roll.ValueModifier);
         }
 
         public int DiceNumber
@@ -41,7 +42,17 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        public ModifierViewModel ValueModifierViewModel { get; set; }
+        public ModifierViewModel ValueModifierViewModel
+        {
+            get => new ModifierViewModel(_roll.ValueModifier);
+            set
+            {
+                _roll.ValueModifier = new Modifier(value.ModifierType, value.ModifierValue);
+                OnPropertyChanged(nameof(ValueModifierViewModel));
+            }
+        }
+
+
 
         private ICommand _rollCommand;
         public ICommand RollCommand => _rollCommand ?? (_rollCommand = new CommandHandler(RollValue, () => { return true; }));

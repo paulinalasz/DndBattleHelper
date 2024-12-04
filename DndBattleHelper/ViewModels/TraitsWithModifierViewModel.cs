@@ -8,9 +8,11 @@ namespace DndBattleHelper.ViewModels
 {
     public class TraitsWithModifierViewModel<T> : NotifyPropertyChanged where T : struct
     {
+        public string Header { get; }
+
         public ObservableCollection<TraitWithModifierViewModel<T>> TraitsWithModifier { get; }
 
-        public TraitsWithModifierViewModel(List<TraitWithModifier<T>> traits)
+        public TraitsWithModifierViewModel(List<TraitWithModifier<T>> traits, string header)
         {
             TraitsWithModifier = new ObservableCollection<TraitWithModifierViewModel<T>>();
 
@@ -18,7 +20,11 @@ namespace DndBattleHelper.ViewModels
             {
                 TraitsWithModifier.Add(new TraitWithModifierViewModel<T>(trait));
             }
+
+            Header = header;
         }
+
+        public string TraitsString => ToString();
 
         public override string ToString()
         {
@@ -37,5 +43,7 @@ namespace DndBattleHelper.ViewModels
 
             return traitsString;
         }
+
+        public bool IsVisible => TraitsWithModifier.Count > 0;
     }
 }

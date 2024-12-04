@@ -1,0 +1,96 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="ApplyPresetDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V31.56763 H117.58537 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="0" Y="52.768997192382813" />
+                </DrawingGroup.Transform>
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-244.99673,-44.3112">
+                    <DrawingGroup>
+                        <GlyphRunDrawing ForegroundBrush="White">
+                            <GlyphRunDrawing.GlyphRun>
+                                <GlyphRun PixelsPerDip="1" BaselineOrigin="244.51872,68.012268" FontRenderingEmSize="27.9699955" BidiLevel="0" IsSideways="False" ClusterMap="0 1 2 3 4" Characters="Apply" GlyphIndices="3 153 153 149 162" AdvanceWidths="21.76066 16.80997 16.80997 8.13927 15.55132" GlyphOffsets="0,0 0,0 0,0 0,0 0,0" Language="en-us">
+                                    <GlyphRun.GlyphTypeface>
+                                        <GlyphTypeface FontUri="C:\WINDOWS\FONTS\PALA.TTF" StyleSimulations="None" />
+                                    </GlyphRun.GlyphTypeface>
+                                </GlyphRun>
+                            </GlyphRunDrawing.GlyphRun>
+                        </GlyphRunDrawing>
+                    </DrawingGroup>
+                    <DrawingGroup Transform="1,0,0,-1,0,0">
+                        <GeometryDrawing Geometry="F1 M117.58537,31.56763z M0,0z M356.03723,-51.925A11.462084,6.9234052,0,0,1,349.91744,-45.758129A11.462084,6.9234052,0,0,1,338.03641,-46.197358A11.462084,6.9234052,0,0,1,333.20738,-52.768996">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="White" Thickness="1.28696942" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M355.9805,52.035124L355.9785,54.825801 M356.0058,62.672058L355.9717,69.697863C355.50189,70.229783 355.03208,70.761704 354.56227,71.293626 354.09246,71.825547 353.62266,72.357469 353.15285,72.889392L350.60745,69.649701 347.79636,72.949576 344.72688,69.458819 343.91486,69.470419 M333.14489,60.34067L333.12669,51.658915">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry RadiusX="2.8889" RadiusY="2.9792" Center="340.3323,53.0884" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry RadiusX="2.8889" RadiusY="2.9792" Center="349.5407,52.9379" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M360.86673,58.845331L354.77505,58.845331">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.1587826" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.67407733" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry RadiusX="4.4855" RadiusY="4.2315" Center="357.7596,58.7572" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M357.85824,61.884048L357.85824,55.792371">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.1587826" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M330.44575,60.337043L343.94704,60.397233 344.01074,74.608357 330.45805,74.608357 330.44575,60.337043z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.66683525" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M331.93037,63.181473L342.12581,63.181473">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M331.93037,68.658351L342.12581,68.658351">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M331.93037,72.070869L342.12581,72.070869">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M117.58537,31.56763z M0,0z M331.93037,66.046301L342.12581,66.046301">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.34815466" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

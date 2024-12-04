@@ -1,6 +1,7 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
 using DndBattleHelper.Models.ActionTypes;
+using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels.Editable.Actions
 {
@@ -44,6 +45,22 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
         }
 
         public Action ActionTaken;
+        public TakenActionViewModel MostRecentTakenAction { get; set; }
+
+        private ICommand _takeActionCommand;
+        public ICommand TakeActionCommand => _takeActionCommand ?? (_takeActionCommand = new CommandHandler(TakeAction, () => { return true; }));
+
+        public virtual void TakeAction()
+        {
+            MostRecentTakenAction = new TakenActionViewModel(Name);
+            ActionTaken?.Invoke();
+        }
+
+        public string ViewModelType => GetType().Name;
+        public virtual string TakenActionTooltip => "Take action";
+        public virtual bool IsTakeActionVisible => true;
+        public virtual bool IsRollToHitVisible => false;
+        public virtual bool IsRollDamageVisible => false;   
 
         public virtual EntityAction CopyModel()
         {

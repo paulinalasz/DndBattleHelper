@@ -52,8 +52,15 @@ namespace DndBattleHelper.Helpers
 
         public List<Entity> OpenSavedFiles(string path)
         {
-            var xmlString = File.ReadAllText(path);
-            return MySerialiser<List<Entity>>.Deserialize(xmlString);
+            if (path != string.Empty)
+            {
+                var xmlString = File.ReadAllText(path);
+                return MySerialiser<List<Entity>>.Deserialize(xmlString);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

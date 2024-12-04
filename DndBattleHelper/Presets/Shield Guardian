@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Shield Guardian</Name>
+  <Health>142</Health>
+  <ArmourClass>17</ArmourClass>
+  <Speed>30</Speed>
+  <Strength>18</Strength>
+  <Dexterity>8</Dexterity>
+  <Constitution>18</Constitution>
+  <Intelligence>7</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>3</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities>
+    <TraitOfDamageType>
+      <Type>Poison</Type>
+    </TraitOfDamageType>
+  </DamageImmunities>
+  <ConditionImmunities>
+    <TraitOfCondition>
+      <Type>Charmed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Exhaustion</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Frightened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Paralyzed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Poisoned</Type>
+    </TraitOfCondition>
+  </ConditionImmunities>
+  <Skills />
+  <Senses>
+    <TraitOfSenseType>
+      <Type>Blindsight</Type>
+    </TraitOfSenseType>
+    <TraitOfSenseType>
+      <Type>Darkvision60ft</Type>
+    </TraitOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>Seven</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Bound</Name>
+      <Description>The shield guardian is magically bound to an amulet. As long as the guardian and its amulet are on the same plane of existence, the amulet's wearer can telepathically call the guardian to travel to it, and the guardian knows the distance and direction to the amulet. If the guardian is within 60 feet of the amulet's wearer, half of any damage the wearer takes (rounded up) is transferred to the guardian.</Description>
+    </Ability>
+    <Ability>
+      <Name>Regeneration</Name>
+      <Description>The shield guardian regains 10 hit points at the start of its turn if it has at least 1 hit point.</Description>
+    </Ability>
+    <Ability>
+      <Name>Spell Storing</Name>
+      <Description> A spellcaster who wears the shield guardian's amulet can cause the guardian to store one spell of 4th level or lower. To do so, the wearer must cast the spell on the guardian. The spell has no effect but is stored within the guardian. When commanded to do so by the wearer or when a situation arises that was predefined by the spellcaster, the guardian casts the stored spell with any parameters set by the original caster, requiring no components. When the spell is cast or a new spell is stored, any previously stored spell is lost.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Shield</Name>
+      <Description>REACTION: When a creature makes an attack against the wearer of the guardian's amulet, the guardian grants a +2 bonus to the wearer's AC if the guardian is within 5 feet of the wearer.</Description>
+      <ActionCost>Reaction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The guardian makes two fist attacks.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Fist</Name>
+      <Description>Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>4</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>7</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Storm Sphere (Once) In Sphere</Name>
+      <Description>A 20-foot-radius sphere of whirling air springs into existence centered on a point you choose within range. The sphere remains for the spell’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 bludgeoning damage. The sphere’s space is difficult terrain. Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage. Creatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Storm Sphere (Once) Extra</Name>
+      <Description></Description>
+      <ActionCost>BonusAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>4</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Lightning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>15</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>60</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Minus</Type>
+      <Value>1</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

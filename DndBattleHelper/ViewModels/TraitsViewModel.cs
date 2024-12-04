@@ -7,10 +7,12 @@ namespace DndBattleHelper.ViewModels
 {
     public class TraitsViewModel<T> : NotifyPropertyChanged where T : struct
     {
+        public string Header { get; }
+
         public ObservableCollection<TraitViewModel<T>> Traits { get; }
         public PassivePerception PassivePerception { get; }
 
-        public TraitsViewModel(List<Trait<T>> traits, PassivePerception passivePerception = null)
+        public TraitsViewModel(List<Trait<T>> traits, string header, PassivePerception passivePerception = null)
         {
             Traits = new ObservableCollection<TraitViewModel<T>>();
 
@@ -19,8 +21,12 @@ namespace DndBattleHelper.ViewModels
                 Traits.Add(new TraitViewModel<T>(trait));
             }
 
+            Header = header;
+
             PassivePerception = passivePerception;
         }
+
+        public string TraitsString => ToString();
 
         public override string ToString()
         {
@@ -43,5 +49,7 @@ namespace DndBattleHelper.ViewModels
 
             return traitsString;
         }
+
+        public bool IsVisible => Traits.Count > 0;
     }
 }

@@ -48,14 +48,14 @@ namespace DndBattleHelper.ViewModels
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
 
-            SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows);
-            DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities);
-            DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances);
-            DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities);
-            ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities);
-            Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills);
-            Senses = new TraitsViewModel<SenseType>(enemy.Senses, enemy.PassivePerception);
-            Languages = new TraitsViewModel<LanguageType>(enemy.Languages);
+            SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows, "Saving Throws:");
+            DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities, "Damage Vulnerabilities:");
+            DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances, "Damage Resistances:");
+            DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities, "Damage Immunities:");
+            ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities, "Condition Immunities:");
+            Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills, "Skills:");
+            Senses = new TraitsViewModel<SenseType>(enemy.Senses, "Senses:", enemy.PassivePerception);
+            Languages = new TraitsViewModel<LanguageType>(enemy.Languages, "Languages:");
             ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);
 
             Abilities = new ObservableCollection<AbilityViewModel>();
@@ -90,14 +90,10 @@ namespace DndBattleHelper.ViewModels
 
             foreach (var action in Actions)
             {
-                if (action is DamagingActionViewModel)
+                action.ActionTaken += () =>
                 {
-                    action.ActionTaken += () =>
-                    {
-                        OutputBox.AttackDamages.Add(((DamagingActionViewModel)action).MostRecentDamageRolled);
-                    };
-
-                }
+                    OutputBox.TakenActions.Add(action.MostRecentTakenAction);
+                };
             }
 
             DamageToTake = 0;

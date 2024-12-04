@@ -13,12 +13,16 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Grid.Row="2" Grid.Column="2" Margin="5, 0, 5, 0" Orientation="Horizontal">
-            <TextBlock Margin="5, 0, 3, 0" Text="{Binding Title}"/>
-            <TextBox MinWidth="15" Text="{Binding DiceNumber}" IsEnabled="{Binding IsDiceChangeEnabled}"/>
-            <TextBlock Text="d" IsEnabled="{Binding IsDiceChangeEnabled}"/>
-            <TextBox Margin="0, 0, 3, 0" MinWidth="15" Text="{Binding DiceBase}" IsEnabled="{Binding IsDiceChangeEnabled}"/>
+            <TextBlock Style="{StaticResource TraitName}" Margin="5, 0, 3, 0" Text="{Binding Title}"/>
+            <TextBox Text="{Binding DiceNumber}" IsEnabled="{Binding IsDiceChangeEnabled}"/>
+            <TextBlock Margin="0" Style="{StaticResource TraitName}" Text="d" IsEnabled="{Binding IsDiceChangeEnabled}"/>
+            <TextBox Margin="0, 0, 3, 0" Text="{Binding DiceBase}" IsEnabled="{Binding IsDiceChangeEnabled}"/>
             <editable:EditableModifierView DataContext="{Binding ValueModifierViewModel}"/>
-            <Button Margin="0, 0, 3, 0" Content="Roll!" Command="{Binding RollCommand}" Visibility="{Binding IsRollVisible, Converter={StaticResource BoolToVisConverter}}"/>
+            <Button Width="30" Height="30" Margin="0, 0, 3, 0" ToolTip="Roll" Command="{Binding RollCommand}" Visibility="{Binding IsRollVisible, Converter={StaticResource BoolToVisConverter}}">
+                <Viewbox>
+                    <Image Source="{StaticResource RollDieDrawingImage}"/>
+                </Viewbox>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>

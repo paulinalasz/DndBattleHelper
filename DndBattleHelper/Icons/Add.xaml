@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="AddDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V5.390304 H5.3903041 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-260.73651,-68.160443">
+                    <GeometryDrawing Geometry="F0 M5.3903041,5.390304z M0,0z M265.69093,70.860878L261.1724,70.860878">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.85953242" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M5.3903041,5.390304z M0,0z M263.45937,73.11486L263.45937,68.59633">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="0.85953242" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

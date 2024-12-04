@@ -4,23 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DndBattleHelper.Views"
+             xmlns:traits="clr-namespace:DndBattleHelper.Views.TraitViews"
              xmlns:converters="clr-namespace:DndBattleHelper.Views.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             xmlns:VM="clr-namespace:DndBattleHelper.ViewModels">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         <converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
     </UserControl.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Column="0" Orientation="Vertical">
+    <DockPanel Background="#f3e9cf" x:Name="ParentGrid">
+        <StackPanel DockPanel.Dock="Left" Width="Auto" MaxWidth="300" Orientation="Vertical">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -33,21 +29,27 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Health"/>
-                <StackPanel Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
-                    <TextBox Text="{Binding Health}"/>
-                    <TextBlock Margin="10, 0, 0, 0" Text="-"/>
-                    <TextBox Margin="10, 0, 0, 0" Text="{Binding DamageToTake}"/>
-                    <Button Content="Take Damage" Command="{Binding TakeDamageCommand}"/>
+                <TextBlock Style="{StaticResource Name}" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Grid.ColumnSpan="2" Text="{Binding Name}"/>
+                <Path Grid.Row="1" Grid.ColumnSpan="2"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Initiative:"/>
+                <TextBlock Style="{StaticResource Trait}" Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Initiative}"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Armour Class:"/>
+                <TextBlock  Style="{StaticResource Trait}" Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ArmourClass}"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Margin="5, 10, 5, 0" Text="Health:"/>
+                <StackPanel Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Orientation="Horizontal">
+                    <TextBox VerticalAlignment="Center" Text="{Binding Health}"/>
+                    <TextBlock Margin="5, 8, 0, 0" Text="-"/>
+                    <TextBox VerticalAlignment="Center" Margin="5, 0, 0, 0" Text="{Binding DamageToTake}"/>
+                    <Button ToolTip="Take damage" Command="{Binding TakeDamageCommand}">
+                        <Viewbox>
+                            <Image Source="{StaticResource TakeDamageDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
                 </StackPanel>
-                <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed"/>
-                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Speed:"/>
+                <TextBlock Style="{StaticResource Trait}" Grid.Row="5" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Speed}"/>
             </Grid>
+            <Path/>
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -62,19 +64,22 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="DEX"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Margin="5, 0, 5, 0" Text="CON"/>
-                <TextBlock Grid.Row="0" Grid.Column="3" Margin="5, 0, 5, 0" Text="INT"/>
-                <TextBlock Grid.Row="0" Grid.Column="4" Margin="5, 0, 5, 0" Text="WIS"/>
-                <TextBlock Grid.Row="0" Grid.Column="5" Margin="5, 0, 5, 0" Text="CHA"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="{Binding Strength}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Dexterity}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Margin="5, 0, 5, 0" Text="{Binding Constitution}"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" Margin="5, 0, 5, 0" Text="{Binding Intelligence}"/>
-                <TextBlock Grid.Row="1" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
-                <TextBlock Grid.Row="1" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource AbilityScore}" Grid.Column="0" Margin="5, 0, 5, 0" Text="STR"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource AbilityScore}" Grid.Column="1" Margin="5, 0, 5, 0" Text="DEX"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource AbilityScore}" Grid.Column="2" Margin="5, 0, 5, 0" Text="CON"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource AbilityScore}" Grid.Column="3" Margin="5, 0, 5, 0" Text="INT"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource AbilityScore}" Grid.Column="4" Margin="5, 0, 5, 0" Text="WIS"/>
+                <TextBlock Grid.Row="0" Style="{StaticResource AbilityScore}" Grid.Column="5" Margin="5, 0, 5, 0" Text="CHA"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource Trait}" HorizontalAlignment="Center" Grid.Column="0" Margin="5, 0, 5, 0" Text="{Binding Strength}"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource Trait}" HorizontalAlignment="Center" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Dexterity}"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource Trait}" HorizontalAlignment="Center" Grid.Column="2" Margin="5, 0, 5, 0" Text="{Binding Constitution}"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource Trait}" HorizontalAlignment="Center" Grid.Column="3" Margin="5, 0, 5, 0" Text="{Binding Intelligence}"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource Trait}" HorizontalAlignment="Center" Grid.Column="4" Margin="5, 0, 5, 0" Text="{Binding Wisdom}"/>
+                <TextBlock Grid.Row="1" Style="{StaticResource Trait}" HorizontalAlignment="Center" Grid.Column="5" Margin="5, 0, 5, 0" Text="{Binding Charisma}"/>
             </Grid>
+            
+            <Path/>
+            
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -89,46 +94,33 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
+                <traits:TraitsView Grid.Row="0" DataContext="{Binding SavingThrows}"/>
+                <traits:TraitsView Grid.Row="1" DataContext="{Binding DamageVulnerabilities}"/>
+                <traits:TraitsView Grid.Row="2" DataContext="{Binding DamageResistances}"/>
+                <traits:TraitsView Grid.Row="3" DataContext="{Binding DamageImmunities}"/>
+                <traits:TraitsView Grid.Row="4" DataContext="{Binding ConditionImmunities}"/>
+                <traits:TraitsView Grid.Row="5" DataContext="{Binding Skills}"/>
+                <traits:TraitsView Grid.Row="6" DataContext="{Binding Senses}"/>
+                <traits:TraitsView Grid.Row="7" DataContext="{Binding Languages}"/>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" Text="Saving Throws"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding SavingThrows}"/>
-
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Vurnerabilities"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageVulnerabilities}"/>
-
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Resistances"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageResistances}"/>
-
-                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5, 0, 5, 0" Text="Damage Immunities"/>
-                <TextBlock Grid.Row="3" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding DamageImmunities}"/>
-
-                <TextBlock Grid.Row="4" Grid.Column="0" Margin="5, 0, 5, 0" Text="Condition Immunities"/>
-                <TextBlock Grid.Row="4" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding ConditionImmunities}"/>
-
-                <TextBlock Grid.Row="5" Grid.Column="0" Margin="5, 0, 5, 0" Text="Skills"/>
-                <TextBlock Grid.Row="5" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Skills}"/>
-
-                <TextBlock Grid.Row="6" Grid.Column="0" Margin="5, 0, 5, 0" Text="Senses"/>
-                <TextBlock Grid.Row="6" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Senses}"/>
-
-                <TextBlock Grid.Row="7" Grid.Column="0" Margin="5, 0, 5, 0" Text="Languages"/>
-                <TextBlock Grid.Row="7" Grid.Column="1" Margin="5, 0, 5, 0" Text="{Binding Languages}"/>
-
-                <local:ChallengeRatingView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding ChallengeRating}"/>
+                <local:ChallengeRatingView Margin="5, 3, 5, 0" Grid.Row="8" DataContext="{Binding ChallengeRating}"/>
             </Grid>
-
-            <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:AbilityView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            
+            <Path/>
+            
+            <ScrollViewer MaxHeight="200">
+                <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:AbilityView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Margin="10, 0, 10, 0">
+        <StackPanel DockPanel.Dock="Right" Width="Auto" Margin="10, 0, 10, 0">
             <TextBlock Text="Spell Slots: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
             <StackPanel Orientation="Horizontal">
                 <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
@@ -164,10 +156,11 @@
                     </ItemsControl>
                 </Grid>
 
-                <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}"/>
+                <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}" Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
             </StackPanel>
 
-            <TextBlock>Actions</TextBlock>
+            <TextBlock Style="{StaticResource Name}">Actions</TextBlock>
+            <Separator Height="1" Background="#912316"/>
             <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -176,6 +169,8 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
 
+            <Separator Height="1" Background="#912316"/>
+
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -183,18 +178,32 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Target Armour Class" Margin="0,0,5,0"/>
-                    <TextBox MinWidth="30" Text="{Binding TargetArmourClass}"/>
-                    <ToggleButton Content="Adv" IsChecked="{Binding IsAdvantage}"/>
-                    <ToggleButton Content="Dis" IsChecked="{Binding IsDisadvantage}"/>
+                    <TextBlock Style="{StaticResource TraitName}" FontSize="14" Text="Target Armour Class:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                    <TextBox VerticalAlignment="Center" MinWidth="30" Text="{Binding TargetArmourClass}"/>
                 </StackPanel>
 
-                <Button Grid.Column="1" Content="Clear" Command="{Binding ClearCommand}"/>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10, 0, 0, 0">
+                    <ToggleButton ToolTip="Roll with advantage" IsChecked="{Binding IsAdvantage}" Style="{StaticResource ToggleButton}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AdvantageDrawingImage}"/>
+                        </Viewbox>
+                    </ToggleButton>
+                    <ToggleButton ToolTip="Roll with disadvantage" IsChecked="{Binding IsDisadvantage}" Style="{StaticResource ToggleButton}">
+                        <Viewbox>
+                            <Image Source="{StaticResource DisadvantageDrawingImage}"/>
+                        </Viewbox>
+                    </ToggleButton>
+                    <Button ToolTip="Clear output" Command="{Binding ClearCommand}" Style="{StaticResource OutputBox}">
+                        <Viewbox>
+                            <Image Source="{StaticResource ClearDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
             </Grid>
 
             <local:OutputBoxView DataContext="{Binding OutputBox}"/>
 
             <TextBlock Text="{Binding OutputBox.TotalDamageOutput}"/>
         </StackPanel>
-    </Grid>
+    </DockPanel>
 </UserControl>
