@@ -174,6 +174,34 @@
                         <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalContentAlignment="Left"/>
                     </Expander>
                 </Grid>
+
+                <Separator/>
+
+                <CheckBox Margin="4, 10, 0, 0" IsChecked="{Binding AddGroup}">
+                    <TextBlock Style="{StaticResource EditTraitName}" Text="Add multiple instances"/>
+                </CheckBox>
+
+                <Grid Visibility="{Binding AddGroup, Converter={StaticResource BoolToVis}}" Margin="5, 5, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock  VerticalAlignment="Center" Style="{StaticResource TraitName}" Text="Number of entities:"/>
+                    <CheckBox Margin="5, 5, 0, 0" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" IsChecked="{Binding SameInitiative}">
+                        <TextBlock Style="{StaticResource TraitName}" Text="Keep same initiative"/>
+                    </CheckBox>
+                    <CheckBox Margin="5, 5, 0, 0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center" Grid.Row="2" IsChecked="{Binding SameHealth}">
+                        <TextBlock Style="{StaticResource TraitName}" Text="Keep same health"/>
+                    </CheckBox>
+
+                    <TextBox Style="{StaticResource Traits}" Grid.Column="1" Text="{Binding NumberInGroup}"/>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>

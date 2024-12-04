@@ -23,7 +23,6 @@ namespace DndBattleHelper
             dialogService.Register<AddNewEnemyViewModel, AddNewEnemyView>();
             dialogService.Register<AddNewEnemyPresetViewModel, AddNewEnemyPresetView>();
             dialogService.Register<AddNewPlayerViewModel, AddNewPlayerView>();
-            dialogService.Register<AddEnemyGroupViewModel, AddEnemyGroupView>();
 
             var viewModel = new MainWindowViewModel(dialogService);
             view.DataContext = viewModel;

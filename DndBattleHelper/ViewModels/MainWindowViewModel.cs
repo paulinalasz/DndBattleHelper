@@ -164,7 +164,7 @@ namespace DndBattleHelper.ViewModels
 
         public void AddEnemyNew()
         {
-            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _entityActionsViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider, _dialogService);
+            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _entityActionsViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
 
             addNewEnemyViewModel.Added += () =>
             {

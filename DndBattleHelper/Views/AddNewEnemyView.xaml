@@ -28,8 +28,6 @@
         </StackPanel>
         <local:NewEnemyView Grid.Row="1"/>
         <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Add Group" Command="{Binding AddGroupCommand}" Style="{StaticResource Confirm}">
-            </Button>
             <Button Command="{Binding AddCommand}" Style="{StaticResource Confirm}">
                 <Viewbox>
                     <Image Source="{StaticResource ConfirmDrawingImage}"/>
