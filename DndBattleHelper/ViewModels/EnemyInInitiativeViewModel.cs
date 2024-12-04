@@ -27,6 +27,8 @@ namespace DndBattleHelper.ViewModels
         public ObservableCollection<AbilityViewModel> Abilities { get; }
         public EntityActionsViewModel Actions { get; }
         public EntityActionsViewModel Reactions { get; }
+        public EntityActionsViewModel LegendaryActions { get; }
+        public EntityActionsViewModel LairActions { get; }
 
         public int TargetArmourClass
         {
@@ -68,11 +70,15 @@ namespace DndBattleHelper.ViewModels
 
             Actions = entityActionsViewModelFactory.Create("Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.MainAction || x.ActionCost == ActionCost.BonusAction));
             Reactions = entityActionsViewModelFactory.Create("Reactions", enemy.Actions.Where(x => x.ActionCost == ActionCost.Reaction));
+            LegendaryActions = entityActionsViewModelFactory.Create("Legendary Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LegendaryAction));
+            LairActions = entityActionsViewModelFactory.Create("Lair Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LairAction));
 
             OutputBox = new OutputBoxViewModel();
 
             SubscribeActionsToEvents(Actions.Actions);
             SubscribeActionsToEvents(Reactions.Actions);
+            SubscribeActionsToEvents(LegendaryActions.Actions);
+            SubscribeActionsToEvents(LairActions.Actions);
 
             DamageToTake = 0;
         }

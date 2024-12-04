@@ -76,7 +76,7 @@
                     <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
                 </Grid>
             <Path Style="{StaticResource NewEnemy}"/>
-                <ScrollViewer MaxHeight="140">
+                <ScrollViewer Style="{StaticResource ScrollViewer}" MaxHeight="140">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>

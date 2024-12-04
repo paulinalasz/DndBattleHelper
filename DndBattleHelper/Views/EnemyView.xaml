@@ -109,7 +109,7 @@
             
             <Path/>
             
-            <ScrollViewer MaxHeight="200">
+            <ScrollViewer Style="{StaticResource ScrollViewer}" MaxHeight="200">
                 <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -161,7 +161,9 @@
 
             <local:ActionsView DataContext="{Binding Actions}"/>
             <local:ActionsView DataContext="{Binding Reactions}"/>
-
+            <local:ActionsView DataContext="{Binding LegendaryActions}"/>
+            <local:ActionsView DataContext="{Binding LairActions}"/>
+            
             <Separator Height="1" Background="#912316"/>
 
             <Grid>
