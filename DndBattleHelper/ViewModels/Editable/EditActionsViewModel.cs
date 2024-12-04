@@ -7,15 +7,11 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditActionsViewModel : EditTraitsViewModel
     {
-        private readonly TargetArmourClassProvider _targetArmourClassProvider;
-        private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
 
-        public EditActionsViewModel(TargetArmourClassProvider targetArmourClassProvider, AdvantageDisadvantageProvider advantageDisadvantageProvider, List<EntityAction> actions = null) : base("Actions", false)
+        public EditActionsViewModel(List<EntityAction> actions = null) : base("Actions", false)
         {
-            _targetArmourClassProvider = targetArmourClassProvider;
-            _advantageDisadvantageProvider = advantageDisadvantageProvider;
-            _entityActionViewModelFactory = new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
+            _entityActionViewModelFactory = new EntityActionViewModelFactory(new TargetArmourClassProvider(), new AdvantageDisadvantageProvider());
 
             ToHitModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditDamageRollsViewModel = new EditDamageRollsViewModel();

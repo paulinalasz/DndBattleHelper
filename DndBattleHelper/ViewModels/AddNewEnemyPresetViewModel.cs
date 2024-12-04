@@ -1,8 +1,5 @@
-﻿using DndBattleHelper.Helpers.DialogService;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
-using DndBattleHelper.ViewModels.Editable.Traits;
-using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -14,9 +11,8 @@ namespace DndBattleHelper.ViewModels
 
         public AddNewEnemyPresetViewModel(
             EnemyFactory enemyFactory,
-            TargetArmourClassProvider targetArmourClassProvider,
-            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
-            : base(false, false, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
+            Presets presets) 
+            : base(false, false, enemyFactory.CreateBlank(), presets)
         {
         }
 
