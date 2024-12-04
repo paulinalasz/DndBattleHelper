@@ -198,6 +198,8 @@ namespace DndBattleHelper.ViewModels
                 CreateNewEnemy();
                 var enemy = AddedEnemy;
 
+                enemy.Name = enemy.Name + $" {i}";
+
                 if (!SameInitiative)
                 {
                     InitiativeRollViewModel.RollValue();
