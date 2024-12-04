@@ -86,7 +86,7 @@ namespace DndBattleHelper.ViewModels
             OnPropertyChanged(string.Empty);
         }
 
-        public EnemyOutboxViewModel AddedEnemy { get; set; }
+        public EnemyInInitiativeViewModel AddedEnemy { get; set; }
 
         public override void CreateNewEnemy()
         {
@@ -125,7 +125,7 @@ namespace DndBattleHelper.ViewModels
                 EditActionsViewModel.CopyNewModels());
 
 
-            AddedEnemy = new EnemyOutboxViewModel(enemy, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
     }
 }

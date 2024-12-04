@@ -10,7 +10,7 @@ using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class EnemyOutboxViewModel : EnemyViewModel
+    public class EnemyInInitiativeViewModel : EnemyViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
@@ -39,7 +39,7 @@ namespace DndBattleHelper.ViewModels
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyOutboxViewModel(Enemy enemy, 
+        public EnemyInInitiativeViewModel(Enemy enemy, 
             EntityActionViewModelFactory entityActionViewModelFactory, 
             TargetArmourClassProvider targetArmourClassProvider, 
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 

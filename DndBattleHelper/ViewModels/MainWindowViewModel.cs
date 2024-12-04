@@ -79,7 +79,7 @@ namespace DndBattleHelper.ViewModels
             {
                 if (entity is Enemy)
                 {
-                    EntitiesInInitiative.Add(new EnemyOutboxViewModel((Enemy)entity, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider));
+                    EntitiesInInitiative.Add(new EnemyInInitiativeViewModel((Enemy)entity, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider));
                 }
                 else
                 {
