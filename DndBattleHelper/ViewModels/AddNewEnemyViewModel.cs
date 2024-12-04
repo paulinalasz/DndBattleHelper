@@ -12,17 +12,17 @@ namespace DndBattleHelper.ViewModels
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly EnemyFactory _enemyFactory;
-        private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
+        private readonly EntityActionsViewModelFactory _entityActionsViewModelFactory;
         private readonly Presets _presets;
 
         public AddNewEnemyViewModel(EnemyFactory enemyFactory,
-            EntityActionViewModelFactory entityActionViewModelFactory,
+            EntityActionsViewModelFactory entityActionsViewModelFactory,
             Presets presets, 
             TargetArmourClassProvider targetArmourClassProvider, 
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
             : base(true, true, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
         {
-            _entityActionViewModelFactory = entityActionViewModelFactory;
+            _entityActionsViewModelFactory = entityActionsViewModelFactory;
             _targetArmourClassProvider = targetArmourClassProvider;
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
             _enemyFactory = enemyFactory;
@@ -125,7 +125,7 @@ namespace DndBattleHelper.ViewModels
                 EditActionsViewModel.CopyNewModels());
 
 
-            AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionsViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
         }
     }
 }

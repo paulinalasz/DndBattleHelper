@@ -159,28 +159,8 @@
                 <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}" Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
             </StackPanel>
 
-            <TextBlock Style="{StaticResource Name}">Actions</TextBlock>
-            <Separator Height="1" Background="#912316"/>
-            <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:EntityActionView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
-            <StackPanel Visibility="{Binding AreReactionsVisible, Converter={StaticResource BoolToVis}}">
-                <TextBlock Style="{StaticResource Name}">Reactions</TextBlock>
-                <Separator Height="1" Background="#912316"/>
-                <ItemsControl ItemsSource="{Binding Reactions}" Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:EntityActionView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-
+            <local:ActionsView DataContext="{Binding Actions}"/>
+            <local:ActionsView DataContext="{Binding Reactions}"/>
 
             <Separator Height="1" Background="#912316"/>
 

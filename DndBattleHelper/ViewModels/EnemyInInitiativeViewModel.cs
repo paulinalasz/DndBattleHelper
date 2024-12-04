@@ -5,25 +5,11 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
-using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.Models.ActionTypes;
+using System;
 
 namespace DndBattleHelper.ViewModels
 {
-    //public class EntityActionsViewModel : NotifyPropertyChanged
-    //{
-    //    public string Header { get; }
-    //    public ObservableCollection<EntityActionViewModel> Actions { get; }
-    //    public bool IsVisible => Actions != null && Actions.Any();
-
-    //    public EntityActionsViewModel(string header,
-    //        ObservableCollection<EntityActionViewModel> actions) 
-    //    {
-    //        Header = header;
-    //        Actions = actions;
-    //    }
-    //}
-
     public class EnemyInInitiativeViewModel : EnemyViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
@@ -39,10 +25,8 @@ namespace DndBattleHelper.ViewModels
         public TraitsViewModel<LanguageType> Languages { get; }
         public ChallengeRatingViewModel ChallengeRating { get; }
         public ObservableCollection<AbilityViewModel> Abilities { get; }
-        public ObservableCollection<EntityActionViewModel> Actions { get; }
-        public ObservableCollection<EntityActionViewModel> Reactions { get; }
-
-        public bool AreReactionsVisible => Reactions.Any();
+        public EntityActionsViewModel Actions { get; }
+        public EntityActionsViewModel Reactions { get; }
 
         public int TargetArmourClass
         {
@@ -57,7 +41,7 @@ namespace DndBattleHelper.ViewModels
         public OutputBoxViewModel OutputBox { get; set; }
 
         public EnemyInInitiativeViewModel(Enemy enemy, 
-            EntityActionViewModelFactory entityActionViewModelFactory, 
+            EntityActionsViewModelFactory entityActionsViewModelFactory, 
             TargetArmourClassProvider targetArmourClassProvider, 
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
             : base(enemy)
@@ -82,45 +66,13 @@ namespace DndBattleHelper.ViewModels
                 Abilities.Add(new AbilityViewModel(ability));
             }
 
-            Actions = new ObservableCollection<EntityActionViewModel>();
-            Reactions = new ObservableCollection<EntityActionViewModel>();
-
-            foreach (var action in enemy.Actions)
-            {
-                var actionViewModel = entityActionViewModelFactory.Create(action);
-
-                if (actionViewModel.ActionCost == ActionCost.Reaction)
-                {
-                    Reactions.Add(actionViewModel);
-                }
-                else
-                {
-                    Actions.Add(actionViewModel);
-                }
-
-                if (actionViewModel is ISpell)
-                {
-                    actionViewModel.ActionTaken += () =>
-                    {
-                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)actionViewModel).SpellSlot);
-
-                        if (spellSlot != null && spellSlot.NumberLeft > 0)
-                        {
-                            spellSlot.NumberLeft -= 1;
-                        }
-                    };
-                }
-            }
+            Actions = entityActionsViewModelFactory.Create("Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.MainAction || x.ActionCost == ActionCost.BonusAction));
+            Reactions = entityActionsViewModelFactory.Create("Reactions", enemy.Actions.Where(x => x.ActionCost == ActionCost.Reaction));
 
             OutputBox = new OutputBoxViewModel();
 
-            foreach (var action in Actions)
-            {
-                action.ActionTaken += () =>
-                {
-                    OutputBox.TakenActions.Add(action.MostRecentTakenAction);
-                };
-            }
+            SubscribeActionsToEvents(Actions.Actions);
+            SubscribeActionsToEvents(Reactions.Actions);
 
             DamageToTake = 0;
         }
@@ -171,6 +123,30 @@ namespace DndBattleHelper.ViewModels
 
                 OnPropertyChanged(nameof(IsAdvantage));
                 OnPropertyChanged(nameof(IsDisadvantage));
+            }
+        }
+
+        private void SubscribeActionsToEvents(IEnumerable<EntityActionViewModel> actions)
+        {
+            foreach (var action in actions)
+            {
+                if (action is ISpell)
+                {
+                    action.ActionTaken += () =>
+                    {
+                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)action).SpellSlot);
+
+                        if (spellSlot != null && spellSlot.NumberLeft > 0)
+                        {
+                            spellSlot.NumberLeft -= 1;
+                        }
+                    };
+                }
+
+                action.ActionTaken += () =>
+                {
+                    OutputBox.TakenActions.Add(action.MostRecentTakenAction);
+                };
             }
         }
 
