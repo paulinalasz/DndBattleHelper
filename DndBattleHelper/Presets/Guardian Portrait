@@ -62,11 +62,7 @@
   <SavingThrows />
   <DamageVurnerabilities />
   <DamageResistances />
-  <DamageImmunities>
-    <TraitOfDamageType>
-      <Type>Poison</Type>
-    </TraitOfDamageType>
-  </DamageImmunities>
+  <DamageImmunities />
   <ConditionImmunities>
     <TraitOfCondition>
       <Type>Charmed</Type>
