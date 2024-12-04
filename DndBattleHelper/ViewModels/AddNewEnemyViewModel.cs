@@ -188,7 +188,7 @@ namespace DndBattleHelper.ViewModels
 
         public Action AddedGroup;
         public List<EnemyInInitiativeViewModel> AddedEnemyInInitiativeViewModels { get; set; }
-
+        public override bool IsAddGroupPossible => true;
         public void CreateNewEnemyGroup()
         {
             var enemyGroup = new List<EnemyInInitiativeViewModel>();

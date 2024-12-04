@@ -10,6 +10,8 @@ namespace DndBattleHelper.ViewModels
     {
         public EnemyPreset AddedEnemyPreset { get; set; }
 
+        public override bool IsAddGroupPossible => false;
+
         public AddNewEnemyPresetViewModel(
             EnemyFactory enemyFactory,
             TargetArmourClassProvider targetArmourClassProvider,
