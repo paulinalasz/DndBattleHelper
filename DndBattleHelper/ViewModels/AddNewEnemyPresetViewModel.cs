@@ -53,7 +53,9 @@ namespace DndBattleHelper.ViewModels
                             EditAbilitiesViewModel.CopyNewModels(),
                             EditActionsViewModel.CopyNewModels(),
                             HealthRollViewModel.CopyModel(),
-                            InitiativeRollViewModel.CopyModel());
+                            InitiativeRollViewModel.CopyModel(),
+                            LegendaryActionsDescription,
+                            LairActionsDescription);
         }
     }
 }

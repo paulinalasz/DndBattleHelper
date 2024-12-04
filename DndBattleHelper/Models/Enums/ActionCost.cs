@@ -9,6 +9,10 @@ namespace DndBattleHelper.Models
         [Description("Bonus Action")]
         BonusAction,
         [Description("Reaction")]
-        Reaction
+        Reaction,
+        [Description("Legendary Action")]
+        LegendaryAction,
+        [Description("Lair Action")]
+        LairAction
     }
 }

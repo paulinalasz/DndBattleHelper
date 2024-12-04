@@ -494,7 +494,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type ScrollViewer}">
+    <Style x:Key="ScrollViewer" TargetType="{x:Type ScrollViewer}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollViewer}">

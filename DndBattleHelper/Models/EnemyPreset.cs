@@ -34,7 +34,9 @@ namespace DndBattleHelper.Models
             List<Ability> abilities,
             List<EntityAction> actions,
             Roll healthRoll,
-            Roll initiativeRoll) 
+            Roll initiativeRoll,
+            string legendaryActionsDescription,
+            string lairActionsDescription) 
             : base(name,
                 initiative,
                 armourClass, 
@@ -59,7 +61,9 @@ namespace DndBattleHelper.Models
                 languages,
                 challengeRating,
                 abilities,
-                actions)
+                actions,
+                legendaryActionsDescription,
+                lairActionsDescription)
         {
             HealthRoll = healthRoll;
             InitiativeRoll = initiativeRoll;

@@ -128,6 +128,26 @@ namespace DndBattleHelper.ViewModels
 
         public List<SpellSlotAvailabilityViewModel> SpellSlots { get; set; }
 
+        public string LegendaryActionsDescription
+        {
+            get => _enemy.LegendaryActionsDescription;
+            set
+            {
+                _enemy.LegendaryActionsDescription = value;
+                OnPropertyChanged(nameof(LegendaryActionsDescription));
+            }
+        }
+
+        public string LairActionsDescription
+        {
+            get => _enemy.LairActionsDescription;
+            set
+            {
+                _enemy.LairActionsDescription = value;
+                OnPropertyChanged(nameof(LairActionsDescription));
+            }
+        }
+
         public PassivePerceptionViewModel PassivePerception { get; set; }
 
         public ChallengeRatingViewModel ChallengeRatingViewModel { get; set; }

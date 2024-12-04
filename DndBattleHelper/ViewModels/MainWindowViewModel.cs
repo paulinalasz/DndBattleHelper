@@ -16,7 +16,7 @@ namespace DndBattleHelper.ViewModels
         private readonly AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly FileIO _fileIo;
         private readonly Presets _presets;
-        private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
+        private readonly EntityActionsViewModelFactory _entityActionsViewModelFactory;
         private readonly EnemyFactory _enemyFactory;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
@@ -28,7 +28,7 @@ namespace DndBattleHelper.ViewModels
             _fileIo = new FileIO();
             _presets = new Presets(_fileIo);
 
-            _entityActionViewModelFactory = new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider);
+            _entityActionsViewModelFactory = new EntityActionsViewModelFactory(new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider));
             _enemyFactory = new EnemyFactory();
 
             _dialogService = dialogService;
@@ -79,7 +79,7 @@ namespace DndBattleHelper.ViewModels
             {
                 if (entity is Enemy)
                 {
-                    EntitiesInInitiative.Add(new EnemyOutboxViewModel((Enemy)entity, _entityActionViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider));
+                    EntitiesInInitiative.Add(new EnemyInInitiativeViewModel((Enemy)entity, _entityActionsViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider));
                 }
                 else
                 {
@@ -164,7 +164,7 @@ namespace DndBattleHelper.ViewModels
 
         public void AddEnemyNew()
         {
-            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _entityActionViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _entityActionsViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
 
             addNewEnemyViewModel.Added += () =>
             {

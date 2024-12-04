@@ -109,7 +109,7 @@
             
             <Path/>
             
-            <ScrollViewer MaxHeight="200">
+            <ScrollViewer Style="{StaticResource ScrollViewer}" MaxHeight="200">
                 <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -159,16 +159,11 @@
                 <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}" Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
             </StackPanel>
 
-            <TextBlock Style="{StaticResource Name}">Actions</TextBlock>
-            <Separator Height="1" Background="#912316"/>
-            <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:EntityActionView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
+            <local:ActionsView DataContext="{Binding Actions}"/>
+            <local:ActionsView DataContext="{Binding Reactions}"/>
+            <local:ActionsView DataContext="{Binding LegendaryActions}"/>
+            <local:ActionsView DataContext="{Binding LairActions}"/>
+            
             <Separator Height="1" Background="#912316"/>
 
             <Grid>

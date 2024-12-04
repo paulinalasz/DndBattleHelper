@@ -5,12 +5,12 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
-using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.Models.ActionTypes;
+using System;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class EnemyOutboxViewModel : EnemyViewModel
+    public class EnemyInInitiativeViewModel : EnemyViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
@@ -25,7 +25,10 @@ namespace DndBattleHelper.ViewModels
         public TraitsViewModel<LanguageType> Languages { get; }
         public ChallengeRatingViewModel ChallengeRating { get; }
         public ObservableCollection<AbilityViewModel> Abilities { get; }
-        public ObservableCollection<EntityActionViewModel> Actions { get; }
+        public EntityActionsViewModel Actions { get; }
+        public EntityActionsViewModel Reactions { get; }
+        public EntityActionsViewModel LegendaryActions { get; }
+        public EntityActionsViewModel LairActions { get; }
 
         public int TargetArmourClass
         {
@@ -39,8 +42,8 @@ namespace DndBattleHelper.ViewModels
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyOutboxViewModel(Enemy enemy, 
-            EntityActionViewModelFactory entityActionViewModelFactory, 
+        public EnemyInInitiativeViewModel(Enemy enemy, 
+            EntityActionsViewModelFactory entityActionsViewModelFactory, 
             TargetArmourClassProvider targetArmourClassProvider, 
             AdvantageDisadvantageProvider advantageDisadvantageProvider) 
             : base(enemy)
@@ -65,36 +68,17 @@ namespace DndBattleHelper.ViewModels
                 Abilities.Add(new AbilityViewModel(ability));
             }
 
-            Actions = new ObservableCollection<EntityActionViewModel>();
-
-            foreach (var action in enemy.Actions)
-            {
-                var actionViewModel = entityActionViewModelFactory.Create(action);
-                Actions.Add(actionViewModel);
-
-                if (actionViewModel is ISpell)
-                {
-                    actionViewModel.ActionTaken += () =>
-                    {
-                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)actionViewModel).SpellSlot);
-
-                        if (spellSlot != null && spellSlot.NumberLeft > 0)
-                        {
-                            spellSlot.NumberLeft -= 1;
-                        }
-                    };
-                }
-            }
+            Actions = entityActionsViewModelFactory.Create("Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.MainAction || x.ActionCost == ActionCost.BonusAction));
+            Reactions = entityActionsViewModelFactory.Create("Reactions", enemy.Actions.Where(x => x.ActionCost == ActionCost.Reaction));
+            LegendaryActions = entityActionsViewModelFactory.Create("Legendary Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LegendaryAction), LegendaryActionsDescription);
+            LairActions = entityActionsViewModelFactory.Create("Lair Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LairAction), LairActionsDescription);
 
             OutputBox = new OutputBoxViewModel();
 
-            foreach (var action in Actions)
-            {
-                action.ActionTaken += () =>
-                {
-                    OutputBox.TakenActions.Add(action.MostRecentTakenAction);
-                };
-            }
+            SubscribeActionsToEvents(Actions.Actions);
+            SubscribeActionsToEvents(Reactions.Actions);
+            SubscribeActionsToEvents(LegendaryActions.Actions);
+            SubscribeActionsToEvents(LairActions.Actions);
 
             DamageToTake = 0;
         }
@@ -145,6 +129,30 @@ namespace DndBattleHelper.ViewModels
 
                 OnPropertyChanged(nameof(IsAdvantage));
                 OnPropertyChanged(nameof(IsDisadvantage));
+            }
+        }
+
+        private void SubscribeActionsToEvents(IEnumerable<EntityActionViewModel> actions)
+        {
+            foreach (var action in actions)
+            {
+                if (action is ISpell)
+                {
+                    action.ActionTaken += () =>
+                    {
+                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)action).SpellSlot);
+
+                        if (spellSlot != null && spellSlot.NumberLeft > 0)
+                        {
+                            spellSlot.NumberLeft -= 1;
+                        }
+                    };
+                }
+
+                action.ActionTaken += () =>
+                {
+                    OutputBox.TakenActions.Add(action.MostRecentTakenAction);
+                };
             }
         }
 
