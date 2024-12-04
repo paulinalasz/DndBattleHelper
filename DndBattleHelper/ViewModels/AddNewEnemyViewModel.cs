@@ -4,10 +4,12 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Traits;
+using DndBattleHelper.Helpers.DialogService;
+using System.Windows.Navigation;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class AddNewEnemyViewModel : NewEnemyViewModel
+    public partial class AddNewEnemyViewModel : NewEnemyViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
@@ -27,8 +29,14 @@ namespace DndBattleHelper.ViewModels
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
             _enemyFactory = enemyFactory;
             _presets = presets;
+
+            AddGroup = false;
+            NumberInGroup = 5;
+            SameInitiative = true;
+            SameHealth = false;
         }
 
+        #region Apply Presets
         public List<EnemyPreset> EnemyPresets => _presets.EnemyPresets;
 
         private EnemyPreset _selectedEnemyPreset;
@@ -88,6 +96,8 @@ namespace DndBattleHelper.ViewModels
             OnPropertyChanged(string.Empty);
         }
 
+        #endregion
+
         public EnemyInInitiativeViewModel AddedEnemy { get; set; }
 
         public override void CreateNewEnemy()
@@ -128,8 +138,101 @@ namespace DndBattleHelper.ViewModels
                 LegendaryActionsDescription,
                 LairActionsDescription);
 
-
             AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionsViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
+        }
+
+        #region Add Group
+        private bool _addGroup;
+        public bool AddGroup 
+        {
+            get => _addGroup;
+            set
+            {
+                _addGroup = value;
+                OnPropertyChanged(nameof(AddGroup));
+            }
+        }
+
+        private int _numberInGroup;
+        public int NumberInGroup
+        {
+            get => _numberInGroup;
+            set
+            {
+                _numberInGroup = value;
+                OnPropertyChanged(nameof(NumberInGroup));
+            }
+        }
+
+        private bool _sameInitiative;
+        public bool SameInitiative 
+        {
+            get => _sameInitiative;
+            set
+            {
+                _sameInitiative = value;
+                OnPropertyChanged(nameof(SameInitiative));
+            }
+        }
+
+        private bool _sameHealth;
+        public bool SameHealth 
+        {
+            get => _sameHealth;
+            set
+            {
+                _sameHealth = value;
+                OnPropertyChanged(nameof(SameHealth));
+            }
+        }
+
+        public Action AddedGroup;
+        public List<EnemyInInitiativeViewModel> AddedEnemyInInitiativeViewModels { get; set; }
+        public override bool IsAddGroupPossible => true;
+        public void CreateNewEnemyGroup()
+        {
+            var enemyGroup = new List<EnemyInInitiativeViewModel>();
+
+            for (int i = 0; i < NumberInGroup; i++)
+            {
+                CreateNewEnemy();
+                var enemy = AddedEnemy;
+
+                enemy.Name = enemy.Name + $" {i}";
+
+                if (!SameInitiative)
+                {
+                    InitiativeRollViewModel.RollValue();
+                    enemy.Initiative = InitiativeRollViewModel.ValueRolled;
+                }
+
+                if (!SameHealth)
+                {
+                    HealthRollViewModel.RollValue();
+                    enemy.Health = HealthRollViewModel.ValueRolled;
+                }
+
+                enemyGroup.Add(enemy);
+            }
+
+            AddedEnemyInInitiativeViewModels = enemyGroup;
+        }
+        #endregion
+
+        public override void Add()
+        {
+            if (AddGroup)
+            {
+                CreateNewEnemyGroup();
+                AddedGroup?.Invoke();
+                base.Add();
+            }
+            else
+            {
+                CreateNewEnemy();
+                Added?.Invoke();
+                base.Add();
+            }
         }
     }
 }

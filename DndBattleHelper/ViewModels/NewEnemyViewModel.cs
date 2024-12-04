@@ -11,6 +11,7 @@ namespace DndBattleHelper.ViewModels
 {
     public abstract class NewEnemyViewModel : EnemyViewModel, IDialogRequestClose
     {
+        public abstract bool IsAddGroupPossible { get; }
         public EditTraitsWithModifierViewModel<AbilityScoreType> EditSavingThrowsViewModel { get; set; }
         public EditTraitsViewModel<DamageType> EditDamageVulnerabilitiesViewModel { get; set; }
         public EditTraitsViewModel<DamageType> EditDamageResistancesViewModel { get; set; }
@@ -68,8 +69,6 @@ namespace DndBattleHelper.ViewModels
 
         public virtual void Add()
         {
-            CreateNewEnemy();
-            Added?.Invoke();
             CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
         }
 

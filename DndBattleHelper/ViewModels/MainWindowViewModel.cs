@@ -172,7 +172,17 @@ namespace DndBattleHelper.ViewModels
                 SortByInitiative(); 
             };
 
-            bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
+            addNewEnemyViewModel.AddedGroup += () =>
+            {
+                foreach (var enemy in addNewEnemyViewModel.AddedEnemyInInitiativeViewModels)
+                {
+                    EntitiesInInitiative.Add(enemy);
+                }
+                
+                SortByInitiative();
+            };
+
+            var result = _dialogService.ShowDialog(addNewEnemyViewModel);
 
             OnPropertyChanged(string.Empty);
         }

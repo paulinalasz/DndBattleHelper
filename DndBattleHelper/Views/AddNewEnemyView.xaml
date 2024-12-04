@@ -6,25 +6,38 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Height="500" Width="850" MinWidth="850" MinHeight="550">
+             Height="500" Width="850" MinWidth="850" MinHeight="500">
     <Grid Background="#f3e9cf">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <ComboBox Width="300"
-                          VerticalAlignment="Center"
-                    ItemsSource="{Binding EnemyPresets}" 
-                    DisplayMemberPath="Name" 
-                    SelectedItem="{Binding SelectedEnemyPreset, Mode=TwoWay}" />
-                <Button Height="25" ToolTip="Apply Preset" Command="{Binding UsePresetCommand}">
-                    <Viewbox>
-                        <Image Source="{StaticResource ApplyPresetDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-            </StackPanel>
+            <ComboBox Width="300"
+                      VerticalAlignment="Center"
+                ItemsSource="{Binding EnemyPresets}" 
+                DisplayMemberPath="Name" 
+                SelectedItem="{Binding SelectedEnemyPreset, Mode=TwoWay}" />
+            <Button Height="25" ToolTip="Apply Preset" Command="{Binding UsePresetCommand}">
+                <Viewbox>
+                    <Image Source="{StaticResource ApplyPresetDrawingImage}"/>
+                </Viewbox>
+            </Button>
+        </StackPanel>
         <local:NewEnemyView Grid.Row="1"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Command="{Binding AddCommand}" Style="{StaticResource Confirm}">
+                <Viewbox>
+                    <Image Source="{StaticResource ConfirmDrawingImage}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding CancelCommand}" Style="{StaticResource Cancel}">
+                <Viewbox>
+                    <Image Source="{StaticResource CancelDrawingImage}"/>
+                </Viewbox>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

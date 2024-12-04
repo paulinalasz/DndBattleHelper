@@ -14,11 +14,20 @@ namespace DndBattleHelper.ViewModels
 
         public EntityActionsViewModel(string header,
             ObservableCollection<EntityActionViewModel> actions,
-            string description)
+            string description = "")
         {
             Header = header;
             Actions = actions;
-            Description = description;
+
+            //TODO: Remove this once released and upgrade code for presets is introduced.
+            if (description != null)
+            {
+                Description = description;
+            }
+            else
+            {
+                Description = "";
+            }
         }
     }
 }

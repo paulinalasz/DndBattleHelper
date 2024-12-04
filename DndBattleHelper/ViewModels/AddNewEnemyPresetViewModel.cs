@@ -1,4 +1,5 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers.DialogService;
+using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.ViewModels.Providers;
@@ -8,6 +9,8 @@ namespace DndBattleHelper.ViewModels
     public class AddNewEnemyPresetViewModel : NewEnemyViewModel
     {
         public EnemyPreset AddedEnemyPreset { get; set; }
+
+        public override bool IsAddGroupPossible => false;
 
         public AddNewEnemyPresetViewModel(
             EnemyFactory enemyFactory,
@@ -56,6 +59,13 @@ namespace DndBattleHelper.ViewModels
                             InitiativeRollViewModel.CopyModel(),
                             LegendaryActionsDescription,
                             LairActionsDescription);
+        }
+
+        public override void Add()
+        {
+            CreateNewEnemy();
+            Added?.Invoke();
+            base.Add();
         }
     }
 }
