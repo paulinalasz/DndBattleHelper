@@ -29,6 +29,9 @@ namespace DndBattleHelper.Models
         public List<Ability> Abilities { get; set; }
         public List<EntityAction> Actions { get; set; }
 
+        public string LegendaryActionsDescription { get; set; }
+        public string LairActionsDescription { get; set; }  
+
         public Enemy(string name, 
             int initiative,
             int armourClass,
@@ -53,7 +56,9 @@ namespace DndBattleHelper.Models
             List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
-            List<EntityAction> actions) : base(initiative, name, health)
+            List<EntityAction> actions,
+            string legendaryActionsDescription,
+            string lairActionsDescription) : base(initiative, name, health)
         {
             ArmourClass = armourClass;
             Speed = speed;
@@ -77,6 +82,8 @@ namespace DndBattleHelper.Models
             ChallengeRating = challengeRating;
             Abilities = abilities;
             Actions = actions;
+            LegendaryActionsDescription = legendaryActionsDescription;
+            LairActionsDescription = lairActionsDescription;
         }
 
         protected Enemy() { }
@@ -107,7 +114,9 @@ namespace DndBattleHelper.Models
                 Languages,
                 ChallengeRating,
                 Abilities,
-                Actions);
+                Actions,
+                LegendaryActionsDescription,
+                LairActionsDescription);
         }
     }
 }

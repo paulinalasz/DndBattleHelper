@@ -28,7 +28,9 @@ namespace DndBattleHelper.Models
             List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,
             List<Ability> abilities,
-            List<EntityAction> actions)
+            List<EntityAction> actions,
+            string legendaryActionsDescription,
+            string lairActionsDescriptions)
         {
             return new Enemy(name,
                 initiative,
@@ -54,7 +56,9 @@ namespace DndBattleHelper.Models
                 languages,
                 challengeRating,
                 abilities,
-                actions);
+                actions,
+                legendaryActionsDescription,
+                lairActionsDescriptions);
         }
 
         public Enemy CreateBlank()
@@ -95,7 +99,9 @@ namespace DndBattleHelper.Models
                 new List<Trait<LanguageType>>(),
                 new ChallengeRating(Enums.ChallengeRatingLevel.One),
                 new List<Ability>(),
-                new List<EntityAction>());
+                new List<EntityAction>(),
+                "",
+                "");
 
         }
     }

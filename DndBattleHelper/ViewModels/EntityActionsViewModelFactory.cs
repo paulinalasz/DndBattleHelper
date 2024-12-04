@@ -14,7 +14,7 @@ namespace DndBattleHelper.ViewModels
             _entityActionViewModelFactory = entityActionViewModelFactory;
         }
 
-        public EntityActionsViewModel Create(string header, IEnumerable<EntityAction> actions)
+        public EntityActionsViewModel Create(string header, IEnumerable<EntityAction> actions, string description = "")
         {
             var entityActions = new ObservableCollection<EntityActionViewModel>();
 
@@ -23,7 +23,7 @@ namespace DndBattleHelper.ViewModels
                 entityActions.Add(_entityActionViewModelFactory.Create(action));
             }
 
-            return new EntityActionsViewModel(header, entityActions);
+            return new EntityActionsViewModel(header, entityActions, description);
         }
     }
 }

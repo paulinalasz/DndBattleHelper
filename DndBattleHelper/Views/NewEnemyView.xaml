@@ -114,51 +114,67 @@
 
         <Grid Grid.Column="1">
             <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox IsChecked="{Binding IsSpellCaster}">
-                            <TextBlock Style="{StaticResource EditTraitName}" Text="Is Spell Caster"/>
-                        </CheckBox>
-                    </StackPanel>
-                    <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Style="{StaticResource EditTraitName}" FontWeight="DemiBold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
-
-                        <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Width="10" Margin="10, 0, 10, 0" FontWeight="DemiBold" Style="{StaticResource EditTraitName}" Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-
-                        <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="2" HorizontalAlignment="Center">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="5, 0, 5, 0" Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </Grid>
-
-                    <Separator/>
-
-                    <editable:EditActionsView Margin="0, 10, 0, 0" DataContext="{Binding EditActionsViewModel}"/>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding IsSpellCaster}">
+                        <TextBlock Style="{StaticResource EditTraitName}" Text="Is Spell Caster"/>
+                    </CheckBox>
                 </StackPanel>
+                <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Style="{StaticResource EditTraitName}" FontWeight="DemiBold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
+
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Width="10" Margin="10, 0, 10, 0" FontWeight="DemiBold" Style="{StaticResource EditTraitName}" Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="2" HorizontalAlignment="Center">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox Margin="5, 0, 5, 0" Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+
+                <Separator/>
+
+                <editable:EditActionsView Margin="0, 10, 0, 0" DataContext="{Binding EditActionsViewModel}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Expander VerticalContentAlignment="Top" Header="Legendary Action Description" Foreground="#912316" FontWeight="Bold" Margin="0, 0, 10, 3">
+                        <TextBox Margin="3" Text="{Binding LegendaryActionsDescription}" HorizontalContentAlignment="Left"/>
+                    </Expander>
+                    <Expander Grid.Row="1" VerticalContentAlignment="Top" Header="Lair Action Description" Foreground="#912316" FontWeight="Bold" Margin="0, 0, 10, 3">
+                        <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalAlignment="Left"/>
+                    </Expander>
+                </Grid>
+            </StackPanel>
             </Grid>
             <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Command="{Binding AddCommand}" Style="{StaticResource Confirm}">

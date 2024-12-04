@@ -82,6 +82,8 @@ namespace DndBattleHelper.ViewModels
             HealthRollViewModel.DiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
             HealthRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
             InitiativeRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.InitiativeRoll.ValueModifier.Copy());
+            LegendaryActionsDescription = SelectedEnemyPreset.LegendaryActionsDescription;
+            LairActionsDescription = SelectedEnemyPreset.LairActionsDescription;
 
             OnPropertyChanged(string.Empty);
         }
@@ -122,7 +124,9 @@ namespace DndBattleHelper.ViewModels
                 EditLanguagesViewModel.CopyNewModels(),
                 ChallengeRatingViewModel.CopyModel(),
                 EditAbilitiesViewModel.CopyNewModels(),
-                EditActionsViewModel.CopyNewModels());
+                EditActionsViewModel.CopyNewModels(),
+                LegendaryActionsDescription,
+                LairActionsDescription);
 
 
             AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionsViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);

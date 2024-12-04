@@ -8,13 +8,17 @@ namespace DndBattleHelper.ViewModels
     {
         public string Header { get; }
         public ObservableCollection<EntityActionViewModel> Actions { get; }
+        public string Description { get; }
+        public bool IsDescriptionVisible => Description.Any();
         public bool IsVisible => Actions != null && Actions.Any();
 
         public EntityActionsViewModel(string header,
-            ObservableCollection<EntityActionViewModel> actions)
+            ObservableCollection<EntityActionViewModel> actions,
+            string description)
         {
             Header = header;
             Actions = actions;
+            Description = description;
         }
     }
 }

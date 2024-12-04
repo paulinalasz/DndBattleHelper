@@ -86,11 +86,9 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
-
-
                 </Grid>
             </Grid>
-            
+
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
         </StackPanel>
     </Grid>

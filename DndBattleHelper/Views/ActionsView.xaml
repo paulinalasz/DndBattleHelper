@@ -12,6 +12,7 @@
     <StackPanel Visibility="{Binding IsVisible, Converter={StaticResource BoolToVis}}">
         <TextBlock Style="{StaticResource Name}" Text="{Binding Header}"/>
         <Separator Height="1" Background="#912316"/>
+        <TextBlock Style="{StaticResource Trait}" Text="{Binding Description}" Visibility="{Binding IsDescriptionVisible, Converter={StaticResource BoolToVis}}"/>
         <ItemsControl ItemsSource="{Binding Actions}" Margin="5">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>

@@ -70,8 +70,8 @@ namespace DndBattleHelper.ViewModels
 
             Actions = entityActionsViewModelFactory.Create("Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.MainAction || x.ActionCost == ActionCost.BonusAction));
             Reactions = entityActionsViewModelFactory.Create("Reactions", enemy.Actions.Where(x => x.ActionCost == ActionCost.Reaction));
-            LegendaryActions = entityActionsViewModelFactory.Create("Legendary Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LegendaryAction));
-            LairActions = entityActionsViewModelFactory.Create("Lair Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LairAction));
+            LegendaryActions = entityActionsViewModelFactory.Create("Legendary Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LegendaryAction), LegendaryActionsDescription);
+            LairActions = entityActionsViewModelFactory.Create("Lair Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.LairAction), LairActionsDescription);
 
             OutputBox = new OutputBoxViewModel();
 
