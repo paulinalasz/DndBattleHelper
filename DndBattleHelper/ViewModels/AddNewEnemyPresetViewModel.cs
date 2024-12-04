@@ -1,8 +1,5 @@
-﻿using DndBattleHelper.Helpers.DialogService;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
-using DndBattleHelper.ViewModels.Editable.Traits;
-using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
 {
