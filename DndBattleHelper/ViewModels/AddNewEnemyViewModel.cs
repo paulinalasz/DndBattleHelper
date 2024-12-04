@@ -141,15 +141,17 @@ namespace DndBattleHelper.ViewModels
 
         public void OpenAddGroupDialog()
         {
-            var addEnemyGroupViewModel = new AddEnemyGroupViewModel();
+            var addEnemyGroupViewModel = new AddEnemyGroupViewModel(Health, InitiativeRollViewModel, HealthRollViewModel);
             bool? result = _dialogService.ShowDialog(addEnemyGroupViewModel);
 
             if (result == true) 
             {
                 AddGroup(new AddEnemyGroupParameters(
                     addEnemyGroupViewModel.Number, 
-                    addEnemyGroupViewModel.SameInitiative, 
-                    addEnemyGroupViewModel.SameHealth));
+                    addEnemyGroupViewModel.SameInitiative,
+                    Initiative,
+                    addEnemyGroupViewModel.SameHealth,
+                    Health));
             }
 
             OnPropertyChanged(string.Empty);

@@ -11,9 +11,25 @@ namespace DndBattleHelper.ViewModels
         {
             private readonly AddEnemyGroupParameters _parameters;
 
-            public AddEnemyGroupViewModel()
+            public RollViewModel InitiativeRollViewModel { get; }
+            public RollViewModel HealthRollViewModel { get; }
+
+            public AddEnemyGroupViewModel(int health, RollViewModel initiativeRollViewModel, RollViewModel healthRollViewModel)
             {
-                _parameters = new AddEnemyGroupParameters(2, true, false);
+                _parameters = new AddEnemyGroupParameters(2, true, 10, false, health);
+                InitiativeRollViewModel = initiativeRollViewModel;
+
+                InitiativeRollViewModel.Rolled += () =>
+                {
+                    Initiative = InitiativeRollViewModel.ValueRolled;
+                };
+
+                HealthRollViewModel = healthRollViewModel;
+
+                HealthRollViewModel.Rolled += () =>
+                {
+                    Health = HealthRollViewModel.ValueRolled;
+                };
             }
 
             public int Number
@@ -36,6 +52,16 @@ namespace DndBattleHelper.ViewModels
                 }
             }
 
+            public int Initiative
+            {
+                get => _parameters.Initiative;
+                set
+                {
+                    _parameters.Initiative = value;
+                    OnPropertyChanged(nameof(Initiative));
+                }
+            }
+
             public bool SameHealth
             {
                 get => _parameters.SameHealth;
@@ -43,6 +69,16 @@ namespace DndBattleHelper.ViewModels
                 {
                     _parameters.SameHealth = value;
                     OnPropertyChanged(nameof(SameHealth));
+                }
+            }
+
+            public int Health
+            {
+                get => _parameters.Health;
+                set
+                {
+                    _parameters.Health = value;
+                    OnPropertyChanged(nameof(Health));
                 }
             }
 

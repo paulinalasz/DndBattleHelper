@@ -4,12 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper.Views"
+        xmlns:traits="clr-namespace:DndBattleHelper.Views.TraitViews"
         mc:Ignorable="d"
         Title="AddEnemyGroupView" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
+    <Grid Background="#f3e9cf">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,11 +23,22 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Number:"/>
-        <TextBox Grid.Column="1" Text="{Binding Number}"/>
-        <CheckBox Grid.Row="1" IsChecked="{Binding SameInitiative}"/>
-        <CheckBox Grid.Row="2" IsChecked="{Binding SameHealth}"/>
-        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock  VerticalAlignment="Center" Style="{StaticResource TraitName}" Text="Number of entities:"/>
+        <CheckBox VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Row="1" IsChecked="{Binding SameInitiative}">
+            <TextBlock Style="{StaticResource TraitName}" Text="Keep same initiative"/>
+        </CheckBox>
+        <CheckBox VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Row="2" IsChecked="{Binding SameHealth}">
+            <TextBlock Style="{StaticResource TraitName}" Text="Keep same health"/>
+        </CheckBox>
+
+        <TextBox Style="{StaticResource Traits}" Grid.Column="1" Text="{Binding Number}"/>
+        <TextBox Style="{StaticResource Traits}" Grid.Column="1" Grid.Row="1" Text="{Binding Initiative}" Visibility="{Binding SameInitiative, Converter={StaticResource BoolToVis}}"/>
+        <TextBox Style="{StaticResource Traits}" Grid.Column="1" Grid.Row="2" Text="{Binding Health}" Visibility="{Binding SameHealth, Converter={StaticResource BoolToVis}}"/>
+
+        <traits:RollView Grid.Row="1" Grid.Column="2" DataContext="{Binding InitiativeRollViewModel}" Visibility="{Binding SameInitiative, Converter={StaticResource BoolToVis}}"/>
+        <traits:RollView Grid.Row="2" Grid.Column="2" DataContext="{Binding HealthRollViewModel}" Visibility="{Binding SameHealth, Converter={StaticResource BoolToVis}}"/>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Add Group" Command="{Binding AddCommand}" Style="{StaticResource Confirm}">
             </Button>
             <Button Command="{Binding CancelCommand}" Style="{StaticResource Cancel}">
