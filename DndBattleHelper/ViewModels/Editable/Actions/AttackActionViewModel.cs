@@ -43,21 +43,56 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             Random rand = new Random();
             var roll = rand.Next(1, 21);
 
+            bool useFirstRoll = true;
+
             if (_advantageDisadvantageProvider.IsAdvantage)
             {
                 var roll2 = rand.Next(1, 21);
-                roll = roll > roll2 ? roll : roll2;
+                
+                if (roll2 > roll)
+                {
+                    useFirstRoll = false;
+                }
+
+                var finalRoll = roll2 + ToHit.ToInt();
+
+                if (useFirstRoll)
+                {
+                    finalRoll = roll + ToHit.ToInt();
+                }
+
+                if (finalRoll >= armourClass && finalRoll != 1)
+                    return new ToHitRoll(true, roll, ToHit, finalRoll, roll2);
+
+                return new ToHitRoll(false, roll, ToHit, finalRoll, roll2);
             }
 
             if (_advantageDisadvantageProvider.IsDisadvantage)
             {
                 var roll2 = rand.Next(1, 21);
-                roll = roll < roll2 ? roll : roll2;
+
+                if (roll2 < roll)
+                {
+                    useFirstRoll = false;
+                }
+
+                var finalRoll = roll2 + ToHit.ToInt();
+
+                if (useFirstRoll)
+                {
+                    finalRoll = roll + ToHit.ToInt();
+                }
+
+                if (finalRoll >= armourClass && finalRoll != 1)
+                    return new ToHitRoll(true, roll, ToHit, finalRoll, roll2);
+
+                return new ToHitRoll(false, roll, ToHit, finalRoll, roll2);
             }
 
             var withModifier = roll + ToHit.ToInt();
 
-            if (withModifier >= armourClass && roll != 1) return new ToHitRoll(true, roll, ToHit, withModifier);
+            if (withModifier >= armourClass && roll != 1) 
+                return new ToHitRoll(true, roll, ToHit, withModifier);
 
             return new ToHitRoll(false, roll, ToHit, withModifier);
         }

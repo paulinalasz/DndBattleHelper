@@ -13,15 +13,15 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
         public override string ToString() 
         {
-            var toHitRollString = $"Rolled to hit: {_toHitRoll.RollWithModifier()} ";
+            var toHitRollString = $"Rolled to hit: {_toHitRoll.ToHitWithModifier}";
 
-            if (_toHitRoll.AdvantageDisadvantageRoll == null) 
+            if (_toHitRoll.AdvantageDisadvantageRoll == 0) 
             {
-                toHitRollString += $"({_toHitRoll.Roll}, {_toHitRoll.Modifier})";
+                toHitRollString += $"({_toHitRoll.Roll}, {_toHitRoll.Modifier}) ";
             }
             else
             {
-                toHitRollString += $"(({_toHitRoll.Roll}, {_toHitRoll.AdvantageDisadvantageRoll.SecondRoll}), {_toHitRoll.Modifier}). ";
+                toHitRollString += $"(({_toHitRoll.Roll}, {_toHitRoll.AdvantageDisadvantageRoll}), {_toHitRoll.Modifier}). ";
             }
 
             if (!_toHitRoll.DidAttackHit)

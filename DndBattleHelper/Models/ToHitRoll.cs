@@ -6,9 +6,9 @@
         public int Roll { get; set; }
         public Modifier Modifier { get; set; }
         public int ToHitWithModifier { get; set; }
-        public AdvantageDisadvantageRoll AdvantageDisadvantageRoll { get; set; }
+        public int AdvantageDisadvantageRoll { get; set; }
 
-        public ToHitRoll(bool didAttackHit, int roll, Modifier modifier, int toHit, AdvantageDisadvantageRoll advantageDisadvantageRoll = null)
+        public ToHitRoll(bool didAttackHit, int roll, Modifier modifier, int toHit, int advantageDisadvantageRoll = 0)
         {
             DidAttackHit = didAttackHit;
             Roll = roll;
@@ -18,10 +18,5 @@
         }
 
         public ToHitRoll() { }
-
-        public int RollWithModifier()
-        {
-            return Roll + Modifier.ToInt();
-        }
     }
 }
