@@ -5,35 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper.Views"
         mc:Ignorable="d"
-        Title="AddNewPlayerView" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <Grid>
+        Title="AddNewPlayerView" Height="200" Width="300" MinHeight="200" MinWidth="300">
+    <Grid Background="#f3e9cf">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <!--<RowDefinition/>
+                    <RowDefinition/>-->
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Name: "/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Initiative"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Health"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Health}"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Grid.Column="0" Text="Name: "/>
+                <TextBox Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Text="Initiative"/>
+                <TextBox Style="{StaticResource Traits}" Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
+                <!--<TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Health"/>
+                <TextBox Style="{StaticResource Traits}" Grid.Row="3" Grid.Column="1" Text="{Binding Health}"/>-->
             </Grid>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-                <Button Content="Add" Command="{Binding AddCommand}"/>
-                <Button Content="Cancel" Command="{Binding CancelCommand}"/>
-            </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button ToolTip="Add player" Style="{StaticResource Confirm}" Command="{Binding AddCommand}">
+                <Viewbox>
+                    <Image Source="{StaticResource ConfirmDrawingImage}"/>
+                </Viewbox>
+            </Button>
+            <Button ToolTip="Cancel add player" Style="{StaticResource Cancel}" Command="{Binding CancelCommand}">
+                <Viewbox>
+                    <Image Source="{StaticResource CancelDrawingImage}"/>
+                </Viewbox>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

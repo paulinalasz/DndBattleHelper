@@ -161,12 +161,12 @@
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Command="{Binding AddCommand}" Width="60" Height="30">
+                <Button Command="{Binding AddCommand}" Style="{StaticResource Confirm}">
                     <Viewbox>
                         <Image Source="{StaticResource ConfirmDrawingImage}"/>
                     </Viewbox>
                 </Button>
-                <Button Command="{Binding CancelCommand}" Width="80" Height="30">
+                <Button Command="{Binding CancelCommand}" Style="{StaticResource Cancel}">
                     <Viewbox>
                         <Image Source="{StaticResource CancelDrawingImage}"/>
                     </Viewbox>

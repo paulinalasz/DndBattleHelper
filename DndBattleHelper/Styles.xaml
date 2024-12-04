@@ -205,7 +205,17 @@
         <Setter Property="MaxHeight" Value="15"/>
         <Setter Property="Padding" Value="2, 2, 2, 2"/>
     </Style>
-    
+
+    <Style TargetType="Button" x:Key="Confirm" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="Cancel" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+
     <!--Toggle Button-->
     <Style x:Key="ToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="Background" Value="#912316"/>
