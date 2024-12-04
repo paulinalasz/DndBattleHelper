@@ -10,6 +10,20 @@ using DndBattleHelper.Models.ActionTypes;
 
 namespace DndBattleHelper.ViewModels
 {
+    //public class EntityActionsViewModel : NotifyPropertyChanged
+    //{
+    //    public string Header { get; }
+    //    public ObservableCollection<EntityActionViewModel> Actions { get; }
+    //    public bool IsVisible => Actions != null && Actions.Any();
+
+    //    public EntityActionsViewModel(string header,
+    //        ObservableCollection<EntityActionViewModel> actions) 
+    //    {
+    //        Header = header;
+    //        Actions = actions;
+    //    }
+    //}
+
     public class EnemyInInitiativeViewModel : EnemyViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
@@ -26,6 +40,9 @@ namespace DndBattleHelper.ViewModels
         public ChallengeRatingViewModel ChallengeRating { get; }
         public ObservableCollection<AbilityViewModel> Abilities { get; }
         public ObservableCollection<EntityActionViewModel> Actions { get; }
+        public ObservableCollection<EntityActionViewModel> Reactions { get; }
+
+        public bool AreReactionsVisible => Reactions.Any();
 
         public int TargetArmourClass
         {
@@ -66,11 +83,20 @@ namespace DndBattleHelper.ViewModels
             }
 
             Actions = new ObservableCollection<EntityActionViewModel>();
+            Reactions = new ObservableCollection<EntityActionViewModel>();
 
             foreach (var action in enemy.Actions)
             {
                 var actionViewModel = entityActionViewModelFactory.Create(action);
-                Actions.Add(actionViewModel);
+
+                if (actionViewModel.ActionCost == ActionCost.Reaction)
+                {
+                    Reactions.Add(actionViewModel);
+                }
+                else
+                {
+                    Actions.Add(actionViewModel);
+                }
 
                 if (actionViewModel is ISpell)
                 {
