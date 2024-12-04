@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Height="500" Width="850" MinWidth="850" MinHeight="500">
-    <Grid>
+    <Grid Background="#f3e9cf">
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <ComboBox Width="300"
@@ -15,7 +15,7 @@
                     ItemsSource="{Binding EnemyPresets}" 
                     DisplayMemberPath="Name" 
                     SelectedItem="{Binding SelectedEnemyPreset, Mode=TwoWay}" />
-                <Button Height="20" ToolTip="Apply Preset" Command="{Binding UsePresetCommand}">
+                <Button Height="25" ToolTip="Apply Preset" Command="{Binding UsePresetCommand}">
                     <Viewbox>
                         <Image Source="{StaticResource ApplyPresetDrawingImage}"/>
                     </Viewbox>

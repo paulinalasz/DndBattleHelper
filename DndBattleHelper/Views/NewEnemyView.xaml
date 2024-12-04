@@ -39,7 +39,7 @@
                     <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Text="Armour Class:"/>
                     <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Health:"/>
                     <TextBlock Style="{StaticResource TraitName}" Grid.Row="4" Grid.Column="0" Text="Speed:"/>
-                    <TextBox Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+                    <TextBox HorizontalContentAlignment="Left" Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" MaxWidth="250" Grid.ColumnSpan="2" Text="{Binding Name}"/>
                     <TextBox Style="{StaticResource Traits}" Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
                     <traits:RollView Grid.Row="1" Grid.Column="2" DataContext="{Binding InitiativeRollViewModel}"/>
                     <TextBox Style="{StaticResource Traits}" Grid.Row="2" Grid.Column="1" Text="{Binding ArmourClass}"/>

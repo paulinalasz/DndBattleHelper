@@ -21,7 +21,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <traits:EntityActionView VerticalAlignment="Center"/>
+        <traits:EntityActionTrait VerticalAlignment="Center"/>
         <StackPanel Grid.Column="1" Orientation="Horizontal">
             <Button Style="{StaticResource Actions}" ToolTip="{Binding TakenActionTooltip}" Command="{Binding TakeActionCommand}" Visibility="{Binding IsTakeActionVisible, Converter={StaticResource BoolToVis}}" Grid.Column="1">
                 <Viewbox>

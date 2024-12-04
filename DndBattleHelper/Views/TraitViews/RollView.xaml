@@ -18,7 +18,7 @@
             <TextBlock Margin="0" Style="{StaticResource TraitName}" Text="d" IsEnabled="{Binding IsDiceChangeEnabled}"/>
             <TextBox Margin="0, 0, 3, 0" Text="{Binding DiceBase}" IsEnabled="{Binding IsDiceChangeEnabled}"/>
             <editable:EditableModifierView DataContext="{Binding ValueModifierViewModel}"/>
-            <Button Width="20" Height="20" Margin="0, 0, 3, 0" ToolTip="Roll" Command="{Binding RollCommand}" Visibility="{Binding IsRollVisible, Converter={StaticResource BoolToVisConverter}}">
+            <Button Width="30" Height="30" Margin="0, 0, 3, 0" ToolTip="Roll" Command="{Binding RollCommand}" Visibility="{Binding IsRollVisible, Converter={StaticResource BoolToVisConverter}}">
                 <Viewbox>
                     <Image Source="{StaticResource RollDieDrawingImage}"/>
                 </Viewbox>

@@ -32,7 +32,9 @@
                 <TextBox HorizontalContentAlignment="Left" VerticalAlignment="Center" Grid.Row="1" MaxHeight="50" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap"/>
             </Grid>
 
-            <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
+            <ScrollViewer Grid.Row="2" MaxHeight="150" Margin="0, 10, 0, 0">
+                <local:EditableTraitsView DataContext="{Binding EditableTraitViewModelsViewModel}"/>
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 </UserControl>

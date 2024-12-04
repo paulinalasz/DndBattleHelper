@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DndBattleHelper.Views.TraitViews
 {
     /// <summary>
-    /// Interaction logic for EntityActionView.xaml
+    /// Interaction logic for EntityActionTrait.xaml
     /// </summary>
-    public partial class EntityActionView : UserControl
+    public partial class EntityActionTrait : UserControl
     {
-        public EntityActionView()
+        public EntityActionTrait()
         {
             InitializeComponent();
         }
