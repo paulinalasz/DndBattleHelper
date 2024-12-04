@@ -14,19 +14,12 @@ namespace DndBattleHelper.ViewModels
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly EnemyFactory _enemyFactory;
-        private readonly EntityActionsViewModelFactory _entityActionsViewModelFactory;
         private readonly Presets _presets;
 
         public AddNewEnemyViewModel(EnemyFactory enemyFactory,
-            EntityActionsViewModelFactory entityActionsViewModelFactory,
-            Presets presets, 
-            TargetArmourClassProvider targetArmourClassProvider, 
-            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
-            : base(true, true, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
+            Presets presets) 
+            : base(true, true, enemyFactory.CreateBlank(), presets)
         {
-            _entityActionsViewModelFactory = entityActionsViewModelFactory;
-            _targetArmourClassProvider = targetArmourClassProvider;
-            _advantageDisadvantageProvider = advantageDisadvantageProvider;
             _enemyFactory = enemyFactory;
             _presets = presets;
 
@@ -36,67 +29,67 @@ namespace DndBattleHelper.ViewModels
             SameHealth = false;
         }
 
-        #region Apply Presets
-        public List<EnemyPreset> EnemyPresets => _presets.EnemyPresets;
+        //#region Apply Presets
+        //public List<EnemyPreset> EnemyPresets => _presets.EnemyPresets;
 
-        private EnemyPreset _selectedEnemyPreset;
-        public EnemyPreset SelectedEnemyPreset
-        {
-            get { return _selectedEnemyPreset; }
-            set
-            {
-                _selectedEnemyPreset = value;
-                OnPropertyChanged(nameof(SelectedEnemyPreset));
-            }
-        }
+        //private EnemyPreset _selectedEnemyPreset;
+        //public EnemyPreset SelectedEnemyPreset
+        //{
+        //    get { return _selectedEnemyPreset; }
+        //    set
+        //    {
+        //        _selectedEnemyPreset = value;
+        //        OnPropertyChanged(nameof(SelectedEnemyPreset));
+        //    }
+        //}
 
-        private ICommand _usePresetCommand;
-        public ICommand UsePresetCommand => _usePresetCommand ?? (_usePresetCommand = new CommandHandler(UsePreset, () => { return true; }));
+        //private ICommand _usePresetCommand;
+        //public ICommand UsePresetCommand => _usePresetCommand ?? (_usePresetCommand = new CommandHandler(UsePreset, () => { return true; }));
 
-        public void UsePreset()
-        {
-            var spellSlots = new List<SpellSlotAvailabilityViewModel>();
+        //public void UsePreset()
+        //{
+        //    var spellSlots = new List<SpellSlotAvailabilityViewModel>();
 
-            foreach (var spellSlot in SelectedEnemyPreset.SpellSlots)
-            {
-                spellSlots.Add(new SpellSlotAvailabilityViewModel(spellSlot.Copy()));
-            }
+        //    foreach (var spellSlot in SelectedEnemyPreset.SpellSlots)
+        //    {
+        //        spellSlots.Add(new SpellSlotAvailabilityViewModel(spellSlot.Copy()));
+        //    }
 
-            Name = SelectedEnemyPreset.Name;
-            ArmourClass = SelectedEnemyPreset.ArmourClass;
-            Health = SelectedEnemyPreset.Health;
-            Speed = SelectedEnemyPreset.Speed;
-            Strength = SelectedEnemyPreset.Strength;
-            Dexterity = SelectedEnemyPreset.Dexterity;
-            Constitution = SelectedEnemyPreset.Constitution;
-            Intelligence = SelectedEnemyPreset.Intelligence;
-            Wisdom = SelectedEnemyPreset.Wisdom;
-            Charisma = SelectedEnemyPreset.Charisma;
-            IsSpellCaster = SelectedEnemyPreset.IsSpellCaster;
-            SpellSlots = spellSlots;
-            EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ", SelectedEnemyPreset.SavingThrows);
-            EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ", SelectedEnemyPreset.DamageVurnerabilities);
-            EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ", SelectedEnemyPreset.DamageResistances);
-            EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ", SelectedEnemyPreset.DamageResistances);
-            EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ", SelectedEnemyPreset.ConditionImmunities);
-            EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ", SelectedEnemyPreset.Skills);
-            EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
-            PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
-            EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ", SelectedEnemyPreset.Languages);
-            ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
-            EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
-            EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);
-            HealthRollViewModel.DiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
-            HealthRollViewModel.DiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
-            HealthRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
-            InitiativeRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.InitiativeRoll.ValueModifier.Copy());
-            LegendaryActionsDescription = SelectedEnemyPreset.LegendaryActionsDescription;
-            LairActionsDescription = SelectedEnemyPreset.LairActionsDescription;
+        //    Name = SelectedEnemyPreset.Name;
+        //    ArmourClass = SelectedEnemyPreset.ArmourClass;
+        //    Health = SelectedEnemyPreset.Health;
+        //    Speed = SelectedEnemyPreset.Speed;
+        //    Strength = SelectedEnemyPreset.Strength;
+        //    Dexterity = SelectedEnemyPreset.Dexterity;
+        //    Constitution = SelectedEnemyPreset.Constitution;
+        //    Intelligence = SelectedEnemyPreset.Intelligence;
+        //    Wisdom = SelectedEnemyPreset.Wisdom;
+        //    Charisma = SelectedEnemyPreset.Charisma;
+        //    IsSpellCaster = SelectedEnemyPreset.IsSpellCaster;
+        //    SpellSlots = spellSlots;
+        //    EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ", SelectedEnemyPreset.SavingThrows);
+        //    EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ", SelectedEnemyPreset.DamageVurnerabilities);
+        //    EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ", SelectedEnemyPreset.DamageResistances);
+        //    EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ", SelectedEnemyPreset.DamageResistances);
+        //    EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ", SelectedEnemyPreset.ConditionImmunities);
+        //    EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ", SelectedEnemyPreset.Skills);
+        //    EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
+        //    PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
+        //    EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ", SelectedEnemyPreset.Languages);
+        //    ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());
+        //    EditAbilitiesViewModel = new EditAbilitiesViewModel(SelectedEnemyPreset.Abilities);
+        //    EditActionsViewModel = new EditActionsViewModel(_targetArmourClassProvider, _advantageDisadvantageProvider, SelectedEnemyPreset.Actions);
+        //    HealthRollViewModel.DiceNumber = SelectedEnemyPreset.HealthRoll.NumberOfDice;
+        //    HealthRollViewModel.DiceBase = SelectedEnemyPreset.HealthRoll.DiceBase;
+        //    HealthRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.HealthRoll.ValueModifier.Copy());
+        //    InitiativeRollViewModel.ValueModifierViewModel = new ModifierViewModel(SelectedEnemyPreset.InitiativeRoll.ValueModifier.Copy());
+        //    LegendaryActionsDescription = SelectedEnemyPreset.LegendaryActionsDescription;
+        //    LairActionsDescription = SelectedEnemyPreset.LairActionsDescription;
 
-            OnPropertyChanged(string.Empty);
-        }
+        //    OnPropertyChanged(string.Empty);
+        //}
 
-        #endregion
+        //#endregion
 
         public EnemyInInitiativeViewModel AddedEnemy { get; set; }
 
@@ -138,7 +131,7 @@ namespace DndBattleHelper.ViewModels
                 LegendaryActionsDescription,
                 LairActionsDescription);
 
-            AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionsViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            AddedEnemy = new EnemyInInitiativeViewModel(enemy);
         }
 
         #region Add Group

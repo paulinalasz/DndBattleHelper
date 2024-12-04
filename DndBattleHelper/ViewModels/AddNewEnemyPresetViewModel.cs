@@ -14,9 +14,8 @@ namespace DndBattleHelper.ViewModels
 
         public AddNewEnemyPresetViewModel(
             EnemyFactory enemyFactory,
-            TargetArmourClassProvider targetArmourClassProvider,
-            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
-            : base(false, false, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
+            Presets presets) 
+            : base(false, false, enemyFactory.CreateBlank(), presets)
         {
         }
 

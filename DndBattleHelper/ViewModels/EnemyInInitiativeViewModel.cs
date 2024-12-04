@@ -7,6 +7,7 @@ using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.Models.ActionTypes;
 using System;
+using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -42,15 +43,9 @@ namespace DndBattleHelper.ViewModels
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyInInitiativeViewModel(Enemy enemy, 
-            EntityActionsViewModelFactory entityActionsViewModelFactory, 
-            TargetArmourClassProvider targetArmourClassProvider, 
-            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
+        public EnemyInInitiativeViewModel(Enemy enemy) 
             : base(enemy)
         {
-            _targetArmourClassProvider = targetArmourClassProvider;
-            _advantageDisadvantageProvider = advantageDisadvantageProvider;
-
             SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows, "Saving Throws:");
             DamageVulnerabilities = new TraitsViewModel<DamageType>(enemy.DamageVurnerabilities, "Damage Vulnerabilities:");
             DamageResistances = new TraitsViewModel<DamageType>(enemy.DamageResistances, "Damage Resistances:");
@@ -67,6 +62,12 @@ namespace DndBattleHelper.ViewModels
             {
                 Abilities.Add(new AbilityViewModel(ability));
             }
+
+            _targetArmourClassProvider = new TargetArmourClassProvider();
+            _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+
+            var entityActionsViewModelFactory = new EntityActionsViewModelFactory(
+                new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider));
 
             Actions = entityActionsViewModelFactory.Create("Actions", enemy.Actions.Where(x => x.ActionCost == ActionCost.MainAction || x.ActionCost == ActionCost.BonusAction));
             Reactions = entityActionsViewModelFactory.Create("Reactions", enemy.Actions.Where(x => x.ActionCost == ActionCost.Reaction));
