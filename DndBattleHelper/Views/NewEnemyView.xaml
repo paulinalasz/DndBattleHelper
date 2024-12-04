@@ -158,7 +158,7 @@
                 <Separator/>
 
                 <editable:EditActionsView Margin="0, 10, 0, 0" DataContext="{Binding EditActionsViewModel}"/>
-                <Grid>
+                <Grid Margin="0, 10, 0, 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -171,7 +171,7 @@
                         <TextBox Margin="3" Text="{Binding LegendaryActionsDescription}" HorizontalContentAlignment="Left"/>
                     </Expander>
                     <Expander Grid.Row="1" VerticalContentAlignment="Top" Header="Lair Action Description" Foreground="#912316" FontWeight="Bold" Margin="0, 0, 10, 3">
-                        <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalAlignment="Left"/>
+                        <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalContentAlignment="Left"/>
                     </Expander>
                 </Grid>
             </StackPanel>
