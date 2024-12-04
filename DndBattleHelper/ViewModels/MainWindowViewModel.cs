@@ -164,7 +164,7 @@ namespace DndBattleHelper.ViewModels
 
         public void AddEnemyNew()
         {
-            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _entityActionsViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider);
+            var addNewEnemyViewModel = new AddNewEnemyViewModel(_enemyFactory, _entityActionsViewModelFactory, _presets, _targetArmourClassProvider, _advantageDisadvantageProvider, _dialogService);
 
             addNewEnemyViewModel.Added += () =>
             {
@@ -172,7 +172,17 @@ namespace DndBattleHelper.ViewModels
                 SortByInitiative(); 
             };
 
-            bool? result = _dialogService.ShowDialog(addNewEnemyViewModel);
+            addNewEnemyViewModel.AddedGroup += () =>
+            {
+                foreach (var enemy in addNewEnemyViewModel.AddedEnemyInInitiativeViewModels)
+                {
+                    EntitiesInInitiative.Add(enemy);
+                }
+                
+                SortByInitiative();
+            };
+
+            var result = _dialogService.ShowDialog(addNewEnemyViewModel);
 
             OnPropertyChanged(string.Empty);
         }

@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows;
 using DndBattleHelper.Views;
 using DndBattleHelper.Helpers.DialogService;
+using static DndBattleHelper.ViewModels.AddNewEnemyViewModel;
 
 namespace DndBattleHelper
 {
@@ -22,6 +23,7 @@ namespace DndBattleHelper
             dialogService.Register<AddNewEnemyViewModel, AddNewEnemyView>();
             dialogService.Register<AddNewEnemyPresetViewModel, AddNewEnemyPresetView>();
             dialogService.Register<AddNewPlayerViewModel, AddNewPlayerView>();
+            dialogService.Register<AddEnemyGroupViewModel, AddEnemyGroupView>();
 
             var viewModel = new MainWindowViewModel(dialogService);
             view.DataContext = viewModel;

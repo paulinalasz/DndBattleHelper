@@ -65,6 +65,7 @@ namespace DndBattleHelper.ViewModels
         #endregion 
 
         public Action Added;
+        public Action AddedGroup;
 
         public virtual void Add()
         {
@@ -73,6 +74,14 @@ namespace DndBattleHelper.ViewModels
             CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
         }
 
+        public virtual void AddGroup(AddEnemyGroupParameters paramters)
+        {
+            CreateNewEnemyGroup(paramters);
+            AddedGroup?.Invoke();
+            CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true));
+        }
+
         public abstract void CreateNewEnemy();
+        public abstract void CreateNewEnemyGroup(AddEnemyGroupParameters parameters);
     }
 }

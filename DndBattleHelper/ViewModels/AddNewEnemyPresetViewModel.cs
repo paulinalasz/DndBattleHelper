@@ -57,5 +57,10 @@ namespace DndBattleHelper.ViewModels
                             LegendaryActionsDescription,
                             LairActionsDescription);
         }
+
+        public override void CreateNewEnemyGroup(AddEnemyGroupParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

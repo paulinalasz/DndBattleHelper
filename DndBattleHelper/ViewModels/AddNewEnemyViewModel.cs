@@ -4,22 +4,25 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Traits;
+using DndBattleHelper.Helpers.DialogService;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class AddNewEnemyViewModel : NewEnemyViewModel
+    public partial class AddNewEnemyViewModel : NewEnemyViewModel
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly EnemyFactory _enemyFactory;
         private readonly EntityActionsViewModelFactory _entityActionsViewModelFactory;
         private readonly Presets _presets;
+        private readonly IDialogService _dialogService;
 
         public AddNewEnemyViewModel(EnemyFactory enemyFactory,
             EntityActionsViewModelFactory entityActionsViewModelFactory,
             Presets presets, 
             TargetArmourClassProvider targetArmourClassProvider, 
-            AdvantageDisadvantageProvider advantageDisadvantageProvider) 
+            AdvantageDisadvantageProvider advantageDisadvantageProvider,
+            IDialogService dialogService) 
             : base(true, true, enemyFactory.CreateBlank(), targetArmourClassProvider, advantageDisadvantageProvider)
         {
             _entityActionsViewModelFactory = entityActionsViewModelFactory;
@@ -27,6 +30,7 @@ namespace DndBattleHelper.ViewModels
             _advantageDisadvantageProvider = advantageDisadvantageProvider;
             _enemyFactory = enemyFactory;
             _presets = presets;
+            _dialogService = dialogService;
         }
 
         public List<EnemyPreset> EnemyPresets => _presets.EnemyPresets;
@@ -89,6 +93,7 @@ namespace DndBattleHelper.ViewModels
         }
 
         public EnemyInInitiativeViewModel AddedEnemy { get; set; }
+        public List<EnemyInInitiativeViewModel> AddedEnemyInInitiativeViewModels { get; set; }
 
         public override void CreateNewEnemy()
         {
@@ -128,8 +133,53 @@ namespace DndBattleHelper.ViewModels
                 LegendaryActionsDescription,
                 LairActionsDescription);
 
-
             AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityActionsViewModelFactory, _targetArmourClassProvider, _advantageDisadvantageProvider);
+        }
+
+        private ICommand _addGroupCommand;
+        public ICommand AddGroupCommand => _addGroupCommand ?? (_addGroupCommand = new CommandHandler(OpenAddGroupDialog, () => { return true; }));
+
+        public void OpenAddGroupDialog()
+        {
+            var addEnemyGroupViewModel = new AddEnemyGroupViewModel();
+            bool? result = _dialogService.ShowDialog(addEnemyGroupViewModel);
+
+            if (result == true) 
+            {
+                AddGroup(new AddEnemyGroupParameters(
+                    addEnemyGroupViewModel.Number, 
+                    addEnemyGroupViewModel.SameInitiative, 
+                    addEnemyGroupViewModel.SameHealth));
+            }
+
+            OnPropertyChanged(string.Empty);
+        }
+
+        public override void CreateNewEnemyGroup(AddEnemyGroupParameters parameters)
+        {
+            var enemyGroup = new List<EnemyInInitiativeViewModel>();
+
+            for (int i = 0; i < parameters.Number; i++)
+            {
+                CreateNewEnemy();
+                var enemy = AddedEnemy;
+
+                if (!parameters.SameInitiative)
+                {
+                    InitiativeRollViewModel.RollValue();
+                    enemy.Initiative = InitiativeRollViewModel.ValueRolled;
+                }
+
+                if (!parameters.SameHealth)
+                {
+                    HealthRollViewModel.RollValue();
+                    enemy.Health = HealthRollViewModel.ValueRolled;
+                }
+
+                enemyGroup.Add(enemy);
+            }
+
+            AddedEnemyInInitiativeViewModels = enemyGroup;
         }
     }
 }
