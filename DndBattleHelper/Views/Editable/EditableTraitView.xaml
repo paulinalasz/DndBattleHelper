@@ -43,16 +43,20 @@
         <converters:DefaultTemplateSelector x:Key="TemplateSelector" DefaultTemplate="{StaticResource DefaultTemplate}" />
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <DockPanel>
-        <ContentPresenter DockPanel.Dock="Left" Content="{Binding Content}" Margin="10, 0, 0, 0" 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="300"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <ContentPresenter Content="{Binding Content}" Margin="10, 0, 0, 0" 
                       ContentTemplateSelector="{StaticResource TemplateSelector}" />
 
-        <Button Style="{StaticResource AddRemove}" DockPanel.Dock="Right" HorizontalAlignment="Right" 
+        <Button Style="{StaticResource AddRemove}" Grid.Column="1" HorizontalAlignment="Right" 
             Command="{Binding RemoveCommand}" 
             Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVis}, ElementName=editableTraitView}">
             <Viewbox>
                 <Image Source="{StaticResource RemoveDrawingImage}" />
             </Viewbox>
         </Button>
-    </DockPanel>
+    </Grid>
 </UserControl>
