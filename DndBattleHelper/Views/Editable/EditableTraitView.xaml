@@ -19,6 +19,16 @@
                 <traitViews:EntityActionTrait />
             </StackPanel>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type actions:AttackActionViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <traitViews:EntityActionTrait />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type actions:SpellAttackViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <traitViews:EntityActionTrait />
+            </StackPanel>
+        </DataTemplate>
 
         <DataTemplate DataType="{x:Type traits:AbilityViewModel}">
             <StackPanel Orientation="Horizontal">
