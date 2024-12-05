@@ -16,7 +16,7 @@ namespace DndBattleHelper.ViewModels.Editable
             ToHitModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditDamageRollsViewModel = new EditDamageRollsViewModel();
             HasModifier = true;
-            DamageRollsEnabled = true;
+            HasDamageRolls = true;
 
             ResetDefaults();
 
@@ -64,14 +64,14 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        private bool _damageRollsEnabled;
-        public bool DamageRollsEnabled
+        private bool _hasDamageRolls;
+        public bool HasDamageRolls
         {
-            get => _damageRollsEnabled;
+            get => _hasDamageRolls;
             set
             {
-                _damageRollsEnabled = value;
-                OnPropertyChanged(nameof(DamageRollsEnabled));
+                _hasDamageRolls = value;
+                OnPropertyChanged(nameof(HasDamageRolls));
                 OnPropertyChanged(nameof(EditDamageRollsViewModel));
             }
         }
@@ -123,7 +123,7 @@ namespace DndBattleHelper.ViewModels.Editable
             var action = new EntityActionFactory().Create(Name,
                     Description,
                     SelectedActionCost,
-                    DamageRollsEnabled,
+                    HasDamageRolls,
                     damageRolls,
                     HasModifier,
                     new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
@@ -171,7 +171,7 @@ namespace DndBattleHelper.ViewModels.Editable
             {
                 AddVerificationError("To Hit Modifier is selected. Please set modifier.", out verified);
             }
-            if (DamageRollsEnabled && !EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels.Any())
+            if (HasDamageRolls && !EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels.Any())
             {
                 AddVerificationError("Does Damage is selected. Please add at least one damage roll to this action.", out verified);
             }
