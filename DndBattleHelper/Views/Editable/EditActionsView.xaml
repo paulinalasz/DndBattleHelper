@@ -79,15 +79,9 @@
                                                Visibility="{Binding DataContext.DamageRollsEnabled, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
                     </StackPanel>
                 </Grid>
-
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
             </Grid>
+
+            <TextBlock Style="{StaticResource Error}" Text="{Binding VerificationError}" Visibility="{Binding IsVerificationErrorVisible, Converter={StaticResource BoolToVisConverter}}"/>
 
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
         </StackPanel>

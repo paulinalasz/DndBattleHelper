@@ -27,6 +27,8 @@ namespace DndBattleHelper.ViewModels.Editable
                     EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(_entityActionViewModelFactory.Create(action.Copy())));
                 }
             }
+
+            VerificationError = string.Empty;
         }
 
         private string _name;
@@ -114,6 +116,8 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override void Add()
         {
+            if (!VerifyAdd()) return;
+
             var damageRolls = EditDamageRollsViewModel.CopyNewModels();
 
             var action = new EntityActionFactory().Create(Name,
@@ -134,6 +138,56 @@ namespace DndBattleHelper.ViewModels.Editable
         public override bool CanAdd()
         {
             return true;
+        }
+
+        private string _verificaitonError;
+        public string VerificationError 
+        {
+            get => _verificaitonError; 
+            set
+            {
+                _verificaitonError = value;
+                OnPropertyChanged(nameof(VerificationError));
+                OnPropertyChanged(nameof(IsVerificationErrorVisible));
+            }
+        }
+
+        public bool IsVerificationErrorVisible => VerificationError.Any();
+
+        private bool VerifyAdd()
+        {
+            var verified = true;
+            VerificationError = "";
+
+            if (!Name.Any())
+            {
+                AddVerificationError("Action needs a name.", out verified);
+            }
+            if (!Description.Any())
+            {
+                AddVerificationError("Action needs a description.", out verified);
+            }
+            if (HasModifier && (ToHitModifierViewModel.ModifierType == ModifierType.Neutral))
+            {
+                AddVerificationError("To Hit Modifier is selected. Please set modifier.", out verified);
+            }
+            if (DamageRollsEnabled && !EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels.Any())
+            {
+                AddVerificationError("Does Damage is selected. Please add at least one damage roll to this action.", out verified);
+            }
+
+            return verified;
+        }
+
+        private void AddVerificationError(string errorMessage, out bool verified)
+        {
+            if (VerificationError != "")
+            {
+                VerificationError += "\n";
+            }
+
+            VerificationError += errorMessage;
+            verified = false;
         }
 
         public override void ResetDefaults()
