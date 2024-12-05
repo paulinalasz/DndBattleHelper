@@ -1,9 +1,5 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
-using DndBattleHelper.ViewModels.Editable.Actions;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Traits;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels.Editable
 {

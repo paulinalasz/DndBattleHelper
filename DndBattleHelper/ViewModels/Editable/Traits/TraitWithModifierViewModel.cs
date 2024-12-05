@@ -1,5 +1,4 @@
 ﻿using DndBattleHelper.Models;
-using Microsoft.Windows.Themes;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {

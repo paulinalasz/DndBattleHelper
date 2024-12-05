@@ -22,7 +22,7 @@ namespace DndBattleHelper.ViewModels
         public TraitsViewModel<DamageType> DamageImmunities { get; }
         public TraitsViewModel<Condition> ConditionImmunities { get; }
         public TraitsWithModifierViewModel<SkillType> Skills { get; }
-        public TraitsViewModel<SenseType> Senses { get; }
+        public TraitsWithValueViewModel<SenseType> Senses { get; }
         public TraitsViewModel<LanguageType> Languages { get; }
         public ChallengeRatingViewModel ChallengeRating { get; }
         public ObservableCollection<AbilityViewModel> Abilities { get; }
@@ -52,7 +52,7 @@ namespace DndBattleHelper.ViewModels
             DamageImmunities = new TraitsViewModel<DamageType>(enemy.DamageImmunities, "Damage Immunities:");
             ConditionImmunities = new TraitsViewModel<Condition>(enemy.ConditionImmunities, "Condition Immunities:");
             Skills = new TraitsWithModifierViewModel<SkillType>(enemy.Skills, "Skills:");
-            Senses = new TraitsViewModel<SenseType>(enemy.Senses, "Senses:", enemy.PassivePerception);
+            Senses = new TraitsWithValueViewModel<SenseType>(enemy.Senses, "Senses:", enemy.PassivePerception);
             Languages = new TraitsViewModel<LanguageType>(enemy.Languages, "Languages:");
             ChallengeRating = new ChallengeRatingViewModel(enemy.ChallengeRating);
 
