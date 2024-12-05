@@ -27,8 +27,6 @@ namespace DndBattleHelper.ViewModels.Editable
                     EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(_entityActionViewModelFactory.Create(action.Copy())));
                 }
             }
-
-            VerificationError = string.Empty;
         }
 
         private string _name;
@@ -122,10 +120,8 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public override void Add()
+        protected override void CreateItem()
         {
-            if (!VerifyAdd()) return;
-
             var damageRolls = EditDamageRollsViewModel.CopyNewModels();
 
             var action = new EntityActionFactory().Create(Name,
@@ -140,7 +136,6 @@ namespace DndBattleHelper.ViewModels.Editable
 
             var newAction = _entityActionViewModelFactory.Create(action);
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(newAction));
-            base.Add();
         }
 
         public override bool CanAdd()
@@ -148,24 +143,9 @@ namespace DndBattleHelper.ViewModels.Editable
             return true;
         }
 
-        private string _verificaitonError;
-        public string VerificationError 
-        {
-            get => _verificaitonError; 
-            set
-            {
-                _verificaitonError = value;
-                OnPropertyChanged(nameof(VerificationError));
-                OnPropertyChanged(nameof(IsVerificationErrorVisible));
-            }
-        }
-
-        public bool IsVerificationErrorVisible => VerificationError.Any();
-
-        private bool VerifyAdd()
+        protected override bool VerifyAdd()
         {
             var verified = true;
-            VerificationError = "";
 
             if (!Name.Any())
             {
@@ -185,17 +165,6 @@ namespace DndBattleHelper.ViewModels.Editable
             }
 
             return verified;
-        }
-
-        private void AddVerificationError(string errorMessage, out bool verified)
-        {
-            if (VerificationError != "")
-            {
-                VerificationError += "\n";
-            }
-
-            VerificationError += errorMessage;
-            verified = false;
         }
 
         public override void ResetDefaults()

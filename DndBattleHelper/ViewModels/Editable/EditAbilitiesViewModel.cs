@@ -41,15 +41,30 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public override void Add()
+        protected override void CreateItem()
         {
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new AbilityViewModel(new Ability(Name, Description))));
-            base.Add();
         }
 
         public override bool CanAdd()
         {
             return true;
+        }
+
+        protected override bool VerifyAdd()
+        {
+            var verified = true;
+
+            if(Name == "")
+            {
+                AddVerificationError("Ability needs a name.", out verified);
+            }
+            if(Description == "")
+            {
+                AddVerificationError("Ability needs a description", out verified);
+            }
+
+            return verified;
         }
 
         public override void ResetDefaults()

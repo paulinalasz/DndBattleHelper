@@ -16,13 +16,48 @@ namespace DndBattleHelper.ViewModels.Editable
             Header = header;
             HasModifier = hasModifier;
             EditableTraitViewModelsViewModel = new EditableTraitViewModelsViewModel(new ObservableCollection<EditableTraitViewModel>());
+            VerificationError = string.Empty;
         }
 
         private ICommand _addCommand;
         public ICommand AddCommand => _addCommand ?? (_addCommand = new CommandHandler(() => Add(), () => CanAdd()));
 
-        public virtual void Add()
+        #region Verification
+        private string _verificaitonError;
+        public string VerificationError
         {
+            get => _verificaitonError;
+            set
+            {
+                _verificaitonError = value;
+                OnPropertyChanged(nameof(VerificationError));
+                OnPropertyChanged(nameof(IsVerificationErrorVisible));
+            }
+        }
+
+        protected void AddVerificationError(string errorMessage, out bool verified)
+        {
+            if (VerificationError != "")
+            {
+                VerificationError += "\n";
+            }
+
+            VerificationError += errorMessage;
+            verified = false;
+        }
+
+        public bool IsVerificationErrorVisible => VerificationError.Any();
+
+        protected abstract bool VerifyAdd();
+        #endregion
+
+        protected abstract void CreateItem();
+
+        public void Add()
+        {
+            VerificationError = "";
+            if (!VerifyAdd()) return;
+            CreateItem();
             OnPropertyChanged(nameof(EditableTraitViewModelsViewModel));
             ResetDefaults();
         }
