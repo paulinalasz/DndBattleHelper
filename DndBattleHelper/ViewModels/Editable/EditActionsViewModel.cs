@@ -76,6 +76,8 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
+        public bool HasDamageRollsEnabled => !HasModifier; 
+
         public EditDamageRollsViewModel EditDamageRollsViewModel { get; }
 
         private bool _hasModifier;
@@ -85,8 +87,14 @@ namespace DndBattleHelper.ViewModels.Editable
             set
             {
                 _hasModifier = value;
+                if (value)
+                {
+                    HasDamageRolls = true;
+                }
+
                 OnPropertyChanged(nameof(HasModifier));
                 OnPropertyChanged(nameof(ToHitModifierViewModel));
+                OnPropertyChanged(nameof(HasDamageRollsEnabled));
             }
         }
 

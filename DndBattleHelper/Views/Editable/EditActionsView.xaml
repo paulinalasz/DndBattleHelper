@@ -72,7 +72,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="0, 10, 0, 10">
-                        <CheckBox IsChecked="{Binding HasDamageRolls}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
+                        <CheckBox IsChecked="{Binding HasDamageRolls}" IsEnabled="{Binding HasDamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
                             <TextBlock Text="Does Damage?" Style="{StaticResource TraitName}" Margin="0"/>
                         </CheckBox>
                         <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" 
