@@ -13,8 +13,9 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Style="{StaticResource TraitName}" Text="{Binding Type, Converter={StaticResource EnumToDescriptionConverter}}"/>
+            <TextBlock Style="{StaticResource TraitName}" Text="{Binding Type, Converter={StaticResource EnumToDescriptionConverter}}" Margin="5, 0, 0, 0"/>
             <local:ModifierView DataContext="{Binding ModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
         </StackPanel>
     </Grid>
+    
 </UserControl>

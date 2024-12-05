@@ -13,35 +13,45 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Name="editableTraitView">
     <UserControl.Resources>
-        <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
-        <converters:EnumToDescriptionConverter x:Key="EnumToDescriptionConverter"/>
+        <!-- Specific DataTemplates -->
         <DataTemplate DataType="{x:Type actions:EntityActionViewModel}">
             <StackPanel Orientation="Horizontal">
-                <traitViews:EntityActionTrait/>
+                <traitViews:EntityActionTrait />
             </StackPanel>
         </DataTemplate>
+
         <DataTemplate DataType="{x:Type traits:AbilityViewModel}">
             <StackPanel Orientation="Horizontal">
-                <parent:AbilityView/>
+                <parent:AbilityView />
             </StackPanel>
         </DataTemplate>
+
         <DataTemplate DataType="{x:Type actions:DamageRollViewModel}">
             <StackPanel Orientation="Horizontal">
-                <parent:DamageRollView/>
+                <parent:DamageRollView />
             </StackPanel>
         </DataTemplate>
+
+        <!-- Default Template -->
+        <DataTemplate x:Key="DefaultTemplate">
+            <StackPanel Orientation="Horizontal">
+                <parent:TraitView/>
+            </StackPanel>
+        </DataTemplate>
+
+        <!-- DataTemplateSelector -->
+        <converters:DefaultTemplateSelector x:Key="TemplateSelector" DefaultTemplate="{StaticResource DefaultTemplate}" />
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
     <DockPanel>
-        <ContentPresenter DockPanel.Dock="Left" Content="{Binding Content}" Margin="10, 0, 0, 0">
-            <ContentPresenter.Resources>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="TextWrapping" Value="Wrap"/>
-                </Style>
-            </ContentPresenter.Resources>
-        </ContentPresenter>
-        <Button Style="{StaticResource AddRemove}" DockPanel.Dock="Right" HorizontalAlignment="Right" Command="{Binding RemoveCommand}" Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}">
+        <ContentPresenter DockPanel.Dock="Left" Content="{Binding Content}" Margin="10, 0, 0, 0" 
+                      ContentTemplateSelector="{StaticResource TemplateSelector}" />
+
+        <Button Style="{StaticResource AddRemove}" DockPanel.Dock="Right" HorizontalAlignment="Right" 
+            Command="{Binding RemoveCommand}" 
+            Visibility="{Binding DataContext.IsRemoveVisible, Converter={StaticResource BoolToVis}, ElementName=editableTraitView}">
             <Viewbox>
-                <Image Source="{StaticResource RemoveDrawingImage}"/>
+                <Image Source="{StaticResource RemoveDrawingImage}" />
             </Viewbox>
         </Button>
     </DockPanel>
