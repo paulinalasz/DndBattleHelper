@@ -44,7 +44,13 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override bool CanAdd()
         {
-            return ToAddModifierViewModel.ModifierType != ModifierType.Neutral;
+            if (EditableTraitViewModelsViewModel.EditableTraitViewModels.Select(x => ((TraitViewModel<T>)x.Content).Type).ToList().Contains(SelectedToAdd)
+                || ToAddModifierViewModel.ModifierType == ModifierType.Neutral)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public override void ResetDefaults()

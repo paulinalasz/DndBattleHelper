@@ -38,6 +38,11 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public override bool CanAdd()
         {
+            if (EditableTraitViewModelsViewModel.EditableTraitViewModels.Select(x => ((TraitViewModel<T>)x.Content).Type).ToList().Contains(SelectedToAdd))
+            {
+                return false;
+            }
+
             return true;
         }
 
