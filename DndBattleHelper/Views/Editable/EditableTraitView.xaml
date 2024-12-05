@@ -15,19 +15,19 @@
     <UserControl.Resources>
         <!-- Specific DataTemplates -->
         <DataTemplate DataType="{x:Type actions:EntityActionViewModel}">
-            <StackPanel Orientation="Horizontal">
+            <Grid>
                 <traitViews:EntityActionTrait />
-            </StackPanel>
+            </Grid>
         </DataTemplate>
         <DataTemplate DataType="{x:Type actions:AttackActionViewModel}">
-            <StackPanel Orientation="Horizontal">
+            <Grid>
                 <traitViews:EntityActionTrait />
-            </StackPanel>
+            </Grid>
         </DataTemplate>
         <DataTemplate DataType="{x:Type actions:SpellAttackViewModel}">
-            <StackPanel Orientation="Horizontal">
+            <Grid>
                 <traitViews:EntityActionTrait />
-            </StackPanel>
+            </Grid>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type traits:AbilityViewModel}">
@@ -59,7 +59,9 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <ContentPresenter Content="{Binding Content}" Margin="10, 0, 0, 0" 
-                      ContentTemplateSelector="{StaticResource TemplateSelector}" />
+                      ContentTemplateSelector="{StaticResource TemplateSelector}"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"/>
 
         <Button Style="{StaticResource AddRemove}" Grid.Column="1" HorizontalAlignment="Right" 
             Command="{Binding RemoveCommand}" 
