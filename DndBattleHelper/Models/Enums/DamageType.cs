@@ -18,6 +18,8 @@ namespace DndBattleHelper.Models
         Force,
         Psychic,
         [Description("Non-Silvered Bludgeoning, Piercing, And Slashing")]
-        NonSilvered
+        NonSilvered,
+        [Description("Non-Magical Bludgeoning, Piercing, And Slashing")]
+        NonMagical
     }
 }
