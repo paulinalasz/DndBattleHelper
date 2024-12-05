@@ -72,22 +72,16 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="0, 10, 0, 10">
-                        <CheckBox IsChecked="{Binding DamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
+                        <CheckBox IsChecked="{Binding HasDamageRolls}" IsEnabled="{Binding HasDamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
                             <TextBlock Text="Does Damage?" Style="{StaticResource TraitName}" Margin="0"/>
                         </CheckBox>
                         <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" 
-                                               Visibility="{Binding DataContext.DamageRollsEnabled, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
+                                               Visibility="{Binding DataContext.HasDamageRolls, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
                     </StackPanel>
                 </Grid>
-
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
             </Grid>
+
+            <TextBlock Style="{StaticResource Error}" Text="{Binding VerificationError}" Visibility="{Binding IsVerificationErrorVisible, Converter={StaticResource BoolToVisConverter}}"/>
 
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
         </StackPanel>

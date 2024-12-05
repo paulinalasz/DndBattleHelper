@@ -31,16 +31,26 @@ namespace DndBattleHelper.ViewModels.Editable
 
         public ModifierViewModel ToAddModifierViewModel { get; set; }
 
-        public override void Add()
+        protected override void CreateItem()
         {
             var traitToAdd = new TraitWithModifier<T>(SelectedToAdd, new Modifier(ToAddModifierViewModel.ModifierType, ToAddModifierViewModel.ModifierValue));
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitWithModifierViewModel<T>(traitToAdd)));
-            base.Add();
+        }
+
+        protected override bool VerifyAdd()
+        {
+            return true;
         }
 
         public override bool CanAdd()
         {
-            return ToAddModifierViewModel.ModifierType != ModifierType.Neutral;
+            if (EditableTraitViewModelsViewModel.EditableTraitViewModels.Select(x => ((TraitViewModel<T>)x.Content).Type).ToList().Contains(SelectedToAdd)
+                || ToAddModifierViewModel.ModifierType == ModifierType.Neutral)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public override void ResetDefaults()

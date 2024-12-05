@@ -16,7 +16,7 @@ namespace DndBattleHelper.ViewModels.Editable
             ToHitModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
             EditDamageRollsViewModel = new EditDamageRollsViewModel();
             HasModifier = true;
-            DamageRollsEnabled = true;
+            HasDamageRolls = true;
 
             ResetDefaults();
 
@@ -62,17 +62,19 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        private bool _damageRollsEnabled;
-        public bool DamageRollsEnabled
+        private bool _hasDamageRolls;
+        public bool HasDamageRolls
         {
-            get => _damageRollsEnabled;
+            get => _hasDamageRolls;
             set
             {
-                _damageRollsEnabled = value;
-                OnPropertyChanged(nameof(DamageRollsEnabled));
+                _hasDamageRolls = value;
+                OnPropertyChanged(nameof(HasDamageRolls));
                 OnPropertyChanged(nameof(EditDamageRollsViewModel));
             }
         }
+
+        public bool HasDamageRollsEnabled => !HasModifier; 
 
         public EditDamageRollsViewModel EditDamageRollsViewModel { get; }
 
@@ -83,8 +85,14 @@ namespace DndBattleHelper.ViewModels.Editable
             set
             {
                 _hasModifier = value;
+                if (value)
+                {
+                    HasDamageRolls = true;
+                }
+
                 OnPropertyChanged(nameof(HasModifier));
                 OnPropertyChanged(nameof(ToHitModifierViewModel));
+                OnPropertyChanged(nameof(HasDamageRollsEnabled));
             }
         }
 
@@ -112,14 +120,14 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public override void Add()
+        protected override void CreateItem()
         {
             var damageRolls = EditDamageRollsViewModel.CopyNewModels();
 
             var action = new EntityActionFactory().Create(Name,
                     Description,
                     SelectedActionCost,
-                    DamageRollsEnabled,
+                    HasDamageRolls,
                     damageRolls,
                     HasModifier,
                     new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
@@ -128,12 +136,35 @@ namespace DndBattleHelper.ViewModels.Editable
 
             var newAction = _entityActionViewModelFactory.Create(action);
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(newAction));
-            base.Add();
         }
 
         public override bool CanAdd()
         {
             return true;
+        }
+
+        protected override bool VerifyAdd()
+        {
+            var verified = true;
+
+            if (!Name.Any())
+            {
+                AddVerificationError("Action needs a name.", out verified);
+            }
+            if (!Description.Any())
+            {
+                AddVerificationError("Action needs a description.", out verified);
+            }
+            if (HasModifier && (ToHitModifierViewModel.ModifierType == ModifierType.Neutral))
+            {
+                AddVerificationError("To Hit Modifier is selected. Please set modifier.", out verified);
+            }
+            if (HasDamageRolls && !EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels.Any())
+            {
+                AddVerificationError("Does Damage is selected. Please add at least one damage roll to this action.", out verified);
+            }
+
+            return verified;
         }
 
         public override void ResetDefaults()

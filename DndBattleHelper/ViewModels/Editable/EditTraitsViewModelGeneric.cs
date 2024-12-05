@@ -1,5 +1,6 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -30,13 +31,22 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        public override void Add()
+        protected override void CreateItem()
         {
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitViewModel<T>(new Trait<T>(SelectedToAdd))));
-            base.Add();
         }
 
         public override bool CanAdd()
+        {
+            if (EditableTraitViewModelsViewModel.EditableTraitViewModels.Select(x => ((TraitViewModel<T>)x.Content).Type).ToList().Contains(SelectedToAdd))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        protected override bool VerifyAdd()
         {
             return true;
         }
