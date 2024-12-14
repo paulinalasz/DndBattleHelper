@@ -39,16 +39,23 @@ namespace DndBattleHelper.ViewModels
 
         public void NewFile()
         {
-            var messageResult = MessageBox.Show("Would you like to save before opening a new file?", "New File", MessageBoxButton.YesNoCancel);
-
-            if (messageResult == MessageBoxResult.Yes)
+            if (IsChanged)
             {
-                if (SaveWithResult())
+                var messageResult = MessageBox.Show("Would you like to save before opening a new file?", "New File", MessageBoxButton.YesNoCancel);
+
+                if (messageResult == MessageBoxResult.Yes)
+                {
+                    if (SaveWithResult())
+                    {
+                        EntitiesInInitiative.Clear();
+                    }
+                }
+                else if (messageResult == MessageBoxResult.No)
                 {
                     EntitiesInInitiative.Clear();
                 }
             }
-            else if (messageResult == MessageBoxResult.No)
+            else
             {
                 EntitiesInInitiative.Clear();
             }
@@ -76,6 +83,8 @@ namespace DndBattleHelper.ViewModels
             }
 
             _fileIo.OutputSaveFile(entitiesInInitiative, saveFileDialog.FileName);
+            
+            AcceptChanges();
             return true;
         }
 
