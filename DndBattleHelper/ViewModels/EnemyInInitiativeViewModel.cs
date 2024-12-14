@@ -6,7 +6,6 @@ using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.Models.ActionTypes;
-using System;
 using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels
@@ -15,6 +14,32 @@ namespace DndBattleHelper.ViewModels
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+
+        public string SpeedOutput => GetSpeed();
+
+        public string GetSpeed()
+        {
+            var speed = $"{Speed} ft.";
+
+            if (FlySpeed != 0)
+            {
+                speed += $", fly {FlySpeed} ft.";
+            }
+            if (SwimSpeed != 0)
+            {
+                speed += $", swim {SwimSpeed} ft.";
+            }
+            if (ClimbSpeed != 0)
+            {
+                speed += $", climb {ClimbSpeed} ft.";
+            }
+            if (BurrowSpeed != 0)
+            {
+                speed += $", burrow {BurrowSpeed} ft.";
+            }
+
+            return speed;
+        }
 
         public TraitsWithModifierViewModel<AbilityScoreType> SavingThrows { get;}
         public TraitsViewModel<DamageType> DamageVulnerabilities { get;}

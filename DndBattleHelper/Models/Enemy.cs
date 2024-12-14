@@ -6,6 +6,11 @@ namespace DndBattleHelper.Models
     {
         public int ArmourClass { get; set; }
         public int Speed { get; set; }
+        public int FlySpeed { get; set; }
+        public int SwimSpeed { get; set; }
+        public int ClimbSpeed { get; set; }
+        public int BurrowSpeed { get; set; }
+
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
@@ -38,6 +43,10 @@ namespace DndBattleHelper.Models
             int armourClass,
             int health,
             int speed,
+            int flySpeed,
+            int swimSpeed,
+            int climbSpeed,
+            int burrowSpeed,
             int strength,
             int dexterity,
             int constitution,
@@ -64,6 +73,10 @@ namespace DndBattleHelper.Models
         {
             ArmourClass = armourClass;
             Speed = speed;
+            FlySpeed = flySpeed;
+            SwimSpeed = swimSpeed;
+            ClimbSpeed = climbSpeed;
+            BurrowSpeed = burrowSpeed;
             Strength = strength;
             Dexterity = dexterity;
             Constitution = constitution;
@@ -98,6 +111,10 @@ namespace DndBattleHelper.Models
                 ArmourClass,
                 Health,
                 Speed,
+                FlySpeed,
+                SwimSpeed,
+                ClimbSpeed,
+                BurrowSpeed,
                 Strength,
                 Dexterity,
                 Constitution,
