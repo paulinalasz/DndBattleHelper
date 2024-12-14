@@ -121,15 +121,31 @@
         </StackPanel>
 
         <StackPanel DockPanel.Dock="Right" Width="Auto" Margin="10, 0, 10, 0">
-            <TextBlock Text="Spell Slots: " Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
-            <StackPanel Orientation="Horizontal">
-                <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+            <!--Spell Caster-->
+            <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid HorizontalAlignment="Center" Margin="21, 0, 0, 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource TraitName}" Text="Spell Save DC:"/>
+                        <TextBlock Style="{StaticResource Trait}" Text="{Binding SpellSaveDC}"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <ItemsControl ItemsSource="{Binding SpellSlots}">
+                    <TextBlock Style="{StaticResource EditTraitName}" FontWeight="Bold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
+
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal"/>
@@ -137,12 +153,12 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}" Margin="5" Width="20"/>
+                                <TextBlock Width="10" Margin="10, 0, 10, 0" FontWeight="DemiBold" Style="{StaticResource EditTraitName}" Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
 
-                    <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="1">
+                    <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="2" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal"/>
@@ -150,14 +166,13 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <TextBox Text="{Binding NumberLeft, UpdateSourceTrigger=PropertyChanged}" Width="20" Margin="5"/>
+                                <TextBox Margin="5, 0, 5, 0" Text="{Binding NumberLeft, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </Grid>
-
-                <Button Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}" Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}"/>
-            </StackPanel>
+                <Button Grid.Column="2" Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}"/>
+            </Grid>
 
             <local:ActionsView DataContext="{Binding Actions}"/>
             <local:ActionsView DataContext="{Binding Reactions}"/>
