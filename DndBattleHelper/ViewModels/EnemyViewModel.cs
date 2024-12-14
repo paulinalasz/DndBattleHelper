@@ -32,6 +32,8 @@ namespace DndBattleHelper.ViewModels
                 SpellSlots.Add(new SpellSlotAvailabilityViewModel(spellSlotAvailability));
             }
 
+            SpellSaveDC = enemy.SpellSaveDC;
+
             PassivePerception = new PassivePerceptionViewModel(enemy.PassivePerception);
             ChallengeRatingViewModel = new ChallengeRatingViewModel(enemy.ChallengeRating);
         }
@@ -127,6 +129,16 @@ namespace DndBattleHelper.ViewModels
         }
 
         public List<SpellSlotAvailabilityViewModel> SpellSlots { get; set; }
+
+        public int SpellSaveDC
+        {
+            get => _enemy.SpellSaveDC;
+            set
+            {
+                _enemy.SpellSaveDC = value;
+                OnPropertyChanged(nameof(SpellSaveDC));
+            }
+        }
 
         public string LegendaryActionsDescription
         {
