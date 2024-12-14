@@ -28,6 +28,11 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button ToolTip="Save" Command="{Binding NewFileCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource SaveDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
                     <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
                         <Viewbox>
                             <Image Source="{StaticResource SaveDrawingImage}"/>

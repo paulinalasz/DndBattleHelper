@@ -33,6 +33,14 @@ namespace DndBattleHelper.ViewModels
             SelectedTab = TurnNumber;
         }
 
+        private ICommand _newFileCommand;
+        public ICommand NewFileCommand => _newFileCommand ?? (_newFileCommand = new CommandHandler(NewFile, () => { return true; }));
+
+        public void NewFile()
+        {
+            EntitiesInInitiative.Clear();
+        }
+
         private ICommand _saveCommand;
         public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new CommandHandler(Save, () => { return true; }));
 
