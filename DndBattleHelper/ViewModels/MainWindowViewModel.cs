@@ -32,6 +32,7 @@ namespace DndBattleHelper.ViewModels
             SelectedTab = TurnNumber;
         }
 
+        #region FileIO
         private ICommand _newFileCommand;
         public ICommand NewFileCommand => _newFileCommand ?? (_newFileCommand = new CommandHandler(NewFile, () => { return true; }));
 
@@ -83,15 +84,11 @@ namespace DndBattleHelper.ViewModels
         public void Open()
         {
             var openFileDialog = new OpenFileDialog();
-            openFileDialog.ShowDialog();
+            var result = openFileDialog.ShowDialog();
+
+            if (result == false) return;
 
             var entities = _fileIo.OpenSavedFiles(openFileDialog.FileName);
-
-            // User cancelled request to open save files
-            if(entities == null)
-            {
-                return;
-            }
 
             EntitiesInInitiative.Clear();
 
@@ -117,6 +114,7 @@ namespace DndBattleHelper.ViewModels
 
             SubscribeToInitativeChangedEvent();
         }
+        #endregion
 
         private int _selectedTab;
         public int SelectedTab
