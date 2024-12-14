@@ -6,20 +6,21 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
     {
         TraitWithValue<T> _trait;
 
-        public int Distance
+        public int Value
         {
-            get { return _trait.Distance; }
+            get { return _trait.Value; }
             set
             {
-                _trait.Distance = value;
-                OnPropertyChanged(nameof(Distance));
+                _trait.Value = value;
+                OnPropertyChanged(nameof(Value));
             }
         }
 
         public TraitWithValueViewModel(TraitWithValue<T> trait) : base(trait)
         {
             _trait = trait;
-            Distance = _trait.Distance;
+            HasValue = true;
+            Value = _trait.Value;
         }
 
         public override string ToString()

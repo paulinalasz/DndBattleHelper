@@ -2,11 +2,11 @@
 {
     public class TraitWithValue<T> : Trait<T>
     {
-        public int Distance { get; set; }
+        public int Value { get; set; }
 
-        public TraitWithValue(T type, int distance) : base(type)
+        public TraitWithValue(T type, int value) : base(type)
         {
-            Distance = distance;
+            Value = value;
         }
 
         protected TraitWithValue() { }
@@ -17,14 +17,14 @@
 
             traitString += Type.ToString();
             traitString += " ";
-            traitString += $"{Distance.ToString()}ft";
+            traitString += $"{Value.ToString()}ft";
 
             return traitString;
         }
 
         public override TraitWithValue<T> Copy()
         {
-            return new TraitWithValue<T>(Type, Distance);
+            return new TraitWithValue<T>(Type, Value);
         }
     }
 }

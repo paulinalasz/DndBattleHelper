@@ -15,6 +15,10 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Style="{StaticResource TraitName}" Text="{Binding Type, Converter={StaticResource EnumToDescriptionConverter}}" Margin="5, 0, 0, 0"/>
             <local:ModifierView DataContext="{Binding ModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editableTraitView}"/>
+            <TextBlock Style="{StaticResource TraitName}" Visibility="{Binding HasValue, Converter={StaticResource BoolToVisConverter}}">
+                <Run Text="{Binding Value}"/>
+                <Run Text="ft."/>
+            </TextBlock>
         </StackPanel>
     </Grid>
     
