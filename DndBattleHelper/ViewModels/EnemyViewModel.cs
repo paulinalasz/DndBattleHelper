@@ -12,19 +12,6 @@ namespace DndBattleHelper.ViewModels
         {
             _enemy = enemy;
 
-            Name = enemy.Name;
-            Initiative = enemy.Initiative;
-            ArmourClass = enemy.ArmourClass;
-            Health = enemy.Health;
-            Speed = enemy.Speed;
-            Strength = enemy.Strength;
-            Dexterity = enemy.Dexterity;
-            Constitution = enemy.Constitution;
-            Intelligence = enemy.Intelligence;
-            Wisdom = enemy.Wisdom;
-            Charisma = enemy.Charisma;
-            IsSpellCaster = enemy.IsSpellCaster;
-
             SpellSlots = new List<SpellSlotAvailabilityViewModel>();
 
             foreach(var spellSlotAvailability in enemy.SpellSlots) 

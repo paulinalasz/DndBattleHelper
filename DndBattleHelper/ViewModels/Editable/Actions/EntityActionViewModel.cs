@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels.Editable.Actions
 {
-    public class EntityActionViewModel : NotifyPropertyChanged, IEditable
+    public class EntityActionViewModel : ViewModelBase, IEditable
     {
         private EntityAction _action;
 

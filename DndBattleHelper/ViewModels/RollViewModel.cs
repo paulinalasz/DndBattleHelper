@@ -5,7 +5,7 @@ using System.Windows.Navigation;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class RollViewModel : NotifyPropertyChanged
+    public class RollViewModel : ViewModelBase
     {
         private readonly Roll _roll;
 

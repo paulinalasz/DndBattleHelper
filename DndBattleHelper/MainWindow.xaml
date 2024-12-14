@@ -28,6 +28,11 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button ToolTip="Save" Command="{Binding NewFileCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource SaveDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
                     <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
                         <Viewbox>
                             <Image Source="{StaticResource SaveDrawingImage}"/>
@@ -69,7 +74,7 @@
                 </StackPanel>
             </Grid>
 
-            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}" ItemsControl.AlternationCount="{Binding EntitiesInInitiativeCount}">
+            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>

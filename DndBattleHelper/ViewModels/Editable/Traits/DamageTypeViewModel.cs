@@ -1,9 +1,8 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
-    public class DamageTypeViewModel : NotifyPropertyChanged, IEditable
+    public class DamageTypeViewModel : ViewModelBase, IEditable
     {
         private DamageType _type;
         public DamageType Type

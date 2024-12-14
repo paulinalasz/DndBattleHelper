@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
 <EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Initiative>10</Initiative>
-  <Name>Example Enemy</Name>
-  <Health>75</Health>
+  <Name>test</Name>
+  <Health>0</Health>
   <ArmourClass>10</ArmourClass>
   <Speed>30</Speed>
   <Strength>10</Strength>
@@ -60,27 +60,11 @@
     </SpellSlotAvailability>
   </SpellSlots>
   <SavingThrows />
-  <DamageVurnerabilities>
-    <TraitOfDamageType>
-      <Type>Piercing</Type>
-    </TraitOfDamageType>
-  </DamageVurnerabilities>
+  <DamageVurnerabilities />
   <DamageResistances />
   <DamageImmunities />
-  <ConditionImmunities>
-    <TraitOfCondition>
-      <Type>Deafened</Type>
-    </TraitOfCondition>
-  </ConditionImmunities>
-  <Skills>
-    <TraitWithModifierOfSkillType>
-      <Type>Athletics</Type>
-      <Modifier>
-        <Type>Plus</Type>
-        <Value>5</Value>
-      </Modifier>
-    </TraitWithModifierOfSkillType>
-  </Skills>
+  <ConditionImmunities />
+  <Skills />
   <Senses />
   <PassivePerception>
     <Value>10</Value>
@@ -89,50 +73,24 @@
   <ChallengeRating>
     <ChallengeRatingLevel>One</ChallengeRatingLevel>
   </ChallengeRating>
-  <Abilities>
-    <Ability>
-      <Name>Ability Name</Name>
-      <Description>Ability Description</Description>
-    </Ability>
-  </Abilities>
-  <Actions>
-    <EntityAction xsi:type="AttackAction">
-      <Name>Name</Name>
-      <Description>Description</Description>
-      <ActionCost>MainAction</ActionCost>
-      <DamageRolls>
-        <DamageRoll>
-          <NumberOfDice>5</NumberOfDice>
-          <DiceBase>6</DiceBase>
-          <ValueModifier>
-            <Type>Plus</Type>
-            <Value>10</Value>
-          </ValueModifier>
-          <DamageType>Piercing</DamageType>
-        </DamageRoll>
-      </DamageRolls>
-      <ToHit>
-        <Type>Plus</Type>
-        <Value>5</Value>
-      </ToHit>
-    </EntityAction>
-  </Actions>
+  <Abilities />
+  <Actions />
   <LegendaryActionsDescription />
   <LairActionsDescription />
   <HealthRoll>
-    <NumberOfDice>5</NumberOfDice>
+    <NumberOfDice>1</NumberOfDice>
     <DiceBase>10</DiceBase>
     <ValueModifier>
-      <Type>Plus</Type>
-      <Value>50</Value>
+      <Type>Neutral</Type>
+      <Value>0</Value>
     </ValueModifier>
   </HealthRoll>
   <InitiativeRoll>
     <NumberOfDice>1</NumberOfDice>
     <DiceBase>20</DiceBase>
     <ValueModifier>
-      <Type>Plus</Type>
-      <Value>6</Value>
+      <Type>Neutral</Type>
+      <Value>0</Value>
     </ValueModifier>
   </InitiativeRoll>
 </EnemyPreset>

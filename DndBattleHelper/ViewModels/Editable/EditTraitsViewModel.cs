@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public abstract class EditTraitsViewModel : NotifyPropertyChanged
+    public abstract class EditTraitsViewModel : ViewModelBase
     {
         public string Header { get; set; }
         public EditableTraitViewModelsViewModel EditableTraitViewModelsViewModel { get; set; }

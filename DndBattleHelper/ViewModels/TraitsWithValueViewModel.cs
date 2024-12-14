@@ -1,11 +1,10 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class TraitsWithValueViewModel<T> : NotifyPropertyChanged where T : struct 
+    public class TraitsWithValueViewModel<T> : ViewModelBase where T : struct 
     {
         public string Header { get; }
 

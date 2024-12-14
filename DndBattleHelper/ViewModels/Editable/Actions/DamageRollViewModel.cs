@@ -1,9 +1,8 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable.Actions
 {
-    public class DamageRollViewModel : NotifyPropertyChanged, IEditable
+    public class DamageRollViewModel : ViewModelBase, IEditable
     {
         private readonly DamageRoll _damageRoll;
 

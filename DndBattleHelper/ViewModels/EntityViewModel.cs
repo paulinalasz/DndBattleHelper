@@ -1,9 +1,8 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
-    public abstract class EntityViewModel : NotifyPropertyChanged, IEntityViewModel
+    public abstract class EntityViewModel : ViewModelBase, IEntityViewModel
     {
         private readonly Entity _entity;
 

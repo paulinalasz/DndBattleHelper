@@ -5,7 +5,7 @@ using DndBattleHelper.Helpers.DialogService;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class AddNewPlayerViewModel : NotifyPropertyChanged, IDialogRequestClose
+    public class AddNewPlayerViewModel : ViewModelBase, IDialogRequestClose
     {
         public AddNewPlayerViewModel() 
         {

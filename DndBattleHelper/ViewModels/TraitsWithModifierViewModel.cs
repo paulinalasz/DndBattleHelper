@@ -1,12 +1,11 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using Microsoft.Windows.Themes;
 using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class TraitsWithModifierViewModel<T> : NotifyPropertyChanged where T : struct
+    public class TraitsWithModifierViewModel<T> : ViewModelBase where T : struct
     {
         public string Header { get; }
 
