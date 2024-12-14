@@ -6,18 +6,13 @@ namespace DndBattleHelper.ViewModels
 {
     public partial class AddNewEnemyViewModel : NewEnemyViewModel
     {
-        private TargetArmourClassProvider _targetArmourClassProvider;
-        private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
         private readonly EnemyFactory _enemyFactory;
-        private readonly Presets _presets;
 
         public AddNewEnemyViewModel(EnemyFactory enemyFactory,
             Presets presets) 
             : base(true, true, enemyFactory.CreateBlank(), presets)
         {
             _enemyFactory = enemyFactory;
-            _presets = presets;
-
             AddGroup = false;
             NumberInGroup = 5;
             SameInitiative = true;
