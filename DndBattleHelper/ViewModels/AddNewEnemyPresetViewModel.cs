@@ -1,5 +1,6 @@
 ﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable;
+using System.Windows;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -64,6 +65,12 @@ namespace DndBattleHelper.ViewModels
 
         public override void Add()
         {
+            if (Name == "")
+            {
+                MessageBox.Show("Preset needs a name!", "Warning");
+                return;
+            }
+
             CreateNewEnemy();
             Added?.Invoke();
             base.Add();
