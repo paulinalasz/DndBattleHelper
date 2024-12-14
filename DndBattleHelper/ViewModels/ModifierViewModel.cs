@@ -3,7 +3,7 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class ModifierViewModel : NotifyPropertyChanged
+    public class ModifierViewModel : ViewModelBase
     {
         private Modifier _modifier { get; }
 

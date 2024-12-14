@@ -8,12 +8,11 @@ using System.Windows;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class MainWindowViewModel : NotifyPropertyChanged
+    public class MainWindowViewModel : ViewModelBase
     {
         private readonly IDialogService _dialogService;
         private readonly FileIO _fileIo;
         private readonly Presets _presets;
-        private readonly EntityActionsViewModelFactory _entityActionsViewModelFactory;
         private readonly EnemyFactory _enemyFactory;
 
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
@@ -30,6 +29,8 @@ namespace DndBattleHelper.ViewModels
 
             TurnNumber = 0;
             SelectedTab = TurnNumber;
+
+            AcceptChanges();
         }
 
         #region FileIO
@@ -113,6 +114,8 @@ namespace DndBattleHelper.ViewModels
             }
 
             SubscribeToInitativeChangedEvent();
+
+            AcceptChanges();
         }
         #endregion
 

@@ -8,7 +8,7 @@ using DndBattleHelper.ViewModels.Editable.Actions;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class OutputBoxViewModel : NotifyPropertyChanged
+    public class OutputBoxViewModel : ViewModelBase
     {
         public ObservableCollection<TakenActionViewModel> TakenActions { get; set; }
 

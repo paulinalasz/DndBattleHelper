@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
-    public class EditableTraitViewModelsViewModel : NotifyPropertyChanged
+    public class EditableTraitViewModelsViewModel : ViewModelBase
     {
         public ObservableCollection<EditableTraitViewModel> EditableTraitViewModels { get; }
 

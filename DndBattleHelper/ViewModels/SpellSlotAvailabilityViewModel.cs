@@ -3,7 +3,7 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class SpellSlotAvailabilityViewModel : NotifyPropertyChanged
+    public class SpellSlotAvailabilityViewModel : ViewModelBase
     {
         private SpellSlotAvailability _spellSlotAvailability;
 

@@ -4,7 +4,7 @@ using DndBattleHelper.Models.Enums;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class ChallengeRatingViewModel : NotifyPropertyChanged
+    public class ChallengeRatingViewModel : ViewModelBase
     {
         private readonly ChallengeRating _challengeRating;
 

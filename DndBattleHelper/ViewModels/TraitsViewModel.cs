@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class TraitsViewModel<T> : NotifyPropertyChanged where T : struct
+    public class TraitsViewModel<T> : ViewModelBase where T : struct
     {
         public string Header { get; }
 

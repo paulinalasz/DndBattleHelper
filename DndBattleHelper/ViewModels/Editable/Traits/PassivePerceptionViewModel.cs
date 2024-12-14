@@ -3,7 +3,7 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
-    public class PassivePerceptionViewModel : NotifyPropertyChanged, IEditable
+    public class PassivePerceptionViewModel : ViewModelBase, IEditable
     {
         private readonly PassivePerception _passivePerception;
 

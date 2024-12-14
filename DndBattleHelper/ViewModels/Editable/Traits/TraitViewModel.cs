@@ -3,7 +3,7 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
-    public class TraitViewModel<T> : NotifyPropertyChanged, IEditable where T : struct 
+    public class TraitViewModel<T> : ViewModelBase, IEditable where T : struct 
     {
         private Trait<T> _trait;
         public T Type

@@ -3,7 +3,7 @@ using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
-    public class AbilityViewModel : NotifyPropertyChanged, IEditable
+    public class AbilityViewModel : ViewModelBase, IEditable
     {
         private readonly Ability _ability;
 
