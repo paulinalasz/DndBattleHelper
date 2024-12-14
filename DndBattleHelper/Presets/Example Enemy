@@ -66,11 +66,7 @@
     </TraitOfDamageType>
   </DamageVurnerabilities>
   <DamageResistances />
-  <DamageImmunities>
-    <TraitOfDamageType>
-      <Type>Piercing</Type>
-    </TraitOfDamageType>
-  </DamageImmunities>
+  <DamageImmunities />
   <ConditionImmunities>
     <TraitOfCondition>
       <Type>Deafened</Type>

@@ -29,8 +29,6 @@ namespace DndBattleHelper.ViewModels
 
             TurnNumber = 0;
             SelectedTab = TurnNumber;
-
-            AcceptChanges();
         }
 
         private int _selectedTab;
