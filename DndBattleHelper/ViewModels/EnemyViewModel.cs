@@ -58,6 +58,46 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
+        public int FlySpeed
+        {
+            get { return _enemy.FlySpeed; }
+            set
+            {
+                _enemy.FlySpeed = value;
+                OnPropertyChanged(nameof(FlySpeed));
+            }
+        }
+
+        public int SwimSpeed
+        {
+            get { return _enemy.SwimSpeed; }
+            set
+            {
+                _enemy.SwimSpeed = value;
+                OnPropertyChanged(nameof(SwimSpeed));
+            }
+        }
+
+        public int ClimbSpeed
+        {
+            get { return _enemy.ClimbSpeed; }
+            set
+            {
+                _enemy.ClimbSpeed = value;
+                OnPropertyChanged(nameof(ClimbSpeed));
+            }
+        }
+
+        public int BurrowSpeed
+        {
+            get { return _enemy.BurrowSpeed; }
+            set
+            {
+                _enemy.BurrowSpeed = value;
+                OnPropertyChanged(nameof(BurrowSpeed));
+            }
+        }
+
         public int Strength
         {
             get { return _enemy.Strength; }
