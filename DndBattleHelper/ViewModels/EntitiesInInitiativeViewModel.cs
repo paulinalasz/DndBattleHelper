@@ -54,6 +54,8 @@ namespace DndBattleHelper.ViewModels
             {
                 EntitiesInInitiative.Add(entityViewModel);
             }
+
+            OnPropertyChanged(nameof(EntitiesInInitiative));
         }
 
         private void SubscribeToInitativeChangedEvent()
