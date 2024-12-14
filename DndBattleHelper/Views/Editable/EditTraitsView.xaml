@@ -28,6 +28,8 @@
                           DisplayMemberPath="Description"
                           SelectedValue="{Binding Path=SelectedToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <local:EditableModifierView DataContext="{Binding ToAddModifierViewModel}" Visibility="{Binding DataContext.HasModifier, Converter={StaticResource BoolToVisConverter}, ElementName=editTraitsView}"/>
+            <TextBox Text="{Binding Value}" Visibility="{Binding HasValue, Converter={StaticResource BoolToVisConverter}}"/>
+            <TextBlock Margin="0, 0, 5, 0" Text="ft." Style="{StaticResource EditTrait}" Visibility="{Binding HasValue, Converter={StaticResource BoolToVisConverter}}"/>
             <Button Style="{StaticResource AddRemove}" Command="{Binding AddCommand}">
                 <Viewbox>
                     <Image Source="{StaticResource AddDrawingImage}"/>

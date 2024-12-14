@@ -5,7 +5,7 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditAbilitiesViewModel : EditTraitsViewModel
     {
-        public EditAbilitiesViewModel(List<Ability> abilities = null) : base("Abilities", false) 
+        public EditAbilitiesViewModel(List<Ability> abilities = null) : base("Abilities") 
         {
             ResetDefaults();
 

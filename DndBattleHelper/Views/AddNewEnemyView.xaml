@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Height="500" Width="850" MinWidth="850" MinHeight="500">
+             Height="500" Width="850" MinWidth="850" MinHeight="550">
     <Grid Background="#f3e9cf">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

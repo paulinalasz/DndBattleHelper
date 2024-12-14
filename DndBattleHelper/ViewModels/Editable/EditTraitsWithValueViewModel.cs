@@ -5,9 +5,11 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditTraitsWithValueViewModel<T> : EditTraitsViewModel where T : struct
     {
-        public EditTraitsWithValueViewModel(string header, List<TraitWithValue<T>> traits = null) : base(header, false)
+        public EditTraitsWithValueViewModel(string header, List<TraitWithValue<T>> traits = null) : base(header)
         {
-            Distance = 60;
+            Value = 60;
+
+            HasValue = true;
 
             if (traits != null)
             {
@@ -29,14 +31,14 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
-        private int _distance;
-        public int Distance
+        private int _value;
+        public int Value
         {
-            get => _distance;
+            get => _value;
             set
             {
-                _distance = value;
-                OnPropertyChanged(nameof(Distance));
+                _value = value;
+                OnPropertyChanged(nameof(Value));
             }
         }
 
@@ -53,12 +55,12 @@ namespace DndBattleHelper.ViewModels.Editable
         public override void ResetDefaults()
         {
             SelectedToAdd = (T)Enum.GetValues(typeof(T)).GetValue(0);
-            Distance = 60;
+            Value = 60;
         }
 
         protected override void CreateItem()
         {
-            var traitToAdd = new TraitWithValue<T>(SelectedToAdd, Distance);
+            var traitToAdd = new TraitWithValue<T>(SelectedToAdd, Value);
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new EditableTraitViewModel(new TraitWithValueViewModel<T>(traitToAdd)));
         }
 

@@ -5,7 +5,7 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditTraitsViewModel<T> : EditTraitsViewModel where T : struct
     {
-        public EditTraitsViewModel(string header, List<Trait<T>> traits = null) : base(header, false)
+        public EditTraitsViewModel(string header, List<Trait<T>> traits = null) : base(header)
         {
             if (traits != null)
             {
