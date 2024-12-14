@@ -16,8 +16,11 @@ namespace DndBattleHelper.ViewModels
         {
             EntitiesInInitiative.Add(newEntity);
             SortByInitiative();
-            //TODO: fix this
-            SubscribeToInitativeChangedEvent();
+
+            newEntity.InitiativeChanged += () =>
+            {
+                SortByInitiative();
+            };
         }
 
         public void CreateFromModels(List<Entity> entities)
