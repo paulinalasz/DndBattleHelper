@@ -1,22 +1,22 @@
 ﻿using System.Collections.ObjectModel;
 using DndBattleHelper.Models;
-using DndBattleHelper.Helpers;
 
 namespace DndBattleHelper.ViewModels
 {
-    public class EntitiesInInitiativeViewModel : ViewModelBase
+    public class EntitiesInInitiativeViewModel : ViewModelBaseWithChildViewModels
     {
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
 
-        public EntitiesInInitiativeViewModel() 
+        public EntitiesInInitiativeViewModel(ObservableCollection<EntityViewModel> entitiesInInitiative) : base(entitiesInInitiative)
         {
-            EntitiesInInitiative = new ObservableCollection<EntityViewModel>();
+            EntitiesInInitiative = entitiesInInitiative;
         }
 
         public void Add(EntityViewModel newEntity)
         {
             EntitiesInInitiative.Add(newEntity);
             SortByInitiative();
+            //TODO: fix this
             SubscribeToInitativeChangedEvent();
         }
 

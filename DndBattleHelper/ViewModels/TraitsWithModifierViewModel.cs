@@ -1,5 +1,4 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using Microsoft.Windows.Themes;
 using System.Collections.ObjectModel;

@@ -4,6 +4,7 @@ using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
 using Microsoft.Win32;
 using System.Windows;
+using System.Collections.ObjectModel;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -24,7 +25,7 @@ namespace DndBattleHelper.ViewModels
 
             _dialogService = dialogService;
 
-            EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel();
+            EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel(new ObservableCollection<EntityViewModel>());
 
             TurnNumber = 0;
             SelectedTab = TurnNumber;

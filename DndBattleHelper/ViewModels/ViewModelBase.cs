@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DndBattleHelper.Helpers
+namespace DndBattleHelper.ViewModels
 {
     public abstract class ViewModelBase : INotifyPropertyChanged, IChangeTracking
     {
@@ -20,7 +20,7 @@ namespace DndBattleHelper.Helpers
         private bool _notifyObjectIsChanged;
         private readonly object _notifyObjectIsChangedSyncRoot = new();
 
-        public bool IsChanged
+        public virtual bool IsChanged
         {
             get
             {

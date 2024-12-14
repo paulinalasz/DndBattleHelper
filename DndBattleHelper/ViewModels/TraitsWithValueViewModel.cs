@@ -1,5 +1,4 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using System.Collections.ObjectModel;
 

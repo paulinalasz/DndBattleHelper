@@ -1,5 +1,4 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.Models.Enums;
 
 namespace DndBattleHelper.ViewModels

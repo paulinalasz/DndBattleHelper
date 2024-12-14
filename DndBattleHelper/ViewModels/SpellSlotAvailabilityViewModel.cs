@@ -1,5 +1,4 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
