@@ -115,6 +115,7 @@ namespace DndBattleHelper.ViewModels
             Charisma = SelectedEnemyPreset.Charisma;
             IsSpellCaster = SelectedEnemyPreset.IsSpellCaster;
             SpellSlots = spellSlots;
+            SpellSaveDC = SelectedEnemyPreset.SpellSaveDC;
             EditSavingThrowsViewModel = new EditTraitsWithModifierViewModel<AbilityScoreType>("Saving Throws: ", SelectedEnemyPreset.SavingThrows);
             EditDamageVulnerabilitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Vurnerabilities: ", SelectedEnemyPreset.DamageVurnerabilities);
             EditDamageResistancesViewModel = new EditTraitsViewModel<DamageType>("Damage Resistances: ", SelectedEnemyPreset.DamageResistances);

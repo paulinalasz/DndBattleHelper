@@ -39,6 +39,7 @@ namespace DndBattleHelper.ViewModels
                             Charisma,
                             IsSpellCaster,
                             spellSlots,
+                            SpellSaveDC,
                             EditSavingThrowsViewModel.CopyNewModels(),
                             EditDamageVulnerabilitiesViewModel.CopyNewModels(),
                             EditDamageResistancesViewModel.CopyNewModels(),

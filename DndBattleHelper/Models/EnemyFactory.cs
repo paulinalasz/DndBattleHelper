@@ -17,6 +17,7 @@ namespace DndBattleHelper.Models
             int charisma,
             bool isSpellCaster,
             List<SpellSlotAvailability> spellSlots,
+            int spellSaveDC,
             List<TraitWithModifier<AbilityScoreType>> savingThrows,
             List<Trait<DamageType>> damageVurnerability,
             List<Trait<DamageType>> damageResistances,
@@ -45,6 +46,7 @@ namespace DndBattleHelper.Models
                 charisma,
                 isSpellCaster,
                 spellSlots,
+                spellSaveDC,
                 savingThrows,
                 damageVurnerability,
                 damageResistances,
@@ -88,6 +90,7 @@ namespace DndBattleHelper.Models
                     new SpellSlotAvailability(SpellSlot.Slot9, 0, 0),
 
                 },
+                15,
                 new List<TraitWithModifier<AbilityScoreType>>(),
                 new List<Trait<DamageType>>(),
                 new List<Trait<DamageType>>(),
