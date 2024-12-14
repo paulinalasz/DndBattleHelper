@@ -6,9 +6,7 @@ using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
 using DndBattleHelper.Models.ActionTypes;
-using System;
 using DndBattleHelper.ViewModels.Editable;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DndBattleHelper.ViewModels
 {
