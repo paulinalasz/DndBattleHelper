@@ -20,7 +20,7 @@ namespace DndBattleHelper.ViewModels
         public EditTraitsViewModel<DamageType> EditDamageImmunitiesViewModel { get; set; }
         public EditTraitsViewModel<Condition> EditConditionImmunitiesViewModel { get; set; }
         public EditTraitsWithModifierViewModel<SkillType> EditSkillsViewModel { get; set; }
-        public EditTraitsViewModel<SenseType> EditSensesViewModel { get; set; }
+        public EditTraitsWithValueViewModel<SenseType> EditSensesViewModel { get; set; }
         public EditTraitsViewModel<LanguageType> EditLanguagesViewModel { get; set; }
 
         public EditAbilitiesViewModel EditAbilitiesViewModel { get; set; }
@@ -46,7 +46,7 @@ namespace DndBattleHelper.ViewModels
             EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ");
             EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ");
             EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ");
-            EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ");
+            EditSensesViewModel = new EditTraitsWithValueViewModel<SenseType>("Senses: ");
             EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ");
             EditAbilitiesViewModel = new EditAbilitiesViewModel();
             EditActionsViewModel = new EditActionsViewModel();
@@ -121,7 +121,7 @@ namespace DndBattleHelper.ViewModels
             EditDamageImmunitiesViewModel = new EditTraitsViewModel<DamageType>("Damage Immunities: ", SelectedEnemyPreset.DamageResistances);
             EditConditionImmunitiesViewModel = new EditTraitsViewModel<Condition>("Condition Immunities: ", SelectedEnemyPreset.ConditionImmunities);
             EditSkillsViewModel = new EditTraitsWithModifierViewModel<SkillType>("Skills: ", SelectedEnemyPreset.Skills);
-            EditSensesViewModel = new EditTraitsViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
+            EditSensesViewModel = new EditTraitsWithValueViewModel<SenseType>("Senses: ", SelectedEnemyPreset.Senses);
             PassivePerception = new PassivePerceptionViewModel(SelectedEnemyPreset.PassivePerception);
             EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ", SelectedEnemyPreset.Languages);
             ChallengeRatingViewModel = new ChallengeRatingViewModel(SelectedEnemyPreset.ChallengeRating.Copy());

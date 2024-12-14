@@ -9,7 +9,7 @@ namespace DndBattleHelper.ViewModels.Editable
     {
         private readonly EntityActionViewModelFactory _entityActionViewModelFactory;
 
-        public EditActionsViewModel(List<EntityAction> actions = null) : base("Actions", false)
+        public EditActionsViewModel(List<EntityAction> actions = null) : base("Actions")
         {
             _entityActionViewModelFactory = new EntityActionViewModelFactory(new TargetArmourClassProvider(), new AdvantageDisadvantageProvider());
 

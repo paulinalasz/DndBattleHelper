@@ -22,7 +22,7 @@ namespace DndBattleHelper.Models
         public List<Trait<DamageType>> DamageImmunities { get; set; }
         public List<Trait<Condition>> ConditionImmunities { get; set; }
         public List<TraitWithModifier<SkillType>> Skills { get; set; }
-        public List<Trait<SenseType>> Senses { get; set; }
+        public List<TraitWithValue<SenseType>> Senses { get; set; }
         public PassivePerception PassivePerception { get; set; }
         public List<Trait<LanguageType>> Languages { get; set; }
         public ChallengeRating ChallengeRating { get; set; }
@@ -51,7 +51,7 @@ namespace DndBattleHelper.Models
             List<Trait<DamageType>> damageImmunities,
             List<Trait<Condition>> conditionImmunities,
             List<TraitWithModifier<SkillType>> skills,
-            List<Trait<SenseType>> senses,
+            List<TraitWithValue<SenseType>> senses,
             PassivePerception passivePerception,
             List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,

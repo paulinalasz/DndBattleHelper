@@ -27,7 +27,7 @@ namespace DndBattleHelper.Models
             List<Trait<DamageType>> damageImmunities,
             List<Trait<Condition>> conditionImmunities,
             List<TraitWithModifier<SkillType>> skills,
-            List<Trait<SenseType>> senses,
+            List<TraitWithValue<SenseType>> senses,
             PassivePerception passivePerception,
             List<Trait<LanguageType>> languages,
             ChallengeRating challengeRating,

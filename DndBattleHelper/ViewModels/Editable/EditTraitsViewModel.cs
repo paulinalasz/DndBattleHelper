@@ -8,13 +8,17 @@ namespace DndBattleHelper.ViewModels.Editable
     public abstract class EditTraitsViewModel : NotifyPropertyChanged
     {
         public string Header { get; set; }
-        public bool HasModifier { get; }
         public EditableTraitViewModelsViewModel EditableTraitViewModelsViewModel { get; set; }
 
-        public EditTraitsViewModel(string header, bool hasModifier) 
+        public bool HasModifier { get; set; }
+        public bool HasValue { get; set; }
+
+        public EditTraitsViewModel(string header) 
         {
+            HasModifier = false;
+            HasValue = false;
+
             Header = header;
-            HasModifier = hasModifier;
             EditableTraitViewModelsViewModel = new EditableTraitViewModelsViewModel(new ObservableCollection<EditableTraitViewModel>());
             VerificationError = string.Empty;
         }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Initiative>10</Initiative>
-  <Name>Hell Hound</Name>
-  <Health>45</Health>
-  <ArmourClass>15</ArmourClass>
-  <Speed>50</Speed>
-  <Strength>17</Strength>
-  <Dexterity>12</Dexterity>
-  <Constitution>14</Constitution>
-  <Intelligence>6</Intelligence>
-  <Wisdom>13</Wisdom>
-  <Charisma>6</Charisma>
+  <Name>Example Enemy</Name>
+  <Health>75</Health>
+  <ArmourClass>10</ArmourClass>
+  <Speed>30</Speed>
+  <Strength>10</Strength>
+  <Dexterity>10</Dexterity>
+  <Constitution>10</Constitution>
+  <Intelligence>10</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>10</Charisma>
   <IsSpellCaster>false</IsSpellCaster>
   <SpellSlots>
     <SpellSlotAvailability>
@@ -60,72 +60,59 @@
     </SpellSlotAvailability>
   </SpellSlots>
   <SavingThrows />
-  <DamageVurnerabilities />
+  <DamageVurnerabilities>
+    <TraitOfDamageType>
+      <Type>Piercing</Type>
+    </TraitOfDamageType>
+  </DamageVurnerabilities>
   <DamageResistances />
   <DamageImmunities>
     <TraitOfDamageType>
-      <Type>Fire</Type>
+      <Type>Piercing</Type>
     </TraitOfDamageType>
   </DamageImmunities>
-  <ConditionImmunities />
+  <ConditionImmunities>
+    <TraitOfCondition>
+      <Type>Deafened</Type>
+    </TraitOfCondition>
+  </ConditionImmunities>
   <Skills>
     <TraitWithModifierOfSkillType>
-      <Type>Perception</Type>
+      <Type>Athletics</Type>
       <Modifier>
         <Type>Plus</Type>
         <Value>5</Value>
       </Modifier>
     </TraitWithModifierOfSkillType>
   </Skills>
-  <Senses>
-    <TraitOfSenseType>
-      <Type>Darkvision60ft</Type>
-    </TraitOfSenseType>
-  </Senses>
+  <Senses />
   <PassivePerception>
-    <Value>15</Value>
+    <Value>10</Value>
   </PassivePerception>
-  <Languages>
-    <TraitOfLanguageType>
-      <Type>Infernal</Type>
-    </TraitOfLanguageType>
-  </Languages>
+  <Languages />
   <ChallengeRating>
-    <ChallengeRatingLevel>Three</ChallengeRatingLevel>
+    <ChallengeRatingLevel>One</ChallengeRatingLevel>
   </ChallengeRating>
   <Abilities>
     <Ability>
-      <Name>Keen Hearing and Smell.</Name>
-      <Description>The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell.</Description>
-    </Ability>
-    <Ability>
-      <Name>Pack Tactics</Name>
-      <Description>The hound has advantage on an attack roll against a creature if at least one of the hound's allies is within 5 feet of the creature and the ally isn't incapacitated.</Description>
+      <Name>Ability Name</Name>
+      <Description>Ability Description</Description>
     </Ability>
   </Abilities>
   <Actions>
     <EntityAction xsi:type="AttackAction">
-      <Name>Bite</Name>
-      <Description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 7 (2d6) fire damage.</Description>
+      <Name>Name</Name>
+      <Description>Description</Description>
       <ActionCost>MainAction</ActionCost>
       <DamageRolls>
         <DamageRoll>
-          <NumberOfDice>1</NumberOfDice>
-          <DiceBase>8</DiceBase>
-          <ValueModifier>
-            <Type>Plus</Type>
-            <Value>3</Value>
-          </ValueModifier>
-          <DamageType>Piercing</DamageType>
-        </DamageRoll>
-        <DamageRoll>
-          <NumberOfDice>2</NumberOfDice>
+          <NumberOfDice>5</NumberOfDice>
           <DiceBase>6</DiceBase>
           <ValueModifier>
-            <Type>Neutral</Type>
-            <Value>0</Value>
+            <Type>Plus</Type>
+            <Value>10</Value>
           </ValueModifier>
-          <DamageType>Fire</DamageType>
+          <DamageType>Piercing</DamageType>
         </DamageRoll>
       </DamageRolls>
       <ToHit>
@@ -133,29 +120,15 @@
         <Value>5</Value>
       </ToHit>
     </EntityAction>
-    <EntityAction xsi:type="DamagingAction">
-      <Name>Fire Breath (Recharge 5–6)</Name>
-      <Description>The hound exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.</Description>
-      <ActionCost>MainAction</ActionCost>
-      <DamageRolls>
-        <DamageRoll>
-          <NumberOfDice>6</NumberOfDice>
-          <DiceBase>6</DiceBase>
-          <ValueModifier>
-            <Type>Neutral</Type>
-            <Value>0</Value>
-          </ValueModifier>
-          <DamageType>Fire</DamageType>
-        </DamageRoll>
-      </DamageRolls>
-    </EntityAction>
   </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
   <HealthRoll>
-    <NumberOfDice>7</NumberOfDice>
-    <DiceBase>8</DiceBase>
+    <NumberOfDice>5</NumberOfDice>
+    <DiceBase>10</DiceBase>
     <ValueModifier>
       <Type>Plus</Type>
-      <Value>14</Value>
+      <Value>50</Value>
     </ValueModifier>
   </HealthRoll>
   <InitiativeRoll>
@@ -163,7 +136,7 @@
     <DiceBase>20</DiceBase>
     <ValueModifier>
       <Type>Plus</Type>
-      <Value>1</Value>
+      <Value>6</Value>
     </ValueModifier>
   </InitiativeRoll>
 </EnemyPreset>

@@ -5,9 +5,11 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditTraitsWithModifierViewModel<T> : EditTraitsViewModel where T : struct
     {
-        public EditTraitsWithModifierViewModel(string header, List<TraitWithModifier<T>> traits = null) : base(header, true)
+        public EditTraitsWithModifierViewModel(string header, List<TraitWithModifier<T>> traits = null) : base(header)
         {
             ToAddModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
+
+            HasModifier = true;
 
             if (traits != null)
             {

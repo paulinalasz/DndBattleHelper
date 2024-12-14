@@ -1,5 +1,4 @@
 ﻿using DndBattleHelper.Models;
-using Microsoft.Windows.Themes;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
@@ -12,6 +11,7 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
         public TraitWithModifierViewModel(TraitWithModifier<T> trait) : base(trait)
         {
             _trait = trait;
+            HasModifier = true;
             ModifierViewModel = new ModifierViewModel(_trait.Modifier);
         }
 

@@ -10,9 +10,8 @@ namespace DndBattleHelper.ViewModels
         public string Header { get; }
 
         public ObservableCollection<TraitViewModel<T>> Traits { get; }
-        public PassivePerception PassivePerception { get; }
 
-        public TraitsViewModel(List<Trait<T>> traits, string header, PassivePerception passivePerception = null)
+        public TraitsViewModel(List<Trait<T>> traits, string header)
         {
             Traits = new ObservableCollection<TraitViewModel<T>>();
 
@@ -22,8 +21,6 @@ namespace DndBattleHelper.ViewModels
             }
 
             Header = header;
-
-            PassivePerception = passivePerception;
         }
 
         public string TraitsString => ToString();
@@ -38,11 +35,7 @@ namespace DndBattleHelper.ViewModels
                 traitsString += ", ";
             }
 
-            if (PassivePerception != null)
-            {
-                traitsString += PassivePerception.ToString();
-            }
-            else if (Traits.Count > 2)
+            if (Traits.Count > 2)
             {
                 traitsString = traitsString.Substring(0, traitsString.Length - 2);
             }

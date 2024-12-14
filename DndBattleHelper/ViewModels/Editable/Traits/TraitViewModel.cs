@@ -16,9 +16,15 @@ namespace DndBattleHelper.ViewModels.Editable.Traits
             }
         }
 
+        public bool HasModifier { get; set; }
+        public bool HasValue { get; set; }
+
         public TraitViewModel(Trait<T> trait)
         {
             _trait = trait;
+
+            HasModifier = false;
+            HasValue = false;
         }
 
         public override string ToString()

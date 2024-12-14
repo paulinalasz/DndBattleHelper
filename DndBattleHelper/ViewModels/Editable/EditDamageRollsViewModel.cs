@@ -6,7 +6,7 @@ namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditDamageRollsViewModel : EditTraitsViewModel
     {
-        public EditDamageRollsViewModel() : base("", false) 
+        public EditDamageRollsViewModel() : base("") 
         {
             DamageModifierViewModel = new ModifierViewModel(new Modifier(ModifierType.Neutral, 0));
         }

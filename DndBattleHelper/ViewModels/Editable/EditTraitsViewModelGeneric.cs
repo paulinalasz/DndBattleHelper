@@ -1,15 +1,11 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
-using DndBattleHelper.ViewModels.Editable.Actions;
+﻿using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Editable.Traits;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels.Editable
 {
     public class EditTraitsViewModel<T> : EditTraitsViewModel where T : struct
     {
-        public EditTraitsViewModel(string header, List<Trait<T>> traits = null) : base(header, false)
+        public EditTraitsViewModel(string header, List<Trait<T>> traits = null) : base(header)
         {
             if (traits != null)
             {
