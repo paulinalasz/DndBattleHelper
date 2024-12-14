@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
@@ -15,7 +14,7 @@ namespace DndBattleHelper.ViewModels
         private readonly Presets _presets;
         private readonly EnemyFactory _enemyFactory;
 
-        public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
+        public EntitiesInInitiativeViewModel EntitiesInInitiativeViewModel { get; set; }
 
         public MainWindowViewModel(IDialogService dialogService) 
         {
@@ -25,12 +24,23 @@ namespace DndBattleHelper.ViewModels
 
             _dialogService = dialogService;
 
-            EntitiesInInitiative = new ObservableCollection<EntityViewModel>();
+            EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel();
 
             TurnNumber = 0;
             SelectedTab = TurnNumber;
 
             AcceptChanges();
+        }
+
+        private int _selectedTab;
+        public int SelectedTab
+        {
+            get { return _selectedTab; }
+            set
+            {
+                _selectedTab = value;
+                OnPropertyChanged(nameof(SelectedTab));
+            }
         }
 
         #region FileIO
@@ -39,50 +49,39 @@ namespace DndBattleHelper.ViewModels
 
         public void NewFile()
         {
-            if (IsChanged)
+            if (EntitiesInInitiativeViewModel.IsChanged)
             {
                 var messageResult = MessageBox.Show("Would you like to save before opening a new file?", "New File", MessageBoxButton.YesNoCancel);
 
                 if (messageResult == MessageBoxResult.Yes)
                 {
-                    if (SaveWithResult())
+                    if (Save())
                     {
-                        EntitiesInInitiative.Clear();
+                        EntitiesInInitiativeViewModel.Clear();
                     }
                 }
                 else if (messageResult == MessageBoxResult.No)
                 {
-                    EntitiesInInitiative.Clear();
+                    EntitiesInInitiativeViewModel.Clear();
                 }
             }
             else
             {
-                EntitiesInInitiative.Clear();
+                EntitiesInInitiativeViewModel.Clear();
             }
         }
 
         private ICommand _saveCommand;
-        public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new CommandHandler(SaveFileCommand, () => { return true; }));
+        public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new CommandHandler(() => { Save(); }, () => { return true; }));
 
-        public void SaveFileCommand()
-        {
-            SaveWithResult();
-        }
-
-        public bool SaveWithResult()
+        public bool Save()
         {
             var saveFileDialog = new SaveFileDialog();
             var result = saveFileDialog.ShowDialog();
 
             if (result == false) return false;
 
-            var entitiesInInitiative = new List<Entity>();
-            foreach (var entityViewModel in EntitiesInInitiative)
-            {
-                entitiesInInitiative.Add(entityViewModel.CopyModel());
-            }
-
-            _fileIo.OutputSaveFile(entitiesInInitiative, saveFileDialog.FileName);
+            _fileIo.OutputSaveFile(EntitiesInInitiativeViewModel.GetEntityModels(), saveFileDialog.FileName);
             
             AcceptChanges();
             return true;
@@ -98,47 +97,13 @@ namespace DndBattleHelper.ViewModels
 
             if (result == false) return;
 
-            var entities = _fileIo.OpenSavedFiles(openFileDialog.FileName);
-
-            EntitiesInInitiative.Clear();
-
-            foreach(var entity in entities)
-            {
-                if (entity is Enemy)
-                {
-                    EntitiesInInitiative.Add(new EnemyInInitiativeViewModel((Enemy)entity));
-                }
-                else
-                {
-                    EntitiesInInitiative.Add(new PlayerViewModel((Player)entity));
-                }
-
-                var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
-                EntitiesInInitiative.Clear();
-
-                foreach (var entityViewModel in entitiesSorted)
-                {
-                    EntitiesInInitiative.Add(entityViewModel);
-                }
-            }
-
-            SubscribeToInitativeChangedEvent();
+            EntitiesInInitiativeViewModel.CreateFromModels(_fileIo.OpenSavedFiles(openFileDialog.FileName));
 
             AcceptChanges();
         }
         #endregion
 
-        private int _selectedTab;
-        public int SelectedTab
-        {
-            get { return _selectedTab; }
-            set 
-            { 
-                _selectedTab = value; 
-                OnPropertyChanged(nameof(SelectedTab));
-            }
-        }
-
+        #region Turn Keeping
         private int _turnNumber;
         public int TurnNumber 
         {
@@ -158,7 +123,7 @@ namespace DndBattleHelper.ViewModels
         {
             if (TurnNumber - 1 < 0)
             {
-                TurnNumber = EntitiesInInitiative.Count - 1;
+                TurnNumber = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1;
             }
             else
             {
@@ -173,7 +138,7 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToNextTurn()
         {
-            if (TurnNumber + 1 > EntitiesInInitiative.Count - 1) 
+            if (TurnNumber + 1 > EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1) 
             {
                 TurnNumber = 0;
             }
@@ -186,8 +151,24 @@ namespace DndBattleHelper.ViewModels
         }
 
         public int DisplayTurnNumber => TurnNumber + 1;
+        #endregion
 
-        public int EntitiesInInitiativeCount => EntitiesInInitiative?.Count ?? 0;
+        #region Add Entities and Presets
+        private ICommand _addNewPlayerCommand;
+        public ICommand AddNewPlayerCommand => _addNewPlayerCommand ?? (_addNewPlayerCommand = new CommandHandler(AddNewPlayer, () => { return true; }));
+
+        public void AddNewPlayer()
+        {
+            var addPlayerViewModel = new AddNewPlayerViewModel();
+
+            addPlayerViewModel.Added += () =>
+            {
+                EntitiesInInitiativeViewModel.Add(addPlayerViewModel.AddedPlayerViewModel);
+            };
+
+            bool? result = _dialogService.ShowDialog(addPlayerViewModel);
+            OnPropertyChanged(string.Empty);
+        }
 
         private ICommand _addNewEnemyCommand;
         public ICommand AddNewEnemyCommand => _addNewEnemyCommand ?? (_addNewEnemyCommand = new CommandHandler(() => AddEnemyNew(), () => { return true; }));
@@ -198,18 +179,16 @@ namespace DndBattleHelper.ViewModels
 
             addNewEnemyViewModel.Added += () =>
             {
-                EntitiesInInitiative.Add(addNewEnemyViewModel.AddedEnemy);
-                SortByInitiative(); 
+                EntitiesInInitiativeViewModel.Add(addNewEnemyViewModel.AddedEnemy);
+
             };
 
             addNewEnemyViewModel.AddedGroup += () =>
             {
                 foreach (var enemy in addNewEnemyViewModel.AddedEnemyInInitiativeViewModels)
                 {
-                    EntitiesInInitiative.Add(enemy);
+                    EntitiesInInitiativeViewModel.Add(enemy);
                 }
-                
-                SortByInitiative();
             };
 
             var result = _dialogService.ShowDialog(addNewEnemyViewModel);
@@ -232,46 +211,6 @@ namespace DndBattleHelper.ViewModels
 
             bool? result = _dialogService.ShowDialog(addNewEnemyPresetViewModel);
         }
-
-        private ICommand _addNewPlayerCommand;
-        public ICommand AddNewPlayerCommand => _addNewPlayerCommand ?? (_addNewPlayerCommand = new CommandHandler(AddNewPlayer, () => { return true; }));
-
-        public void AddNewPlayer()
-        {
-            var addPlayerViewModel = new AddNewPlayerViewModel();
-
-            addPlayerViewModel.Added += () =>
-            {
-                EntitiesInInitiative.Add(addPlayerViewModel.AddedPlayerViewModel);
-                SortByInitiative();
-                SubscribeToInitativeChangedEvent();
-            };
-
-            bool? result = _dialogService.ShowDialog(addPlayerViewModel);
-
-            OnPropertyChanged(string.Empty);
-        }
-
-        private void SortByInitiative()
-        {
-            var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
-            EntitiesInInitiative.Clear();
-
-            foreach (var entityViewModel in entitiesSorted)
-            {
-                EntitiesInInitiative.Add(entityViewModel);
-            }
-        }
-
-        private void SubscribeToInitativeChangedEvent()
-        {
-            foreach(var entityViewModel in EntitiesInInitiative)
-            {
-                entityViewModel.InitiativeChanged += () =>
-                {
-                    SortByInitiative();
-                };
-            }
-        }
+        #endregion
     }
 }

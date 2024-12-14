@@ -74,7 +74,7 @@
                 </StackPanel>
             </Grid>
 
-            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}" ItemsControl.AlternationCount="{Binding EntitiesInInitiativeCount}">
+            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
