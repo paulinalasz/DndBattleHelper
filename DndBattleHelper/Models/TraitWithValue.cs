@@ -17,7 +17,7 @@
 
             traitString += Type.ToString();
             traitString += " ";
-            traitString += $"{Value.ToString()}ft";
+            traitString += $"{Value.ToString()} ft.";
 
             return traitString;
         }

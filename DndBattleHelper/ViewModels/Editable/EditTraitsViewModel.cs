@@ -1,6 +1,5 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.ViewModels.Editable.Traits;
-using SharpVectors.Dom.Css;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 

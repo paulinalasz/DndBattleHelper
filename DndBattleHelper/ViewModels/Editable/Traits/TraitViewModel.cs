@@ -1,6 +1,5 @@
 ﻿using DndBattleHelper.Helpers;
 using DndBattleHelper.Models;
-using System.Text;
 
 namespace DndBattleHelper.ViewModels.Editable.Traits
 {
