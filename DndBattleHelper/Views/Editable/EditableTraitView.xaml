@@ -19,6 +19,21 @@
                 <traitViews:EntityActionTrait />
             </Grid>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type actions:DamagingActionViewModel}">
+            <Grid>
+                <traitViews:EntityActionTrait />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type actions:DamagingSpellWithSaveViewModel}">
+            <Grid>
+                <traitViews:EntityActionTrait />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type actions:NonDamagingSpellViewModel}">
+            <Grid>
+                <traitViews:EntityActionTrait />
+            </Grid>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type actions:AttackActionViewModel}">
             <Grid>
                 <traitViews:EntityActionTrait />
