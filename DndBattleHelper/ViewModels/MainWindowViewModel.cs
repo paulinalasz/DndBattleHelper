@@ -3,9 +3,8 @@ using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.Helpers;
 using DndBattleHelper.Helpers.DialogService;
-using DndBattleHelper.ViewModels.Providers;
 using Microsoft.Win32;
-using DndBattleHelper.ViewModels.Editable;
+using System.Windows;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -38,25 +37,44 @@ namespace DndBattleHelper.ViewModels
 
         public void NewFile()
         {
-            EntitiesInInitiative.Clear();
+            var messageResult = MessageBox.Show("Would you like to save before opening a new file?", "New File", MessageBoxButton.YesNoCancel);
+
+            if (messageResult == MessageBoxResult.Yes)
+            {
+                if (SaveWithResult())
+                {
+                    EntitiesInInitiative.Clear();
+                }
+            }
+            else if (messageResult == MessageBoxResult.No)
+            {
+                EntitiesInInitiative.Clear();
+            }
         }
 
         private ICommand _saveCommand;
-        public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new CommandHandler(Save, () => { return true; }));
+        public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new CommandHandler(SaveFileCommand, () => { return true; }));
 
-        public void Save()
+        public void SaveFileCommand()
+        {
+            SaveWithResult();
+        }
+
+        public bool SaveWithResult()
         {
             var saveFileDialog = new SaveFileDialog();
-            saveFileDialog.ShowDialog();
+            var result = saveFileDialog.ShowDialog();
+
+            if (result == false) return false;
 
             var entitiesInInitiative = new List<Entity>();
-
-            foreach(var entityViewModel in EntitiesInInitiative)
+            foreach (var entityViewModel in EntitiesInInitiative)
             {
                 entitiesInInitiative.Add(entityViewModel.CopyModel());
             }
 
             _fileIo.OutputSaveFile(entitiesInInitiative, saveFileDialog.FileName);
+            return true;
         }
 
         private ICommand _openCommand;
