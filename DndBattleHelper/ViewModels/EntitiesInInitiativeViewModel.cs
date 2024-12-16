@@ -15,12 +15,13 @@ namespace DndBattleHelper.ViewModels
         public void Add(EntityViewModel newEntity)
         {
             EntitiesInInitiative.Add(newEntity);
+            SubscribeToEvents(newEntity);
             SortByInitiative();
+        }
 
-            newEntity.InitiativeChanged += () =>
-            {
-                SortByInitiative();
-            };
+        public void Remove(EntityViewModel entity)
+        {
+            EntitiesInInitiative.Remove(entity);
         }
 
         public void CreateFromModels(List<Entity> entities)
@@ -31,16 +32,13 @@ namespace DndBattleHelper.ViewModels
             {
                 if (entity is Enemy)
                 {
-                    EntitiesInInitiative.Add(new EnemyInInitiativeViewModel((Enemy)entity));
+                    Add(new EnemyInInitiativeViewModel((Enemy)entity));
                 }
                 else
                 {
-                    EntitiesInInitiative.Add(new PlayerViewModel((Player)entity));
+                    Add(new PlayerViewModel((Player)entity));
                 }
             }
-
-            SortByInitiative();
-            SubscribeToInitativeChangedEvent();
         }
 
         public void Clear()
@@ -59,6 +57,19 @@ namespace DndBattleHelper.ViewModels
             }
 
             OnPropertyChanged(nameof(EntitiesInInitiative));
+        }
+
+        private void SubscribeToEvents(EntityViewModel entityViewModel)
+        {
+            entityViewModel.InitiativeChanged += () =>
+            {
+                SortByInitiative();
+            };
+
+            entityViewModel.RemoveRequested += (o, e) =>
+            {
+                Remove((EntityViewModel)o);
+            };
         }
 
         private void SubscribeToInitativeChangedEvent()
