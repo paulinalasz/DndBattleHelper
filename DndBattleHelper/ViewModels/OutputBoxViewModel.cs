@@ -36,7 +36,7 @@ namespace DndBattleHelper.ViewModels
 
         public string CalculateTotalDamageOutput()
         {
-            if (TakenActions.Count == 0) return "";
+            if (TakenActions.Where(x => x.AttackDamageViewModel != null).ToList().Count == 0) return "";
 
             var totalDamage = TakenActions
                 .Where(x => x.AttackDamageViewModel != null)
