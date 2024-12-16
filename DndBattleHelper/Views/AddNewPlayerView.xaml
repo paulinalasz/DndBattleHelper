@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper.Views"
         mc:Ignorable="d"
-        Title="AddNewPlayerView" Height="200" Width="300" MinHeight="200" MinWidth="300">
+        Title="Add New Player" Height="200" Width="300" MinHeight="200" MinWidth="300">
     <Grid Background="#f3e9cf">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,10 +16,8 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <!--<RowDefinition/>
-                    <RowDefinition/>-->
-                </Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
