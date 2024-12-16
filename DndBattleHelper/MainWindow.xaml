@@ -74,7 +74,7 @@
                 </StackPanel>
             </Grid>
 
-            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
+            <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
@@ -86,7 +86,19 @@
                 <TabControl.ItemTemplate>
                     <!-- this is the header template-->
                     <DataTemplate>
-                        <TextBlock Style="{StaticResource TabTitle}" Text="{Binding Name}" />
+                        <Grid MinWidth="150" MaxWidth="200">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Style="{StaticResource TabTitle}" Text="{Binding Name}" />
+                            <Button Grid.Column="1" Height="20" Width="20" ToolTip="Remove Entity" Command="{Binding RemoveCommand}">
+                                <Viewbox>
+                                    <Image Source="{StaticResource ClearDrawingImage}"/>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
                     </DataTemplate>
                 </TabControl.ItemTemplate>
             </TabControl>

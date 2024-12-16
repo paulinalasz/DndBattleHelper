@@ -1,8 +1,23 @@
-﻿using DndBattleHelper.Models;
+﻿using DndBattleHelper.Helpers;
+using DndBattleHelper.Models;
+using System.Windows.Input;
 
 namespace DndBattleHelper.ViewModels
 {
-    public abstract class EntityViewModel : ViewModelBase, IEntityViewModel
+    public abstract class Tab : ViewModelBase
+    {
+        private ICommand _removeCommand;
+        public ICommand RemoveCommand => _removeCommand ?? (new CommandHandler(Remove, () => { return true; }));
+
+        public void Remove()
+        {
+            RemoveRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        public event EventHandler RemoveRequested;
+    }
+
+    public abstract class EntityViewModel : Tab, IEntityViewModel
     {
         private readonly Entity _entity;
 
