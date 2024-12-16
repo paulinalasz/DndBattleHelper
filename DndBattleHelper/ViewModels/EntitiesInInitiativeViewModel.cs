@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using DndBattleHelper.Models;
+using SharpVectors.Dom;
+using SharpVectors.Scripting;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -12,16 +14,22 @@ namespace DndBattleHelper.ViewModels
             EntitiesInInitiative = entitiesInInitiative;
         }
 
-        public void Add(EntityViewModel newEntity)
+        public void Add(EntityViewModel entity)
         {
-            EntitiesInInitiative.Add(newEntity);
-            SubscribeToEvents(newEntity);
-            SortByInitiative();
+            SubscribeToEvents(entity);
+            MoveOrInsertAtCorrectIndex(entity);
         }
 
         public void Remove(EntityViewModel entity)
         {
             EntitiesInInitiative.Remove(entity);
+            UnsubscribeEvents(entity);
+
+        }
+
+        public void Clear()
+        {
+            EntitiesInInitiative.Clear();
         }
 
         public void CreateFromModels(List<Entity> entities)
@@ -41,46 +49,50 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
-        public void Clear()
+        private void MoveOrInsertAtCorrectIndex(EntityViewModel entity)
         {
-            EntitiesInInitiative.Clear();
-        }
-
-        private void SortByInitiative()
-        {
-            var entitiesSorted = EntitiesInInitiative.OrderByDescending(entity => entity.Initiative).ToList();
-            EntitiesInInitiative.Clear();
-
-            foreach (var entityViewModel in entitiesSorted)
+            // find the index that the item should be at
+            var index = EntitiesInInitiative.ToList().BinarySearch(entity, Comparer<EntityViewModel>.Create((x, y) => y.Initiative.CompareTo(x.Initiative)));
+            if (index < 0)
             {
-                EntitiesInInitiative.Add(entityViewModel);
+                index = ~index;
             }
 
-            OnPropertyChanged(nameof(EntitiesInInitiative));
+            // If already present in list, remove from list
+            // We don't want to unsubscribe from events as we are only moving entity
+            if (EntitiesInInitiative.Contains(entity))
+            {
+                EntitiesInInitiative.Remove(entity);
+            }
+
+            // add to list at correct index
+            EntitiesInInitiative.Insert(index, entity);
         }
 
-        private void SubscribeToEvents(EntityViewModel entityViewModel)
+        private void SubscribeToEvents(EntityViewModel entity)
         {
-            entityViewModel.InitiativeChanged += () =>
+            entity.InitiativeChanged += () =>
             {
-                SortByInitiative();
+                MoveOrInsertAtCorrectIndex(entity);
             };
 
-            entityViewModel.RemoveRequested += (o, e) =>
+            entity.RemoveRequested += (o, e) =>
             {
                 Remove((EntityViewModel)o);
             };
         }
 
-        private void SubscribeToInitativeChangedEvent()
+        private void UnsubscribeEvents(EntityViewModel entity)
         {
-            foreach (var entityViewModel in EntitiesInInitiative)
+            entity.InitiativeChanged -= () =>
             {
-                entityViewModel.InitiativeChanged += () =>
-                {
-                    SortByInitiative();
-                };
-            }
+                MoveOrInsertAtCorrectIndex(entity);
+            };
+
+            entity.RemoveRequested -= (o, e) =>
+            {
+                Remove((EntityViewModel)o);
+            };
         }
 
         public List<Entity> GetEntityModels()
