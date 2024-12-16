@@ -13,7 +13,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
         public override string ToString() 
         {
-            var toHitRollString = $"Rolled to hit: {_toHitRoll.ToHitWithModifier}";
+            var toHitRollString = $"Rolled to hit: {_toHitRoll.ToHitWithModifier} ";
 
             if (_toHitRoll.AdvantageDisadvantageRoll == 0) 
             {

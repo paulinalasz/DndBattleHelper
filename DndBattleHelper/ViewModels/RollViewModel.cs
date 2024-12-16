@@ -65,7 +65,7 @@ namespace DndBattleHelper.ViewModels
 
         public void RollValue()
         {
-            ValueRolled = _roll.RollValue();
+            ValueRolled = _roll.DoRoll().Result;
             Rolled?.Invoke();
         }
 

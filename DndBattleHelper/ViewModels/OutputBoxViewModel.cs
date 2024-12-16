@@ -36,7 +36,7 @@ namespace DndBattleHelper.ViewModels
 
         public string CalculateTotalDamageOutput()
         {
-            if (TakenActions.Count == 0) return "";
+            if (TakenActions.Where(x => x.AttackDamageViewModel != null).ToList().Count == 0) return "";
 
             var totalDamage = TakenActions
                 .Where(x => x.AttackDamageViewModel != null)
@@ -49,11 +49,11 @@ namespace DndBattleHelper.ViewModels
             {
                 if(totalDamagePerType.ContainsKey(damage.DamageType)) 
                 {
-                    totalDamagePerType[damage.DamageType] += damage.DamageGiven;
+                    totalDamagePerType[damage.DamageType] += damage.Result;
                 }
                 else
                 {
-                    totalDamagePerType.Add(damage.DamageType, damage.DamageGiven);
+                    totalDamagePerType.Add(damage.DamageType, damage.Result);
                 }
             }
 

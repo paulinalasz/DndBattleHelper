@@ -17,18 +17,21 @@
 
         public Roll() { }
 
-        public int RollValue()
+        public RollResult DoRoll()
         {
-            var roll = 0;
+            var result = 0;
+            var rolls = new List<int>();
 
             for (int i = 0; i < NumberOfDice; i++)
             {
-                roll += rand.Next(1, DiceBase + 1);
+                var roll = rand.Next(1, DiceBase + 1);
+                result += roll;
+                rolls.Add(roll);
             }
 
-            roll += ValueModifier.ToInt();
+            result += ValueModifier.ToInt();
 
-            return roll;
+            return new RollResult(result, rolls, ValueModifier.Copy());
         }
 
         public Roll Copy()

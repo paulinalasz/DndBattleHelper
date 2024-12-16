@@ -29,7 +29,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
         public void RollDamage(ToHitRoll toHitRoll = null)
         {
-            var damageRolled = new ObservableCollection<Damage>();
+            var damageRolled = new ObservableCollection<DamageRollResult>();
 
             foreach (var damageRoll in DamageRolls)
             {

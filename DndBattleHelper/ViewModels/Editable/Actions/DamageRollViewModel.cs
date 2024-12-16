@@ -45,7 +45,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             }
         }
 
-        public Damage RollDamage(bool criticalHit)
+        public DamageRollResult RollDamage(bool criticalHit)
         {
             return _damageRoll.RollDamage(criticalHit);
         }

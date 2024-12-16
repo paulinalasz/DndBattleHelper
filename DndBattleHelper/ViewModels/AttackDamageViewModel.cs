@@ -5,9 +5,9 @@ namespace DndBattleHelper.ViewModels
 {
     public class AttackDamageViewModel
     {
-        public ObservableCollection<Damage> DamageRolled { get; set; }
+        public ObservableCollection<DamageRollResult> DamageRolled { get; set; }
 
-        public AttackDamageViewModel(ObservableCollection<Damage> damageRolled)
+        public AttackDamageViewModel(ObservableCollection<DamageRollResult> damageRolled)
         {
             DamageRolled = damageRolled;
         }
@@ -16,13 +16,13 @@ namespace DndBattleHelper.ViewModels
         {
             var attackDamageString = "Target takes ";
 
-            foreach (Damage damage in DamageRolled)
+            foreach (RollResult damage in DamageRolled)
             {
                 attackDamageString += damage.ToString();
                 attackDamageString += " and ";
             }
 
-            attackDamageString.Substring(0, attackDamageString.Length - 4);
+            attackDamageString = attackDamageString.Substring(0, attackDamageString.Length - 4);
 
             return attackDamageString += "damage!";
         }
