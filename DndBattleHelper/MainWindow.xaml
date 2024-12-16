@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper"
         mc:Ignorable="d"
-        Title="DnD Battle Helper" Height="450" Width="1000"
+        Title="TTRPG Battle Helper" Height="450" Width="1000"
         MinWidth="1000"
         xmlns:VM="clr-namespace:DndBattleHelper.ViewModels"
         xmlns:Views="clr-namespace:DndBattleHelper.Views"
