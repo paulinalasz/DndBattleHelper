@@ -74,7 +74,7 @@
                 </StackPanel>
             </Grid>
 
-            <TabControl TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
+            <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
@@ -86,9 +86,27 @@
                 <TabControl.ItemTemplate>
                     <!-- this is the header template-->
                     <DataTemplate>
-                        <TextBlock Style="{StaticResource TabTitle}" Text="{Binding Name}" />
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Tab Header Text -->
+                            <TextBlock Grid.Column="0" Text="{Binding Name}" Style="{StaticResource TabTitle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                            <!-- Close Button -->
+                            <Button Grid.Column="1" Command="{Binding RemoveCommand}" ToolTip="Remove Entity" Width="20" Height="20" Margin="10, 0, 0, 0">
+                                <Image Source="{StaticResource ClearDrawingImage}" />
+                            </Button>
+                        </Grid>
                     </DataTemplate>
                 </TabControl.ItemTemplate>
+                <TabControl.ItemContainerStyle>
+                    <Style TargetType="TabItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Right" />
+                    </Style>
+                </TabControl.ItemContainerStyle>
             </TabControl>
         </StackPanel>
     </Grid>
