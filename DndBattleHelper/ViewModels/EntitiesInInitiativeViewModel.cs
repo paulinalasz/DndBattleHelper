@@ -1,7 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using DndBattleHelper.Models;
-using SharpVectors.Dom;
-using SharpVectors.Scripting;
 
 namespace DndBattleHelper.ViewModels
 {
