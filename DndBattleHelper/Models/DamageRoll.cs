@@ -1,7 +1,4 @@
-﻿using DndBattleHelper.Helpers;
-using System.Windows.Input;
-
-namespace DndBattleHelper.Models
+﻿namespace DndBattleHelper.Models
 {
     public class DamageRoll : Roll
     {
@@ -18,19 +15,20 @@ namespace DndBattleHelper.Models
 
         public DamageRoll() { }
 
-        public Damage RollDamage(bool critialHit)
+        public DamageRollResult RollDamage(bool critialHit)
         {
-            var damage = base.RollValue();
+            var rollResult = DoRoll(); 
 
             if(critialHit) 
             {
-                for (int i = 0; i < NumberOfDice; i++)
-                {
-                    damage += rand.Next(1, DiceBase + 1);
-                }
+                var criticalDamage = DoRoll();
+
+                // We want to take away one modifier value else we have added it twice.
+                rollResult.Result += criticalDamage.Result - ValueModifier.ToInt();
+                rollResult.DiceRolls.AddRange(criticalDamage.DiceRolls);
             }
 
-            return new Damage(damage, DamageType);
+            return new DamageRollResult(rollResult.Result, rollResult.DiceRolls, ValueModifier.Copy(), DamageType);
         }
 
         public DamageRoll Copy()

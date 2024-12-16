@@ -49,11 +49,11 @@ namespace DndBattleHelper.ViewModels
             {
                 if(totalDamagePerType.ContainsKey(damage.DamageType)) 
                 {
-                    totalDamagePerType[damage.DamageType] += damage.DamageGiven;
+                    totalDamagePerType[damage.DamageType] += damage.Result;
                 }
                 else
                 {
-                    totalDamagePerType.Add(damage.DamageType, damage.DamageGiven);
+                    totalDamagePerType.Add(damage.DamageType, damage.Result);
                 }
             }
 
