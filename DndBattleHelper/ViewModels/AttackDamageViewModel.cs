@@ -22,7 +22,7 @@ namespace DndBattleHelper.ViewModels
                 attackDamageString += " and ";
             }
 
-            attackDamageString.Substring(0, attackDamageString.Length - 4);
+            attackDamageString = attackDamageString.Substring(0, attackDamageString.Length - 4);
 
             return attackDamageString += "damage!";
         }
