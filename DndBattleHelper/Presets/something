@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Initiative>10</Initiative>
-  <Name>test</Name>
+  <Name>something</Name>
   <Health>0</Health>
   <ArmourClass>10</ArmourClass>
   <Speed>30</Speed>
-  <FlySpeed>0</FlySpeed>
-  <SwimSpeed>0</SwimSpeed>
-  <ClimbSpeed>0</ClimbSpeed>
-  <BurrowSpeed>0</BurrowSpeed>
   <Strength>10</Strength>
   <Dexterity>10</Dexterity>
   <Constitution>10</Constitution>
@@ -63,7 +59,6 @@
       <NumberLeft>0</NumberLeft>
     </SpellSlotAvailability>
   </SpellSlots>
-  <SpellSaveDC>15</SpellSaveDC>
   <SavingThrows />
   <DamageVurnerabilities />
   <DamageResistances />
@@ -80,8 +75,6 @@
   </ChallengeRating>
   <Abilities />
   <Actions />
-  <LegendaryActionsDescription />
-  <LairActionsDescription />
   <HealthRoll>
     <NumberOfDice>1</NumberOfDice>
     <DiceBase>10</DiceBase>

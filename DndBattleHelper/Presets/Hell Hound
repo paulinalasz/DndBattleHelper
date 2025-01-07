@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Hell Hound</Name>
+  <Health>45</Health>
+  <ArmourClass>15</ArmourClass>
+  <Speed>50</Speed>
+  <Strength>17</Strength>
+  <Dexterity>12</Dexterity>
+  <Constitution>14</Constitution>
+  <Intelligence>6</Intelligence>
+  <Wisdom>13</Wisdom>
+  <Charisma>6</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities>
+    <TraitOfDamageType>
+      <Type>Fire</Type>
+    </TraitOfDamageType>
+  </DamageImmunities>
+  <ConditionImmunities />
+  <Skills>
+    <TraitWithModifierOfSkillType>
+      <Type>Perception</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>5</Value>
+      </Modifier>
+    </TraitWithModifierOfSkillType>
+  </Skills>
+  <Senses>
+    <TraitOfSenseType>
+      <Type>Darkvision60ft</Type>
+    </TraitOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>15</Value>
+  </PassivePerception>
+  <Languages>
+    <TraitOfLanguageType>
+      <Type>Infernal</Type>
+    </TraitOfLanguageType>
+  </Languages>
+  <ChallengeRating>
+    <ChallengeRatingLevel>Three</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Keen Hearing and Smell.</Name>
+      <Description>The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell.</Description>
+    </Ability>
+    <Ability>
+      <Name>Pack Tactics</Name>
+      <Description>The hound has advantage on an attack roll against a creature if at least one of the hound's allies is within 5 feet of the creature and the ally isn't incapacitated.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Bite</Name>
+      <Description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 7 (2d6) fire damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>3</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Fire</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>5</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Fire Breath (Recharge 5–6)</Name>
+      <Description>The hound exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>6</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Fire</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>7</NumberOfDice>
+    <DiceBase>8</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>14</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>1</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>
