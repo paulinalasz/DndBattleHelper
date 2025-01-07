@@ -534,4 +534,80 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--Tab Styles-->
+    <Style TargetType="TabItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid>
+                        <Border 
+                                Name="Border"
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="1,1,1,0" 
+                                CornerRadius="2,2,0,0" 
+                                Padding="4,2">
+                            <ContentPresenter 
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Left" 
+                                    ContentSource="Header"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                         <!--Trigger for when the TabItem is selected--> 
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="Border" Property="Background" Value="#c8766b" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="black" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="white"/>
+                        </Trigger>
+                         <!--Trigger for when the TabItem is hovered--> 
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#c8766b" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="black" />
+                        </Trigger>
+                         <!--Trigger for when the TabItem is disabled--> 
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+     <!--TabControl Style--> 
+    <Style TargetType="TabControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                         <!--TabPanel for the TabItem headers--> 
+                        <TabPanel 
+                                Name="HeaderPanel" 
+                                Grid.Column="0" 
+                                Background="Transparent"
+                                IsItemsHost="True" 
+                                KeyboardNavigation.TabIndex="1"
+                                KeyboardNavigation.TabNavigation="Once"
+                                Panel.ZIndex="1"/>
+                         <!--ContentPresenter for the selected TabItem's content--> 
+                        <ContentPresenter 
+                                Name="ContentPanel" 
+                                Grid.Column="1"
+                                ContentSource="SelectedContent" 
+                                Margin="1"
+                                KeyboardNavigation.DirectionalNavigation="Contained"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
