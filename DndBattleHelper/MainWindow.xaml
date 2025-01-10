@@ -84,16 +84,28 @@
                     </DataTemplate>
                 </TabControl.Resources>
                 <TabControl.ItemTemplate>
-                    <!-- this is the header template-->
                     <DataTemplate>
-                        <DockPanel MinWidth="150" MaxWidth="200">
-                            <TextBlock DockPanel.Dock="Left" Style="{StaticResource TabTitle}" Text="{Binding Name}"/>
-                            <Button DockPanel.Dock="Right" HorizontalAlignment="Right" Height="20" Width="20" Margin="5, 0, 0, 0" ToolTip="Remove Entity" Command="{Binding RemoveCommand}">
+                        <Grid Width="150">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" 
+                                Style="{StaticResource TabTitle}"
+                                Text="{Binding Name}" 
+                                VerticalAlignment="Center" 
+                                TextTrimming="CharacterEllipsis" />
+                            <Button Grid.Column="1" 
+                                Height="20" 
+                                Width="20" 
+                                Margin="5, 0, 0, 0" 
+                                ToolTip="Remove Entity" 
+                                Command="{Binding RemoveCommand}">
                                 <Viewbox>
-                                    <Image Source="{StaticResource ClearDrawingImage}"/>
+                                    <Image Source="{StaticResource ClearDrawingImage}" />
                                 </Viewbox>
                             </Button>
-                        </DockPanel>
+                        </Grid>
                     </DataTemplate>
                 </TabControl.ItemTemplate>
             </TabControl>
