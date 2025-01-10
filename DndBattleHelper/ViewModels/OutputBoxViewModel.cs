@@ -61,7 +61,7 @@ namespace DndBattleHelper.ViewModels
 
             foreach (var  damage in totalDamagePerType)
             {
-                totalDamageString += $"{damage.Value} {damage.Key} damage and ";
+                totalDamageString += ($"{damage.Value} {damage.Key} damage and ").ToLower();
             }
 
             totalDamageString = totalDamageString.Substring(0, totalDamageString.Length - 5);
