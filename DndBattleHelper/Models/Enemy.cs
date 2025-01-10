@@ -4,6 +4,7 @@ namespace DndBattleHelper.Models
 {
     public class Enemy : Entity
     {
+        public string VersionNumber = "1.0.0";
         public int ArmourClass { get; set; }
         public int Speed { get; set; }
         public int FlySpeed { get; set; }
