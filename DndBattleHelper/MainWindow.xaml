@@ -20,67 +20,68 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            
-            <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Button ToolTip="Save" Command="{Binding NewFileCommand}" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource SaveDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource SaveDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Button ToolTip="Open Save File" Command="{Binding OpenCommand}" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource OpenFileDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Button ToolTip="Go to previous turn" Command="{Binding PreviousTurnCommand}" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource PreviousTurnDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Button ToolTip="Go to next turn" Command="{Binding NextTurnCommand}" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource NextTurnDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Border Width="50" Height="50" ToolTip="Initiative Count" BorderBrush="{DynamicResource DndRed}" BorderThickness="2" Margin="2">
-                    <Border Width="44" Height="44" ToolTip="Initiative Count" BorderBrush="{DynamicResource HighlighterYellow}" BorderThickness="2">
-                        <Border Width="38" Height="38" ToolTip="Initiative Count" BorderBrush="{DynamicResource DndRed}" BorderThickness="2">
-                            <TextBlock Text="{Binding InitiativeCount}" Style="{StaticResource DisplayInitiativeNumber}"/>
+        <Border Grid.Column="0" BorderBrush="{DynamicResource DndRed}" BorderThickness="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Button ToolTip="Save" Command="{Binding NewFileCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource SaveDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource SaveDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Open Save File" Command="{Binding OpenCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource OpenFileDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Go to previous turn" Command="{Binding PreviousTurnCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource PreviousTurnDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Go to next turn" Command="{Binding NextTurnCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource NextTurnDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Border Width="50" Height="50" ToolTip="Initiative Count" BorderBrush="{DynamicResource DndRed}" BorderThickness="2" Margin="2">
+                        <Border Width="44" Height="44" ToolTip="Initiative Count" BorderBrush="{DynamicResource HighlighterYellow}" BorderThickness="2">
+                            <Border Width="38" Height="38" ToolTip="Initiative Count" BorderBrush="{DynamicResource DndRed}" BorderThickness="2">
+                                <TextBlock Text="{Binding InitiativeCount}" Style="{StaticResource DisplayInitiativeNumber}"/>
+                            </Border>
                         </Border>
                     </Border>
-                </Border>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource AddPlayerDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Button Command="{Binding AddNewEnemyCommand}" ToolTip="Add new enemy" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource AddEnemyDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-                <Button Command="{Binding AddNewEnemyPresetCommand}" ToolTip="Add new enemy preset" Style="{StaticResource ToolBar}">
-                    <Viewbox>
-                        <Image Source="{StaticResource AddEnemyPresetDrawingImage}"/>
-                    </Viewbox>
-                </Button>
-            </StackPanel>
-        </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddPlayerDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Command="{Binding AddNewEnemyCommand}" ToolTip="Add new enemy" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddEnemyDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Command="{Binding AddNewEnemyPresetCommand}" ToolTip="Add new enemy preset" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource AddEnemyPresetDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
 
         <ScrollViewer Grid.Row="1">
             <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" 
