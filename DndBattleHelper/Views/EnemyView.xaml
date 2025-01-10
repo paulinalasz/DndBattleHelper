@@ -211,7 +211,7 @@
 
             <local:OutputBoxView DataContext="{Binding OutputBox}"/>
 
-            <TextBlock Margin="0, 5, 0, 0" Style="{StaticResource TraitName}" Text="{Binding OutputBox.TotalDamageOutput}"/>
+            <TextBlock Margin="0, 5, 0, 0" Style="{StaticResource TraitName}" FontSize="14" Text="{Binding OutputBox.TotalDamageOutput}"/>
         </StackPanel>
     </DockPanel>
 </UserControl>
