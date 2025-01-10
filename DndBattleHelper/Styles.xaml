@@ -553,22 +553,23 @@
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
-                         <!--Trigger for when the TabItem is selected--> 
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="White"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding IsMyTurn}" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource Special}" />
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndBeige}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
+                        </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1" />
                             <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndBeige}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
                         </Trigger>
-                        <Trigger Property="IsSelected" Value="False">
-                            <Setter TargetName="Border" Property="Background" Value="White"/>
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
-                        </Trigger>
-                         <!--Trigger for when the TabItem is hovered--> 
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndBeige}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
-                        </Trigger>
-                         <!--Trigger for when the TabItem is disabled--> 
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Border" Property="Opacity" Value="0.5" />
                         </Trigger>
@@ -578,7 +579,7 @@
         </Setter>
     </Style>
 
-     <!--TabControl Style--> 
+    <!--TabControl Style--> 
     <Style TargetType="TabControl">
         <Setter Property="Template">
             <Setter.Value>
@@ -619,4 +620,5 @@
     <SolidColorBrush x:Key="DndRed" Color="#912316" />
     <SolidColorBrush x:Key="DndBeige" Color="#f3e9cf" />
     <SolidColorBrush x:Key="HighlighterYellow" Color="#f7bf2d" />
+    <SolidColorBrush x:Key="Special" Color="#f1c27d       "/>
 </ResourceDictionary>

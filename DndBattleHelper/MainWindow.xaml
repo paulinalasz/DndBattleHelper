@@ -53,7 +53,7 @@
                             <Image Source="{StaticResource NextTurnDrawingImage}"/>
                         </Viewbox>
                     </Button>
-                    <TextBlock Text="{Binding DisplayTurnNumber}"/>
+                    <TextBlock Text="{Binding TurnNumber}"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
@@ -74,7 +74,9 @@
                 </StackPanel>
             </Grid>
 
-            <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
+            <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" 
+            ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" 
+            SelectedIndex="{Binding SelectedTab}">
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
@@ -85,22 +87,22 @@
                 </TabControl.Resources>
                 <TabControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Width="150">
+                        <Grid Width="200">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" 
-                                Style="{StaticResource TabTitle}"
-                                Text="{Binding Name}" 
-                                VerticalAlignment="Center" 
-                                TextTrimming="CharacterEllipsis" />
+                           Style="{StaticResource TabTitle}"
+                           Text="{Binding Name}" 
+                           VerticalAlignment="Center" 
+                           TextTrimming="CharacterEllipsis" />
                             <Button Grid.Column="1" 
-                                Height="20" 
-                                Width="20" 
-                                Margin="5, 0, 0, 0" 
-                                ToolTip="Remove Entity" 
-                                Command="{Binding RemoveCommand}">
+                        Height="20" 
+                        Width="20" 
+                        Margin="5, 0, 0, 0" 
+                        ToolTip="Remove Entity" 
+                        Command="{Binding RemoveCommand}">
                                 <Viewbox>
                                     <Image Source="{StaticResource ClearDrawingImage}" />
                                 </Viewbox>

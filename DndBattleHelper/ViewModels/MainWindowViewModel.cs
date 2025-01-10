@@ -27,7 +27,7 @@ namespace DndBattleHelper.ViewModels
 
             EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel(new ObservableCollection<EntityViewModel>());
 
-            TurnNumber = 0;
+            TurnNumber = 1;
             SelectedTab = TurnNumber;
         }
 
@@ -109,9 +109,19 @@ namespace DndBattleHelper.ViewModels
             get { return _turnNumber; } 
             set
             {
+                if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > TurnNumber - 1 && TurnNumber != 0)
+                {
+                    EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnNumber - 1].IsMyTurn = false;
+                }
+
                 _turnNumber = value;
+
+                if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > TurnNumber - 1)
+                {
+                    EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnNumber - 1].IsMyTurn = true;
+                }
+
                 OnPropertyChanged(nameof(TurnNumber));
-                OnPropertyChanged(nameof(DisplayTurnNumber));
             } 
         }
 
@@ -120,16 +130,16 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToPreviousTurn()
         {
-            if (TurnNumber - 1 < 0)
+            if (TurnNumber - 1 < 1)
             {
-                TurnNumber = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1;
+                TurnNumber = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count;
             }
             else
             {
                 TurnNumber -= 1;
             }
 
-            SelectedTab = TurnNumber;
+            SelectedTab = TurnNumber - 1;
         }
 
         private ICommand _nextTurnCommand;
@@ -137,19 +147,17 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToNextTurn()
         {
-            if (TurnNumber + 1 > EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1) 
+            if (TurnNumber + 1 > EntitiesInInitiativeViewModel.EntitiesInInitiative.Count) 
             {
-                TurnNumber = 0;
+                TurnNumber = 1;
             }
             else
             {
                 TurnNumber += 1;
             }
 
-            SelectedTab = TurnNumber;
+            SelectedTab = TurnNumber - 1;
         }
-
-        public int DisplayTurnNumber => TurnNumber + 1;
         #endregion
 
         #region Add Entities and Presets
