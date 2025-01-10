@@ -9,7 +9,8 @@
         <Converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <Grid Background="{DynamicResource DndBeige}">
+    <ScrollViewer>
+        <Grid Background="{DynamicResource DndBeige}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="380" Width="*"/>
                 <ColumnDefinition Width="2*"/>
@@ -18,223 +19,224 @@
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Orientation="Vertical">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Grid.Column="0" Text="Name: "/>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Text="Initiative:"/>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Text="Armour Class:"/>
-                <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Health:"/>
-                <TextBox MinWidth="60" HorizontalContentAlignment="Left" Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" MaxWidth="250" Grid.ColumnSpan="2" Text="{Binding Name}"/>
-                <TextBox Style="{StaticResource Traits}" Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
-                <traits:RollView Grid.Row="1" Grid.Column="2" DataContext="{Binding InitiativeRollViewModel}"/>
-                <TextBox Style="{StaticResource Traits}" Grid.Row="2" Grid.Column="1" Text="{Binding ArmourClass}"/>
-                <TextBox Style="{StaticResource Traits}" Grid.Row="3" Grid.Column="1" Text="{Binding Health}"/>
-                <traits:RollView Grid.Row="3" Grid.Column="2" DataContext="{Binding HealthRollViewModel}"/>
-            </Grid>
-            
-            <StackPanel Margin="0, 10, 0, 0" Orientation="Horizontal">
-                <TextBlock Style="{StaticResource TraitName}" Text="Speed:"/>
-                <TextBox Text="{Binding Speed}" MaxWidth="30" MaxHeight="20" Margin="0, 0, 10, 0"/>
-
-                <TextBlock Style="{StaticResource TraitName}" Text="Fly"/>
-                <TextBox  HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding FlySpeed}" Margin="0, 0, 10, 0"/>
-
-                <TextBlock Style="{StaticResource TraitName}" Text="Swim"/>
-                <TextBox HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding SwimSpeed}" Margin="0, 0, 10, 0"/>
-
-                <TextBlock Style="{StaticResource TraitName}" Text="Climb"/>
-                <TextBox HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding ClimbSpeed}" Margin="0, 0, 10, 0"/>
-
-                <TextBlock Style="{StaticResource TraitName}" Text="Burrow"/>
-                <TextBox HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding BurrowSpeed}" Margin="0, 0, 10, 0"/>
-            </StackPanel>
-
-            <Path Style="{StaticResource NewEnemy}"/>
-            <Grid Margin="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="0" Text="STR"/>
-                <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="1" Text="DEX"/>
-                <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="2" Text="CON"/>
-                <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="3" Text="INT"/>
-                <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="4" Text="WIS"/>
-                <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="5" Text="CHA"/>
-                <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="0" Text="{Binding Strength}"/>
-                <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="1" Text="{Binding Dexterity}"/>
-                <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="2" Text="{Binding Constitution}"/>
-                <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="3" Text="{Binding Intelligence}"/>
-                <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="4" Text="{Binding Wisdom}"/>
-                <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
-            </Grid>
-            <Path Style="{StaticResource NewEnemy}"/>
-            <ScrollViewer Style="{StaticResource ScrollViewer}" MaxHeight="140">
+            <StackPanel Grid.Column="0" Orientation="Vertical">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSavingThrowsViewModel}"/>
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageVulnerabilitiesViewModel}"/>
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageResistancesViewModel}"/>
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageImmunitiesViewModel}"/>
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditConditionImmunitiesViewModel}"/>
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
-                    <editable:EditTraitsView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
-                    <traits:PassivePerceptionView Margin="0, 0, 0, 10" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
-                    <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
-                    <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="0" Grid.Column="0" Text="Name: "/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Text="Initiative:"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="2" Grid.Column="0" Text="Armour Class:"/>
+                    <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Health:"/>
+                    <TextBox MinWidth="60" HorizontalContentAlignment="Left" Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" MaxWidth="250" Grid.ColumnSpan="2" Text="{Binding Name}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
+                    <traits:RollView Grid.Row="1" Grid.Column="2" DataContext="{Binding InitiativeRollViewModel}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="2" Grid.Column="1" Text="{Binding ArmourClass}"/>
+                    <TextBox Style="{StaticResource Traits}" Grid.Row="3" Grid.Column="1" Text="{Binding Health}"/>
+                    <traits:RollView Grid.Row="3" Grid.Column="2" DataContext="{Binding HealthRollViewModel}"/>
                 </Grid>
-            </ScrollViewer>
-            <Path Style="{StaticResource NewEnemy}"/>
-            <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
-        </StackPanel>
-        
-        <Grid Grid.Column="1">
-            <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox IsChecked="{Binding IsSpellCaster}">
-                        <TextBlock Style="{StaticResource EditTraitName}" FontSize="16" Text="Is Spell Caster"/>
-                    </CheckBox>
+
+                <StackPanel Margin="0, 10, 0, 0" Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource TraitName}" Text="Speed:"/>
+                    <TextBox Text="{Binding Speed}" MaxWidth="30" MaxHeight="20" Margin="0, 0, 10, 0"/>
+
+                    <TextBlock Style="{StaticResource TraitName}" Text="Fly"/>
+                    <TextBox  HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding FlySpeed}" Margin="0, 0, 10, 0"/>
+
+                    <TextBlock Style="{StaticResource TraitName}" Text="Swim"/>
+                    <TextBox HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding SwimSpeed}" Margin="0, 0, 10, 0"/>
+
+                    <TextBlock Style="{StaticResource TraitName}" Text="Climb"/>
+                    <TextBox HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding ClimbSpeed}" Margin="0, 0, 10, 0"/>
+
+                    <TextBlock Style="{StaticResource TraitName}" Text="Burrow"/>
+                    <TextBox HorizontalAlignment="Center" MaxWidth="30" MaxHeight="20" Text="{Binding BurrowSpeed}" Margin="0, 0, 10, 0"/>
                 </StackPanel>
 
-                <!--Spell Caster-->
-                <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid HorizontalAlignment="Center" Margin="21, 0, 0, 0">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Style="{StaticResource TraitName}" Text="Spell Save DC:"/>
-                            <TextBox Text="{Binding SpellSaveDC}"/>
-                        </StackPanel>
-                    </Grid>
-                    
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Style="{StaticResource EditTraitName}" FontWeight="Bold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
-
-                        <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Width="10" Margin="10, 0, 10, 0" FontWeight="DemiBold" Style="{StaticResource EditTraitName}" Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-
-                        <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="2" HorizontalAlignment="Center">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBox Margin="5, 0, 5, 0" Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </Grid>
-                </Grid>
-
-                <Separator Margin="0, 10, 0, 0"/>
-
-                <editable:EditActionsView Margin="0, 10, 0, 0" DataContext="{Binding EditActionsViewModel}"/>
-                <Grid Margin="0, 10, 0, 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
+                <Path Style="{StaticResource NewEnemy}"/>
+                <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-                    <Expander VerticalContentAlignment="Top" Header="Legendary Action Description" Foreground="{DynamicResource DndRed}" FontWeight="Bold" Margin="0, 0, 10, 3">
-                        <TextBox Margin="3" Text="{Binding LegendaryActionsDescription}" HorizontalContentAlignment="Left"/>
-                    </Expander>
-                    <Expander Grid.Row="1" VerticalContentAlignment="Top" Header="Lair Action Description" Foreground="{DynamicResource DndRed}" FontWeight="Bold" Margin="0, 0, 10, 3">
-                        <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalContentAlignment="Left"/>
-                    </Expander>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="0" Text="STR"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="1" Text="DEX"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="2" Text="CON"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="3" Text="INT"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="4" Text="WIS"/>
+                    <TextBlock Style="{StaticResource AbilityScore}" Grid.Row="0" Grid.Column="5" Text="CHA"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="0" Text="{Binding Strength}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="1" Text="{Binding Dexterity}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="2" Text="{Binding Constitution}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="3" Text="{Binding Intelligence}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="4" Text="{Binding Wisdom}"/>
+                    <TextBox MaxWidth="30" Grid.Row="1" Grid.Column="5" Text="{Binding Charisma}"/>
                 </Grid>
-
-                <Separator/>
-
-                <StackPanel Visibility="{Binding IsAddGroupPossible, Converter={StaticResource BoolToVis}}">
-                    <CheckBox Margin="4, 10, 0, 0" IsChecked="{Binding AddGroup}">
-                        <TextBlock Style="{StaticResource EditTraitName}" Text="Add multiple instances"/>
-                    </CheckBox>
-
-                    <Grid Visibility="{Binding AddGroup, Converter={StaticResource BoolToVis}}" Margin="5, 5, 0, 0">
+                <Path Style="{StaticResource NewEnemy}"/>
+                <ScrollViewer Style="{StaticResource ScrollViewer}" MaxHeight="140">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
+
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSavingThrowsViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageVulnerabilitiesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageResistancesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditDamageImmunitiesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditConditionImmunitiesViewModel}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSkillsViewModel}"/>
+                        <editable:EditTraitsView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditSensesViewModel}"/>
+                        <traits:PassivePerceptionView Margin="0, 0, 0, 10" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding PassivePerception}"/>
+                        <editable:EditTraitsView Margin="0, 0, 0, 10" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditLanguagesViewModel}"/>
+                        <editable:EditableChallengeRatingView Grid.Row="9" Grid.Column="0" DataContext="{Binding ChallengeRatingViewModel}"/>
+                    </Grid>
+                </ScrollViewer>
+                <Path Style="{StaticResource NewEnemy}"/>
+                <editable:EditAbilitiesView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" DataContext="{Binding EditAbilitiesViewModel}"/>
+            </StackPanel>
+
+            <Grid Grid.Column="1">
+                <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsSpellCaster}">
+                            <TextBlock Style="{StaticResource EditTraitName}" FontSize="16" Text="Is Spell Caster"/>
+                        </CheckBox>
+                    </StackPanel>
+
+                    <!--Spell Caster-->
+                    <Grid Visibility="{Binding IsSpellCaster, Converter={StaticResource BoolToVis}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid HorizontalAlignment="Center" Margin="21, 0, 0, 0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource TraitName}" Text="Spell Save DC:"/>
+                                <TextBox Text="{Binding SpellSaveDC}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Style="{StaticResource EditTraitName}" FontWeight="Bold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
+
+                            <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="10" Margin="10, 0, 10, 0" FontWeight="DemiBold" Style="{StaticResource EditTraitName}" Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+                            <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="2" HorizontalAlignment="Center">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBox Margin="5, 0, 5, 0" Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </Grid>
+
+                    <Separator Margin="0, 10, 0, 0"/>
+
+                    <editable:EditActionsView Margin="0, 10, 0, 0" DataContext="{Binding EditActionsViewModel}"/>
+                    <Grid Margin="0, 10, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock  VerticalAlignment="Center" Style="{StaticResource TraitName}" Text="Number of entities:"/>
-                        <CheckBox Margin="5, 5, 0, 0" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" IsChecked="{Binding SameInitiative}">
-                            <TextBlock Style="{StaticResource TraitName}" Text="Keep same initiative"/>
-                        </CheckBox>
-                        <CheckBox Margin="5, 5, 0, 0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center" Grid.Row="2" IsChecked="{Binding SameHealth}">
-                            <TextBlock Style="{StaticResource TraitName}" Text="Keep same health"/>
+                        <Expander VerticalContentAlignment="Top" Header="Legendary Action Description" Foreground="{DynamicResource DndRed}" FontWeight="Bold" Margin="0, 0, 10, 3">
+                            <TextBox Margin="3" Text="{Binding LegendaryActionsDescription}" HorizontalContentAlignment="Left"/>
+                        </Expander>
+                        <Expander Grid.Row="1" VerticalContentAlignment="Top" Header="Lair Action Description" Foreground="{DynamicResource DndRed}" FontWeight="Bold" Margin="0, 0, 10, 3">
+                            <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalContentAlignment="Left"/>
+                        </Expander>
+                    </Grid>
+
+                    <Separator/>
+
+                    <StackPanel Visibility="{Binding IsAddGroupPossible, Converter={StaticResource BoolToVis}}">
+                        <CheckBox Margin="4, 10, 0, 0" IsChecked="{Binding AddGroup}">
+                            <TextBlock Style="{StaticResource EditTraitName}" Text="Add multiple instances"/>
                         </CheckBox>
 
-                        <TextBox Style="{StaticResource Traits}" Grid.Column="1" Text="{Binding NumberInGroup}"/>
-                    </Grid>
+                        <Grid Visibility="{Binding AddGroup, Converter={StaticResource BoolToVis}}" Margin="5, 5, 0, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock  VerticalAlignment="Center" Style="{StaticResource TraitName}" Text="Number of entities:"/>
+                            <CheckBox Margin="5, 5, 0, 0" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" IsChecked="{Binding SameInitiative}">
+                                <TextBlock Style="{StaticResource TraitName}" Text="Keep same initiative"/>
+                            </CheckBox>
+                            <CheckBox Margin="5, 5, 0, 0" VerticalContentAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Center" Grid.Row="2" IsChecked="{Binding SameHealth}">
+                                <TextBlock Style="{StaticResource TraitName}" Text="Keep same health"/>
+                            </CheckBox>
+
+                            <TextBox Style="{StaticResource Traits}" Grid.Column="1" Text="{Binding NumberInGroup}"/>
+                        </Grid>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
+            </Grid>
         </Grid>
-    </Grid>
+    </ScrollViewer>
 </UserControl>

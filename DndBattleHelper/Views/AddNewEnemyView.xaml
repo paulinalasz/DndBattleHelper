@@ -7,14 +7,13 @@
              Title="Add New Enemy"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Height="500" Width="850" MinWidth="850" MinHeight="550">
+             Height="500" Width="870" MinWidth="870" MinHeight="550">
     <Grid Background="{DynamicResource DndBeige}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <ComboBox Width="300"
                       VerticalAlignment="Center"

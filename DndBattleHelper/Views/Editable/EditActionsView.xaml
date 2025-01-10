@@ -75,7 +75,7 @@
                         <CheckBox IsChecked="{Binding HasDamageRolls}" IsEnabled="{Binding HasDamageRollsEnabled}" VerticalContentAlignment="Bottom" Margin="0, 0, 10, 3">
                             <TextBlock Text="Does Damage?" Style="{StaticResource TraitName}" Margin="0"/>
                         </CheckBox>
-                        <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}" 
+                        <local:EditDamageRollsView DataContext="{Binding EditDamageRollsViewModel}"
                                                Visibility="{Binding DataContext.HasDamageRolls, Converter={StaticResource BoolToVisConverter}, ElementName=EditActions}"/>
                     </StackPanel>
                 </Grid>

@@ -108,16 +108,14 @@
             </Grid>
             
             <Path/>
-            
-            <ScrollViewer Style="{StaticResource ScrollViewer}" MaxHeight="200">
-                <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:AbilityView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
+
+            <ItemsControl ItemsSource="{Binding Abilities}" Margin="5">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:AbilityView/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
 
         <StackPanel DockPanel.Dock="Right" Width="Auto" Margin="10, 0, 10, 0">

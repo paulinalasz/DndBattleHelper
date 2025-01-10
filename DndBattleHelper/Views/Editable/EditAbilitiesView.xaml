@@ -36,10 +36,8 @@
             </Grid>
 
             <TextBlock Style="{StaticResource Error}" Text="{Binding VerificationError}" Visibility="{Binding IsVerificationErrorVisible, Converter={StaticResource BoolToVis}}"/>
-            
-            <ScrollViewer Style="{StaticResource ScrollViewer}" Grid.Row="2" MaxHeight="150" Margin="0, 10, 0, 0">
-                <local:EditableTraitsView DataContext="{Binding EditableTraitViewModelsViewModel}"/>
-            </ScrollViewer>
+
+            <local:EditableTraitsView DataContext="{Binding EditableTraitViewModelsViewModel}"/>
         </StackPanel>
     </Grid>
 </UserControl>
