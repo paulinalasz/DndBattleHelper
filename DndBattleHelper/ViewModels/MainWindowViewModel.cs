@@ -27,8 +27,8 @@ namespace DndBattleHelper.ViewModels
 
             EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel(new ObservableCollection<EntityViewModel>());
 
-            TurnNumber = 0;
-            SelectedTab = TurnNumber;
+            TurnEntityIndex = 0;
+            SelectedTab = TurnEntityIndex;
         }
 
         private int _selectedTab;
@@ -99,19 +99,31 @@ namespace DndBattleHelper.ViewModels
             EntitiesInInitiativeViewModel.CreateFromModels(_fileIo.OpenSavedFiles(openFileDialog.FileName));
 
             AcceptChanges();
+
+            TurnEntityIndex = 0;
+            EntitiesInInitiativeViewModel.EntitiesInInitiative[0].IsMyTurn = true;
         }
         #endregion
 
         #region Turn Keeping
-        private int _turnNumber;
-        public int TurnNumber 
+        private int _turnEntityIndex;
+        public int TurnEntityIndex 
         {
-            get { return _turnNumber; } 
+            get { return _turnEntityIndex; } 
             set
             {
-                _turnNumber = value;
-                OnPropertyChanged(nameof(TurnNumber));
-                OnPropertyChanged(nameof(DisplayTurnNumber));
+                var indexOfEntityOfPreviousTurn = _turnEntityIndex;
+                _turnEntityIndex = value;
+
+                if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > TurnEntityIndex)
+                {
+                    EntitiesInInitiativeViewModel.EntitiesInInitiative[indexOfEntityOfPreviousTurn].IsMyTurn = false;
+                    EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnEntityIndex].IsMyTurn = true;
+                }
+
+                OnPropertyChanged(nameof(TurnEntityIndex));
+                OnPropertyChanged(nameof(InitiativeCount));
+                SelectedTab = TurnEntityIndex;
             } 
         }
 
@@ -120,16 +132,14 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToPreviousTurn()
         {
-            if (TurnNumber - 1 < 0)
+            if (TurnEntityIndex - 1 < 0)
             {
-                TurnNumber = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1;
+                TurnEntityIndex = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1;
             }
             else
             {
-                TurnNumber -= 1;
+                TurnEntityIndex -= 1;
             }
-
-            SelectedTab = TurnNumber;
         }
 
         private ICommand _nextTurnCommand;
@@ -137,19 +147,17 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToNextTurn()
         {
-            if (TurnNumber + 1 > EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1) 
+            if (TurnEntityIndex + 1 > EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1) 
             {
-                TurnNumber = 0;
+                TurnEntityIndex = 0;
             }
             else
             {
-                TurnNumber += 1;
+                TurnEntityIndex += 1;
             }
-
-            SelectedTab = TurnNumber;
         }
 
-        public int DisplayTurnNumber => TurnNumber + 1;
+        public int InitiativeCount => EntitiesInInitiativeViewModel.EntitiesInInitiative.Any() ? EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnEntityIndex].Initiative : 0;
         #endregion
 
         #region Add Entities and Presets

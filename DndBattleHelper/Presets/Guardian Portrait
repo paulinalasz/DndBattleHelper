@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Guardian Portrait</Name>
+  <Health>22</Health>
+  <ArmourClass>5</ArmourClass>
+  <Speed>0</Speed>
+  <Strength>1</Strength>
+  <Dexterity>1</Dexterity>
+  <Constitution>10</Constitution>
+  <Intelligence>14</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>10</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities />
+  <ConditionImmunities>
+    <TraitOfCondition>
+      <Type>Charmed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Exhaustion</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Frightened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Grappled</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Paralyzed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Petrified</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Poisoned</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Poisoned</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Restrained</Type>
+    </TraitOfCondition>
+  </ConditionImmunities>
+  <Skills />
+  <Senses>
+    <TraitOfSenseType>
+      <Type>Darkvision60ft</Type>
+    </TraitOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages>
+    <TraitOfLanguageType>
+      <Type>Common</Type>
+    </TraitOfLanguageType>
+  </Languages>
+  <ChallengeRating>
+    <ChallengeRatingLevel>One</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Antimagic Susceptibility</Name>
+      <Description>The portrait is incapacitated while in the area of an Antimagic Field. If targeted by Dispel Magic, the portrait must succeed on a Constitution saving throw against the caster's spell save DC or become unconscious for 1 minute.</Description>
+    </Ability>
+    <Ability>
+      <Name>Innate Spellcasting</Name>
+      <Description>The portrait's innate spellcasting ability is Intelligence (spell save DC 12). The portrait can innately cast the following spells, requiring no material components:</Description>
+    </Ability>
+    <Ability>
+      <Name>False Appearance</Name>
+      <Description>While the figure in the portrait remains motionless, the portrait is indistinguishable from a normal painting.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Counterspell</Name>
+      <Description>REACTION: You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect. If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell’s level. On a success, the creature’s spell fails and has no effect.</Description>
+      <ActionCost>Reaction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Crown Of Madness</Name>
+      <Description>One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes. The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if none are within its reach. On your subsequent turns, you must use your action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>5</NumberOfDice>
+    <DiceBase>8</DiceBase>
+    <ValueModifier>
+      <Type>Neutral</Type>
+      <Value>0</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Minus</Type>
+      <Value>5</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

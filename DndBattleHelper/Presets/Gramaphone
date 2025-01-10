@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
 <EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Initiative>10</Initiative>
-  <Name>test</Name>
-  <Health>0</Health>
+  <Name>Gramaphone</Name>
+  <Health>58</Health>
   <ArmourClass>10</ArmourClass>
   <Speed>30</Speed>
   <FlySpeed>0</FlySpeed>
@@ -63,7 +63,7 @@
       <NumberLeft>0</NumberLeft>
     </SpellSlotAvailability>
   </SpellSlots>
-  <SpellSaveDC>15</SpellSaveDC>
+  <SpellSaveDC>0</SpellSaveDC>
   <SavingThrows />
   <DamageVurnerabilities />
   <DamageResistances />
@@ -79,22 +79,73 @@
     <ChallengeRatingLevel>One</ChallengeRatingLevel>
   </ChallengeRating>
   <Abilities />
-  <Actions />
-  <LegendaryActionsDescription />
-  <LairActionsDescription />
+  <Actions>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Release Dust</Name>
+      <Description>You create a 20-foot-radius Sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners. It lasts for the Duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured. When a creature enters the spell’s area for the first time on a turn or starts its turn there, that creature must make a Constitution saving throw. The creature takes 3d8 poison damage on a failed save, or half as much damage on a successful one. Creatures are affected even if they hold their breath or don’t need to breathe. The fog moves 10 feet away from you at the start of each of your turns, rolling along the surface of the ground. The vapors, being heavier than air, sink to the lowest level of the land, even pouring down openings.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>3</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Poison</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Neutral</Type>
+        <Value>0</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Blaring Sound</Name>
+      <Description>DC 15 Const save. If target within 15ft take 4d6 + 10 psychic dmg, half on success. Within 60 ft take 1d6 + 5 dmg on failed</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>4</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>10</Value>
+          </ValueModifier>
+          <DamageType>Psychic</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Blaring Sound 60ft</Name>
+      <Description>blaring sound</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>5</Value>
+          </ValueModifier>
+          <DamageType>Psychic</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+  </Actions>
   <HealthRoll>
-    <NumberOfDice>1</NumberOfDice>
+    <NumberOfDice>6</NumberOfDice>
     <DiceBase>10</DiceBase>
     <ValueModifier>
-      <Type>Neutral</Type>
-      <Value>0</Value>
+      <Type>Plus</Type>
+      <Value>20</Value>
     </ValueModifier>
   </HealthRoll>
   <InitiativeRoll>
     <NumberOfDice>1</NumberOfDice>
     <DiceBase>20</DiceBase>
     <ValueModifier>
-      <Type>Neutral</Type>
+      <Type>Plus</Type>
       <Value>0</Value>
     </ValueModifier>
   </InitiativeRoll>

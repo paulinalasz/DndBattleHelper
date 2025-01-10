@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Animated Table</Name>
+  <Health>39</Health>
+  <ArmourClass>15</ArmourClass>
+  <Speed>40</Speed>
+  <Strength>18</Strength>
+  <Dexterity>8</Dexterity>
+  <Constitution>13</Constitution>
+  <Intelligence>1</Intelligence>
+  <Wisdom>3</Wisdom>
+  <Charisma>1</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities>
+    <TraitOfDamageType>
+      <Type>Poison</Type>
+    </TraitOfDamageType>
+    <TraitOfDamageType>
+      <Type>Psychic</Type>
+    </TraitOfDamageType>
+  </DamageImmunities>
+  <ConditionImmunities>
+    <TraitOfCondition>
+      <Type>Blinded</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Charmed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Deafened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Exhaustion</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Frightened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Invisible</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Petrified</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Poisoned</Type>
+    </TraitOfCondition>
+  </ConditionImmunities>
+  <Skills />
+  <Senses>
+    <TraitOfSenseType>
+      <Type>Blindsight</Type>
+    </TraitOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>Two</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Constructed Nature</Name>
+      <Description>An animated table doesn't require air, food, drink, or sleep.</Description>
+    </Ability>
+    <Ability>
+      <Name>Antimagic Susceptibility</Name>
+      <Description>The table is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the table must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.</Description>
+    </Ability>
+    <Ability>
+      <Name>False Appearance</Name>
+      <Description>While the table remains motionless, it is indistinguishable from a normal table.</Description>
+    </Ability>
+    <Ability>
+      <Name>Charge</Name>
+      <Description>If the table moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 9 (2d8) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Ram</Name>
+      <Description>Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8+4) bludgeoning damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>4</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>6</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+  <HealthRoll>
+    <NumberOfDice>6</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>6</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Minus</Type>
+      <Value>1</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

@@ -53,7 +53,13 @@
                             <Image Source="{StaticResource NextTurnDrawingImage}"/>
                         </Viewbox>
                     </Button>
-                    <TextBlock Text="{Binding DisplayTurnNumber}"/>
+                    <Border Width="50" Height="50" ToolTip="Initiative Count" BorderBrush="{DynamicResource DndRed}" BorderThickness="2" Margin="2">
+                        <Border Width="44" Height="44" ToolTip="Initiative Count" BorderBrush="{DynamicResource HighlighterYellow}" BorderThickness="2">
+                            <Border Width="38" Height="38" ToolTip="Initiative Count" BorderBrush="{DynamicResource DndRed}" BorderThickness="2">
+                                <TextBlock Text="{Binding InitiativeCount}" Style="{StaticResource DisplayInitiativeNumber}"/>
+                            </Border>
+                        </Border>
+                    </Border>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
@@ -74,7 +80,9 @@
                 </StackPanel>
             </Grid>
 
-            <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" SelectedIndex="{Binding SelectedTab}">
+            <TabControl HorizontalContentAlignment="Stretch" TabStripPlacement="Left" 
+            ItemsSource="{Binding EntitiesInInitiativeViewModel.EntitiesInInitiative}" 
+            SelectedIndex="{Binding SelectedTab}">
                 <TabControl.Resources>
                     <DataTemplate DataType="{x:Type VM:EnemyViewModel}">
                         <Views:EnemyView/>
@@ -84,18 +92,25 @@
                     </DataTemplate>
                 </TabControl.Resources>
                 <TabControl.ItemTemplate>
-                    <!-- this is the header template-->
                     <DataTemplate>
-                        <Grid MinWidth="150" MaxWidth="200">
+                        <Grid Width="200">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-
-                            <TextBlock Style="{StaticResource TabTitle}" Text="{Binding Name}" />
-                            <Button Grid.Column="1" Height="20" Width="20" ToolTip="Remove Entity" Command="{Binding RemoveCommand}">
+                            <TextBlock Grid.Column="0" 
+                           Style="{StaticResource TabTitle}"
+                           Text="{Binding Name}" 
+                           VerticalAlignment="Center" 
+                           TextTrimming="CharacterEllipsis" />
+                            <Button Grid.Column="1" 
+                        Height="20" 
+                        Width="20" 
+                        Margin="5, 0, 0, 0" 
+                        ToolTip="Remove Entity" 
+                        Command="{Binding RemoveCommand}">
                                 <Viewbox>
-                                    <Image Source="{StaticResource ClearDrawingImage}"/>
+                                    <Image Source="{StaticResource ClearDrawingImage}" />
                                 </Viewbox>
                             </Button>
                         </Grid>

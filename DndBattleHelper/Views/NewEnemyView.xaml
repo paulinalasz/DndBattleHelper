@@ -9,7 +9,7 @@
         <Converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <Grid Background="#f3e9cf">
+    <Grid Background="{DynamicResource DndBeige}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="380" Width="*"/>
                 <ColumnDefinition Width="2*"/>
@@ -197,10 +197,10 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Expander VerticalContentAlignment="Top" Header="Legendary Action Description" Foreground="#912316" FontWeight="Bold" Margin="0, 0, 10, 3">
+                    <Expander VerticalContentAlignment="Top" Header="Legendary Action Description" Foreground="{DynamicResource DndRed}" FontWeight="Bold" Margin="0, 0, 10, 3">
                         <TextBox Margin="3" Text="{Binding LegendaryActionsDescription}" HorizontalContentAlignment="Left"/>
                     </Expander>
-                    <Expander Grid.Row="1" VerticalContentAlignment="Top" Header="Lair Action Description" Foreground="#912316" FontWeight="Bold" Margin="0, 0, 10, 3">
+                    <Expander Grid.Row="1" VerticalContentAlignment="Top" Header="Lair Action Description" Foreground="{DynamicResource DndRed}" FontWeight="Bold" Margin="0, 0, 10, 3">
                         <TextBox Margin="3" Text="{Binding LairActionsDescription}" HorizontalContentAlignment="Left"/>
                     </Expander>
                 </Grid>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DndBattleHelper.Views"
         mc:Ignorable="d"
         Title="Add New Enemy Preset" Height="500" Width="850" MinWidth="850" MinHeight="550">
-    <Grid Background="#f3e9cf">
+    <Grid Background="{DynamicResource DndBeige}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>

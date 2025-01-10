@@ -10,7 +10,7 @@
         <Setter Property="FontSize" Value="12"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="Trait" BasedOn="{StaticResource {x:Type TextBlock}}">
-        <Setter Property="Foreground" Value="#912316"/>
+        <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
         <!--<Setter Property="Foreground" Value="#58170d"/>-->
         <Setter Property="FontFamily" Value="Ariel"/>
         <Setter Property="Margin" Value="5"/>
@@ -38,13 +38,22 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="TabTitle">
-        <Setter Property="Foreground" Value="#912316"/>
+        <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="Error" BasedOn="{StaticResource Trait}">
         <Setter Property="Foreground" Value="Red"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="DisplayInitiativeNumber">
+        <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
     </Style>
     
     <!--Run-->
@@ -56,7 +65,7 @@
         <Setter Property="FontSize" Value="12"/>
     </Style>
     <Style TargetType="Run" x:Key="TraitRun">
-        <Setter Property="Foreground" Value="#912316"/>
+        <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
         <!--<Setter Property="Foreground" Value="#58170d"/>-->
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontFamily" Value="Ariel"/>
@@ -75,7 +84,7 @@
     <Style TargetType="TextBox">
         <Setter Property="MinWidth" Value="20"/>
         <Setter Property="MinHeight" Value="20"/>
-        <Setter Property="Foreground" Value="#912316"/>
+        <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
         <Setter Property="FontWeight" Value="DemiBold"/>
         <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -91,11 +100,11 @@
                             <Setter Property="BorderBrush" TargetName="bg" Value="#858585"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="bg" Value="#912316"/>
+                            <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DndRed}"/>
                             <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" TargetName="bg" Value="#912316"/>
+                            <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DndRed}"/>
                             <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
@@ -119,7 +128,7 @@
     
     <!--Path Separator-->
     <Style TargetType="Path">
-        <Setter Property="Fill" Value="#912316"/>
+        <Setter Property="Fill" Value="{DynamicResource DndRed}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0,5,0,5"/>
@@ -139,7 +148,7 @@
     </Style>
 
     <Style x:Key="NewEnemy" TargetType="Path">
-        <Setter Property="Fill" Value="#912316"/>
+        <Setter Property="Fill" Value="{DynamicResource DndRed}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0,5,0,5"/>
@@ -159,13 +168,13 @@
     </Style>
 
     <Style TargetType="Separator">
-        <Setter Property="Background" Value="#912316"/>
+        <Setter Property="Background" Value="{DynamicResource DndRed}"/>
         <Setter Property="Height" Value="1"/>
     </Style>
     
     <!--Button Styles-->
     <Style TargetType="Button">
-        <Setter Property="Background" Value="#912316"/>
+        <Setter Property="Background" Value="{DynamicResource DndRed}"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Margin" Value="2"/>
@@ -180,7 +189,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#f7bf2d"/>
+                <Setter Property="Background" Value="{DynamicResource HighlighterYellow}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" Value="#8f6c68"/>
@@ -190,6 +199,7 @@
     </Style>
     
     <Style TargetType="Button" x:Key="ToolBar" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Margin" Value="2"/>
         <Setter Property="Width" Value="50"/>
         <Setter Property="Height" Value="50"/>
     </Style>
@@ -222,7 +232,7 @@
 
     <!--Toggle Button-->
     <Style x:Key="ToggleButton" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background" Value="#912316"/>
+        <Setter Property="Background" Value="{DynamicResource DndRed}"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Margin" Value="2"/>
@@ -243,15 +253,15 @@
                             <Setter Property="BorderBrush" TargetName="border" Value="black"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="#f7bf2d"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource HighlighterYellow}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="black"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="#f7bf2d"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource HighlighterYellow}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="black"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="#f7bf2d"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource HighlighterYellow}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="black"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
@@ -267,7 +277,7 @@
 
         <!--ComboBox Styles-->
     <Style TargetType="{x:Type ComboBox}">
-        <Setter Property="Foreground" Value="#912316"/>
+        <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -282,20 +292,20 @@
                                             <ColumnDefinition Width="5*" />
                                             <ColumnDefinition Width="15" />
                                         </Grid.ColumnDefinitions>
-                                        <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="5" Background="#912316" BorderBrush="#858585" BorderThickness="1" />
+                                        <Border x:Name="Border" Grid.ColumnSpan="2" CornerRadius="5" Background="{DynamicResource DndRed}" BorderBrush="#858585" BorderThickness="1" />
                                         <Border Grid.Column="0" CornerRadius="5,0,0,5"  Margin="1"  Background="White"  BorderBrush="#858585" BorderThickness="0,0,1,0" />
-                                        <Path x:Name="Arrow" Grid.Column="1"  Fill="#f7bf2d" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z"/>
+                                        <Path x:Name="Arrow" Grid.Column="1"  Fill="{DynamicResource HighlighterYellow}" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z"/>
                                     </Grid>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="ToggleButton.IsMouseOver" Value="true">
-                                            <Setter TargetName="Border" Property="Background" Value="#f7bf2d" />
-                                            <Setter TargetName="Border" Property="BorderBrush" Value="#912316"/>
-                                            <Setter TargetName="Arrow" Property="Fill" Value="#912316"/>
+                                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource HighlighterYellow}" />
+                                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}"/>
+                                            <Setter TargetName="Arrow" Property="Fill" Value="{DynamicResource DndRed}"/>
                                         </Trigger>
                                         <Trigger Property="ToggleButton.IsChecked" Value="true">
-                                            <Setter TargetName="Border" Property="Background" Value="#f7bf2d" />
-                                            <Setter TargetName="Border" Property="BorderBrush" Value="#912316"/>
-                                            <Setter TargetName="Arrow" Property="Fill" Value="#912316"/>
+                                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource HighlighterYellow}" />
+                                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}"/>
+                                            <Setter TargetName="Arrow" Property="Fill" Value="{DynamicResource DndRed}"/>
                                         </Trigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
@@ -319,7 +329,7 @@
             <!-- ComboBoxItem Style -->
             <Style TargetType="{x:Type ComboBoxItem}">
                 <Setter Property="Background" Value="White"/>
-                <Setter Property="Foreground" Value="#912316"/>
+                <Setter Property="Foreground" Value="{DynamicResource DndRed}"/>
                 <Setter Property="Padding" Value="4"/>
                 <Setter Property="Template">
                     <Setter.Value>
@@ -329,12 +339,12 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="Border" Property="Background" Value="#912316"/>
+                                    <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndRed}"/>
                                     <Setter Property="Foreground" Value="White"/>
                                     <Setter Property="FontWeight" Value="SemiBold"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="True">
-                                    <Setter TargetName="Border" Property="Background" Value="#912316"/>
+                                    <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndRed}"/>
                                     <Setter Property="Foreground" Value="White"/>
                                     <Setter Property="FontWeight" Value="SemiBold"/>
                                 </Trigger>
@@ -352,8 +362,6 @@
     </Style>
     
     <!--ScrollViewer-->
-    <SolidColorBrush x:Key="EslScrollbarThumb" Color="#912316" />
-
     <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
         <Setter Property="Visibility" Value="Visible" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -416,7 +424,7 @@
                 <Thumb
                     Style="{StaticResource ScrollBarThumb}"
                     Margin="2,0,2,0"
-                    Background="{DynamicResource EslScrollbarThumb}" />
+                    Background="{DynamicResource DndRed}" />
             </Track.Thumb>
             <Track.IncreaseRepeatButton>
                 <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageDownCommand" />
@@ -435,7 +443,7 @@
                 <Thumb
                     Style="{StaticResource ScrollBarThumbHor}"
                     Margin="0,2,0,2"
-                    Background="{DynamicResource EslScrollbarThumb}" />
+                    Background="{DynamicResource DndRed}" />
             </Track.Thumb>
             <Track.IncreaseRepeatButton>
                 <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageRightCommand" />
@@ -534,4 +542,92 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--Tab Styles-->
+    <Style TargetType="TabItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid>
+                        <Border 
+                                Name="Border"
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="1,1,1,1" 
+                                Padding="4, 2">
+                            <ContentPresenter 
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Left" 
+                                    ContentSource="Header"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="White"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding IsMyTurn}" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource Special}" />
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndBeige}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DndBeige}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DndRed}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--TabControl Style--> 
+    <Style TargetType="TabControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                         <!--TabPanel for the TabItem headers--> 
+                        <TabPanel 
+                                Name="HeaderPanel" 
+                                Grid.Column="0" 
+                                Background="Transparent"
+                                IsItemsHost="True" 
+                                KeyboardNavigation.TabIndex="1"
+                                KeyboardNavigation.TabNavigation="Once"
+                                Panel.ZIndex="1"/>
+                         <!--ContentPresenter for the selected TabItem's content-->
+                        <Border
+                            Grid.Column="1"
+                            BorderBrush="{DynamicResource DndRed}"
+                            BorderThickness="0, 1, 1, 1">
+                            <ContentPresenter 
+                                Name="ContentPanel" 
+                                ContentSource="SelectedContent" 
+                                Margin="0"
+                                KeyboardNavigation.DirectionalNavigation="Contained"/>
+                        </Border>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Colours-->
+    <SolidColorBrush x:Key="DndRed" Color="#912316" />
+    <SolidColorBrush x:Key="DndBeige" Color="#f3e9cf" />
+    <SolidColorBrush x:Key="HighlighterYellow" Color="#f7bf2d" />
+    <SolidColorBrush x:Key="Special" Color="#f1c27d       "/>
 </ResourceDictionary>

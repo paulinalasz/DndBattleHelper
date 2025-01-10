@@ -1,23 +1,9 @@
-﻿using DndBattleHelper.Helpers;
-using DndBattleHelper.Models;
-using System.Windows.Input;
+﻿using DndBattleHelper.Models;
 
 namespace DndBattleHelper.ViewModels
 {
-    public abstract class Tab : ViewModelBase
-    {
-        private ICommand _removeCommand;
-        public ICommand RemoveCommand => _removeCommand ?? (new CommandHandler(Remove, () => { return true; }));
 
-        public void Remove()
-        {
-            RemoveRequested?.Invoke(this, EventArgs.Empty);
-        }
-
-        public event EventHandler RemoveRequested;
-    }
-
-    public abstract class EntityViewModel : Tab, IEntityViewModel
+    public abstract class EntityViewModel : Tab, IEntityViewModel, IInInitiative
     {
         private readonly Entity _entity;
 
@@ -49,6 +35,17 @@ namespace DndBattleHelper.ViewModels
             {
                 _entity.Health = value; 
                 OnPropertyChanged(nameof(Health));
+            }
+        }
+
+        private bool _isMyTurn;
+        public bool IsMyTurn 
+        {
+            get => _isMyTurn;
+            set
+            {
+                _isMyTurn = value;
+                OnPropertyChanged(nameof(IsMyTurn));
             }
         }
 

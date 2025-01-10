@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DndBattleHelper.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#f3e9cf">
+    <Grid Background="{DynamicResource DndBeige}">
         <StackPanel>
             <TextBlock Style="{StaticResource Name}" Text="{Binding Name}"/>
             <StackPanel Orientation="Horizontal">

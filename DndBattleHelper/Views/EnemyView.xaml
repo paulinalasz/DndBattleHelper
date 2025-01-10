@@ -12,7 +12,7 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         <converters:EnumToDescriptionConverter x:Key="EnumToDescription"/>
     </UserControl.Resources>
-    <DockPanel Background="#f3e9cf" x:Name="ParentGrid">
+    <DockPanel Background="{DynamicResource DndBeige}" x:Name="ParentGrid">
         <StackPanel DockPanel.Dock="Left" Width="Auto" MaxWidth="300" Orientation="Vertical">
             <Grid>
                 <Grid.RowDefinitions>
@@ -178,8 +178,8 @@
             <local:ActionsView DataContext="{Binding Reactions}"/>
             <local:ActionsView DataContext="{Binding LegendaryActions}"/>
             <local:ActionsView DataContext="{Binding LairActions}"/>
-            
-            <Separator Height="1" Background="#912316"/>
+
+            <Separator Height="1" Background="{DynamicResource DndRed}"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>
