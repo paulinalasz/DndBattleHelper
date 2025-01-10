@@ -53,7 +53,7 @@
                             <Image Source="{StaticResource NextTurnDrawingImage}"/>
                         </Viewbox>
                     </Button>
-                    <TextBlock Text="{Binding TurnNumber}"/>
+                    <TextBlock Text="{Binding InitiativeCount}"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Command="{Binding AddNewPlayerCommand}" ToolTip="Add new player" Style="{StaticResource ToolBar}">
