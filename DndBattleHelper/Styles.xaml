@@ -611,7 +611,7 @@
                         <Border
                             Grid.Column="1"
                             BorderBrush="{DynamicResource DndRed}"
-                            BorderThickness="0, 1, 1, 1">
+                            BorderThickness="0, 1, 1, 0">
                             <ContentPresenter 
                                 Name="ContentPanel" 
                                 ContentSource="SelectedContent" 
