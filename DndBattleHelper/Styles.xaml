@@ -544,7 +544,7 @@
                                 Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="1,1,1,1" 
-                                Padding="4,2">
+                                Padding="4, 2">
                             <ContentPresenter 
                                     VerticalAlignment="Center" 
                                     HorizontalAlignment="Left" 
