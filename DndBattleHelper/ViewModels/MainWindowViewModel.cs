@@ -99,6 +99,9 @@ namespace DndBattleHelper.ViewModels
             EntitiesInInitiativeViewModel.CreateFromModels(_fileIo.OpenSavedFiles(openFileDialog.FileName));
 
             AcceptChanges();
+
+            TurnNumber = 1;
+            EntitiesInInitiativeViewModel.EntitiesInInitiative[0].IsMyTurn = true;
         }
         #endregion
 
@@ -109,15 +112,12 @@ namespace DndBattleHelper.ViewModels
             get { return _turnNumber; } 
             set
             {
-                if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > TurnNumber - 1 && TurnNumber != 0)
-                {
-                    EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnNumber - 1].IsMyTurn = false;
-                }
-
+                var indexOfEntityOfPreviousTurn = _turnNumber;
                 _turnNumber = value;
 
                 if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > TurnNumber - 1)
                 {
+                    EntitiesInInitiativeViewModel.EntitiesInInitiative[indexOfEntityOfPreviousTurn - 1].IsMyTurn = false;
                     EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnNumber - 1].IsMyTurn = true;
                 }
 
