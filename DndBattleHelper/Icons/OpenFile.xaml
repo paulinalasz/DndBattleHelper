@@ -1,16 +1,28 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<DrawingImage x:Key="OpenFileDrawingImage">
-		<DrawingImage.Drawing>
-			<DrawingGroup ClipGeometry="M0,0 V22.86147 H28.50865 V0 H0 Z">
-				<DrawingGroup Opacity="1" Transform="1,0,0,1,-241.35224,-63.612139">
-					<GeometryDrawing Geometry="F0 M28.50865,22.86147z M0,0z M263.13115,71.786536L263.21045,66.801696C261.12506,66.793796 259.03967,66.785586 256.95428,66.777096 255.00125,66.769196 253.04822,66.760946 251.09519,66.752496L248.29649,64.109397 241.83737,64.076837 241.81507,85.941211C248.98278,85.964031 256.15049,85.985581 263.31821,86.005881 263.83851,86.007381 264.35881,86.008781 264.87911,86.010281L269.23484,71.855979 248.05179,71.855979 241.93268,85.943316">
-						<GeometryDrawing.Pen>
-							<Pen Brush="white" Thickness="0.92472786" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
-						</GeometryDrawing.Pen>
-					</GeometryDrawing>
-				</DrawingGroup>
-			</DrawingGroup>
-		</DrawingImage.Drawing>
-	</DrawingImage>
+    <DrawingImage x:Key="OpenFileDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V24.803149 H24.803149 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-260.25525,-489.98751">
+                    <DrawingGroup Opacity="1" Transform="1,0,0,1,15.638529,432.71077">
+                        <GeometryDrawing Geometry="F0 M24.803149,24.803149z M0,0z M265.61672,70.079888L265.61672,66.079889 256.61672,66.079889 252.61672,63.079889 245.61672,63.079889 245.61672,81.079887 265.61672,81.079887">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="white" Thickness="1" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F0 M24.803149,24.803149z M0,0z M245.61672,81.07989L248.61672,70.079888 268.61672,70.079888 265.61672,81.079887">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="white" Thickness="0.99999988" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="white" Geometry="F0 M24.803149,24.803149z M0,0z M264.57773,60.919578C262.94928,60.871438 261.30977,61.423592 260.04222,62.447059 258.33781,63.823263 257.35693,66.049636 257.49172,68.236138L259.64797,68.236138C259.45081,67.219994 259.61897,66.136888 260.11501,65.228381 260.61103,64.319874 261.43119,63.59273 262.39258,63.209121 263.08205,62.934011 263.8404,62.833526 264.57773,62.919578L264.57773,63.919578 267.57773,61.919578 264.57773,59.919578 264.57773,60.919578z">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="white" Thickness="0.79999989" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
 </ResourceDictionary>

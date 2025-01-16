@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="ResetSpellSlotsDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V24.803149 H24.803149 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-260.25525,-489.98751">
+                    <DrawingGroup Opacity="1" Transform="1,0,0,1,15.638529,432.71077">
+                        <GeometryDrawing Geometry="F1 M24.803149,24.803149z M0,0z M266.11802,70.571213A10.000654,10.008677,0,0,1,258.20651,80.359068A10.000654,10.008677,0,0,1,246.98956,74.660581A10.000654,10.008677,0,0,1,250.21463,62.491897A10.000654,10.008677,0,0,1,262.77902,63.106304">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="white" Thickness="1.99999857" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F0 M24.803149,24.803149z M0,0z M258.61672,64.079889L263.61672,64.079889 263.61672,59.07989">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="white" Thickness="1.99999976" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

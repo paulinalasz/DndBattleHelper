@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Icons\NextTurn.xaml"/>
                 <ResourceDictionary Source="Icons\PreviousTurn.xaml"/>
                 <ResourceDictionary Source="Icons\OpenFile.xaml"/>
+                <ResourceDictionary Source="Icons\NewFile.xaml"/>
                 <ResourceDictionary Source="Icons\Save.xaml"/>
                 <ResourceDictionary Source="Icons\AddPlayer.xaml"/>
                 <ResourceDictionary Source="Icons\AddEnemy.xaml"/>
@@ -28,6 +29,7 @@
                 <ResourceDictionary Source="Icons\Cancel.xaml"/>
                 <ResourceDictionary Source="Icons\RollDie.xaml"/>
                 <ResourceDictionary Source="Icons\ApplyPreset.xaml"/>
+                <ResourceDictionary Source="Icons\ResetSpellSlots.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

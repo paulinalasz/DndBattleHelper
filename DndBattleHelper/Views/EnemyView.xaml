@@ -40,7 +40,7 @@
                     <TextBox VerticalAlignment="Center" Text="{Binding Health}"/>
                     <TextBlock Margin="5, 8, 0, 0" Text="-"/>
                     <TextBox VerticalAlignment="Center" Margin="5, 0, 0, 0" Text="{Binding DamageToTake}"/>
-                    <Button ToolTip="Take damage" Command="{Binding TakeDamageCommand}">
+                    <Button ToolTip="Take damage" Command="{Binding TakeDamageCommand}" Margin="10, 0, 0, 0">
                         <Viewbox>
                             <Image Source="{StaticResource TakeDamageDrawingImage}"/>
                         </Viewbox>
@@ -169,7 +169,11 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </Grid>
-                <Button Grid.Column="2" Content="Reset Spell Slots" Command="{Binding ResetSpellSlotsUsedCommand}"/>
+                <Button Grid.Column="2" ToolTip="Reset spell slot count" Command="{Binding ResetSpellSlotsUsedCommand}">
+                    <Viewbox>
+                        <Image Source="{StaticResource ResetSpellSlotsDrawingImage}"/>
+                    </Viewbox>
+                </Button>
             </Grid>
 
             <local:ActionsView DataContext="{Binding Actions}"/>

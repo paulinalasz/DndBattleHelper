@@ -30,19 +30,19 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal">
-                    <Button ToolTip="Save" Command="{Binding NewFileCommand}" Style="{StaticResource ToolBar}">
+                    <Button ToolTip="New File" Command="{Binding NewFileCommand}" Style="{StaticResource ToolBar}">
                         <Viewbox>
-                            <Image Source="{StaticResource SaveDrawingImage}"/>
-                        </Viewbox>
-                    </Button>
-                    <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
-                        <Viewbox>
-                            <Image Source="{StaticResource SaveDrawingImage}"/>
+                            <Image Source="{StaticResource NewFileDrawingImage}"/>
                         </Viewbox>
                     </Button>
                     <Button ToolTip="Open Save File" Command="{Binding OpenCommand}" Style="{StaticResource ToolBar}">
                         <Viewbox>
                             <Image Source="{StaticResource OpenFileDrawingImage}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="Save" Command="{Binding SaveCommand}" Style="{StaticResource ToolBar}">
+                        <Viewbox>
+                            <Image Source="{StaticResource SaveDrawingImage}"/>
                         </Viewbox>
                     </Button>
                     <Button ToolTip="Go to previous turn" Command="{Binding PreviousTurnCommand}" Style="{StaticResource ToolBar}">
@@ -108,13 +108,13 @@
                            VerticalAlignment="Center" 
                            TextTrimming="CharacterEllipsis" />
                             <Button Grid.Column="1" 
-                        Height="20" 
-                        Width="20" 
+                        Height="18" 
+                        Width="18" 
                         Margin="5, 0, 0, 0" 
                         ToolTip="Remove Entity" 
                         Command="{Binding RemoveCommand}">
                                 <Viewbox>
-                                    <Image Source="{StaticResource ClearDrawingImage}" />
+                                    <Image Source="{StaticResource RemoveDrawingImage}" />
                                 </Viewbox>
                             </Button>
                         </Grid>

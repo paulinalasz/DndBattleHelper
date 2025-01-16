@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="CancelDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V10.056831 H51.494768 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="1,0,0,1,-244.53971,-62.862218">
+                    <GeometryDrawing Geometry="F0 M51.494768,10.056831z M0,0z M287.04566,63.952599L294.96646,71.751553">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="2.11450672" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F0 M51.494768,10.056831z M0,0z M294.96323,63.930232L287.16428,71.851036">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="2.11450672" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <DrawingGroup>
+                        <GlyphRunDrawing ForegroundBrush="White">
+                            <GlyphRunDrawing.GlyphRun>
+                                <GlyphRun PixelsPerDip="1" BaselineOrigin="243.84901,72.419357" FontRenderingEmSize="12.30033207" BidiLevel="0" IsSideways="False" Characters="Cancel" GlyphIndices="38 68 81 70 72 79" AdvanceWidths="7.39249957407 6.45767433675 6.86358529506 5.68275341634 6.46997466882 2.80447571196" Language="en-us">
+                                    <GlyphRun.GlyphTypeface>
+                                        <GlyphTypeface FontUri="C:\WINDOWS\FONTS\TAHOMA.TTF" StyleSimulations="None" />
+                                    </GlyphRun.GlyphTypeface>
+                                </GlyphRun>
+                            </GlyphRunDrawing.GlyphRun>
+                        </GlyphRunDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>
