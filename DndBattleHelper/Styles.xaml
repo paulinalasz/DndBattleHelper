@@ -628,9 +628,48 @@
         </Setter>
     </Style>
     
+    <!--Checkbox-->
+    <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid Width="18" Height="18">
+                                <Border x:Name="Border" Margin="2" Background="White" BorderBrush="{DynamicResource DefaultGrey}" BorderThickness="1,1,1,1" CornerRadius="1,1,1,1"/>
+                                <Path x:Name="CheckMark" Margin="4" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{DynamicResource DndRed}" StrokeThickness="2" SnapsToDevicePixels="False" Data="M1.5000001,1.5833334 L9.7920001,9.6666667 M1.5420001,9.6666667 L9.7083333,1.5000001" ClipToBounds="False" StrokeEndLineCap="Round" StrokeStartLineCap="Round"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="CheckMark"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" Value="{DynamicResource DndRed}" TargetName="Border"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="BorderBrush" Value="{DynamicResource DndRed}" TargetName="Border"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--Colours-->
-    <SolidColorBrush x:Key="DndRed" Color="#912316" />
-    <SolidColorBrush x:Key="DndBeige" Color="#f3e9cf" />
-    <SolidColorBrush x:Key="HighlighterYellow" Color="#f7bf2d" />
-    <SolidColorBrush x:Key="Special" Color="#f1c27d       "/>
+    <SolidColorBrush x:Key="DndRed" Color="#912316"/>
+    <SolidColorBrush x:Key="DndBeige" Color="#f3e9cf"/>
+    <SolidColorBrush x:Key="HighlighterYellow" Color="#f7bf2d"/>
+    <SolidColorBrush x:Key="PressedYellow" Color="#d9a528"/>
+    <SolidColorBrush x:Key="Special" Color="#f1c27d"/>
+    <SolidColorBrush x:Key="DefaultGrey" Color="#FF9E7A7A "/>
+    <!--858585-->
+    <!--FF9E7A7A-->
 </ResourceDictionary>
