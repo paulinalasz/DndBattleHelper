@@ -92,12 +92,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="bg" BorderBrush="#FF825E5E" Background="White" BorderThickness="1">
+                    <Border x:Name="bg" BorderBrush="{DynamicResource DefaultGrey}" Background="White" BorderThickness="1">
                         <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="False">
-                            <Setter Property="BorderBrush" TargetName="bg" Value="#858585"/>
+                            <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DefaultGrey}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DndRed}"/>
@@ -108,7 +108,7 @@
                             <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="#858585"/>
+                            <Setter Property="Opacity" Value="0.6"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -192,11 +192,10 @@
                 <Setter Property="Background" Value="{DynamicResource HighlighterYellow}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="#d9a528"/>
+                <Setter Property="Background" Value="{DynamicResource PressedYellow}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="#8f6c68"/>
-                <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="Opacity" Value="0.6"/>
             </Trigger>
         </Style.Triggers>
     </Style>
