@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Fighter - Level 8</Name>
+  <Health>0</Health>
+  <VersionNumber>1.0.0</VersionNumber>
+  <ArmourClass>19</ArmourClass>
+  <Speed>30</Speed>
+  <FlySpeed>0</FlySpeed>
+  <SwimSpeed>0</SwimSpeed>
+  <ClimbSpeed>0</ClimbSpeed>
+  <BurrowSpeed>0</BurrowSpeed>
+  <Strength>20</Strength>
+  <Dexterity>14</Dexterity>
+  <Constitution>18</Constitution>
+  <Intelligence>10</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>18</Charisma>
+  <IsSpellCaster>true</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>5</Available>
+      <NumberLeft>5</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SpellSaveDC>18</SpellSaveDC>
+  <SavingThrows>
+    <TraitWithModifierOfAbilityScoreType>
+      <Type>Strength</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>8</Value>
+      </Modifier>
+    </TraitWithModifierOfAbilityScoreType>
+    <TraitWithModifierOfAbilityScoreType>
+      <Type>Constitution</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>7</Value>
+      </Modifier>
+    </TraitWithModifierOfAbilityScoreType>
+  </SavingThrows>
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities />
+  <ConditionImmunities />
+  <Skills>
+    <TraitWithModifierOfSkillType>
+      <Type>Acrobatics</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>8</Value>
+      </Modifier>
+    </TraitWithModifierOfSkillType>
+    <TraitWithModifierOfSkillType>
+      <Type>Athletics</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>9</Value>
+      </Modifier>
+    </TraitWithModifierOfSkillType>
+    <TraitWithModifierOfSkillType>
+      <Type>Stealth</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>7</Value>
+      </Modifier>
+    </TraitWithModifierOfSkillType>
+  </Skills>
+  <Senses />
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>One</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Second Wind</Name>
+      <Description>You have a limited well of physical and mental stamina that you can draw on. As a Bonus Action, you can use it to regain Hit Points equal to 1d10 plus your Fighter level. You can use this feature four times. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.</Description>
+    </Ability>
+    <Ability>
+      <Name>Action Surge</Name>
+      <Description>You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action, except the Magic action.</Description>
+    </Ability>
+    <Ability>
+      <Name>Tactical Mind</Name>
+      <Description>You have a mind for tactics and getting the upper hand on and off the battlefield. When you fail an ability check, you can expend a use of your Second Wind to push yourself toward success. Rather than regaining Hit Points, you roll 1d10 and add the number rolled to the ability check, potentially turning it into a success. If the check still fails, this use of Second Wind isn’t expended.</Description>
+    </Ability>
+    <Ability>
+      <Name>Tactical Shift</Name>
+      <Description>Whenever you activate your Second Wind with a Bonus Action, you can move up to half your Speed without provoking Opportunity Attacks.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Know your Enemy</Name>
+      <Description>As a Bonus Action, you can discern certain strengths and weaknesses of a creature you can see within 30 feet of yourself; you know whether that creature has any damage immunities, resistances, or vulnerabilities, and if the creature has any, you know what they are. Once you use this feature, you can’t do so again until you finish a Long Rest. You can also restore a use of the feature by expending one Superiority Die (no action required).</Description>
+      <ActionCost>BonusAction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Commanders Strike</Name>
+      <Description>When you take the Attack action on your turn, you can replace one of your attacks to direct one of your companions to strike. When you do so, choose a willing creature who can see or hear you and expend one Superiority Die. That creature can immediately use its Reaction to make one attack with a weapon or an Unarmed Strike, adding the Superiority Die to the attack’s damage roll on a hit.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Disarming Attack</Name>
+      <Description>When you hit a creature with an attack roll, you can expend one Superiority Die to attempt to disarm the target. Add the Superiority Die roll to the attack’s damage roll. The target must succeed on a Strength saving throw, or it drops one object of your choice that it’s holding, with the object landing in its space.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Menacing Attack</Name>
+      <Description>When you hit a creature with an attack roll, you can expend one Superiority Die to attempt to frighten the target. Add the Superiority Die to the attack’s damage roll. The target must succeed on a Wisdom saving throw or have the Frightened condition until the end of your next turn.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Parry</Name>
+      <Description>When another creature damages you with a melee attack, you can use your Reaction and expend one Superiority Die to reduce the damage by the number you roll on your Superiority Die plus your Strength or Dexterity</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Riposte</Name>
+      <Description>When a creature misses you with a melee attack, you can use your Reaction and expend one Superiority Die to make a melee attack with a weapon or an Unarmed Strike against the creature. If you hit, add the Superiority Die to the attack’s damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The fighter attacks twice</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Longsword</Name>
+      <Description>+ 8 to hit, 1d8 + 6</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>6</Value>
+          </ValueModifier>
+          <DamageType>Slashing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>8</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
+  <HealthRoll>
+    <NumberOfDice>7</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>42</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>2</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>
