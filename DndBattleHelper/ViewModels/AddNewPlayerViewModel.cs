@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using DndBattleHelper.Models;
 using DndBattleHelper.Helpers.DialogService;
+using System.Windows;
 
 namespace DndBattleHelper.ViewModels
 {
@@ -63,6 +64,12 @@ namespace DndBattleHelper.ViewModels
 
         public void Add()
         {
+            if (Name == "")
+            {
+                MessageBox.Show("Preset needs a name!", "Warning");
+                return;
+            }
+
             AddedPlayerViewModel = new PlayerViewModel(new Player(Name, Initiative, Health));
             Added?.Invoke();
         }
