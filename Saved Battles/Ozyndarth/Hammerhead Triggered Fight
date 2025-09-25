@@ -1,0 +1,3681 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>25</Initiative>
+    <Name>Elite Guard Swarm</Name>
+    <Health>0</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>10</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Arrows</Name>
+        <Description>Arrows rain from sky</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>21</Initiative>
+    <Name>Guard 14</Name>
+    <Health>10</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>21</Initiative>
+    <Name>Guard 12</Name>
+    <Health>6</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>20</Initiative>
+    <Name>Guard 28</Name>
+    <Health>11</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>20</Initiative>
+    <Name>Guard 21</Name>
+    <Health>10</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>19</Initiative>
+    <Name>Guard 9</Name>
+    <Health>12</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>18</Initiative>
+    <Name>Guard 2</Name>
+    <Health>14</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>17</Initiative>
+    <Name>Guard 18</Name>
+    <Health>16</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>17</Initiative>
+    <Name>Guard 20</Name>
+    <Health>10</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Guard 25</Name>
+    <Health>10</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Guard 3</Name>
+    <Health>12</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Guard 0</Name>
+    <Health>9</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Guard 5</Name>
+    <Health>18</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Guard 8</Name>
+    <Health>10</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Elite Guard 8</Name>
+    <Health>35</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The elite guard makes two attacks.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Longsword</Name>
+        <Description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) slashing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>3</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>5</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Longbow</Name>
+        <Description> Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>2</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>12</Initiative>
+    <Name>Guard 19</Name>
+    <Health>9</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>12</Initiative>
+    <Name>Guard 29</Name>
+    <Health>15</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>12</Initiative>
+    <Name>Guard 13</Name>
+    <Health>13</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>12</Initiative>
+    <Name>Guard 1</Name>
+    <Health>15</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>11</Initiative>
+    <Name>Guard 17</Name>
+    <Health>16</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Guard 4</Name>
+    <Health>9</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Guard 10</Name>
+    <Health>4</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Guard 16</Name>
+    <Health>14</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>9</Initiative>
+    <Name>Guard 22</Name>
+    <Health>7</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>9</Initiative>
+    <Name>Guard 6</Name>
+    <Health>9</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>8</Initiative>
+    <Name>Guard 24</Name>
+    <Health>8</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>8</Initiative>
+    <Name>Guard 7</Name>
+    <Health>14</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>6</Initiative>
+    <Name>Guard 27</Name>
+    <Health>13</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>6</Initiative>
+    <Name>Guard 23</Name>
+    <Health>12</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Guard 26</Name>
+    <Health>12</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Guard 11</Name>
+    <Health>13</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>4</Initiative>
+    <Name>Guard 15</Name>
+    <Health>10</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>2</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>12</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Spear</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d8 + 1) piercing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Tortellini</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Roy</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Relic</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Elara</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Bar</Name>
+    <Health>0</Health>
+  </Entity>
+</ArrayOfEntity>
