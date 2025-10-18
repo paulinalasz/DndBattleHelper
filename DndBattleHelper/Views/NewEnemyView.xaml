@@ -156,7 +156,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
-                            <TextBlock Style="{StaticResource EditTraitName}" FontWeight="Bold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
+                            <TextBlock Style="{StaticResource EditTraitName}" Margin="0,10,0,10" FontWeight="Bold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
 
                             <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
                                 <ItemsControl.ItemsPanel>
