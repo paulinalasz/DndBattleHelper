@@ -131,7 +131,7 @@
                 <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
                     <StackPanel Orientation="Horizontal">
                         <CheckBox IsChecked="{Binding IsSpellCaster}">
-                            <TextBlock Style="{StaticResource EditTraitName}" FontSize="16" Text="Is Spell Caster"/>
+                            <TextBlock Style="{StaticResource EditTraitName}" FontSize="16" Text="Spell Caster"/>
                         </CheckBox>
                     </StackPanel>
 
@@ -142,47 +142,71 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Grid HorizontalAlignment="Center" Margin="21, 0, 0, 0">
-                            <StackPanel Orientation="Horizontal">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="21, 0, 0, 0">
+                            <StackPanel Orientation="Vertical">
                                 <TextBlock Style="{StaticResource TraitName}" Text="Spell Save DC:"/>
-                                <TextBox Text="{Binding SpellSaveDC}"/>
+                                <TextBox Width="20" Height="20" Text="{Binding SpellSaveDC}"/>
                             </StackPanel>
                         </Grid>
 
-                        <Grid Grid.Column="1">
+                        <Grid Grid.Column="1" Margin="10, 10, 10, 10">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
-                            <TextBlock Style="{StaticResource EditTraitName}" Margin="0,10,0,10" FontWeight="Bold" Text="Spell Slot Availability" HorizontalAlignment="Center"/>
+                            <TextBlock Style="{StaticResource EditTraitName}"
+                                   Margin="0,10,0,10"
+                                   FontWeight="Bold"
+                                   Text="Spell Slot Availability"
+                                   HorizontalAlignment="Center"/>
 
-                            <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}" HorizontalAlignment="Center">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal"/>
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Width="10" Margin="10, 0, 10, 0" FontWeight="DemiBold" Style="{StaticResource EditTraitName}" Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+                            <Grid Grid.Row="1">
+                                <!-- Header -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                            <ItemsControl ItemsSource="{Binding SpellSlots}" Grid.Row="2" HorizontalAlignment="Center">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal"/>
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBox Margin="5, 0, 5, 0" Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}" Width="20"/>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+                                <ItemsControl Grid.Row="0" ItemsSource="{Binding SpellSlots}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <UniformGrid Rows="1"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="{StaticResource DndRed}" BorderThickness="1">
+                                                <TextBlock TextAlignment="Center"
+                                                   Padding="5"
+                                                   FontWeight="Bold"
+                                                   Style="{StaticResource EditTraitName}"
+                                                   Text="{Binding SpellSlotLevel, Converter={StaticResource EnumToDescription}}"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <!-- Values -->
+                                <ItemsControl Grid.Row="1" ItemsSource="{Binding SpellSlots}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <UniformGrid Rows="1"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="{StaticResource DndRed}" BorderThickness="1">
+                                                <TextBox Padding="0"
+                                                     TextAlignment="Center"
+                                                     Text="{Binding Available, UpdateSourceTrigger=PropertyChanged}"
+                                                     Margin="0"
+                                                     Style="{StaticResource InsideOfTable}"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
                         </Grid>
                     </Grid>
 
