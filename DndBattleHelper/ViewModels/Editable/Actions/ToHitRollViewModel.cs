@@ -26,7 +26,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
 
             if (!_toHitRoll.DidAttackHit)
             {
-                if (_toHitRoll.Roll == 1)
+                if (_toHitRoll.Roll == 1 || _toHitRoll.AdvantageDisadvantageRoll == 1)
                 {
                     toHitRollString += "Critical miss! ";
                 }
@@ -37,7 +37,7 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
             }
             else
             {
-                if (_toHitRoll.Roll == 20)
+                if (_toHitRoll.Roll == 20 || _toHitRoll.AdvantageDisadvantageRoll == 20)
                 {
                     toHitRollString += "Critical hit! ";
                 }

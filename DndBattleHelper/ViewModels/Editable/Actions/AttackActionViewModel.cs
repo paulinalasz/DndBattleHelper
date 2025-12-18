@@ -41,60 +41,48 @@ namespace DndBattleHelper.ViewModels.Editable.Actions
         private ToHitRoll DoesAttackHit(int armourClass)
         {
             Random rand = new Random();
-            var roll = rand.Next(1, 21);
+            var roll1 = rand.Next(1, 21);
+            var actualRoll = roll1;
+            //bool useFirstRoll = true;
 
-            bool useFirstRoll = true;
+            var withModifier = actualRoll + ToHit.ToInt();
 
             if (_advantageDisadvantageProvider.IsAdvantage)
             {
                 var roll2 = rand.Next(1, 21);
                 
-                if (roll2 > roll)
+                if (roll2 > roll1)
                 {
-                    useFirstRoll = false;
+                    actualRoll = roll2;
                 }
 
-                var finalRoll = roll2 + ToHit.ToInt();
+                withModifier = actualRoll + ToHit.ToInt();
+                if (withModifier >= armourClass && actualRoll != 1)
+                    return new ToHitRoll(true, roll1, ToHit, withModifier, roll2);
 
-                if (useFirstRoll)
-                {
-                    finalRoll = roll + ToHit.ToInt();
-                }
-
-                if (finalRoll >= armourClass && finalRoll != 1)
-                    return new ToHitRoll(true, roll, ToHit, finalRoll, roll2);
-
-                return new ToHitRoll(false, roll, ToHit, finalRoll, roll2);
+                return new ToHitRoll(false, roll1, ToHit, withModifier, roll2);
             }
 
             if (_advantageDisadvantageProvider.IsDisadvantage)
             {
                 var roll2 = rand.Next(1, 21);
 
-                if (roll2 < roll)
+                if (roll2 < roll1)
                 {
-                    useFirstRoll = false;
+                    actualRoll = roll2;
                 }
 
-                var finalRoll = roll2 + ToHit.ToInt();
+                withModifier = actualRoll + ToHit.ToInt();
+                if (withModifier >= armourClass && actualRoll != 1)
+                    return new ToHitRoll(true, roll1, ToHit, withModifier, roll2);
 
-                if (useFirstRoll)
-                {
-                    finalRoll = roll + ToHit.ToInt();
-                }
-
-                if (finalRoll >= armourClass && finalRoll != 1)
-                    return new ToHitRoll(true, roll, ToHit, finalRoll, roll2);
-
-                return new ToHitRoll(false, roll, ToHit, finalRoll, roll2);
+                return new ToHitRoll(false, roll1, ToHit, withModifier, roll2);
             }
 
-            var withModifier = roll + ToHit.ToInt();
+            if (withModifier >= armourClass && actualRoll != 1) 
+                return new ToHitRoll(true, actualRoll, ToHit, withModifier);
 
-            if (withModifier >= armourClass && roll != 1) 
-                return new ToHitRoll(true, roll, ToHit, withModifier);
-
-            return new ToHitRoll(false, roll, ToHit, withModifier);
+            return new ToHitRoll(false, actualRoll, ToHit, withModifier);
         }
 
         public override void TakeAction()
