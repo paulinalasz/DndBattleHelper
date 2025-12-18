@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Solar</Name>
+    <Health>243</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>21</ArmourClass>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>26</Strength>
+    <Dexterity>22</Dexterity>
+    <Constitution>26</Constitution>
+    <Intelligence>25</Intelligence>
+    <Wisdom>25</Wisdom>
+    <Charisma>30</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Intelligence</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Charisma</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>17</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Radiant</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Radiant</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Frightened</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Truesight</Type>
+        <Value>120</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>TwentyOne</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Angelic Weapons</Name>
+        <Description> The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage (included in the attack).</Description>
+      </Ability>
+      <Ability>
+        <Name>Divine Awareness</Name>
+        <Description>The solar knows if it hears a lie.</Description>
+      </Ability>
+      <Ability>
+        <Name>Innate Spellcasting</Name>
+        <Description>The solar's spell casting ability is Charisma (spell save DC 25). It can innately cast the following spells, requiring no material components: At will: detect evil and good, invisibility (self only) 3/day each: blade barrier, dispel evil and good, resurrection 1/day each: commune, control weather</Description>
+      </Ability>
+      <Ability>
+        <Name>Magic Resistance</Name>
+        <Description>The solar has advantage on saving throws against spells and other magical effects</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Greatsword</Name>
+        <Description>Melee Weapon Attack: +15 to hit, reach 5 ft., one target. Hit: (4d6 + 8) slashing damage plus (6d8)radiant damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>6</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Radiant</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>15</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The solar makes two greatsword attacks.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slaying Longbow</Name>
+        <Description>Ranged Weapon Attack: +13 to hit, reach 150/600 ft., one target. Hit: (2d8 + 6) piercing damage plus (6d8)radiant damage. If the target is a creature that has 100 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>6</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>6</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Radiant</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>13</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction>
+        <Name>Flying Sword</Name>
+        <Description>The solar releases its greatsword to hover magically in an unoccupied space within 5 ft. of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 ft. and either make one attack against a target or return to the solar's hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Healing Touch (4/Day).</Name>
+        <Description>The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>8</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>4</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction>
+        <Name>Teleport</Name>
+        <Description>The solar magically teleports, along with any equipment it is wearing or carrying, up to 120 ft. to an unoccupied space it can see.</Description>
+        <ActionCost>LegendaryAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Searing Burst (Costs 2 Actions).</Name>
+        <Description>The solar emits magical, divine energy. Each creature of its choice in a 10 -foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one.</Description>
+        <ActionCost>LegendaryAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>14</Value>
+            </ValueModifier>
+            <DamageType>Fire</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Radiant</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction>
+        <Name>Blinding Gaaze</Name>
+        <Description>The solar targets one creature it can see within 30 ft. of it. If the target can see it, the target must succeed on a DC 15 Constitution saving throw or be blinded until magic such as the lesser restoration spell removes the blindness.</Description>
+        <ActionCost>LegendaryAction</ActionCost>
+      </EntityAction>
+      <EntityAction>
+        <Name>Magnetic Pull of the Divine</Name>
+        <Description>Each creature must make a DC 18 Strength check or be pulled 50 ft towards the solars location. Upon finishing the movement the player falls.</Description>
+        <ActionCost>LairAction</ActionCost>
+      </EntityAction>
+      <EntityAction>
+        <Name>Gravity Reversal</Name>
+        <Description>Upside down everyone goes :D</Description>
+        <ActionCost>LairAction</ActionCost>
+      </EntityAction>
+      <EntityAction>
+        <Name>Chains Activate</Name>
+        <Description>5 Chains sprout from the broken vault heart. They aim to wrap around the 5 creatures closest to them. DC18 strength check to break free. Can also be broken</Description>
+        <ActionCost>LairAction</ActionCost>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription>Solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. Solar regains spent legendary actions at the start of their turn. </LegendaryActionsDescription>
+    <LairActionsDescription>On Initiative Count 20, the Solar can preform a Legendary Lair Action. It cannot perform the smae one twice in a row</LairActionsDescription>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Relic</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Roy</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Tortellini</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Finnigan</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Elara</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Bar</Name>
+    <Health>0</Health>
+  </Entity>
+</ArrayOfEntity>

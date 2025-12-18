@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Elite Guard</Name>
+  <Health>39</Health>
+  <VersionNumber>1.0.0</VersionNumber>
+  <ArmourClass>16</ArmourClass>
+  <Speed>30</Speed>
+  <FlySpeed>0</FlySpeed>
+  <SwimSpeed>0</SwimSpeed>
+  <ClimbSpeed>0</ClimbSpeed>
+  <BurrowSpeed>0</BurrowSpeed>
+  <Strength>10</Strength>
+  <Dexterity>10</Dexterity>
+  <Constitution>10</Constitution>
+  <Intelligence>10</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>10</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SpellSaveDC>15</SpellSaveDC>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities />
+  <ConditionImmunities />
+  <Skills />
+  <Senses />
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>One</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities />
+  <Actions>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The elite guard makes two attacks.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Longsword</Name>
+      <Description>Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) slashing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>10</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>3</Value>
+          </ValueModifier>
+          <DamageType>Slashing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>5</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Longbow</Name>
+      <Description> Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>2</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>4</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
+  <HealthRoll>
+    <NumberOfDice>6</NumberOfDice>
+    <DiceBase>8</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>12</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>2</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

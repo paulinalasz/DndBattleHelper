@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>12</Initiative>
+  <Name>Cadaver Collector</Name>
+  <Health>189</Health>
+  <VersionNumber>1.0.0</VersionNumber>
+  <ArmourClass>17</ArmourClass>
+  <Speed>30</Speed>
+  <FlySpeed>0</FlySpeed>
+  <SwimSpeed>0</SwimSpeed>
+  <ClimbSpeed>0</ClimbSpeed>
+  <BurrowSpeed>0</BurrowSpeed>
+  <Strength>21</Strength>
+  <Dexterity>14</Dexterity>
+  <Constitution>20</Constitution>
+  <Intelligence>5</Intelligence>
+  <Wisdom>11</Wisdom>
+  <Charisma>8</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SpellSaveDC>15</SpellSaveDC>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities>
+    <TraitOfDamageType>
+      <Type>Necrotic</Type>
+    </TraitOfDamageType>
+    <TraitOfDamageType>
+      <Type>Poison</Type>
+    </TraitOfDamageType>
+    <TraitOfDamageType>
+      <Type>Psychic</Type>
+    </TraitOfDamageType>
+  </DamageImmunities>
+  <ConditionImmunities>
+    <TraitOfCondition>
+      <Type>Charmed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Exhaustion</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Paralyzed</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Frightened</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Petrified</Type>
+    </TraitOfCondition>
+    <TraitOfCondition>
+      <Type>Poisoned</Type>
+    </TraitOfCondition>
+  </ConditionImmunities>
+  <Skills />
+  <Senses>
+    <TraitWithValueOfSenseType>
+      <Type>Darkvision</Type>
+      <Value>60</Value>
+    </TraitWithValueOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>Fourteen</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Magic Resistance</Name>
+      <Description>The cadaver collector has advantage on saving throws against spells and other magical effects.</Description>
+    </Ability>
+    <Ability>
+      <Name>Summon Specters (recharges after a Short or Long Rest</Name>
+      <Description>As a bonus action, the cadaver collector calls up the enslaved spirits of those it has slain; 1d6 specters (without Sunlight Sensitivity) arise in unoccupied spaces within 15 feet of the cadaver collector. The specters act right after the cadaver collector on the same initiative count and fight until they're destroyed. They disappear when the cadaver collector is destroyed.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The cadaver collector makes two slam attacks.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Slam</Name>
+      <Description>Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 18 (3d8 + 5) bludgeoning damage plus 16 (3d10) necrotic damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>3</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>5</Value>
+          </ValueModifier>
+          <DamageType>Bludgeoning</DamageType>
+        </DamageRoll>
+        <DamageRoll>
+          <NumberOfDice>3</NumberOfDice>
+          <DiceBase>10</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Necrotic</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>10</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction>
+      <Name>Paralyzing Breath (Recharge 5–6).</Name>
+      <Description>The cadaver collector releases paralyzing gas in a 30-foot cone. Each creature in that area must make a successful DC 18 Constitution saving throw or be paralyzed for 1 minute. A paralyzed creature repeats the saving throw at the end of each of its turns, ending the effect on itself with a success.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+  </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
+  <HealthRoll>
+    <NumberOfDice>18</NumberOfDice>
+    <DiceBase>10</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>90</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>2</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

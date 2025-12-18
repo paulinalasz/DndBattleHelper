@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Druid</Name>
+  <Health>58</Health>
+  <VersionNumber>1.0.0</VersionNumber>
+  <ArmourClass>15</ArmourClass>
+  <Speed>30</Speed>
+  <FlySpeed>0</FlySpeed>
+  <SwimSpeed>0</SwimSpeed>
+  <ClimbSpeed>0</ClimbSpeed>
+  <BurrowSpeed>0</BurrowSpeed>
+  <Strength>10</Strength>
+  <Dexterity>10</Dexterity>
+  <Constitution>10</Constitution>
+  <Intelligence>10</Intelligence>
+  <Wisdom>10</Wisdom>
+  <Charisma>10</Charisma>
+  <IsSpellCaster>true</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SpellSaveDC>15</SpellSaveDC>
+  <SavingThrows />
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities />
+  <ConditionImmunities />
+  <Skills />
+  <Senses />
+  <PassivePerception>
+    <Value>10</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>One</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities />
+  <Actions>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Frostbite</Name>
+      <Description>You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes 1d6 cold damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Cold</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Blight</Name>
+      <Description>Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>8</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Necrotic</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Cone of cold</Name>
+      <Description>A blast of cold air erupts from your hands. Each creature in a 60-foot cone must make a Constitution saving throw. A creature takes 8d8 cold damage on a failed save, or half as much damage on a successful one.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>8</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Cold</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+    <EntityAction>
+      <Name>Dispel Magic</Name>
+      <Description>Choose any creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends. For each spell of or higher on the target, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a successful check, the spell ends.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Heat Metal</Name>
+      <Description>Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again. If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Fire</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+    <EntityAction>
+      <Name>Sleet Storm</Name>
+      <Description>Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused. The ground in the area is covered with slick ice, making it difficult terrain. When a creature enters the spell's area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls prone. If a creature is concentrating in the spell's area, the creature must make a successful Constitution saving throw against your spell save DC or lose concentration.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Wall of fire</Name>
+      <Description>You create a wall of fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration. When the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 5d8 fire damage, or half as much damage on a successful save. One side of the wall, selected by you when you cast this spell, deals 5d8 fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>5</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Fire</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+  </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
+  <HealthRoll>
+    <NumberOfDice>9</NumberOfDice>
+    <DiceBase>8</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>18</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Neutral</Type>
+      <Value>0</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

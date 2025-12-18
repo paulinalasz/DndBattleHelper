@@ -1,0 +1,2175 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>20</Initiative>
+    <Name>Necromancer</Name>
+    <Health>68</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>15</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>9</Strength>
+    <Dexterity>14</Dexterity>
+    <Constitution>12</Constitution>
+    <Intelligence>17</Intelligence>
+    <Wisdom>12</Wisdom>
+    <Charisma>11</Charisma>
+    <IsSpellCaster>true</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>4</Available>
+        <NumberLeft>4</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>3</Available>
+        <NumberLeft>3</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>3</Available>
+        <NumberLeft>3</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>3</Available>
+        <NumberLeft>3</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>2</Available>
+        <NumberLeft>2</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>1</Available>
+        <NumberLeft>1</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Necrotic</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Necrotic</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities />
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Arcana</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+      <TraitWithModifierOfSkillType>
+        <Type>History</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses />
+    <PassivePerception>
+      <Value>11</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Nine</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Grim Harvest (1/Turn)</Name>
+        <Description>When necromancer kills a creature that is neither a construct nor undead with a spell of 1st level or higher, the necromancer regains hit points equal to twice the spell's level, or three times if it is a necromancy spell.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Spellcasting</Name>
+        <Description>The necromancer is a 12th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 15, +7 to hit with spell attacks). The necromancer has the following wizard spells prepared:</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>Chill Touch</Name>
+        <Description>120 feet. 1 round. You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn. Until then, the hand clings to the target. If you hit an undead target, it also has disadvantage on attack rolls against you until the end of your next turn.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </ToHit>
+        <Concentration>true</Concentration>
+        <SpellSlot>Cantrip</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>Ray of Sickness</Name>
+        <Description>60 feet. A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </ToHit>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot1</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="NonDamagingSpell">
+        <Name>Blindness/Deafness</Name>
+        <Description>30 feet. 1 minute. You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.  When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot2</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>Ray of Enfeeblement</Name>
+        <Description>60 feet. Concentration up to 1 min. A black beam of enervating energy springs from your finger toward a creature within range. Make a ranged spell attack against the target. On a hit, the target deals only half damage with weapon attacks that use Strength until the spell ends. At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>0</NumberOfDice>
+            <DiceBase>0</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </ToHit>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot2</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="NonDamagingSpell">
+        <Name>Web</Name>
+        <Description>60 feet, Concentration up to 1 hour. You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area. If the webs aren't anchored between two solid masses (such as walls or trees) or layered across a floor, wall, or ceiling, the conjured web collapses on itself, and the spell ends at the start of your next turn. Webs layered over a flat surface have a depth of 5 feet. Each creature that starts its turn in the webs or that enters them during its turn must make a Dexterity saving throw. On a failed save, the creature is restrained as long as it remains in the webs or until it breaks free. A creature restrained by the webs can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer restrained. The webs are flammable. Any 5-foot cube of webs exposed to fire burns away in 1 round, dealing 2d4 fire damage to any creature that starts its turn in the fire.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot2</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>Blight</Name>
+        <Description>Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs. If you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it. If you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>8</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </ToHit>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot4</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="NonDamagingSpell">
+        <Name>Dimension Door</Name>
+        <Description>500 feet. You teleport yourself from your current location to any other spot within range. You arrive at exactly the spot desired. It can be a place you can see, one you can visualize, or one you can describe by stating distance and direction, such as "200 feet straight downward" or "upward to the northwest at a 45-degree angle, 300 feet." You can bring along objects as long as their weight doesn't exceed what you can carry. You can also bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you cast this spell. If you would arrive in a place already occupied by an object or a creature, you and any creature traveling with you each take 4d6 force damage, and the spell fails to teleport you.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot4</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="NonDamagingSpell">
+        <Name>Stoneskin</Name>
+        <Description>Concentration up to 1 hour. This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot4</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>Bigby's Hand</Name>
+        <Description>120 feet. Concentration 1 minute. You create a Large hand of shimmering, translucent force in an unoccupied space that you can see within range. The hand lasts for the spell's duration, and it moves at your command, mimicking the movements of your own hand. The hand is an object that has AC 20 and hit points equal to your hit point maximum. If it drops to 0 hit points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The hand doesn't fill its space. When you cast the spell and as a bonus action on your subsequent turns, you can move the hand up to 60 feet and then cause one of the following effects with it. Clenched Fist. The hand strikes one creature or object within 5 feet of it. Make a melee spell attack for the hand using your game statistics. On a hit, the target takes 4d8 force damage. Forceful Hand. The hand attempts to push a creature within 5 feet of it in a direction you choose. Make a check with the hand's Strength contested by the Strength (Athletics) check of the target. If the target is Medium or smaller, you have advantage on the check. If you succeed, the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target to remain within 5 feet of it. Grasping Hand. The hand attempts to grapple a Huge or smaller creature within 5 feet of it. You use the hand's Strength score to resolve the grapple. If the target is Medium or smaller, you have advantage on the check. While the hand is grappling the target, you can use a bonus action to have the hand crush it. When you do so, the target takes bludgeoning damage equal to 2d6 + your spellcasting ability modifier.  Interposing Hand. The hand interposes itself between you and a creature you choose until you give the hand a different command. The hand moves to stay between you and the target, providing you with half cover against the target. The target can't move through the hand's space if its Strength score is less than or equal to the hand's Strength score. If its Strength score is higher than the hand's Strength score, the target can move toward you through the hand's space, but that space is difficult terrain for the target.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Force</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>8</Value>
+        </ToHit>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot5</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingSpellWithSave">
+        <Name>Cloudkill</Name>
+        <Description>120 feet. concentration up to 10 mints. You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a point you choose within range. The fog spreads around corners. It lasts for the duration or until strong wind disperses the fog, ending the spell. Its area is heavily obscured. When a creature enters the spell's area for the first time on a turn or starts its turn there, that creature must make a Constitution saving throw. The creature takes 5d8 poison damage on a failed save, or half as much damage on a successful one. Creatures are affected even if they hold their breath or don't need to breathe. The fog moves 10 feet away from you at the start of each of your turns, rolling along the surface of the ground. The vapors, being heavier than air, sink to the lowest level of the land, even pouring down openings.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>5</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot5</SpellSlot>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingSpellWithSave">
+        <Name>Circle of Death</Name>
+        <Description>150 feet. A sphere of negative energy ripples out in a 60-foot-radius sphere from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>8</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <Concentration>true</Concentration>
+        <SpellSlot>Slot6</SpellSlot>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Specter 3</Name>
+    <Health>24</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>12</ArmourClass>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Grappled</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Prone</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Restrained</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Incorporeal Movement</Name>
+        <Description>The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sunlight Sensitivity</Name>
+        <Description>While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Life Drain</Name>
+        <Description>Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Specter 0</Name>
+    <Health>13</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>12</ArmourClass>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Grappled</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Prone</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Restrained</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Incorporeal Movement</Name>
+        <Description>The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sunlight Sensitivity</Name>
+        <Description>While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Life Drain</Name>
+        <Description>Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Cadaver Collector</Name>
+    <Health>212</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>17</ArmourClass>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>21</Strength>
+    <Dexterity>14</Dexterity>
+    <Constitution>20</Constitution>
+    <Intelligence>5</Intelligence>
+    <Wisdom>11</Wisdom>
+    <Charisma>8</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Frightened</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fourteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Magic Resistance</Name>
+        <Description>The cadaver collector has advantage on saving throws against spells and other magical effects.</Description>
+      </Ability>
+      <Ability>
+        <Name>Summon Specters (recharges after a Short or Long Rest</Name>
+        <Description>As a bonus action, the cadaver collector calls up the enslaved spirits of those it has slain; 1d6 specters (without Sunlight Sensitivity) arise in unoccupied spaces within 15 feet of the cadaver collector. The specters act right after the cadaver collector on the same initiative count and fight until they're destroyed. They disappear when the cadaver collector is destroyed.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The cadaver collector makes two slam attacks.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 18 (3d8 + 5) bludgeoning damage plus 16 (3d10) necrotic damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>5</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction>
+        <Name>Paralyzing Breath (Recharge 5–6).</Name>
+        <Description>The cadaver collector releases paralyzing gas in a 30-foot cone. Each creature in that area must make a successful DC 18 Constitution saving throw or be paralyzed for 1 minute. A paralyzed creature repeats the saving throw at the end of each of its turns, ending the effect on itself with a success.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Specter 1</Name>
+    <Health>21</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>12</ArmourClass>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Grappled</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Prone</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Restrained</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Incorporeal Movement</Name>
+        <Description>The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sunlight Sensitivity</Name>
+        <Description>While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Life Drain</Name>
+        <Description>Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Specter 5</Name>
+    <Health>32</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>12</ArmourClass>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Grappled</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Prone</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Restrained</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Incorporeal Movement</Name>
+        <Description>The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sunlight Sensitivity</Name>
+        <Description>While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Life Drain</Name>
+        <Description>Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Specter 4</Name>
+    <Health>29</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>12</ArmourClass>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Grappled</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Prone</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Restrained</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Incorporeal Movement</Name>
+        <Description>The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sunlight Sensitivity</Name>
+        <Description>While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Life Drain</Name>
+        <Description>Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>13</Initiative>
+    <Name>Specter 2</Name>
+    <Health>15</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>12</ArmourClass>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Acid</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Cold</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Fire</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Lightning</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Grappled</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Prone</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Restrained</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Incorporeal Movement</Name>
+        <Description>The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sunlight Sensitivity</Name>
+        <Description>While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Life Drain</Name>
+        <Description>Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Zombie 4</Name>
+    <Health>28</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>8</ArmourClass>
+    <Speed>20</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Undead Fortitude</Name>
+        <Description>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) bludgeoning damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Zombie 3</Name>
+    <Health>16</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>8</ArmourClass>
+    <Speed>20</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Undead Fortitude</Name>
+        <Description>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) bludgeoning damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Zombie 1</Name>
+    <Health>21</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>8</ArmourClass>
+    <Speed>20</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Undead Fortitude</Name>
+        <Description>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) bludgeoning damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Zombie 2</Name>
+    <Health>26</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>8</ArmourClass>
+    <Speed>20</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Undead Fortitude</Name>
+        <Description>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) bludgeoning damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>5</Initiative>
+    <Name>Zombie 0</Name>
+    <Health>19</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>8</ArmourClass>
+    <Speed>20</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Undead Fortitude</Name>
+        <Description>If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: (1d6 + 1) bludgeoning damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>1</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>3</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Elara</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Bar</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Tortelini</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Relic</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Roy</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Finnigan</Name>
+    <Health>0</Health>
+  </Entity>
+</ArrayOfEntity>
