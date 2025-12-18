@@ -46,6 +46,17 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
+        private int _armourClass;
+        public int ArmourClass
+        {
+            get => _armourClass;
+            set
+            {
+                _armourClass = value;
+                OnPropertyChanged(nameof(ArmourClass));
+            }
+        }
+
         #region dialogService
         public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
 
@@ -70,7 +81,7 @@ namespace DndBattleHelper.ViewModels
                 return;
             }
 
-            AddedPlayerViewModel = new PlayerViewModel(new Player(Name, Initiative, Health));
+            AddedPlayerViewModel = new PlayerViewModel(new Player(Name, Initiative, Health, ArmourClass));
             Added?.Invoke();
         }
     }

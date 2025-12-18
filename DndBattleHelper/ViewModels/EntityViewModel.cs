@@ -38,6 +38,16 @@ namespace DndBattleHelper.ViewModels
             }
         }
 
+        public int ArmourClass
+        {
+            get => _entity.ArmourClass;
+            set
+            {
+                _entity.ArmourClass = value;
+                OnPropertyChanged(nameof(ArmourClass));
+            }
+        }
+
         private bool _isMyTurn;
         public bool IsMyTurn 
         {

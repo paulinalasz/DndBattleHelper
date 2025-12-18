@@ -5,7 +5,6 @@ namespace DndBattleHelper.Models
     public class Enemy : Entity
     {
         public string VersionNumber = "1.0.0";
-        public int ArmourClass { get; set; }
         public int Speed { get; set; }
         public int FlySpeed { get; set; }
         public int SwimSpeed { get; set; }
@@ -70,9 +69,8 @@ namespace DndBattleHelper.Models
             List<Ability> abilities,
             List<EntityAction> actions,
             string legendaryActionsDescription,
-            string lairActionsDescription) : base(initiative, name, health)
+            string lairActionsDescription) : base(initiative, name, health, armourClass)
         {
-            ArmourClass = armourClass;
             Speed = speed;
             FlySpeed = flySpeed;
             SwimSpeed = swimSpeed;
