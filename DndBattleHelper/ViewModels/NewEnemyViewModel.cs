@@ -50,6 +50,11 @@ namespace DndBattleHelper.ViewModels
             EditLanguagesViewModel = new EditTraitsViewModel<LanguageType>("Languages: ");
             EditAbilitiesViewModel = new EditAbilitiesViewModel();
             EditActionsViewModel = new EditActionsViewModel();
+
+            if (_presets.EnemyPresets.Count != 0)
+            {
+                SelectedEnemyPreset = _presets.EnemyPresets.FirstOrDefault();
+            }
         }
 
         public RollViewModel InitiativeRollViewModel { get; set; }
@@ -96,6 +101,8 @@ namespace DndBattleHelper.ViewModels
 
         public void UsePreset()
         {
+            if (SelectedEnemyPreset == null) return;
+
             var spellSlots = new List<SpellSlotAvailabilityViewModel>();
 
             foreach (var spellSlot in SelectedEnemyPreset.SpellSlots)
