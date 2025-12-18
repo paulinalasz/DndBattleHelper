@@ -27,8 +27,8 @@
                 <TextBox Style="{StaticResource Traits}" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
                 <TextBlock Style="{StaticResource TraitName}" Grid.Row="1" Grid.Column="0" Text="Initiative"/>
                 <TextBox Style="{StaticResource Traits}" Grid.Row="1" Grid.Column="1" Text="{Binding Initiative}"/>
-                <!--<TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Health"/>
-                <TextBox Style="{StaticResource Traits}" Grid.Row="3" Grid.Column="1" Text="{Binding Health}"/>-->
+                <TextBlock Style="{StaticResource TraitName}" Grid.Row="3" Grid.Column="0" Text="Armour Class"/>
+                <TextBox Style="{StaticResource Traits}" Grid.Row="3" Grid.Column="1" Text="{Binding ArmourClass}"/>
             </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
             <Button ToolTip="Add player" Style="{StaticResource Confirm}" Command="{Binding AddCommand}">

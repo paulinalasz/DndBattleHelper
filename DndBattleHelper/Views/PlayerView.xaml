@@ -9,10 +9,21 @@
     <Grid Background="{DynamicResource DndBeige}">
         <StackPanel>
             <TextBlock Style="{StaticResource Name}" Text="{Binding Name}"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Style="{StaticResource TraitName}" Text="Initiative: "/>
-                <TextBox Style="{StaticResource Traits}" Text="{Binding Initiative}"/>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource TraitName}" Text="Initiative: "/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource TraitName}" Text="Armour Class: "/>
+                <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource Traits}" Text="{Binding Initiative}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource Traits}" Text="{Binding ArmourClass}"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </UserControl>
