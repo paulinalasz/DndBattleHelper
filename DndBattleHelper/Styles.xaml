@@ -118,6 +118,34 @@
         </Style.Resources>
     </Style>
     
+    <Style TargetType="TextBox" x:Key="InsideOfTableNoBorder" BasedOn="{StaticResource InsideOfTable}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="bg" BorderBrush="{DynamicResource DefaultGrey}" Background="White" BorderThickness="0">
+                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DefaultGrey}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DndRed}"/>
+                            <Setter Property="BorderThickness" TargetName="bg" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="bg" Value="{DynamicResource DndRed}"/>
+                            <Setter Property="BorderThickness" TargetName="bg" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style TargetType="TextBox">
         <Setter Property="MinWidth" Value="20"/>
         <Setter Property="MinHeight" Value="20"/>
