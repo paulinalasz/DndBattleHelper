@@ -28,7 +28,7 @@ namespace DndBattleHelper.ViewModels
             EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel(new ObservableCollection<EntityViewModel>());
 
             TurnEntityIndex = 0;
-            SelectedTab = TurnEntityIndex;
+            SelectedTab = -1;
         }
 
         private int _selectedTab;
@@ -37,7 +37,22 @@ namespace DndBattleHelper.ViewModels
             get { return _selectedTab; }
             set
             {
-                _selectedTab = value;
+                var count = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count;
+                // If list is empty, only allow -1 (no selection)
+                if (count == 0 && value != -1)
+                {
+                    _selectedTab = -1;
+                }
+                // If list has items, ensure index is valid
+                else if (count > 0 && (value < 0 || value >= count))
+                {
+                    // Invalid index, set to -1 or clamp to valid range
+                    _selectedTab = -1;
+                }
+                else
+                {
+                    _selectedTab = value;
+                }
                 OnPropertyChanged(nameof(SelectedTab));
             }
         }
@@ -57,16 +72,22 @@ namespace DndBattleHelper.ViewModels
                     if (Save())
                     {
                         EntitiesInInitiativeViewModel.Clear();
+                        SelectedTab = -1;
+                        TurnEntityIndex = 0;
                     }
                 }
                 else if (messageResult == MessageBoxResult.No)
                 {
                     EntitiesInInitiativeViewModel.Clear();
+                    SelectedTab = -1;
+                    TurnEntityIndex = 0;
                 }
             }
             else
             {
                 EntitiesInInitiativeViewModel.Clear();
+                SelectedTab = -1;
+                TurnEntityIndex = 0;
             }
         }
 
@@ -100,8 +121,16 @@ namespace DndBattleHelper.ViewModels
 
             AcceptChanges();
 
-            TurnEntityIndex = 0;
-            EntitiesInInitiativeViewModel.EntitiesInInitiative[0].IsMyTurn = true;
+            if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > 0)
+            {
+                TurnEntityIndex = 0;
+                EntitiesInInitiativeViewModel.EntitiesInInitiative[0].IsMyTurn = true;
+            }
+            else
+            {
+                TurnEntityIndex = 0;
+                SelectedTab = -1;
+            }
         }
         #endregion
 
@@ -114,16 +143,26 @@ namespace DndBattleHelper.ViewModels
             {
                 var indexOfEntityOfPreviousTurn = _turnEntityIndex;
                 _turnEntityIndex = value;
+                var count = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count;
 
-                if (EntitiesInInitiativeViewModel.EntitiesInInitiative.Count > TurnEntityIndex)
+                if (count > 0 && count > TurnEntityIndex && TurnEntityIndex >= 0)
                 {
-                    EntitiesInInitiativeViewModel.EntitiesInInitiative[indexOfEntityOfPreviousTurn].IsMyTurn = false;
+                    // Only access previous index if it's valid
+                    if (indexOfEntityOfPreviousTurn >= 0 && indexOfEntityOfPreviousTurn < count)
+                    {
+                        EntitiesInInitiativeViewModel.EntitiesInInitiative[indexOfEntityOfPreviousTurn].IsMyTurn = false;
+                    }
                     EntitiesInInitiativeViewModel.EntitiesInInitiative[TurnEntityIndex].IsMyTurn = true;
+                    SelectedTab = TurnEntityIndex;
+                }
+                else
+                {
+                    // List is empty or index is invalid, set SelectedTab to -1 (no selection)
+                    SelectedTab = -1;
                 }
 
                 OnPropertyChanged(nameof(TurnEntityIndex));
                 OnPropertyChanged(nameof(InitiativeCount));
-                SelectedTab = TurnEntityIndex;
             } 
         }
 
@@ -132,9 +171,12 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToPreviousTurn()
         {
+            var count = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count;
+            if (count == 0) return;
+
             if (TurnEntityIndex - 1 < 0)
             {
-                TurnEntityIndex = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1;
+                TurnEntityIndex = count - 1;
             }
             else
             {
@@ -147,7 +189,10 @@ namespace DndBattleHelper.ViewModels
 
         public void GoToNextTurn()
         {
-            if (TurnEntityIndex + 1 > EntitiesInInitiativeViewModel.EntitiesInInitiative.Count - 1) 
+            var count = EntitiesInInitiativeViewModel.EntitiesInInitiative.Count;
+            if (count == 0) return;
+
+            if (TurnEntityIndex + 1 > count - 1) 
             {
                 TurnEntityIndex = 0;
             }
