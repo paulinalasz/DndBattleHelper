@@ -14,6 +14,7 @@ namespace DndBattleHelper.ViewModels
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private EntityListProvider _entityListProvider;
 
         public string SpeedOutput => GetSpeed();
 
@@ -68,7 +69,34 @@ namespace DndBattleHelper.ViewModels
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyInInitiativeViewModel(Enemy enemy) 
+        public ObservableCollection<EntityViewModel> AvailableEntities
+        {
+            get
+            {
+                if (_entityListProvider?.EntitiesInInitiativeViewModel?.EntitiesInInitiative != null)
+                {
+                    return _entityListProvider.EntitiesInInitiativeViewModel.EntitiesInInitiative;
+                }
+                return new ObservableCollection<EntityViewModel>();
+            }
+        }
+
+        private EntityViewModel _selectedEntity;
+        public EntityViewModel SelectedEntity
+        {
+            get => _selectedEntity;
+            set
+            {
+                _selectedEntity = value;
+                if (value != null)
+                {
+                    TargetArmourClass = value.ArmourClass;
+                }
+                OnPropertyChanged(nameof(SelectedEntity));
+            }
+        }
+
+        public EnemyInInitiativeViewModel(Enemy enemy, EntityListProvider entityListProvider = null) 
             : base(enemy)
         {
             SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows, "Saving Throws:");
@@ -90,6 +118,7 @@ namespace DndBattleHelper.ViewModels
 
             _targetArmourClassProvider = new TargetArmourClassProvider();
             _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+            _entityListProvider = entityListProvider;
 
             var entityActionsViewModelFactory = new EntityActionsViewModelFactory(
                 new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider));

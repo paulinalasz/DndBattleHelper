@@ -7,12 +7,15 @@ namespace DndBattleHelper.ViewModels
     public partial class AddNewEnemyViewModel : NewEnemyViewModel
     {
         private readonly EnemyFactory _enemyFactory;
+        private readonly EntityListProvider _entityListProvider;
 
         public AddNewEnemyViewModel(EnemyFactory enemyFactory,
-            Presets presets) 
+            Presets presets,
+            EntityListProvider entityListProvider = null) 
             : base(true, true, enemyFactory.CreateBlank(), presets)
         {
             _enemyFactory = enemyFactory;
+            _entityListProvider = entityListProvider;
             AddGroup = false;
             NumberInGroup = 5;
             SameInitiative = true;
@@ -64,7 +67,7 @@ namespace DndBattleHelper.ViewModels
                 LegendaryActionsDescription,
                 LairActionsDescription);
 
-            AddedEnemy = new EnemyInInitiativeViewModel(enemy);
+            AddedEnemy = new EnemyInInitiativeViewModel(enemy, _entityListProvider);
         }
 
         #region Add Group

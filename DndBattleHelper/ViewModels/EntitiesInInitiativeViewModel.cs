@@ -1,15 +1,21 @@
 ﻿using System.Collections.ObjectModel;
 using DndBattleHelper.Models;
+using DndBattleHelper.ViewModels.Providers;
 
 namespace DndBattleHelper.ViewModels
 {
     public class EntitiesInInitiativeViewModel : ViewModelBaseWithChildViewModels
     {
         public ObservableCollection<EntityViewModel> EntitiesInInitiative { get; set; }
+        public EntityListProvider EntityListProvider { get; }
 
         public EntitiesInInitiativeViewModel(ObservableCollection<EntityViewModel> entitiesInInitiative) : base(entitiesInInitiative)
         {
             EntitiesInInitiative = entitiesInInitiative;
+            EntityListProvider = new EntityListProvider
+            {
+                EntitiesInInitiativeViewModel = this
+            };
         }
 
         public void Add(EntityViewModel entity)
@@ -38,7 +44,7 @@ namespace DndBattleHelper.ViewModels
             {
                 if (entity is Enemy)
                 {
-                    Add(new EnemyInInitiativeViewModel((Enemy)entity));
+                    Add(new EnemyInInitiativeViewModel((Enemy)entity, EntityListProvider));
                 }
                 else
                 {
