@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Sand Elemental 1</Name>
+    <Health>166</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>40</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>20</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>21</Constitution>
+    <Intelligence>6</Intelligence>
+    <Wisdom>11</Wisdom>
+    <Charisma>6</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+    </DamageVurnerabilities>
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Blinded</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Seven</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Sand Camouflage</Name>
+        <Description>The elemental has advantage on Dexterity (Stealth) checks made to hide in sandy or desert environments.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sand Form</Name>
+        <Description> The elemental can burrow through sand, loose earth, and nonmagical terrain without disturbing it and without leaving any trace of its passage.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sandstorm Aura</Name>
+        <Description>The area within 10 feet of the elemental is heavily obscured for creatures other than the elemental. Creatures starting their turn in the aura take 5 (1d10) slashing damage from the abrasive sand.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The elemental makes two slam attacks.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage plus 3 (1d6) slashing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>5</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>8</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sand Blast</Name>
+        <Description>The elemental exhales a blast of scorching sand in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 28 (8d6) slashing damage on a failed save, or half as much damage on a successful one. The sand blast leaves a layer of coarse sand in the area, turning it into difficult terrain for every creature other than the elemental for 1 minute.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>8</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Sand Elemental 0</Name>
+    <Health>161</Health>
+    <VersionNumber>1.0.0</VersionNumber>
+    <ArmourClass>16</ArmourClass>
+    <Speed>40</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>20</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>21</Constitution>
+    <Intelligence>6</Intelligence>
+    <Wisdom>11</Wisdom>
+    <Charisma>6</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities>
+      <TraitOfDamageType>
+        <Type>Thunder</Type>
+      </TraitOfDamageType>
+    </DamageVurnerabilities>
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>NonMagical</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Blinded</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Petrified</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Unconscious</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Seven</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Sand Camouflage</Name>
+        <Description>The elemental has advantage on Dexterity (Stealth) checks made to hide in sandy or desert environments.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sand Form</Name>
+        <Description> The elemental can burrow through sand, loose earth, and nonmagical terrain without disturbing it and without leaving any trace of its passage.</Description>
+      </Ability>
+      <Ability>
+        <Name>Sandstorm Aura</Name>
+        <Description>The area within 10 feet of the elemental is heavily obscured for creatures other than the elemental. Creatures starting their turn in the aura take 5 (1d10) slashing damage from the abrasive sand.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The elemental makes two slam attacks.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Slam</Name>
+        <Description>Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage plus 3 (1d6) slashing damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>5</Value>
+            </ValueModifier>
+            <DamageType>Bludgeoning</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>8</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sand Blast</Name>
+        <Description>The elemental exhales a blast of scorching sand in a 30-foot cone. Each creature in that area must make a DC 16 Dexterity saving throw, taking 28 (8d6) slashing damage on a failed save, or half as much damage on a successful one. The sand blast leaves a layer of coarse sand in the area, turning it into difficult terrain for every creature other than the elemental for 1 minute.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>8</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Tortelini</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Roy</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Finigan</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Relic</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Elara</Name>
+    <Health>0</Health>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Bar</Name>
+    <Health>0</Health>
+  </Entity>
+</ArrayOfEntity>
