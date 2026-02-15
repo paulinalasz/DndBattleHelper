@@ -120,6 +120,83 @@ namespace DndBattleHelper.ViewModels.Editable
             }
         }
 
+        private bool _concentration;
+        public bool Concentration
+        {
+            get => _concentration;
+            set
+            {
+                _concentration = value;
+                OnPropertyChanged(nameof(Concentration));
+            }
+        }
+
+        private string _duration;
+        public string Duration
+        {
+            get => _duration;
+            set
+            {
+                _duration = value;
+                OnPropertyChanged(nameof(Duration));
+            }
+        }
+
+        private string _range;
+        public string Range
+        {
+            get => _range;
+            set
+            {
+                _range = value;
+                OnPropertyChanged(nameof(Range));
+            }
+        }
+
+        private bool _hasVerbalComponent;
+        public bool HasVerbalComponent
+        {
+            get => _hasVerbalComponent;
+            set
+            {
+                _hasVerbalComponent = value;
+                OnPropertyChanged(nameof(HasVerbalComponent));
+            }
+        }
+
+        private bool _hasSomaticComponent;
+        public bool HasSomaticComponent
+        {
+            get => _hasSomaticComponent;
+            set
+            {
+                _hasSomaticComponent = value;
+                OnPropertyChanged(nameof(HasSomaticComponent));
+            }
+        }
+
+        private bool _hasMaterialComponent;
+        public bool HasMaterialComponent
+        {
+            get => _hasMaterialComponent;
+            set
+            {
+                _hasMaterialComponent = value;
+                OnPropertyChanged(nameof(HasMaterialComponent));
+            }
+        }
+
+        private string _materialComponent;
+        public string MaterialComponent
+        {
+            get => _materialComponent;
+            set
+            {
+                _materialComponent = value;
+                OnPropertyChanged(nameof(MaterialComponent));
+            }
+        }
+
         protected override void CreateItem()
         {
             var damageRolls = EditDamageRollsViewModel.CopyNewModels();
@@ -132,7 +209,14 @@ namespace DndBattleHelper.ViewModels.Editable
                     HasModifier,
                     new Modifier(ToHitModifierViewModel.ModifierType, ToHitModifierViewModel.ModifierValue),
                     IsSpell,
-                    SelectedSpellSlot);
+                    SelectedSpellSlot,
+                    Concentration,
+                    Duration,
+                    Range,
+                    HasVerbalComponent,
+                    HasSomaticComponent,
+                    HasMaterialComponent,
+                    MaterialComponent);
 
             var newAction = _entityActionViewModelFactory.Create(action);
             EditableTraitViewModelsViewModel.EditableTraitViewModels.Add(new Traits.EditableTraitViewModel(newAction));
@@ -176,6 +260,13 @@ namespace DndBattleHelper.ViewModels.Editable
             ToHitModifierViewModel.ModifierType = 0;
             ToHitModifierViewModel.ModifierValue = 0;
             SelectedSpellSlot = 0;
+            Concentration = false;
+            Duration = "";
+            Range = "";
+            HasVerbalComponent = false;
+            HasSomaticComponent = false;
+            HasMaterialComponent = false;
+            MaterialComponent = "";
             EditDamageRollsViewModel.EditableTraitViewModelsViewModel.EditableTraitViewModels.Clear();
         }
 

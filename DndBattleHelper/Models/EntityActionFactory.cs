@@ -12,7 +12,14 @@ namespace DndBattleHelper.Models
         bool hasModifier,
         Modifier toHitModifier,
         bool isSpell,
-        SpellSlot spellSlot)
+        SpellSlot spellSlot,
+        bool concentration,
+        string duration,
+        string range,
+        bool hasVerbalComponent,
+        bool hasSomaticComponent,
+        bool hasMaterialComponent,
+        string materialComponent)
         {
             if (!isSpell && !hasModifier && !hasDamageRolls)
             {
@@ -32,11 +39,13 @@ namespace DndBattleHelper.Models
             }
             else if (isSpell && !hasModifier && !hasDamageRolls)
             {
-                return new NonDamagingSpell(name, description, actionCost, true, spellSlot);
+                return new NonDamagingSpell(name, description, actionCost, concentration, spellSlot,
+                    duration, range, hasVerbalComponent, hasSomaticComponent, hasMaterialComponent, materialComponent);
             }
             else if (isSpell && !hasModifier && hasDamageRolls)
             {
-                return new DamagingSpellWithSave(name, description, actionCost, true, spellSlot, damageRolls);
+                return new DamagingSpellWithSave(name, description, actionCost, concentration, spellSlot, damageRolls,
+                    duration, range, hasVerbalComponent, hasSomaticComponent, hasMaterialComponent, materialComponent);
             }
             else if (isSpell && hasModifier && !hasDamageRolls)
             {
@@ -44,7 +53,8 @@ namespace DndBattleHelper.Models
             }
             else if (isSpell && hasModifier && hasDamageRolls)
             {
-                return new SpellAttack(name, description, actionCost, true, damageRolls, toHitModifier, spellSlot);
+                return new SpellAttack(name, description, actionCost, concentration, damageRolls, toHitModifier, spellSlot,
+                    duration, range, hasVerbalComponent, hasSomaticComponent, hasMaterialComponent, materialComponent);
             }
             else
             {

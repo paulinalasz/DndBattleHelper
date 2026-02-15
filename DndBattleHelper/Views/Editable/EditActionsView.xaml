@@ -82,6 +82,44 @@
                 </Grid>
             </Grid>
 
+            <!-- Spell Details (visible only when Is Spell is checked) -->
+            <StackPanel Visibility="{Binding IsSpell, Converter={StaticResource BoolToVisConverter}}" Margin="5, 0, 5, 10">
+                <TextBlock Text="Spell Details" Style="{StaticResource TraitName}" Margin="0, 0, 0, 5"/>
+                <WrapPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="0, 0, 15, 5">
+                        <CheckBox IsChecked="{Binding Concentration}" VerticalContentAlignment="Center">
+                            <TextBlock Text="Concentration" Style="{StaticResource TraitName}" Margin="0"/>
+                        </CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0, 0, 15, 5">
+                        <TextBlock Text="Range: " Style="{StaticResource TraitName}" VerticalAlignment="Center"/>
+                        <TextBox Width="100" Text="{Binding Range, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0, 0, 15, 5">
+                        <TextBlock Text="Duration: " Style="{StaticResource TraitName}" VerticalAlignment="Center"/>
+                        <TextBox Width="120" Text="{Binding Duration, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </WrapPanel>
+
+                <WrapPanel Orientation="Horizontal" Margin="0, 5, 0, 0">
+                    <TextBlock Text="Components: " Style="{StaticResource TraitName}" VerticalAlignment="Center" Margin="0, 0, 5, 0"/>
+                    <CheckBox IsChecked="{Binding HasVerbalComponent}" VerticalContentAlignment="Center" Margin="0, 0, 10, 0">
+                        <TextBlock Text="V" Style="{StaticResource TraitName}" Margin="0"/>
+                    </CheckBox>
+                    <CheckBox IsChecked="{Binding HasSomaticComponent}" VerticalContentAlignment="Center" Margin="0, 0, 10, 0">
+                        <TextBlock Text="S" Style="{StaticResource TraitName}" Margin="0"/>
+                    </CheckBox>
+                    <CheckBox IsChecked="{Binding HasMaterialComponent}" VerticalContentAlignment="Center" Margin="0, 0, 5, 0">
+                        <TextBlock Text="M" Style="{StaticResource TraitName}" Margin="0"/>
+                    </CheckBox>
+                    <TextBox Width="200" Text="{Binding MaterialComponent, UpdateSourceTrigger=PropertyChanged}" 
+                             Visibility="{Binding HasMaterialComponent, Converter={StaticResource BoolToVisConverter}}"
+                             Margin="5, 0, 0, 0"/>
+                </WrapPanel>
+            </StackPanel>
+
             <TextBlock Style="{StaticResource Error}" Text="{Binding VerificationError}" Visibility="{Binding IsVerificationErrorVisible, Converter={StaticResource BoolToVisConverter}}"/>
 
             <local:EditableTraitsView Grid.Row="2" DataContext="{Binding EditableTraitViewModelsViewModel}"/>
