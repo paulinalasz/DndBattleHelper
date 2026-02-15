@@ -28,12 +28,13 @@
                     <Image>
                         <Image.Style>
                             <Style TargetType="Image">
+                                <Setter Property="Source" Value="{StaticResource TakeActionDrawingImage}" />
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding ViewModelType}" Value="AttackActionViewModel">
                                         <Setter Property="Source" Value="{StaticResource RollToHitAndDamageDrawingImage}" />
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding ViewModelType}" Value="EntityActionViewModel">
-                                        <Setter Property="Source" Value="{StaticResource TakeActionDrawingImage}" />
+                                    <DataTrigger Binding="{Binding ViewModelType}" Value="SpellAttackViewModel">
+                                        <Setter Property="Source" Value="{StaticResource RollToHitAndDamageDrawingImage}" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>

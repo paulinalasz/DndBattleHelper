@@ -5,7 +5,6 @@ using DndBattleHelper.Models;
 using DndBattleHelper.ViewModels.Providers;
 using DndBattleHelper.ViewModels.Editable.Actions;
 using DndBattleHelper.ViewModels.Editable.Traits;
-using DndBattleHelper.Models.ActionTypes;
 using DndBattleHelper.ViewModels.Editable;
 
 namespace DndBattleHelper.ViewModels
@@ -209,11 +208,11 @@ namespace DndBattleHelper.ViewModels
         {
             foreach (var action in actions)
             {
-                if (action is ISpell)
+                if (action is ISpellViewModel)
                 {
                     action.ActionTaken += () =>
                     {
-                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpell)action).SpellSlot);
+                        var spellSlot = SpellSlots.FirstOrDefault(slot => slot.SpellSlotLevel == ((ISpellViewModel)action).SpellSlot);
 
                         if (spellSlot != null && spellSlot.NumberLeft > 0)
                         {

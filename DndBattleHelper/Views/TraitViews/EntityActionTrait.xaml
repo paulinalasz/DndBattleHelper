@@ -9,10 +9,13 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
     </UserControl.Resources>
-    <Grid>
+    <StackPanel>
         <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap">
             <Run FontWeight="Bold" Style="{StaticResource ActionName}" Text="{Binding Name}"/>
             <Run Text="{Binding Description}"/>
         </TextBlock>
-    </Grid>
+        <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" FontStyle="Italic" Margin="0, 0, 0, 2"
+                   Text="{Binding SpellInfoText}" 
+                   Visibility="{Binding IsSpellInfoVisible, Converter={StaticResource BoolToVisConverter}, FallbackValue=Collapsed}"/>
+    </StackPanel>
 </UserControl>

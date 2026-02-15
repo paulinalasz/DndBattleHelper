@@ -1,6 +1,8 @@
-﻿namespace DndBattleHelper.Models.ActionTypes
+using DndBattleHelper.Models;
+
+namespace DndBattleHelper.ViewModels.Editable.Actions
 {
-    public interface ISpell
+    public interface ISpellViewModel
     {
         public bool Concentration { get; set; }
         public SpellSlot SpellSlot { get; set; }
@@ -10,5 +12,7 @@
         public bool HasSomaticComponent { get; set; }
         public bool HasMaterialComponent { get; set; }
         public string MaterialComponent { get; set; }
+        public string SpellInfoText { get; }
+        public bool IsSpellInfoVisible { get; }
     }
 }
