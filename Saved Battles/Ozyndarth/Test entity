@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name />
+    <Health>0</Health>
+    <ArmourClass>10</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>damaging action</Name>
+        <Description>test</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>ToHitAction</Name>
+        <Description>dsafd</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>1</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction>
+        <Name>actiuon</Name>
+        <Description>asdfa</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="NonDamagingSpell">
+        <Name>spell action</Name>
+        <Description>asdfa</Description>
+        <ActionCost>MainAction</ActionCost>
+        <Concentration>false</Concentration>
+        <SpellSlot>Cantrip</SpellSlot>
+        <Duration />
+        <Range />
+        <HasVerbalComponent>false</HasVerbalComponent>
+        <HasSomaticComponent>false</HasSomaticComponent>
+        <HasMaterialComponent>false</HasMaterialComponent>
+        <MaterialComponent />
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>spell to hit</Name>
+        <Description>asdfsdf</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+        <Concentration>false</Concentration>
+        <SpellSlot>Cantrip</SpellSlot>
+        <Duration />
+        <Range />
+        <HasVerbalComponent>false</HasVerbalComponent>
+        <HasSomaticComponent>false</HasSomaticComponent>
+        <HasMaterialComponent>false</HasMaterialComponent>
+        <MaterialComponent />
+      </EntityAction>
+      <EntityAction xsi:type="DamagingSpellWithSave">
+        <Name>SpellDamaging</Name>
+        <Description>asdfasdf</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <Concentration>false</Concentration>
+        <SpellSlot>Cantrip</SpellSlot>
+        <Duration />
+        <Range />
+        <HasVerbalComponent>false</HasVerbalComponent>
+        <HasSomaticComponent>false</HasSomaticComponent>
+        <HasMaterialComponent>false</HasMaterialComponent>
+        <MaterialComponent />
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+</ArrayOfEntity>
