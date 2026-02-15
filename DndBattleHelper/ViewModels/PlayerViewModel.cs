@@ -13,7 +13,7 @@ namespace DndBattleHelper.ViewModels
 
         public override Player CopyModel()
         {
-            return new Player(Name, Initiative, Health);
+            return new Player(Name, Initiative, Health, ArmourClass);
         }
     }
 }

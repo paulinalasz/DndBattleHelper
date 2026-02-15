@@ -8,13 +8,13 @@ namespace DndBattleHelper.Models
 {
     public class Player : Entity
     {
-        public Player(string name, int initiative, int health) : base(initiative, name, health) { }
+        public Player(string name, int initiative, int health, int armourClass) : base(initiative, name, health, armourClass) { }
 
         public Player() { }
 
         public Player Copy()
         {
-            return new Player(Name, Initiative, Health);
+            return new Player(Name, Initiative, Health, ArmourClass);
         }
     }
 }

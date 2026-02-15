@@ -14,6 +14,7 @@ namespace DndBattleHelper.ViewModels
     {
         private TargetArmourClassProvider _targetArmourClassProvider;
         private AdvantageDisadvantageProvider _advantageDisadvantageProvider;
+        private EntityListProvider _entityListProvider;
 
         public string SpeedOutput => GetSpeed();
 
@@ -56,6 +57,17 @@ namespace DndBattleHelper.ViewModels
         public EntityActionsViewModel LegendaryActions { get; }
         public EntityActionsViewModel LairActions { get; }
 
+        private bool _isEntitySelected;
+        public bool IsEntitySelected
+        {
+            get => _isEntitySelected;
+            set
+            {
+                _isEntitySelected = value;
+                OnPropertyChanged(nameof(IsEntitySelected));
+            }
+        }
+
         public int TargetArmourClass
         {
             get { return _targetArmourClassProvider.TargetArmourClass; }
@@ -63,12 +75,46 @@ namespace DndBattleHelper.ViewModels
             {
                 _targetArmourClassProvider.TargetArmourClass = value;
                 OnPropertyChanged(nameof(TargetArmourClass));
+
+                _selectedEntity = null;
+                IsEntitySelected = false;
+                OnPropertyChanged(nameof(SelectedEntity));
             }
         }
 
         public OutputBoxViewModel OutputBox { get; set; }
 
-        public EnemyInInitiativeViewModel(Enemy enemy) 
+        public ObservableCollection<EntityViewModel> AvailableEntities
+        {
+            get
+            {
+                if (_entityListProvider?.EntitiesInInitiativeViewModel?.EntitiesInInitiative != null)
+                {
+                    return _entityListProvider.EntitiesInInitiativeViewModel.EntitiesInInitiative;
+                }
+                return new ObservableCollection<EntityViewModel>();
+            }
+        }
+
+        private EntityViewModel _selectedEntity;
+        public EntityViewModel SelectedEntity
+        {
+            get => _selectedEntity;
+            set
+            {
+                _selectedEntity = value;
+                IsEntitySelected = value != null;
+
+                if (value != null)
+                {
+                    _targetArmourClassProvider.TargetArmourClass = value.ArmourClass;
+                    OnPropertyChanged(nameof(TargetArmourClass));
+                }
+                OnPropertyChanged(nameof(SelectedEntity));
+            }
+        }
+
+        public EnemyInInitiativeViewModel(Enemy enemy, EntityListProvider entityListProvider = null) 
             : base(enemy)
         {
             SavingThrows = new TraitsWithModifierViewModel<AbilityScoreType>(enemy.SavingThrows, "Saving Throws:");
@@ -90,6 +136,7 @@ namespace DndBattleHelper.ViewModels
 
             _targetArmourClassProvider = new TargetArmourClassProvider();
             _advantageDisadvantageProvider = new AdvantageDisadvantageProvider();
+            _entityListProvider = entityListProvider;
 
             var entityActionsViewModelFactory = new EntityActionsViewModelFactory(
                 new EntityActionViewModelFactory(_targetArmourClassProvider, _advantageDisadvantageProvider));
