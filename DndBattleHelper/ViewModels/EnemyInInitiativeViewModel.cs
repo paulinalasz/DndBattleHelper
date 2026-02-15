@@ -57,6 +57,17 @@ namespace DndBattleHelper.ViewModels
         public EntityActionsViewModel LegendaryActions { get; }
         public EntityActionsViewModel LairActions { get; }
 
+        private bool _isEntitySelected;
+        public bool IsEntitySelected
+        {
+            get => _isEntitySelected;
+            set
+            {
+                _isEntitySelected = value;
+                OnPropertyChanged(nameof(IsEntitySelected));
+            }
+        }
+
         public int TargetArmourClass
         {
             get { return _targetArmourClassProvider.TargetArmourClass; }
@@ -64,6 +75,10 @@ namespace DndBattleHelper.ViewModels
             {
                 _targetArmourClassProvider.TargetArmourClass = value;
                 OnPropertyChanged(nameof(TargetArmourClass));
+
+                _selectedEntity = null;
+                IsEntitySelected = false;
+                OnPropertyChanged(nameof(SelectedEntity));
             }
         }
 
@@ -88,9 +103,12 @@ namespace DndBattleHelper.ViewModels
             set
             {
                 _selectedEntity = value;
+                IsEntitySelected = value != null;
+
                 if (value != null)
                 {
-                    TargetArmourClass = value.ArmourClass;
+                    _targetArmourClassProvider.TargetArmourClass = value.ArmourClass;
+                    OnPropertyChanged(nameof(TargetArmourClass));
                 }
                 OnPropertyChanged(nameof(SelectedEntity));
             }
