@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Red Worm</Name>
+  <Health>247</Health>
+  <ArmourClass>15</ArmourClass>
+  <VersionNumber>1.0.0</VersionNumber>
+  <Speed>50</Speed>
+  <FlySpeed>0</FlySpeed>
+  <SwimSpeed>0</SwimSpeed>
+  <ClimbSpeed>0</ClimbSpeed>
+  <BurrowSpeed>0</BurrowSpeed>
+  <Strength>28</Strength>
+  <Dexterity>7</Dexterity>
+  <Constitution>22</Constitution>
+  <Intelligence>1</Intelligence>
+  <Wisdom>8</Wisdom>
+  <Charisma>4</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SpellSaveDC>15</SpellSaveDC>
+  <SavingThrows>
+    <TraitWithModifierOfAbilityScoreType>
+      <Type>Constitution</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>11</Value>
+      </Modifier>
+    </TraitWithModifierOfAbilityScoreType>
+    <TraitWithModifierOfAbilityScoreType>
+      <Type>Wisdom</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>4</Value>
+      </Modifier>
+    </TraitWithModifierOfAbilityScoreType>
+  </SavingThrows>
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities />
+  <ConditionImmunities />
+  <Skills />
+  <Senses>
+    <TraitWithValueOfSenseType>
+      <Type>Blindsight</Type>
+      <Value>30</Value>
+    </TraitWithValueOfSenseType>
+    <TraitWithValueOfSenseType>
+      <Type>Tremoresense</Type>
+      <Value>60</Value>
+    </TraitWithValueOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>9</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Tunneler</Name>
+      <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Bite</Name>
+      <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 15), and it has the Restrained condition until the grapple ends.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>9</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>10</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Tail Stinger</Name>
+      <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+        <DamageRoll>
+          <NumberOfDice>6</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Poison</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>10</Value>
+      </ToHit>
+    </EntityAction>
+  </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
+  <HealthRoll>
+    <NumberOfDice>8</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>30</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>3</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

@@ -1,11 +1,11 @@
-﻿<Window x:Class="DndBattleHelper.Views.AddNewPlayerView"
+<Window x:Class="DndBattleHelper.Views.EditPlayerView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DndBattleHelper.Views"
         mc:Ignorable="d"
-        Title="Add New Player" Height="200" Width="300" MinHeight="200" MinWidth="300">
+        Title="Edit Player" Height="200" Width="300" MinHeight="200" MinWidth="300">
     <Grid Background="{DynamicResource DndBeige}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -13,12 +13,8 @@
         </Grid.RowDefinitions>
         <local:NewPlayerView Grid.Row="0"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button ToolTip="Add player" Style="{StaticResource Confirm}" Command="{Binding AddCommand}">
-                <Viewbox>
-                    <Image Source="{StaticResource ConfirmDrawingImage}"/>
-                </Viewbox>
-            </Button>
-            <Button ToolTip="Cancel add player" Style="{StaticResource Cancel}" Command="{Binding CancelCommand}">
+            <Button ToolTip="Edit player" Command="{Binding EditCommand}" Style="{StaticResource Confirm}" Content="Edit"/>
+            <Button ToolTip="Cancel edit player" Style="{StaticResource Cancel}" Command="{Binding CancelCommand}">
                 <Viewbox>
                     <Image Source="{StaticResource CancelDrawingImage}"/>
                 </Viewbox>

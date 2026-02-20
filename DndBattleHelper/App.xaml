@@ -30,6 +30,7 @@
                 <ResourceDictionary Source="Icons\RollDie.xaml"/>
                 <ResourceDictionary Source="Icons\ApplyPreset.xaml"/>
                 <ResourceDictionary Source="Icons\ResetSpellSlots.xaml"/>
+                <ResourceDictionary Source="Icons\Edit.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
