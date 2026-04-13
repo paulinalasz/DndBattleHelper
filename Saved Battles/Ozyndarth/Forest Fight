@@ -1,0 +1,1747 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>24</Initiative>
+    <Name>Rogue - Level 17</Name>
+    <Health>0</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>20</Dexterity>
+    <Constitution>20</Constitution>
+    <Intelligence>18</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Dexterity</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Intelligence</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Cunning Action</Name>
+        <Description>Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.</Description>
+      </Ability>
+      <Ability>
+        <Name>Steady Aim</Name>
+        <Description>At 3rd level, as a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you haven't moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn.</Description>
+      </Ability>
+      <Ability>
+        <Name>Uncanny Dodge</Name>
+        <Description>Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.</Description>
+      </Ability>
+      <Ability>
+        <Name>Evasion</Name>
+        <Description>Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an Ice Storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</Description>
+      </Ability>
+      <Ability>
+        <Name>Reliable Talent</Name>
+        <Description>By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.</Description>
+      </Ability>
+      <Ability>
+        <Name>Blindsense</Name>
+        <Description>Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.</Description>
+      </Ability>
+      <Ability>
+        <Name>Cunning Strike</Name>
+        <Description>You have developed cunning ways to use your Sneak Attack. When you deal Sneak Attack damage, you can add one of the following Cunning Strike effects. Each effect has a die cost, which is the number of Sneak Attack damage dice you must forgo to add the effect. You remove the die before rolling, and the effect occurs immediately after the attack’s damage is dealt. For example, if you add the Poison effect, remove 1d6 from the Sneak Attack’s damage before rolling.If a Cunning Strike effect requires a saving throw, the DC equals 8 plus your Dexterity modifier and Proficiency Bonus.Poison (Cost: 1d6). You add a toxin to your strike, forcing the target to make a Constitution saving throw. On a failed save, the target has the Poisoned condition for 1 minute. At the end of each of its turns, the Poisoned target repeats the save, ending the effect on itself on a success.Trip (Cost: 1d6). If the target is Large or smaller, it must succeed on a Dexterity saving throw or have the Prone condition.Withdraw (Cost: 1d6). Immediately after the attack, you move up to half your Speed without provoking Opportunity Attacks.</Description>
+      </Ability>
+      <Ability>
+        <Name>Reliable Talent</Name>
+        <Description>Whenever you make an ability check that uses one of your skill or tool proficiencies, you can treat a d20 roll of 9 or lower as a 10</Description>
+      </Ability>
+      <Ability>
+        <Name>Imrpoved Cunning Strike</Name>
+        <Description>You can use up to two Cunning Strike effects when you deal Sneak Attack damage, paying the die cost for each effect.</Description>
+      </Ability>
+      <Ability>
+        <Name>Devious Strikes</Name>
+        <Description>Daze (Cost: 2d6). The target must succeed on a Constitution saving throw, or on its next turn, it can do only one of the following: move or take an action or a Bonus Action. Knock Out (Cost: 6d6). The target must succeed on a Constitution saving throw, or it has the Unconscious condition for 1 minute or until it takes any damage. The Unconscious target can repeat the save at the end of each of its turns, ending the effect on itself on a success. Obscure (Cost: 3d6). The target must succeed on a Dexterity saving throw, or it has the Blinded condition until the end of its next turn.</Description>
+      </Ability>
+      <Ability>
+        <Name>Assassinate</Name>
+        <Description>Initiative. You have Advantage on Initiative rolls. Surprising Strikes. During the first round of each combat, you have Advantage on attack rolls against any creature that hasn’t taken a turn. If your Sneak Attack hits any target during that round, the target takes extra damage of the weapon’s type equal to your Rogue level.</Description>
+      </Ability>
+      <Ability>
+        <Name>Infiltrate</Name>
+        <Description>You are expert at posing as someone else to aid your infiltrations. While in a disguise created using your Disguise Kit, you have Advantage on any Charisma (Deception) check you make while pretending to be someone else. You can also unerringly mimic another person’s speech, handwriting, or both if you have spent at least one hour studying each one.</Description>
+      </Ability>
+      <Ability>
+        <Name>Envenom Weapons</Name>
+        <Description>When you use the Poison option of your Cunning Strike, the target also takes 2d6 Poison damage whenever it fails the saving throw. This damage ignores resistance to Poison damage.</Description>
+      </Ability>
+      <Ability>
+        <Name>Death Strike</Name>
+        <Description>When you hit with your Sneak Attack on the first round of a combat, the target must succeed on a Constitution saving throw (DC 8 + your Dexterity modifier + your Proficiency Bonus), or the attack’s damage is doubled against the target.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sneak Attack</Name>
+        <Description>You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>9</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Longbow </Name>
+        <Description>1d8 + 8</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Knock out sneak attack</Name>
+        <Description>The target must succeed on a Constitution saving throw, or it has the Unconscious condition for 1 minute or until it takes any damage. The Unconscious target can repeat the save at the end of each of its turns, ending the effect on itself on a success.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Daze</Name>
+        <Description>The target must succeed on a Constitution saving throw, or on its next turn, it can do only one of the following: move or take an action or a Bonus Action.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>7</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Obscure</Name>
+        <Description>The target must succeed on a Dexterity saving throw, or it has the Blinded condition until the end of its next turn.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>6</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Poison / Trip /Widthdraw</Name>
+        <Description>one of those</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>8</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>18</Initiative>
+    <Name>Dracolith Tree</Name>
+    <Health>256</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>27</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>25</Constitution>
+    <Intelligence>16</Intelligence>
+    <Wisdom>13</Wisdom>
+    <Charisma>23</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Dexterity</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>6</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>7</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances>
+      <TraitOfDamageType>
+        <Type>Necrotic</Type>
+      </TraitOfDamageType>
+    </DamageResistances>
+    <DamageImmunities>
+      <TraitOfDamageType>
+        <Type>Necrotic</Type>
+      </TraitOfDamageType>
+    </DamageImmunities>
+    <ConditionImmunities>
+      <TraitOfCondition>
+        <Type>Charmed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Exhaustion</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Frightened</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Paralyzed</Type>
+      </TraitOfCondition>
+      <TraitOfCondition>
+        <Type>Poisoned</Type>
+      </TraitOfCondition>
+    </ConditionImmunities>
+    <Skills>
+      <TraitWithModifierOfSkillType>
+        <Type>Perception</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>12</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+      <TraitWithModifierOfSkillType>
+        <Type>Stealth</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>6</Value>
+        </Modifier>
+      </TraitWithModifierOfSkillType>
+    </Skills>
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Darkvision</Type>
+        <Value>120</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>23</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Seventeen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Soul Gem</Name>
+        <Description>The dracolich has a magical gem. If the dracolich is destroyed while the gem is on the same plane of existence as it, the dracolich gains a new body in 1d20 days, regaining all its Hit Points and appearing within 5 feet of the gem. The gem is a Tiny object that has AC 20; HP 50; and Immunity to Necrotic, Poison, and Psychic damage. The gem regains all its Hit Points at the end of every turn, but it turns to dust if reduced to 0 Hit Points. If the gem is destroyed, the dracolich can create a new one by completing an 8-hour ritual using a gem worth 1,000+ GP and by expending 5,000 GP, which the ritual consumes.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>MultiAttack</Name>
+        <Description>The dracolich makes three Rend attacks. It can replace one attack with a use of Spellcasting to cast Ray of Sickness (level 2 version).</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Rend</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 18 (2d10 + 7) Slashing damage plus 4 (1d8) Necrotic damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>7</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Necrotic Breath</Name>
+        <Description> Constitution Saving Throw: DC 21, each creature in a 60-foot Cone. Failure: 59 (17d6) Necrotic damage. Success: Half damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>17</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+      <EntityAction>
+        <Name>Spellcasting</Name>
+        <Description> The dracolich casts one of the following spells, requiring no Material components and using Charisma as the spellcasting ability (spell save DC 19, +11 to hit with spell attacks): At will: Detect Magic, Ray of Sickness (level 2 version)</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="SpellAttack">
+        <Name>Ray of Sickness</Name>
+        <Description>A ray of sickening greenish energy lashes out toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </ToHit>
+        <Concentration>false</Concentration>
+        <SpellSlot>Cantrip</SpellSlot>
+        <Duration />
+        <Range />
+        <HasVerbalComponent>false</HasVerbalComponent>
+        <HasSomaticComponent>false</HasSomaticComponent>
+        <HasMaterialComponent>false</HasMaterialComponent>
+        <MaterialComponent />
+      </EntityAction>
+      <EntityAction>
+        <Name>Pounce</Name>
+        <Description>Pounce. The dracolich moves up to half its Speed, and it makes one Rend attack.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction>
+        <Name>Sickening Ray</Name>
+        <Description>The dracolich uses Spellcasting to cast Ray of Sickness (level 2 version). The dracolich can't take this action again until the start of its next turn.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Terrifying Presence</Name>
+        <Description>Wisdom Saving Throw: DC 21, each creature in a 30-foot Emanation originating from the dracolich. Failure: 11 (2d10) Psychic damage, and the target has the Frightened condition until the end of its next turn. Failure or Success: The dracolich can't take this action again until the start of its next turn.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>10</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Psychic</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription>Legendary Action Uses: 3 (4 in Lair). Immediately after another creature's turn, the dracolich can expend a use to take one of the following actions. The dracolich regains all expended uses at the start of each of its turns.</LegendaryActionsDescription>
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 3</Name>
+    <Health>9</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 5</Name>
+    <Health>5</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 6</Name>
+    <Health>6</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 4</Name>
+    <Health>1</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 2</Name>
+    <Health>6</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 1</Name>
+    <Health>1</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>10</Initiative>
+    <Name>Tree evil 0</Name>
+    <Health>7</Health>
+    <ArmourClass>20</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>0</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Vine Whip</Name>
+        <Description>2 vine whips</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>8</Value>
+            </ValueModifier>
+            <DamageType>Slashing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Sap</Name>
+        <Description>If a trees vine gets cut, it produces a sap that falls on the floor / on person. Dex save 4d6 acid damage and the person is stuck. DC 16 to get out </Description>
+        <ActionCost>Reaction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Elara</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Tortellini</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Roy</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Finnigan</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Relic</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>0</Initiative>
+    <Name>Rune 2</Name>
+    <Health>6</Health>
+    <ArmourClass>10</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>rune attack</Name>
+        <Description>Dc dex 12 to jump out of way</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>7</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>30</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>0</NumberOfDice>
+            <DiceBase>0</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Bar</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>0</Initiative>
+    <Name>Rune 1</Name>
+    <Health>2</Health>
+    <ArmourClass>10</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>rune attack</Name>
+        <Description>Dc dex 12 to jump out of way</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>7</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>30</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>0</NumberOfDice>
+            <DiceBase>0</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>0</Initiative>
+    <Name>Rune 0</Name>
+    <Health>2</Health>
+    <ArmourClass>10</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>30</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>10</Strength>
+    <Dexterity>10</Dexterity>
+    <Constitution>10</Constitution>
+    <Intelligence>10</Intelligence>
+    <Wisdom>10</Wisdom>
+    <Charisma>10</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows />
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses />
+    <PassivePerception>
+      <Value>10</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>One</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities />
+    <Actions>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>rune attack</Name>
+        <Description>Dc dex 12 to jump out of way</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>7</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>30</Value>
+            </ValueModifier>
+            <DamageType>Necrotic</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>0</NumberOfDice>
+            <DiceBase>0</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+</ArrayOfEntity>

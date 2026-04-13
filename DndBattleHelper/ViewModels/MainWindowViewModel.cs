@@ -27,6 +27,11 @@ namespace DndBattleHelper.ViewModels
 
             EntitiesInInitiativeViewModel = new EntitiesInInitiativeViewModel(new ObservableCollection<EntityViewModel>());
 
+            EntitiesInInitiativeViewModel.EntityEditRequested = (entity) =>
+            {
+                EditEntity(entity);
+            };
+
             TurnEntityIndex = 0;
             SelectedTab = -1;
         }
@@ -262,6 +267,61 @@ namespace DndBattleHelper.ViewModels
             };
 
             bool? result = _dialogService.ShowDialog(addNewEnemyPresetViewModel);
+        }
+
+        public void EditEntity(EntityViewModel entity)
+        {
+            if (entity is EnemyInInitiativeViewModel enemyViewModel)
+            {
+                EditEnemy(enemyViewModel);
+            }
+            else if (entity is PlayerViewModel playerViewModel)
+            {
+                EditPlayer(playerViewModel);
+            }
+        }
+
+        public void EditEnemy(EnemyInInitiativeViewModel enemyViewModel)
+        {
+            var enemyModel = (Enemy)enemyViewModel.CopyModel();
+            var editEnemyViewModel = new EditEnemyViewModel(_enemyFactory, _presets, enemyModel, EntitiesInInitiativeViewModel.EntityListProvider);
+
+            editEnemyViewModel.Edited += () =>
+            {
+                var wasMyTurn = enemyViewModel.IsMyTurn;
+                var oldIndex = EntitiesInInitiativeViewModel.EntitiesInInitiative.IndexOf(enemyViewModel);
+
+                EntitiesInInitiativeViewModel.Remove(enemyViewModel);
+                EntitiesInInitiativeViewModel.Add(editEnemyViewModel.EditedEnemy);
+
+                if (wasMyTurn)
+                {
+                    editEnemyViewModel.EditedEnemy.IsMyTurn = true;
+                    var newIndex = EntitiesInInitiativeViewModel.EntitiesInInitiative.IndexOf(editEnemyViewModel.EditedEnemy);
+                    _turnEntityIndex = newIndex;
+                    SelectedTab = newIndex;
+                    OnPropertyChanged(nameof(TurnEntityIndex));
+                    OnPropertyChanged(nameof(InitiativeCount));
+                }
+            };
+
+            var result = _dialogService.ShowDialog(editEnemyViewModel);
+            OnPropertyChanged(string.Empty);
+        }
+
+        public void EditPlayer(PlayerViewModel playerViewModel)
+        {
+            var editPlayerViewModel = new EditPlayerViewModel(playerViewModel);
+
+            editPlayerViewModel.Edited += () =>
+            {
+                playerViewModel.Name = editPlayerViewModel.Name;
+                playerViewModel.Initiative = editPlayerViewModel.Initiative;
+                playerViewModel.ArmourClass = editPlayerViewModel.ArmourClass;
+            };
+
+            var result = _dialogService.ShowDialog(editPlayerViewModel);
+            OnPropertyChanged(string.Empty);
         }
         #endregion
     }

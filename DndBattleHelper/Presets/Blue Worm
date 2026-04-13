@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-16"?>
+<EnemyPreset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Initiative>10</Initiative>
+  <Name>Blue Worm</Name>
+  <Health>200</Health>
+  <ArmourClass>16</ArmourClass>
+  <VersionNumber>1.0.0</VersionNumber>
+  <Speed>50</Speed>
+  <FlySpeed>0</FlySpeed>
+  <SwimSpeed>0</SwimSpeed>
+  <ClimbSpeed>0</ClimbSpeed>
+  <BurrowSpeed>50</BurrowSpeed>
+  <Strength>28</Strength>
+  <Dexterity>7</Dexterity>
+  <Constitution>22</Constitution>
+  <Intelligence>1</Intelligence>
+  <Wisdom>8</Wisdom>
+  <Charisma>4</Charisma>
+  <IsSpellCaster>false</IsSpellCaster>
+  <SpellSlots>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot1</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot2</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot3</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot4</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot5</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot6</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot7</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot8</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+    <SpellSlotAvailability>
+      <SpellSlotLevel>Slot9</SpellSlotLevel>
+      <Available>0</Available>
+      <NumberLeft>0</NumberLeft>
+    </SpellSlotAvailability>
+  </SpellSlots>
+  <SpellSaveDC>15</SpellSaveDC>
+  <SavingThrows>
+    <TraitWithModifierOfAbilityScoreType>
+      <Type>Constitution</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>11</Value>
+      </Modifier>
+    </TraitWithModifierOfAbilityScoreType>
+    <TraitWithModifierOfAbilityScoreType>
+      <Type>Wisdom</Type>
+      <Modifier>
+        <Type>Plus</Type>
+        <Value>4</Value>
+      </Modifier>
+    </TraitWithModifierOfAbilityScoreType>
+  </SavingThrows>
+  <DamageVurnerabilities />
+  <DamageResistances />
+  <DamageImmunities />
+  <ConditionImmunities />
+  <Skills />
+  <Senses>
+    <TraitWithValueOfSenseType>
+      <Type>Blindsight</Type>
+      <Value>30</Value>
+    </TraitWithValueOfSenseType>
+    <TraitWithValueOfSenseType>
+      <Type>Tremoresense</Type>
+      <Value>60</Value>
+    </TraitWithValueOfSenseType>
+  </Senses>
+  <PassivePerception>
+    <Value>9</Value>
+  </PassivePerception>
+  <Languages />
+  <ChallengeRating>
+    <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+  </ChallengeRating>
+  <Abilities>
+    <Ability>
+      <Name>Tunneler</Name>
+      <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+    </Ability>
+  </Abilities>
+  <Actions>
+    <EntityAction>
+      <Name>Multiattack</Name>
+      <Description>The worm makes one Bite attack and one Tail Stinger attack.</Description>
+      <ActionCost>MainAction</ActionCost>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Bite</Name>
+      <Description>Melee Attack Roll: +12, reach 10 ft. Hit: 22 (2d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 18), and it has the Restrained condition until the grapple ends.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>2</NumberOfDice>
+          <DiceBase>8</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>9</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>12</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="AttackAction">
+      <Name>Tail Stinger</Name>
+      <Description>Melee Attack Roll: +12, reach 10 ft. Hit: 16 (1d6 + 9) Piercing damage plus  (7d6) Poison damage.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>1</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Plus</Type>
+            <Value>9</Value>
+          </ValueModifier>
+          <DamageType>Piercing</DamageType>
+        </DamageRoll>
+        <DamageRoll>
+          <NumberOfDice>7</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Poison</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+      <ToHit>
+        <Type>Plus</Type>
+        <Value>12</Value>
+      </ToHit>
+    </EntityAction>
+    <EntityAction xsi:type="DamagingAction">
+      <Name>Swallow</Name>
+      <Description>Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.</Description>
+      <ActionCost>MainAction</ActionCost>
+      <DamageRolls>
+        <DamageRoll>
+          <NumberOfDice>4</NumberOfDice>
+          <DiceBase>6</DiceBase>
+          <ValueModifier>
+            <Type>Neutral</Type>
+            <Value>0</Value>
+          </ValueModifier>
+          <DamageType>Acid</DamageType>
+        </DamageRoll>
+      </DamageRolls>
+    </EntityAction>
+  </Actions>
+  <LegendaryActionsDescription />
+  <LairActionsDescription />
+  <HealthRoll>
+    <NumberOfDice>10</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>50</Value>
+    </ValueModifier>
+  </HealthRoll>
+  <InitiativeRoll>
+    <NumberOfDice>1</NumberOfDice>
+    <DiceBase>20</DiceBase>
+    <ValueModifier>
+      <Type>Plus</Type>
+      <Value>3</Value>
+    </ValueModifier>
+  </InitiativeRoll>
+</EnemyPreset>

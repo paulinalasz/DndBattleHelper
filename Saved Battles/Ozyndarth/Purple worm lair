@@ -1,0 +1,1477 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entity xsi:type="Enemy">
+    <Initiative>23</Initiative>
+    <Name>Purple Worm 2</Name>
+    <Health>247</Health>
+    <ArmourClass>18</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 19), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Swallow</Name>
+        <Description>Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.</Description>
+        <ActionCost>BonusAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>5</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>23</Initiative>
+    <Name>Purple Worm 1</Name>
+    <Health>151</Health>
+    <ArmourClass>18</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 19), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Swallow</Name>
+        <Description>Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.</Description>
+        <ActionCost>BonusAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>5</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>23</Initiative>
+    <Name>Purple Worm 0</Name>
+    <Health>165</Health>
+    <ArmourClass>18</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 19), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>3</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>10</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>14</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Swallow</Name>
+        <Description>Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.</Description>
+        <ActionCost>BonusAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>5</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>22</Initiative>
+    <Name>Red Worm 2</Name>
+    <Health>101</Health>
+    <ArmourClass>15</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 15), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>6</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>22</Initiative>
+    <Name>Red Worm 1</Name>
+    <Health>123</Health>
+    <ArmourClass>15</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 15), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>6</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>22</Initiative>
+    <Name>Red Worm 0</Name>
+    <Health>93</Health>
+    <ArmourClass>15</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes two attacks: one with its bite and one with its stinger.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 22 (3d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 15), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +14, reach 10 ft. Hit: 16 (2d6 + 9) Piercing damage plus 35 (10d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>6</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>10</Value>
+        </ToHit>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Blue Worm 1</Name>
+    <Health>132</Health>
+    <ArmourClass>16</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes one Bite attack and one Tail Stinger attack.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +12, reach 10 ft. Hit: 22 (2d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 18), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>12</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +12, reach 10 ft. Hit: 16 (1d6 + 9) Piercing damage plus  (7d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>7</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>12</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Swallow</Name>
+        <Description>Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Enemy">
+    <Initiative>14</Initiative>
+    <Name>Blue Worm 0</Name>
+    <Health>155</Health>
+    <ArmourClass>16</ArmourClass>
+    <VersionNumber>1.0.0</VersionNumber>
+    <Speed>50</Speed>
+    <FlySpeed>0</FlySpeed>
+    <SwimSpeed>0</SwimSpeed>
+    <ClimbSpeed>0</ClimbSpeed>
+    <BurrowSpeed>0</BurrowSpeed>
+    <Strength>28</Strength>
+    <Dexterity>7</Dexterity>
+    <Constitution>22</Constitution>
+    <Intelligence>1</Intelligence>
+    <Wisdom>8</Wisdom>
+    <Charisma>4</Charisma>
+    <IsSpellCaster>false</IsSpellCaster>
+    <SpellSlots>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot1</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot2</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot3</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot4</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot5</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot6</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot7</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot8</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+      <SpellSlotAvailability>
+        <SpellSlotLevel>Slot9</SpellSlotLevel>
+        <Available>0</Available>
+        <NumberLeft>0</NumberLeft>
+      </SpellSlotAvailability>
+    </SpellSlots>
+    <SpellSaveDC>15</SpellSaveDC>
+    <SavingThrows>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Constitution</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>11</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+      <TraitWithModifierOfAbilityScoreType>
+        <Type>Wisdom</Type>
+        <Modifier>
+          <Type>Plus</Type>
+          <Value>4</Value>
+        </Modifier>
+      </TraitWithModifierOfAbilityScoreType>
+    </SavingThrows>
+    <DamageVurnerabilities />
+    <DamageResistances />
+    <DamageImmunities />
+    <ConditionImmunities />
+    <Skills />
+    <Senses>
+      <TraitWithValueOfSenseType>
+        <Type>Blindsight</Type>
+        <Value>30</Value>
+      </TraitWithValueOfSenseType>
+      <TraitWithValueOfSenseType>
+        <Type>Tremoresense</Type>
+        <Value>60</Value>
+      </TraitWithValueOfSenseType>
+    </Senses>
+    <PassivePerception>
+      <Value>9</Value>
+    </PassivePerception>
+    <Languages />
+    <ChallengeRating>
+      <ChallengeRatingLevel>Fiftteen</ChallengeRatingLevel>
+    </ChallengeRating>
+    <Abilities>
+      <Ability>
+        <Name>Tunneler</Name>
+        <Description>The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.</Description>
+      </Ability>
+    </Abilities>
+    <Actions>
+      <EntityAction>
+        <Name>Multiattack</Name>
+        <Description>The worm makes one Bite attack and one Tail Stinger attack.</Description>
+        <ActionCost>MainAction</ActionCost>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Bite</Name>
+        <Description>Melee Attack Roll: +12, reach 10 ft. Hit: 22 (2d8 + 9) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 18), and it has the Restrained condition until the grapple ends.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>2</NumberOfDice>
+            <DiceBase>8</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>12</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="AttackAction">
+        <Name>Tail Stinger</Name>
+        <Description>Melee Attack Roll: +12, reach 10 ft. Hit: 16 (1d6 + 9) Piercing damage plus  (7d6) Poison damage.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>1</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Plus</Type>
+              <Value>9</Value>
+            </ValueModifier>
+            <DamageType>Piercing</DamageType>
+          </DamageRoll>
+          <DamageRoll>
+            <NumberOfDice>7</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Poison</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+        <ToHit>
+          <Type>Plus</Type>
+          <Value>12</Value>
+        </ToHit>
+      </EntityAction>
+      <EntityAction xsi:type="DamagingAction">
+        <Name>Swallow</Name>
+        <Description>Strength Saving Throw: DC 19, one Large or smaller creature Grappled by the worm (it can have up to three creatures swallowed at a time). Failure: The target is swallowed by the worm, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions, has Total Cover against attacks and other effects outside the worm, and takes 17 (5d6) Acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 5 feet of the worm and has the Prone condition. If the worm dies, any swallowed creature no longer has the Restrained condition and can escape from the corpse using 20 feet of movement, exiting Prone.</Description>
+        <ActionCost>MainAction</ActionCost>
+        <DamageRolls>
+          <DamageRoll>
+            <NumberOfDice>4</NumberOfDice>
+            <DiceBase>6</DiceBase>
+            <ValueModifier>
+              <Type>Neutral</Type>
+              <Value>0</Value>
+            </ValueModifier>
+            <DamageType>Acid</DamageType>
+          </DamageRoll>
+        </DamageRolls>
+      </EntityAction>
+    </Actions>
+    <LegendaryActionsDescription />
+    <LairActionsDescription />
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Tortelini</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Elara</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Bar</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Finnigan</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Roy</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Relic</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+  <Entity xsi:type="Player">
+    <Initiative>0</Initiative>
+    <Name>Ned</Name>
+    <Health>0</Health>
+    <ArmourClass>0</ArmourClass>
+  </Entity>
+</ArrayOfEntity>

@@ -73,6 +73,8 @@ namespace DndBattleHelper.ViewModels
             EntitiesInInitiative.Insert(index, entity);
         }
 
+        public Action<EntityViewModel> EntityEditRequested;
+
         private void SubscribeToEvents(EntityViewModel entity)
         {
             entity.InitiativeChanged += () =>
@@ -83,6 +85,11 @@ namespace DndBattleHelper.ViewModels
             entity.RemoveRequested += (o, e) =>
             {
                 Remove((EntityViewModel)o);
+            };
+
+            entity.EditRequested += (o, e) =>
+            {
+                EntityEditRequested?.Invoke((EntityViewModel)o);
             };
         }
 

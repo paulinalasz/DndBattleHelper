@@ -101,6 +101,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" 
                            Style="{StaticResource TabTitle}"
@@ -108,6 +109,16 @@
                            VerticalAlignment="Center" 
                            TextTrimming="CharacterEllipsis" />
                             <Button Grid.Column="1" 
+                        Height="18" 
+                        Width="18" 
+                        Margin="5, 0, 0, 0" 
+                        ToolTip="Edit Entity" 
+                        Command="{Binding EditCommand}">
+                                <Viewbox>
+                                    <Image Source="{StaticResource EditDrawingImage}" />
+                                </Viewbox>
+                            </Button>
+                            <Button Grid.Column="2" 
                         Height="18" 
                         Width="18" 
                         Margin="5, 0, 0, 0" 
